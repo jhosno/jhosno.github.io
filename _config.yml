@@ -1,12 +1,12 @@
 # Site settings
-title:Jhosno 
-email:jhosnodev@gmail.com
+title: Jhosno 
+email: jhosnodev@gmail.com
 description: Jhosno | web designer & developer # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "/" # the base hostname & protocol for your site
 
 twitter_username: jhosno
-github_username:jhosno
+github_username: jhosno
 
 # Build settings
 markdown: kramdown
