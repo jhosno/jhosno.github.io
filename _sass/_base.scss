@@ -155,13 +155,7 @@ aside {
 }
 
 // Homepage Header
-.img-header{
-    width: 100%;
-    margin-top: 5em;
-    max-width: 150px;
-    display: inline;
-    
-}
+
 header {
     position: relative;
     width: 100%;
@@ -178,6 +172,13 @@ header {
         padding: 100px 15px 100px;
         width: 100%;
         .header-content-inner {
+            img-header{
+                width: 100%;
+                margin-top: 5em;
+                max-width: 150px;
+                display: inline;
+            }
+            
             h1 {
                 font-weight: 700;
                 text-transform: uppercase;
