@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fahkwang|Raleway');
+
 html,
 body {
     height: 100%;
@@ -6,8 +6,8 @@ body {
 }
 
 body {
-    /*@include serif-font;*/
-    font-family: 'Fahkwang', sans-serif;
+    @include serif-font;
+
 }
 
 hr {
@@ -36,8 +36,8 @@ h3,
 h4,
 h5,
 h6 {
-    /*@include sans-serif-font;*/
-    font-family: 'Raleway', sans-serif;
+    @include sans-serif-font;
+    
 }
 
 p {
@@ -47,7 +47,7 @@ p {
 }
 
 .bg-primary {
-background-color: rgba(66,9,146,1);
+background-color: @include linear-gradient;
 }
 
 .bg-dark {
@@ -79,8 +79,8 @@ aside {
 .navbar-default {
     background-color: white;
     border-color: rgba($theme-dark, .5);
-    /*@include sans-serif-font;*/
-    font-family: 'Raleway', sans-serif;
+    @include sans-serif-font;
+
     @include transition-all;
     .navbar-header .navbar-brand {
         color: $theme-primary;
