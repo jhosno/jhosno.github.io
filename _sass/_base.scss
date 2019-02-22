@@ -48,7 +48,6 @@ p {
 
 .bg-primary {
     background-color: rgba(66,9,146,1);
-    
     background: @include background-image(linear-gradient(top, rgba(66,9,146,1) 0%, rgba(66,9,146,1) 25%, rgba(6,158,205,1) 100%));
 }
 
