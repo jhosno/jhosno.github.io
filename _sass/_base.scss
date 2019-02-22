@@ -47,7 +47,13 @@ p {
 }
 
 .bg-primary {
-background-color: @include linear-gradient;
+background: rgba(66,9,146,1);
+background: -moz-linear-gradient(top, rgba(66,9,146,1) 31%, rgba(29,102,183,1) 74%, rgba(6,158,205,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(31%, rgba(66,9,146,1)), color-stop(74%, rgba(29,102,183,1)), color-stop(100%, rgba(6,158,205,1)));
+background: -webkit-linear-gradient(top, rgba(66,9,146,1) 31%, rgba(29,102,183,1) 74%, rgba(6,158,205,1) 100%);
+background: -o-linear-gradient(top, rgba(66,9,146,1) 31%, rgba(29,102,183,1) 74%, rgba(6,158,205,1) 100%);
+background: -ms-linear-gradient(top, rgba(66,9,146,1) 31%, rgba(29,102,183,1) 74%, rgba(6,158,205,1) 100%);
+background: linear-gradient(to bottom, rgba(66,9,146,1) 31%, rgba(29,102,183,1) 74%, rgba(6,158,205,1) 100%);
 }
 
 .bg-dark {
