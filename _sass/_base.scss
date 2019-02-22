@@ -47,9 +47,9 @@ p {
 }
 
 .bg-primary {
-    background-color: rgba(66,9,146,1);
-
-   
+background-color: rgba(66,9,146,1);
+background: @include filter-gradient(#420992, #1d66b7, vertical);
+background: @include background-image(linear-gradient(top, rgba(66,9,146,1) 31%, rgba(29,102,183,1) 74%, rgba(6,158,205,1) 100%));
 }
 
 .bg-dark {
