@@ -79,7 +79,8 @@ aside {
 .navbar-default {
     background-color: white;
     border-color: rgba($theme-dark, .5);
-    @include sans-serif-font;
+    /*@include sans-serif-font;*/
+    font-family: 'Raleway', sans-serif;
     @include transition-all;
     .navbar-header .navbar-brand {
         color: $theme-primary;
@@ -173,6 +174,7 @@ header {
         width: 100%;
         .header-content-inner {
             img-header{
+                max-height: auto;
                 margin-top: 60px;
                 max-width: 150px;
                 display: inline;
