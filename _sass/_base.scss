@@ -257,7 +257,9 @@ header {
     max-width: 650px;
 
     margin: 0 auto;
-
+    img {
+        max-height: 228px;
+    }
     .portfolio-box-caption {
         color: white;
         opacity: 0;
