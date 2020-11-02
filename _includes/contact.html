@@ -1,29 +1,48 @@
-<section id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">¡Mantengamonos en contacto!</h2>
-                <hr class="primary">
-                <p>¿Listo para empezar tu próximo proyecto conmigo? ¡Excelente! Puedes contactar conmigo a a través de los siguientes medios</p>
-            </div>
-        <div class="col-lg-2 col-lg-offset-2 text-center">
-            <a href="https://twitter.com/{{ site.twitter_username }}">
-                <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p>{{ site.twitter_username }}</p>
-            </a>
-        </div>
-        <div class="col-lg-2 col-lg-offset-1 text-center">
-            <a href="mailto:{{ site.email }}">
-            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p>{{ site.email }}</p>
-            </a>
-        </div>
-        <div class="col-lg-2 col-lg-offset-1 text-center">
-            <a href="https://github.com/{{ site.github_username }}">
-            <i class="fa fa-github fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p>{{ site.github_username }}</p>
-            </a>
-        </div>
+<section class="row bg-dark" id="contact">
+  <div class="col-md-6 col-md-offset-3">
+    <h3>¡Contáctame!</h3>
+    <div class="rrss">
+      <a href="https://github.com/jhosno"  target="_blank">
+       <i class="flaticon-github" target
+       ></i>
+      </a>
+      <a href="https://codepen.io/jhosno" target="_blank">
+          <i class="flaticon-codepen"></i>
+      </a>
+       <a href="https://www.linkedin.com/in/jhosno/" target="_blank">
+           <i class="flaticon-linkedin"></i>
+       </a>
+   <a href="https://twitter.com/jhosno" target="_blank">
+       <i class="flaticon-twitter"></i>
+   </a>
+<a href=""></a>
+   
+  </div>
+    <hr>
+    <p>Estoy interesada en oportunidades Freelancer y trabajos remotos, especialmente ambiosiosos o largos proyectos.
+      <br>
+      Sin embargo, si tienes algún requerimiento o duda, no dudes en contactarme a través del siguiente formulario.
+    </p>
 
-    </div>
+    <form action="https://formspree.io/f/mpzorqzq" method="POST" >
+      <div class="form-group">
+        <label>
+          Tú correo:
+          <input type="email" class="form-control" name="_replyto" required>
+        </label>
+      </div>
+      <div class="form-group">
+        <label>
+          Tú mensaje:
+          <textarea name="message" class="form-control" required></textarea>
+        </label>
+      </div>
+
+
+      <!-- your other form fields go here -->
+
+      <button type="submit" class="btn btn-primary">¡Enviar!</button>
+    </form>
+  </div>
+
 </section>
