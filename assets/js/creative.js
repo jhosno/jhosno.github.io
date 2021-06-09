@@ -44,7 +44,9 @@
     //
     $(document).ready(function(){
         let screenWidth = screen.width
-        $('#skills-charts').attr('width', screenWidth).attr('height', screenWidth)
+        if( screenWidth < 768){
+        $('#tag-skills').attr('width', screenWidth).attr('height', screenWidth)
+        }
     })
     
 
