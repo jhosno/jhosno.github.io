@@ -43,9 +43,10 @@
     })
     //
     $(document).ready(function(){
-        let screenWidth = screen.width
-        if( screenWidth < 768){
-        $('#tag-skills').attr('width', screenWidth).attr('height', screenWidth)
+        let screenWidth = screen.width;
+        console.log(screenWidth);
+        if( screenWidth < 500){
+            $('#tag-skills').attr('width', screenWidth).attr('height', screenWidth);
         }
     })
     
