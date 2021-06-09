@@ -41,6 +41,12 @@
             top: 100
         }
     })
+    //
+    $(document).ready(function(){
+        let screenWidth = screen.width
+        $('#skills-charts').attr('width', screenWidth).attr('height', screenWidth)
+    })
+    
 
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
