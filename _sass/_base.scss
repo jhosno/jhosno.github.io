@@ -140,11 +140,11 @@ aside {
             >a:focus {
                 text-transform: uppercase;
                 font-weight: 700;
-                font-size: .75rem;
+                font-size: 1.7rem;
                 color: white;
 
                 &:hover {
-                    color: $theme-primary;
+                    color: $theme-cyan;
                 }
             }
 
