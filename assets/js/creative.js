@@ -49,6 +49,7 @@
         console.log(screenWidth);
         if( screenWidth < 500){
             $('#tag-skills').attr('width', screenWidth).attr('height', screenWidth);
+            $('#mainNav').removeClass('navbar-fixed-top').addClass('navbar-fixed-bottom')
         }
     })
     
