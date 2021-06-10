@@ -189,7 +189,7 @@ aside {
         }
 
         &.affix {
-            background-color: white;
+            background-color: rgba($theme-dark, .7);
             border-color: rgba($theme-dark, .5);
 
             .navbar-header .navbar-brand {
