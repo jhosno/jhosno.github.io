@@ -2,7 +2,7 @@
 ---
 
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Raleway:wght@500;700;800;900&display=swap');
 
 @charset "utf-8";
 $font-montserrat: 'Montserrat', sans-serif;
@@ -55,5 +55,6 @@ $theme-base: #d8d6d6;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "mixins",
-        "base"
+        "base",
+        "card"
 ;

@@ -2,7 +2,7 @@
 layout: post
 title: "Cosas"
 date: 2020-10-28 12:23:26 -0400
-category: jekyll update
+category: [javascript, tutorial]
 image: matrix.jpg
 alt: React
 ---

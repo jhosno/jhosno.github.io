@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+
 <body class="container-fluid bg-dark">
     {% include navbar.html %}
     <section class="blog-body" id="blog-body">
-
         <div class="last-post">
             {% for post in site.posts limit:1 %}
             {% if post.project == null %}
-            <div class="wow fadeInLeft" data-wow-duration="1.5s">
-                <a href="{{ site.url }}{{ post.url }}">
-                    <img src="/assets/images/post/{{post.image}}" alt="{{ post.alt }}" class="last-post">
-                </a>
-                <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">
-                    <div class="card-content">
-                        <span>{{post.category}}</span>
-                        <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
-                            <h2>
-                                {{ post.title }}
-    
-                            </h2>
-                        </a>
-                        <p>{{ post.excerpt | slice: 0, 500}}</p>
-                    </div>
-                </a>
+            <div class="card">
+                <div class="card-img">
+                    <a href="{{ site.url }}{{ post.url }}">
+                        <img src="/assets/images/post/{{post.image}}" alt="{{ post.alt }}">
+                    </a>
+                </div>
+                <div class="card-content">
+                    {% for cat in post.categories%}
+                    <span>{{cat | capitalize | join:', '}}</span>
+                    {% endfor %}
+                    <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
+                        <h2>
+                            {{ post.title }}
+                        </h2>
+                    </a>
+                    <p>{{ post.excerpt | slice: 0, 350}}</p>
+                    <p class="date-string">{{ post.date | date_to_string}}</p>
+                </div>
             </div>
             {% endif %}
             {% endfor %}
         </div>
-    
+        
         <hr>
-    
+        
         <div class="list-post">
-            {% for post in site.posts offset:1 limit:5 %}
+                      {% for post in site.posts offset:1  %}
             {% if post.project == null %}
-            <div class="wow fadeInLeft" data-wow-duration="1.5s">
-                <a href="{{ site.url }}{{ post.url }}">
-    
-                </a>
-                <a href="{{ site.url }}{{ post.url }}" class="btn zoombtn">
-                    <div class="card-content">
-                        <span>{{post.category}}</span>
-                        <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
-                            <h2>
-                                {{ post.title }}
-                            </h2>
-                        </a>
-                        <p>{{ post.excerpt | slice: 0, 500}}...</p>
-                    </div>
-                </a>
+            <div class="card">
+                <div class="card-img">
+                    <a href="{{ site.url }}{{ post.url }}">
+                        <img src="/assets/images/post/{{post.image}}" alt="{{ post.alt }}">
+                    </a>
+                </div>
+                <div class="card-content">
+                    {% for cat in post.categories%}
+                    <span>{{cat | capitalize | join:', '}}</span>
+                    {% endfor %}
+                    <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
+                        <h2>
+                            {{ post.title }}
+                        </h2>
+                    </a>
+                    <p>{{ post.excerpt | slice: 0, 350}}</p>
+                    <p class="date-string">{{ post.date | date_to_string}}</p>
+                </div>
             </div>
             {% endif %}
             {% endfor %}
-            <button>Ver más</button>
-    
-    
+
         </div>
     </section>
 </body>
+<script>
+
+</script>
 </html>

@@ -2,7 +2,7 @@
 layout: post
 title:  "Test!"
 date:   2020-01-15 12:23:26 -0400
-category: classic hollywood
+category: [classic, hollywood]
 image: javascript.jpg
 alt: React
 ---
