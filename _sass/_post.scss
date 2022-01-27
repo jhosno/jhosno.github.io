@@ -1,0 +1,12 @@
+#post{
+    margin: 3rem 2rem;
+}
+.post-content{
+  display: grid; 
+  grid-template-columns: 25% 50% 25%;
+
+  background: $theme-base;
+  color: $theme-dark;
+  width: 80vw;
+  padding: 5rem;
+}

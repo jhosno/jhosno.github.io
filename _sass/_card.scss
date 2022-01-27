@@ -1,5 +1,5 @@
 .blog-body {
-  padding: 8rem 5rem;
+  padding: 12rem 5rem;
   hr {
     border-color: $theme-acents;
   }
@@ -26,7 +26,6 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.15rem;
- 
   }
 }
 .last-post {
@@ -81,10 +80,10 @@
     background: aliceblue;
     border-radius: 10px;
     color: #1d1d1d;
-
+    grid-template-rows: 35% 65%;
     .card-img {
-      width: 25%;
-      
+      width: 100%;
+  
       a {
         img {
           border-radius: 10px 10px 0px 0px;
@@ -95,19 +94,12 @@
     }
 
     .card-content {
-      span {
-        //
-      }
-
       a h2 {
-        
         font-size: 3rem;
       }
-      }
-
       p {
         font-size: 1.5rem;
       }
     }
   }
-
+}
