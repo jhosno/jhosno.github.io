@@ -46,16 +46,33 @@ $theme-lila: #8c61ff;
 // variables.less
 $theme-primary: #420992;
 $theme-dark: #171717;
-$theme-bg: #1D1D1D;
+$theme-bg: #1d1d1d;
 $theme-contrast: #81d6fd;
 $theme-acents: #c7b3ff;
 $theme-base: #d8d6d6;
+
+
+
+//Breakpoints
+//movils
+$bp-movil-sm: 330px;
+$bp-movil-md: 390px;
+$bp-movil-lg: 420px;
+//tablets
+$bp-tablet-sm: 600px;
+$bp-tablet-md: 768px;
+$bp-tablet-lg: 834px;
+//desktop
+$bp-laptop-md: 1280px;
+$bp-laptop-sm: 1440px;
+
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "mixins",
         "base",
+        "card",
         "post",
-        "card"
+        "footer"
 ;
