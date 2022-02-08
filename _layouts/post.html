@@ -2,15 +2,35 @@
 <html lang="es">
 {% include head.html %}
 
-<body class="container-fluid bg-dark" id="post">
+<body class="container-fluid bg-dark">
+    {% include hero-blog.html %}
     {% include navbar.html %}
-    <section class="post-content">
-        {{title}}
-        {{content}}
+    <section id="post">
+    
+        <div class="post-header">
+            <div>
+            {% for cat in page.categories%}
+                <span class="category">
+                    {{cat | capitalize }}
+                </span>
+                {% endfor %}
+                <h2>
+                    {{page.title}}
+                </h2>
+            </div>
+            <p class="date-string">
+                {{ page.date | date_to_string}}
+            </p>
+        </div>
 
+        <div class="post-content">
+            {{content}}
+        </div>
     </section>
-    {% include contact.html %}
+
+    
     {% include footer.html %}
+    
     {% include scripts.html %}
 </body>
 

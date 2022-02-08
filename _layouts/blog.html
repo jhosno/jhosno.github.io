@@ -4,7 +4,9 @@
 
 <body class="container-fluid bg-dark" id="blog">
     {% include navbar.html %}
+    {% include hero-blog.html %}
     <section class="blog-body" id="blog-body">
+        
         <div class="last-post">
             {% for post in site.posts limit:1 %}
             {% if post.project == null %}
@@ -30,11 +32,11 @@
             {% endif %}
             {% endfor %}
         </div>
-        
+
         <hr>
-        
+
         <div class="list-post">
-                      {% for post in site.posts offset:1  %}
+            {% for post in site.posts offset:1  %}
             {% if post.project == null %}
             <div class="card">
                 <div class="card-img">
@@ -60,6 +62,9 @@
 
         </div>
     </section>
+
+    {% include footer.html %}
 </body>
 {% include scripts.html %}
+
 </html>

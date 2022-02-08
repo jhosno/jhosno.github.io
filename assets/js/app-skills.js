@@ -1,4 +1,29 @@
-//////////header background//////////////////////7
+//////////////////////modal contact!!!!!!!!!!!!!!
+
+  
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
+
+
+//////////header blog background//////////////////////7
+
+VANTA.TRUNK({
+  el: "#hero-blog",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  color: 0x342460,
+  backgroundColor: 0x1d1d1d,
+  chaos: 10.00
+})
+//////////header home background//////////////////////7
 
 VANTA.HALO({
   el: "#header",
@@ -48,4 +73,3 @@ if (!$('#tag-skills').tagcanvas({
   $('#skills-charts').hide();
 
 }
-

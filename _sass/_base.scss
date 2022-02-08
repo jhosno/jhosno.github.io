@@ -1,9 +1,25 @@
-form{
-  width: 40vh;
+
+form {
+  width: 40vw;
 }
 .form-control {
-
   width: 39rem;
+  
+}
+
+@media (min-width: $bp-movil-sm ){
+  .form{
+    width: 65vw;
+  }
+  .form-control{
+    width: 20rem;
+  }
+  p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: justify;
+}
 }
 
 .navbar-default .navbar-toggle {
@@ -132,13 +148,13 @@ p {
   );
 }
 
-.btn-info{
-    background: $theme-primary;
-    
-    &:hover{
-        color: $theme-primary;
-        background: $theme-acents;
-    }
+.btn-info {
+  background: $theme-primary;
+
+  &:hover {
+    color: $theme-primary;
+    background: $theme-acents;
+  }
 }
 .bg-dark {
   background-color: $theme-bg;
