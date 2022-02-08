@@ -10,13 +10,22 @@ footer {
   grid-template-rows: auto;
   grid-template-areas:
     "rrss    contact"
+    "hr      hr"
     "credits credits";
-
+  .btn-footer {
+    background: transparent;
+    color: $theme-cyan;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
   .rrss {
     grid-area: rrss;
   }
   .contact {
     grid-area: contact;
+  }
+  hr {
+    grid-area: hr;
   }
   .credits {
     grid-area: credits;
@@ -61,12 +70,67 @@ footer {
   }
 }
 
-.modal-body{
-    p{
-        font-size: 1.4rem;
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    font-size: 1.4rem;
+  }
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 4rem 8rem;
+    .form-group {
+      width: 100%;
+      label {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+        textarea {
+          width: 100%;
+        }
+      }
     }
+    button {
+      width: auto;
+    }
+  }
 }
 
 .modal-footer {
   border-top: solid #3430904d 2px;
+}
+@media (max-width: $bp-movil-lg) {
+  footer {
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "rrss" "contact"
+      "credits";
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    .credits {
+      padding: 2rem;
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  .modal-body {
+    form {
+      padding: 4rem;
+    }
+  }
+  .btn-footer {
+    font-size: 1.1rem;
+  }
 }

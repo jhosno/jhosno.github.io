@@ -20,9 +20,8 @@
         <h3>
             Contact
         </h3>
-        <a href="#" id="triggerModal">Email</a>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contactModal">
-            Launch demo modal
+        <button type="button" class="btn btn-primary btn-lg btn-footer" data-toggle="modal" data-target="#contactModal">
+            ¡Hablame de tu proyecto!
           </button>
     </div>
 
@@ -43,12 +42,27 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Si tienes algún proyecto, comentario o sugerencia, puedes contactarme directamente a través de este formulario</p>
+            <p>Si tienes algún proyecto, comentario o sugerencia, puedes contactarme directamente a través de este formulario</p>
+            <form action="https://formspree.io/f/mpzorqzq" method="POST" >
+            <div class="form-group">
+                <label>
+                Tú correo:
+                <input type="email" class="form-control" name="_replyto" required>
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                Tú mensaje:
+                <textarea name="message" class="form-control" required></textarea>
+              </label>
+            </div>
+      
+            <!-- your other form fields go here -->
+      
+            <button type="submit" class="btn btn-primary">¡Enviar!</button>
+          </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary send-modal">Enviar</button>
-          
-        </div>
+ 
       </div>
     </div>
   </div>
