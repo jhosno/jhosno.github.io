@@ -29,7 +29,7 @@ VANTA.HALO({
   el: "#header",
   mouseControls: true,
   touchControls: true,
-  gyroControls: false,
+  gyroControls: true,
   minHeight: 200.00,
   minWidth: 200.00,
   baseColor: 0xc0950,
@@ -41,8 +41,30 @@ VANTA.HALO({
 })
 
 
+/////////////404 hover distorsion  ////////////////////
+
+ 
+var hoverDistort404 = new hoverEffect({
+  parent: document.querySelector('#lost404'),
+  intensity: 0.5,
+  angle:    Math.PI / 6,
+  hover:true,
+  speedIn: 1.8,
+  speedOut: 1.8,
+  easing: Expo.easeOut,
+  image1: "/assets/images/404/404-not-found-group-FX.png",
+  image2: "/assets/images/404/LIQUID-FX.png",
+  displacementImage: "/assets/images/14.jpg"
+});
+
+  // setInterval(function(){
+  //   console.log('intervalo')
+  //   hoverDistort404.next();
+  // },6000)
+
+
 /////////////about hover distorsion  ////////////////////
-var hoverDistort = new hoverEffect({
+var hoverDistortAbout = new hoverEffect({
   parent: document.querySelector('.about-wrapper'),
   intensity: 0.5,
   image1: '/assets/images/JH-about-1-c.png',
