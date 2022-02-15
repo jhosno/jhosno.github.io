@@ -39,7 +39,7 @@ En este caso, será un proyecto de react, podemos escoger si será un proyecto c
 
 
 
-Una vez culminado el proceso seguimos los pasos indicados en la consola, que serían los siguientes:
+Para finalizar el proceso seguimos los pasos indicados en la consola, que serían los siguientes:
 
 ```bash
 > cd thunder-project
