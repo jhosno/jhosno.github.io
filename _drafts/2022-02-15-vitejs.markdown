@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "ViteJS: acelera tu código"
+date:   2022-02-15 15:00:00 -0400
+categories: [vitejs, automatizador]
+image: vitejs2.jpg
+alt: "ViteJS, acelera tu código | Crédito: Dimensioni by Alka Cappellazzo at OpenProcessing"
+---
+# Vite
+## ¿Qué es Vite?
+
+Es una herramienta frontend, que destaca por la rápidez que brindaa la hora de derrollar proyectos. Está creado por [Evan You][Evan-You], el mismo que creó [VueJS][VueJS]. Dentro de las virtudes de esta herramienta está su gran velocidad y agnosticismo (con esto quiero aclarar que no está atado a ningún otro framework especifico), capaz de soportar proyectos JS vainilla, o, por otro lado, diferentes frameworks: Vue.js, Angular, React, tanto como si quieres que sean JS o TS.
+
+## Beneficios
+
+-   Puedes crear un server instantáneo sin lidiar con buildings.
+-   Actualiza los cambios en la app súper rápido.
+-   Soporta el uso de JS, CSS y TS.
+-   Soporte server side render (para navegadores que no soporten node modules).
+
+Esto nos ayuda a crear proyectos mucho más eficaces a la hora de iniciar, mostrar cambios y depurar.
+
+## Vite + React
+
+Escribimos en consola lo siguiente, para instalar vite
+
+```bash
+> npm init vite@latest
+```
+
+![Instalación de vite](/assets/images/content/vitejs1.png)
+
+![Instalación de vite](/assets/images/content/vitejs2.png)
+
+Una vez finalizado el proceso del comando nos pedira que ingresemos el nombre del proyecto, escojamos la tecnología que vamos a utilizar, y si será un proyecto con typeScript o JavaScript.
+
+![Instalación de vite](/assets/images/content/vitejs3.png)
+
+
+
+Una vez culminado el proceso seguimos los pasos indicados en la consola, que serían los siguientes:
+
+```bash
+> cd thunder-project
+> npm install
+> npm run dev
+```
+
+### Estructura de un proyecto Vite/React
+
+![Directorio de Vite/React](/assets/images/content/vitejs4.png)
+
+#### Directorio de Vite/React
+
+- En la carpeta /_src/_ es donde nos enfocaremos la mayor parte del proyecto, aquí tendremos nuestro archivo _/App.jsx_, que es nuestro archivo principal y el padre de todos nuestros componentes,aparte, podremos crear es resto de nuestros componentes.
+
+- El archivo _/.igtignore_, es una archivo de configuración para definir los archivos que queremos excluir a la hora de llevar nuestro control de versiones, o crear respositorios en host externos como github, gitlab o bitbucker.
+
+- El documento _/index.html_, es el documento base en donde se verá el sistema.
+
+- El archivo _/package.json_, es una archivo de configuración, ahí están definidos los paquetes de node que se requieren, comandos de compilacion, ejecución o depuración que fueran necesarios.
+
+- Luego está el archivo _/vite.config_, que tiene las configuraciones propias de este building-tool, que es una herramienta sencilla y rápida para configurar tus proyectos.
+
+[VueJS]: https://vuejs.org/
+[Evan-You]:   https://evanyou.me/

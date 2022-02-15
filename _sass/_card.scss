@@ -4,20 +4,25 @@
     border-color: $theme-acents;
   }
 }
-
-.header-blog{
-  font-size: 5rem;
-  color: #fff;
-  a{
+a {
   text-decoration: none;
+  &:hover{
+  text-decoration: none;
+  font-size: 2.6rem;
+  }
+  .header-blog {
+    font-size: 5rem;
+    color: #fff;
+    &:hover{
+      text-decoration: none;
+      font-size: 3.6rem;
+      }
   }
 }
 .card {
   border-radius: 10px;
   background-color: #f0f8ff;
-  // display: flex;
-  // flex-wrap: wrap;
-  // align-items: stretch;
+
   color: #1d1d1d;
 
   .card-content {
@@ -41,23 +46,21 @@
   }
 }
 .last-post {
-  width: 94vw;
+  width: 100%;
   height: 60vh;
-  
+
   .card {
-    display:grid;
-    grid-template-columns: 45% 50% ;
-    width: 91vw;
+    display: grid;
+    grid-template-columns: 45% 50%;
+    width: 100%;
     height: 60vh;
-    flex-direction: rows;
 
     .card-img {
       z-index: 0000;
-
       a img {
         border-radius: 10px 0px 0px 10px;
-        height: 41rem;
-        width: 65rem;
+        height: 100%;
+        width: 70rem;
       }
     }
 
@@ -79,7 +82,7 @@
         font-size: 5rem;
       }
       p {
-        font-size: 2rem;
+        font-size: 1.7rem;
       }
     }
   }
@@ -94,7 +97,7 @@
     background: aliceblue;
     border-radius: 10px;
     color: #1d1d1d;
-    display:grid;
+    display: grid;
     grid-template-rows: 35% 65%;
     height: 75vh;
     .card-img {
@@ -120,13 +123,12 @@
   }
 }
 
-@media (max-width: $bp-movil-lg) {
-
+@media (max-width: $bp-tablet-lg) {
   .blog-body {
     padding: 4rem 2rem;
     padding-bottom: 9rem;
   }
-  .last-post{
+  .last-post {
     .card {
       display: grid;
       flex-wrap: wrap;
@@ -135,13 +137,13 @@
       grid-template-rows: 35% 65%;
       grid-template-columns: 1fr;
       border: solid 2px $theme-primary;
-  
+
       .card-img {
         z-index: 0000;
         a img {
           border-radius: 8px 8px 0px 0px;
           height: 14rem;
-          width: 34.5rem;
+          width: 100%;
         }
       }
       .card-content {
@@ -154,7 +156,7 @@
         span {
           font-size: 1rem;
         }
-        span{
+        span {
           font-size: 1rem;
         }
         a h2 {
@@ -166,7 +168,6 @@
       }
     }
   }
-  
 
   .list-post {
     display: grid;
@@ -191,7 +192,7 @@
       }
 
       .card-content {
-        span{
+        span {
           font-size: 1rem;
         }
         a h2 {
@@ -206,10 +207,7 @@
 }
 ///////////////////////////////////
 
-
-#blogFront{
-  background: #1d1d1d  no-repeat fixed center;
+#blogFront {
+  background: #1d1d1d no-repeat fixed center;
   color: $theme-base;
-  
-
 }
