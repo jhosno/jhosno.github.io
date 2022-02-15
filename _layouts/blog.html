@@ -11,7 +11,7 @@
         {% for post in site.posts limit:1 %} {% if post.project == null %}
         <div class="card">
           <div class="card-img">
-            <a href="/{{ post.url }}">
+            <a href="{{ site.url }}{{ post.url }}">
               <img
                 src="/assets/images/post/{{post.image}}"
                 alt="{{ post.alt }}"
@@ -22,7 +22,7 @@
             {% for cat in post.categories%}
             <span>{{cat | capitalize | join:', '}}</span>
             {% endfor %}
-            <a class="zoombtn" href="/{{ post.url }}">
+            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
               <h2>{{ post.title }}</h2>
             </a>
             <p>{{ post.extract | slice: 0, 350}}</p>
@@ -41,7 +41,7 @@
         {% for post in site.posts offset:1 %} {% if post.project == null %}
         <div class="card">
           <div class="card-img">
-            <a href="/{{ post.url }}">
+            <a href="{{ site.url }}{{ post.url }}">
               <img
                 src="/assets/images/post/{{post.image}}"
                 alt="{{ post.alt }}"
@@ -52,7 +52,7 @@
             {% for cat in post.categories%}
             <span>{{cat | capitalize | join:', '}}</span>
             {% endfor %}
-            <a class="zoombtn" href="/{{ post.url }}">
+            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
               <h2>{{ post.title }}</h2>
             </a>
             <p>{{ post.excerpt | slice: 0, 350}}</p>
