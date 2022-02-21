@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "ViteJS: acelera tu código"
-date:   2022-02-15 15:00:00 -0400
-categories: [vitejs, automatizador]
-image: vitejs2.jpg
-alt: "ViteJS, acelera tu código | Crédito: Dimensioni by Alka Cappellazzo at OpenProcessing"
+title:  "CRUD ReactJS"
+date:   2022-02-22 15:00:00 -0400
+categories: [Reactjs, tutorial]
+image: reactjs2.png
+alt: "ReactJS, como hacer un CRUD | Crédito: CSS Generative Pattern Circles by crankysparrow at CodePen"
+extract: "¿Quiéres hacer un CRUD en reactJS y no sabes como empezar? Aquí puedes hacerte una idea de como funciona la librería, a parte de usar tailwindsCSS . ¿Quieres saber más? Sigue leyendo"
 ---
 # Vite
 ## ¿Qué es Vite?

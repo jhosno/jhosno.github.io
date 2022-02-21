@@ -1,7 +1,7 @@
-I"�<h2 id="vitejs-acelera-tu-código">ViteJS: Acelera tu código</h2>
+I"�<h2 id="vitejs-acelera-tu-código">ViteJS: Acelera tu código</h2>
 <h2 id="qué-es-vite">¿Qué es Vite?</h2>
 
-<p>Es una herramienta frontend, que destaca por la rápidez que brindaa la hora de derrollar proyectos. Está creado por <a href="https://evanyou.me/">Evan You</a>, el mismo que creó <a href="https://vuejs.org/">VueJS</a>. Dentro de las virtudes de esta herramienta está su gran velocidad y agnosticismo (con esto quiero aclarar que no está atado a ningún otro framework especifico), capaz de soportar proyectos JS vainilla, o, por otro lado, diferentes frameworks: Vue.js, Angular, React, tanto como si quieres que sean JS o TS.</p>
+<p>Es una herramienta frontend, que destaca por la rápidez que brindaa la hora de derrollar proyectos. Está creado por [Evan You][Evan-You], el mismo que creó [VueJS][VueJS]. Dentro de las virtudes de esta herramienta está su gran velocidad y agnosticismo (con esto quiero aclarar que no está atado a ningún otro framework especifico), capaz de soportar proyectos JS vainilla, o, por otro lado, diferentes frameworks: Vue.js, Angular, React, tanto como si quieres que sean JS o TS.</p>
 
 <h2 id="beneficios">Beneficios</h2>
 
@@ -20,22 +20,25 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> npm init vite@latest
 </code></pre></div></div>
+<p>Una vez instalado, puedes colocar el nombre de tu nuevo proyecto…</p>
 
 <p><img src="/assets/images/content/vitejs1.png" alt="Instalación de vite" /></p>
 
+<p>…Lo siguiente será definir cual va a ser la tecnología con la que trabajaremos….</p>
+
 <p><img src="/assets/images/content/vitejs2.png" alt="Instalación de vite" /></p>
 
-<p>Una vez finalizado el proceso del comando nos pedira que ingresemos el nombre del proyecto, escojamos la tecnología que vamos a utilizar, y si será un proyecto con typeScript o JavaScript.</p>
+<p>…En este caso, será un proyecto de react, podemos escoger si será un proyecto con typeScript o JavaScript….</p>
 
 <p><img src="/assets/images/content/vitejs3.png" alt="Instalación de vite" /></p>
 
-<p>Una vez culminado el proceso seguimos los pasos indicados en la consola, que serían los siguientes:</p>
+<p>…Para finalizar el proceso seguimos los pasos indicados en la consola, que serían los siguientes:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">cd </span>thunder-project
 <span class="o">&gt;</span> npm <span class="nb">install</span>
 <span class="o">&gt;</span> npm run dev
 </code></pre></div></div>
-
+<p>¡Y ya con esto puedes empezar a programar!</p>
 <h3 id="estructura-de-un-proyecto-vitereact">Estructura de un proyecto Vite/React</h3>
 
 <p><img src="/assets/images/content/vitejs4.png" alt="Directorio de Vite/React" /></p>
@@ -60,4 +63,7 @@
   </li>
 </ul>
 
+<p>Créditos de la imágen: Dimensioni by Alka Cappellazzo at OpenProcessing.
+[VueJS]: https://vuejs.org/
+[Evan-You]:   https://evanyou.me/</p>
 :ET

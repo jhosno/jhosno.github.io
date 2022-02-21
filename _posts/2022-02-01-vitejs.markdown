@@ -66,5 +66,6 @@ Una vez instalado, puedes colocar el nombre de tu nuevo proyecto...
 
 - Luego está el archivo _/vite.config_, que tiene las configuraciones propias de este building-tool, que es una herramienta sencilla y rápida para configurar tus proyectos.
 
+Créditos de la imágen: Dimensioni by Alka Cappellazzo at OpenProcessing.
 [VueJS]: https://vuejs.org/
 [Evan-You]:   https://evanyou.me/
