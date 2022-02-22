@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CRUD ReactJS"
-date:   2022-02-22 15:00:00 -0400
+date:   2022-02-22 12:00:00 -0400
 categories: [Reactjs, tutorial]
 image: reactjs3.png
 alt: "ReactJS, como hacer un CRUD | Crédito: CSS Generative Pattern Circles crankysparrow at CodePen"
