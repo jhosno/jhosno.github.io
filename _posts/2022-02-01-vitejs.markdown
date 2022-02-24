@@ -30,15 +30,15 @@ Escribimos en consola lo siguiente, para instalar vite
 ```
 Una vez instalado, puedes colocar el nombre de tu nuevo proyecto...
 
-![Instalación de vite](/assets/images/content/vitejs1.png)
+![Instalación de vite](/assets/images/content/vitejs1.png){:class="img-responsive"}
 
 ...Lo siguiente será definir cual va a ser la tecnología con la que trabajaremos....
 
-![Instalación de vite](/assets/images/content/vitejs2.png)
+![Instalación de vite](/assets/images/content/vitejs2.png){:class="img-responsive"}
 
 ...En este caso, será un proyecto de react, podemos escoger si será un proyecto con typeScript o JavaScript....
 
-![Instalación de vite](/assets/images/content/vitejs3.png)
+![Instalación de vite](/assets/images/content/vitejs3.png){:class="img-responsive"}
 
 
 
@@ -52,7 +52,7 @@ Una vez instalado, puedes colocar el nombre de tu nuevo proyecto...
 ¡Y ya con esto puedes empezar a programar!
 ### Estructura de un proyecto Vite/React
 
-![Directorio de Vite/React](/assets/images/content/vitejs4.png)
+![Directorio de Vite/React](/assets/images/content/vitejs4.png){:class="img-responsive"}
 
 #### Directorio de Vite/React
 
