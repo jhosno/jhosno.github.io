@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Creando un repositorio"
-date:   2022-03-01 13:00:00 -0400
+date:   2022-02-28 15:00:00 -0400
 categories: [GIT, Github]
 image: 1.png
 alt: "GIT - agregar un repo a un proyecto local"
