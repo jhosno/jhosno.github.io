@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "Hablemos de API"
+date:   2022-03-08 15:00:00 -0400
+categories: [API, WEB]
+image: 7.png
+alt: "API - Qué es y cuales son sus cualidades"
+extract: "Las APIs están en todos lados, forman parte de nuestra cotidianidad, seguramente has usado muchas de ellas, pero qué tal si le hacemos una mirada más detallada sobre que son y cuales con sus cualidades. ¿Quieres saber más? Sigue leyendo"
+---
+
+API, es un acrónimo del inglés que corresponde a Application Programing interface, que en español se entiende como interfaz de programación de aplicaciones. Es un conjunto de protocolos que se usa para integrar sistemas a diferentes módulos. En la práctica es sencillamente como podemos acceder a ciertas funciones de un sistema, como interactuar, integrar y comunicar, sin tener que involucrarnos directamente con el sistema en sí.
+
+Un ejemplo sería un e-commerce que para sus funciones de pago, en vez de desarrollar una app de pagos, utilice una pasarela de pago ya existente, tal puede ser el caso de PayPal. Otra posible situación sería una aplicación de gestión de contenido, que debe de una API de Twitter, dándole al usuario la opción de enviar tweed sin entrar a la plataforma de Twitter. O incluso cuando hacemos loggin a través de plataformas como Facebook o Google.
+
+Esto representa ventajas y ahorro de tiempo y esfuerzo: simplificando el diseño de sistemas, flexibilidad, ya que con esto solo tienes que acceder a servicios particulares en vez de estar reinventando la rueda, servicios que, probablemente sean mantenidos constantemente y testeado por muchos usuarios.
+
+Podríamos ver las API con contratos, puesto que si el cliente envía una petición con ciertas características, esto determina como la interfaz del sistema a consultar generará una respuesta, ya
+
+Así que vamos a desvelar como funciona estas herramientas.
+## APIs remotas
+Las APIs remotas hacen referencia a recursos que se administran fuera del dispositivo cliente, a través de redes de comunicaciones, la más usual es el internet, por ello muchas de las API’s remotas se desarrollan tomando en cuenta los estándares del internet.
+Lo más habitual es que las APIs web usen protocolo HTTP, para las solicitudes, y sus respuestas suelen ser archivos de tipo JSON o XML, que son formatos popularizados, con soporte en muchos lenguajes, haciendo que la manipulación de los datos contenidos en la respuesta sean fácil de acceder y manipular.
+
+![API y diagrama de flujo de información](/assets/images/content/apis.png){:class="img-responsive"}
+## SOAP y REST
+A través del uso difundido de las API, se ha desarrollado un protocolo estándar para el intercambio de información, este lleva el nombre de Protocolo de Acceso a Objetos Simples, puede que te suene más por su acrónimo en inglés: SOAP. Las APIs SOAP envían respuestas formateadas a XML, y reciben sus solicitudes a través de HTTP o SMTP.
+Ahora, hablaremos de las APIs REST, que en español vendría siendo Transferencia de Estado Representacional. La principal diferencia entre REST y SOAP es que uno es una arquitectura y la otra es un protocolo. A pesar de que no existe un estándar oficial para API Rest, hay algunas características destacables en la arquitectura de la API que hacen que una API REST sea considerada un API RESTful, según en la tesis de Roy Fielding, "Architectural Styles and the Design of Network-based Software Architectures", las API son RESTful siempre que cumplan con las 6 limitaciones principales de un sistema RESTful:
+- Arquitectura cliente-servidor: Dentro de esta arquitectura se contemplan los siguientes elementos: clientes, servidores y recursos, administrados a través de solicitudes HTTP.
+- Sistemas sin Estados: Los estados de la sesión de cliente son dominio del mismo, sin ser almacenado en el servidor entre solicitudes.
+- Capacidad de almacenamiento en caché: al ser capaz de almacenarse, ahorrando interacciones entre cliente y servidor.
+- Sistema en capas: Las interacciones entre cliente y servidor pueden estar mediadas a través de diferentes capas de funcionalidades, que puedan enriquecer la interacción con virtudes como equilibrio de carga, cachés compartidos y/o seguridad.
+- Arquitectura estandarizada: que se define de la siguiente manera:
+    - Identifica los recursos en las solicitudes y separan las representaciones que recibe el cliente.
+    - Administra recursos mediante representaciones, estás representaciones a su vez deben estar lo suficientemente
+    - Mensaje autodescriptivo que permita al cliente saber de qué manera debe manejar la información.
+
+A pesar de verse extenso, en la práctica permite flexibilidad a la hora de adaptarlo a un proyecto, a diferencia de un protocolo rígido, esto ha permitido que las API RESTful sena mucho más populares que las SOAP.
+Recientemente, los parámetros de [OpenAPI](https://www.openapis.org/), se han convertido en un estándar regular para definir las API REST, de manera agnóstica, brindando una arquitectura fácil de comprender. Por otro lado, tenemos [GraphQL](https://graphql.org/), que cada vez se hace más conocido, con una filosofía que se esfuerza porque los usuarios obtengan solo la información que solicitan y nada más, aparte de crear consultar con datos de fuentes diversas y sintetizarla en una solo respuesta, creando un rendimiento y tiempo de respuesta óptimo
+
+
+Créditos de la Img: CSS Geometric Art - Joseph Martucci [[link]](https://codepen.io/jjmartucci/pen/MWXyVe)
