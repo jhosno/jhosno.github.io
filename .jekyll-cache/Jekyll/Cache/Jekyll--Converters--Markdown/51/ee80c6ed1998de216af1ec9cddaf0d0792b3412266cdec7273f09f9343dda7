@@ -1,0 +1,212 @@
+I"@T<p>En esta ocasión vamos a hacer una APIRest de manera rápida con node.js y Heroku, siguiendo los pasos del <a href="https://www.youtube.com/watch?v=FLnxgSZ0DG4&amp;list=TLPQMjEwMjIwMjKMhH1mDkbm0Q&amp;index=4">tutorial de Ania Kubów</a>, ajustado para Windows 10 y utilizando tls-test, según las <a href="https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/">recomendaciones de github</a> a la hora de hacer . La API será sobre los gatitos del <a href="https://www.instagram.com/apoyoanimalst/?hl=es">refugio Apoyo Animal Santa Teresa</a> (Venezuela) 🐱🐈, a quienes puedes apoyar a través de los canales que tienen publicado en sus RRSS.</p>
+
+<ul>
+  <li>Aquí está el repositorio → [<a href="https://github.com/jhosno/catapi">link</a>]</li>
+  <li>Aquí está la APIRestful en línea→ [<a href="https://happycatsapi.herokuapp.com/cats">link</a>]</li>
+</ul>
+
+<h2 id="requerimientos">Requerimientos:</h2>
+
+<ul>
+  <li>Node.js</li>
+  <li>GIT</li>
+  <li>Cuentas en GitHub y Heroku</li>
+</ul>
+
+<p>Para empezar vamos a necesitar instalar unos repositorios de Node de manera global, el primero será json-server y heroku, con el siguiente código:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-g</span> json-server heroku
+</code></pre></div></div>
+
+<p>Necesitaremos tener el repositorio alojado en GitHub, así que la recomendación es que crees un repositorio directamente en la página de GitHub, y luego hagas git clone, o agregues una carpeta local al repositorio, aquí puedes encontrar una <a href="https://jhosno.github.io//git/github/Git-agregar-repo">pequeña guía de como</a></p>
+
+<p>Lo siguiente que necesitamos es crear una carpeta, en este ejemplo lo llamaremos CatAPI, en donde vamos a crear un archivo que llamaremos db.json, este contendrá lo siguiente:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"cats"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"michu"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eyecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nosecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatpattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"solid"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coattype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wirehair"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatcolors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nl">"coat0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black"</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">}]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pancho"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eyecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nosecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pink"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatpattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tuxedo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coattype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"longhair"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatcolors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"white"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"luna"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"medium"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eyecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nosecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pink partialy black"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatpattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tuxedo"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coattype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"longhair"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatcolors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"white"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"black"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"duquesa"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"large"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"eyecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"green"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"nosecolor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pink"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatpattern"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patched tabby"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coatcolors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat0"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blue"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cream"</span><span class="w"> </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="nl">"coat2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"apricot"</span><span class="w"> </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Para confirmar que está en todo en orden, con la consola encima de la carpeta vamos a poner lo siguiente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>json-server <span class="nt">--watch</span> db.json
+</code></pre></div></div>
+
+<p>debería verse lo siguiente:</p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dab07c5d-28b7-4ee4-8377-e3dcb03558a2/Untitled.png" alt="Untitled" /></p>
+
+<p>Esto nos deja saber que podemos acceder a la API desde http://localhost:3000/</p>
+
+<p>Crearemos un server.js para configurar algunas opciones del servidor. Para ver todas las opciones disponibles puedes consultar la documentación de <a href="https://www.npmjs.com/package/json-server#getting-started">JSON-server</a></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">jsonServer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">json-server</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">jsonServer</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="nx">jsonServer</span><span class="p">.</span><span class="nx">router</span><span class="p">(</span><span class="dl">'</span><span class="s1">db.json</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">middlewares</span> <span class="o">=</span> <span class="nx">jsonServer</span><span class="p">.</span><span class="nx">defaults</span><span class="p">();</span>
+<span class="kd">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">3000</span><span class="p">;</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">middlewares</span><span class="p">);</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">router</span><span class="p">);</span>
+
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="nx">port</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>El paso siguiente es instalar json-server en el proyecto:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i json-server
+</code></pre></div></div>
+
+<p>En el tutorial de Ania Kubów el siguiente paso corresponde a lo siguiente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i json-server <span class="nt">--registry</span> http://registry.npmjs.org
+</code></pre></div></div>
+
+<p>Pero esto es vamos a seguir las recomendaciones de GitHub, que corresponde a instalar TLS-Test</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i <span class="nt">-g</span> http://tls-test.npmjs.com/tls-test-1.0.0.tgz
+</code></pre></div></div>
+
+<p>Continuamos con crear nuestro package.json  a través del comando init</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
+</code></pre></div></div>
+
+<p>En el package.json vamos a colocar en los scripts el siguiente comando:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"start"</span><span class="p">:</span><span class="s2">"node server.js"</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Y nos debe quedar algo como esto</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catapi"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Api de gattos "</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"json"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^11.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"json-server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.17.0"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\\</span><span class="s2">"</span><span class="err">Error:</span><span class="w"> </span><span class="err">no</span><span class="w"> </span><span class="err">test</span><span class="w"> </span><span class="err">specified\\</span><span class="s2">" &amp;&amp; exit 1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"start"</span><span class="p">:</span><span class="s2">"node server.js"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"repository"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git+https://github.com/jhosno/catapi.git"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"apirestfull"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"heroku"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jhosno"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"bugs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;https://github.com/jhosno/catapi/issues&gt;"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"homepage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;https://github.com/jhosno/catapi#readme&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Luego de esto, hacemos install para que instale todos los paquetes necesarios</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i
+</code></pre></div></div>
+
+<p>Ahora sí, vamos a hacer el registro en NPM, con el siguiente comando</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm config <span class="nb">set </span>registry https://registry.npmjs.org
+</code></pre></div></div>
+
+<p>Vamos a comprobar que tenemos Heroku instalado correctamente</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Es importante estar loggeados en heroku, antes de continuar, así que colocamos el siguiente comando</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku login
+</code></pre></div></div>
+
+<p>Lo siguiente es crear el proyecto en donde vamos a correr nuestra APIRestful, es importante que el nombre que escojas esté disponible, para este ejemplo hemos usado <happycatsapi></happycatsapi></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku create &lt;nombre-del-proyecto&gt;
+</code></pre></div></div>
+
+<p>Al finalizar heroku create, podemos acceder a la dirección del proyecto y veremos una pantalla como esta:</p>
+
+<p><img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6b832098-0f6d-4781-9c38-af7a736e2957/Untitled.png" alt="Untitled" /></p>
+
+<p>Repetimos <em>heroku login</em> para confirmar que seguimos en línea, en este punto es importante que tengas tu repositorio de GitHub al día, así que te recomiendo que antes de estos pasos finales hagas <em>git push</em>. Ahora vamos a escribirlo siguiente en consola:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push heroku main
+</code></pre></div></div>
+
+<p>Es fundamental que hagas push en la brecha en la que estás trabajando, en este caso es main, pero también puede ser master u otra.  Siguiendo con el paso anterior, verás algo parecido a esto al finalizar:</p>
+
+<p><img src="/assets/images/content/catapi3.png" alt="Consola - Heroku building" class="img-responsive" /></p>
+
+<p>¡Ya está en línea → <a href="https://happycatsapi.herokuapp.com/cats">https://happycatsapi.herokuapp.com/cats</a> 🔥🐱!</p>
+
+<p>También puedes abrirlo directamente en consola con:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku open 
+</code></pre></div></div>
+
+<p>Creditos de la img: Bongo Cat Codes #2 - Jamming  - Caroline Artz <a href="https://codepen.io/carolineartz/pen/qBOEzQa">[link]</a></p>
+:ET

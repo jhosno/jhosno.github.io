@@ -1,4 +1,4 @@
-I"h<p>API, es un acrónimo del inglés que corresponde a Application Programing interface, que en español se entiende como interfaz de programación de aplicaciones. Es un conjunto de protocolos que se usa para integrar sistemas a diferentes módulos. En la práctica es sencillamente como podemos acceder a ciertas funciones de un sistema, como interactuar, integrar y comunicar, sin tener que involucrarnos directamente con el sistema en sí.</p>
+I"�<p>API, es un acrónimo del inglés que corresponde a Application Programing interface, que en español se entiende como interfaz de programación de aplicaciones. Es un conjunto de protocolos que se usa para integrar sistemas a diferentes módulos. En la práctica es sencillamente como podemos acceder a ciertas funciones de un sistema, como interactuar, integrar y comunicar, sin tener que involucrarnos directamente con el sistema en sí.</p>
 
 <p>Un ejemplo sería un e-commerce que para sus funciones de pago, en vez de desarrollar una app de pagos, utilice una pasarela de pago ya existente, tal puede ser el caso de PayPal. Otra posible situación sería una aplicación de gestión de contenido, que debe de una API de Twitter, dándole al usuario la opción de enviar tweed sin entrar a la plataforma de Twitter. O incluso cuando hacemos loggin a través de plataformas como Facebook o Google.</p>
 
@@ -9,8 +9,9 @@
 <p>Así que vamos a desvelar como funciona estas herramientas.</p>
 <h2 id="apis-remotas">APIs remotas</h2>
 <p>Las APIs remotas hacen referencia a recursos que se administran fuera del dispositivo cliente, a través de redes de comunicaciones, la más usual es el internet, por ello muchas de las API’s remotas se desarrollan tomando en cuenta los estándares del internet.
-Lo más habitual es que las APIs web usen protocolo HTTP, para las solicitudes, y sus respuestas suelen ser archivos de tipo JSON o XML, que son formatos popularizados, con soporte en muchos lenguajes, haciendo que la manipulación de los datos contenidos en la respuesta sean fácil de acceder y manipular.
-<img src="/assets/images/content/api.png" alt="API y diagrama de flujo de información" class="img-responsive" /></p>
+Lo más habitual es que las APIs web usen protocolo HTTP, para las solicitudes, y sus respuestas suelen ser archivos de tipo JSON o XML, que son formatos popularizados, con soporte en muchos lenguajes, haciendo que la manipulación de los datos contenidos en la respuesta sean fácil de acceder y manipular.</p>
+
+<p><img src="/assets/images/content/apis.png" alt="API y diagrama de flujo de información" class="img-responsive" /></p>
 <h2 id="soap-y-rest">SOAP y REST</h2>
 <p>A través del uso difundido de las API, se ha desarrollado un protocolo estándar para el intercambio de información, este lleva el nombre de Protocolo de Acceso a Objetos Simples, puede que te suene más por su acrónimo en inglés: SOAP. Las APIs SOAP envían respuestas formateadas a XML, y reciben sus solicitudes a través de HTTP o SMTP.
 Ahora, hablaremos de las APIs REST, que en español vendría siendo Transferencia de Estado Representacional. La principal diferencia entre REST y SOAP es que uno es una arquitectura y la otra es un protocolo. A pesar de que no existe un estándar oficial para API Rest, hay algunas características destacables en la arquitectura de la API que hacen que una API REST sea considerada un API RESTful, según en la tesis de Roy Fielding, “Architectural Styles and the Design of Network-based Software Architectures”, las API son RESTful siempre que cumplan con las 6 limitaciones principales de un sistema RESTful:</p>
@@ -30,4 +31,6 @@ Ahora, hablaremos de las APIs REST, que en español vendría siendo Transferenci
 
 <p>A pesar de verse extenso, en la práctica permite flexibilidad a la hora de adaptarlo a un proyecto, a diferencia de un protocolo rígido, esto ha permitido que las API RESTful sena mucho más populares que las SOAP.
 Recientemente, los parámetros de <a href="https://www.openapis.org/">OpenAPI</a>, se han convertido en un estándar regular para definir las API REST, de manera agnóstica, brindando una arquitectura fácil de comprender. Por otro lado, tenemos <a href="https://graphql.org/">GraphQL</a>, que cada vez se hace más conocido, con una filosofía que se esfuerza porque los usuarios obtengan solo la información que solicitan y nada más, aparte de crear consultar con datos de fuentes diversas y sintetizarla en una solo respuesta, creando un rendimiento y tiempo de respuesta óptimo</p>
+
+<p>Créditos de la Img: CSS Geometric Art - Joseph Martucci <a href="https://codepen.io/jjmartucci/pen/MWXyVe">[link]</a></p>
 :ET
