@@ -38,4 +38,4 @@ A pesar de verse extenso, en la práctica permite flexibilidad a la hora de adap
 Recientemente, los parámetros de [OpenAPI](https://www.openapis.org/), se han convertido en un estándar regular para definir las API REST, de manera agnóstica, brindando una arquitectura fácil de comprender. Por otro lado, tenemos [GraphQL](https://graphql.org/), que cada vez se hace más conocido, con una filosofía que se esfuerza porque los usuarios obtengan solo la información que solicitan y nada más, aparte de crear consultar con datos de fuentes diversas y sintetizarla en una solo respuesta, creando un rendimiento y tiempo de respuesta óptimo
 
 
-Créditos de la Img: CSS Geometric Art - Joseph Martucci [[link]](https://codepen.io/jjmartucci/pen/MWXyVe)
+Créditos de la Img: CSS Geometric Art by Joseph Martucci [[link]](https://codepen.io/jjmartucci/pen/MWXyVe)

@@ -62,3 +62,5 @@ Por otra parte, vamos a importar los elementos tailwinds
 ```
 
 Y ya con esto puedes empezar a útilizar tailwinds.
+
+Creditos de la img: Flow field by frank [[link]](https://codepen.io/franksLaboratory/pen/rNYGbZm)

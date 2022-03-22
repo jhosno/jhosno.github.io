@@ -1,4 +1,4 @@
-I"�S<p>En esta ocasión vamos a hacer una APIRest de manera rápida con node.js y Heroku, siguiendo los pasos del <a href="https://www.youtube.com/watch?v=FLnxgSZ0DG4&amp;list=TLPQMjEwMjIwMjKMhH1mDkbm0Q&amp;index=4">tutorial de Ania Kubów</a>, ajustado para Windows 10 y utilizando tls-test, según las <a href="https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/">recomendaciones de github</a> a la hora de hacer . La API será sobre los gatitos del <a href="https://www.instagram.com/apoyoanimalst/?hl=es">refugio Apoyo Animal Santa Teresa</a> (Venezuela) 🐱🐈, a quienes puedes apoyar a través de los canales que tienen publicado en sus RRSS.</p>
+I"�S<p>En esta ocasión vamos a hacer una APIRest de manera rápida con node.js y Heroku, siguiendo los pasos del <a href="https://www.youtube.com/watch?v=FLnxgSZ0DG4&amp;list=TLPQMjEwMjIwMjKMhH1mDkbm0Q&amp;index=4">tutorial de Ania Kubów</a>, ajustado para Windows 10 y utilizando tls-test, según las <a href="https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/">recomendaciones de github</a> a la hora de hacer . La API será sobre los gatitos del <a href="https://www.instagram.com/apoyoanimalst/?hl=es">refugio Apoyo Animal Santa Teresa</a> (Venezuela) 🐱🐈, a quienes puedes apoyar a través de los canales que tienen publicado en sus RRSS.</p>
 
 <ul>
   <li>Aquí está el repositorio → [<a href="https://github.com/jhosno/catapi">link</a>]</li>
@@ -208,5 +208,5 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku open 
 </code></pre></div></div>
 
-<p>Creditos de la img: Bongo Cat Codes #2 - Jamming  - Caroline Artz <a href="https://codepen.io/carolineartz/pen/qBOEzQa">[link]</a></p>
+<p>Creditos de la img: Bongo Cat Codes #2 - Jamming  by Caroline Artz <a href="https://codepen.io/carolineartz/pen/qBOEzQa">[link]</a></p>
 :ET

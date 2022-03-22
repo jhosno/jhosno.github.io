@@ -230,4 +230,4 @@ También puedes abrirlo directamente en consola con:
 heroku open 
 ```
 
-Creditos de la img: Bongo Cat Codes #2 - Jamming  - Caroline Artz [[link]](https://codepen.io/carolineartz/pen/qBOEzQa)
+Creditos de la img: Bongo Cat Codes #2 - Jamming  by Caroline Artz [[link]](https://codepen.io/carolineartz/pen/qBOEzQa)

@@ -1,4 +1,4 @@
-I"�<p>Tailwinds CSS es un framework de código abierto, con una filosofía diferente a otros framework, como bootstrap, no se enfoca en definir clases definidas para componentes como botones o alertas. En cambio, prioriza la funcionalidad, de tal manera que se puedan definir estilos de manera individual a cada elemento, dándole más versatilidad al desarrollo.</p>
+I"<p>Tailwinds CSS es un framework de código abierto, con una filosofía diferente a otros framework, como bootstrap, no se enfoca en definir clases definidas para componentes como botones o alertas. En cambio, prioriza la funcionalidad, de tal manera que se puedan definir estilos de manera individual a cada elemento, dándole más versatilidad al desarrollo.</p>
 
 <p>En su <a href="https://tailwindcss.com/">página oficial</a> se declara como rápido, flexible, confiable, sin tiempo de ejecución.</p>
 
@@ -49,4 +49,6 @@
 </code></pre></div></div>
 
 <p>Y ya con esto puedes empezar a útilizar tailwinds.</p>
+
+<p>Creditos de la img: Flow field by frank <a href="https://codepen.io/franksLaboratory/pen/rNYGbZm">[link]</a></p>
 :ET

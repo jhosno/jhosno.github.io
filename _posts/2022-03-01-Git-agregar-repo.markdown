@@ -57,4 +57,4 @@ git add .
 >git push -u origin main
 ```
 
-Créditos de la Img: Spiral fractal experiment v2 - frank [[link]](https://codepen.io/franksLaboratory/pen/jOaVMwX)
+Créditos de la Img: Spiral fractal experiment v2 by frank [[link]](https://codepen.io/franksLaboratory/pen/jOaVMwX)

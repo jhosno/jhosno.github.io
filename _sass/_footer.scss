@@ -12,27 +12,33 @@ footer {
     "rrss    contact"
     "hr      hr"
     "credits credits";
+
   .btn-footer {
     background: transparent;
     color: $theme-cyan;
     cursor: pointer;
     font-size: 1.5rem;
   }
+
   .rrss {
     grid-area: rrss;
   }
+
   .contact {
     grid-area: contact;
   }
+
   hr {
     grid-area: hr;
   }
+
   .credits {
     grid-area: credits;
     display: flex;
     justify-content: center;
     align-content: flex-end;
     padding-top: 3rem;
+
     p {
       font-size: 1.5rem;
     }
@@ -43,8 +49,9 @@ footer {
 .modal-content {
   background-color: #171717de;
   border: 0px solid #3430904d;
-  color : $theme-base;
+  color: $theme-base;
 }
+
 .modal-header {
   display: flex;
   flex-direction: row;
@@ -52,17 +59,21 @@ footer {
   width: 100%;
   border-bottom: solid #3430904d 2px;
   padding: 2rem;
+
   &::before {
     content: none;
   }
+
   &::after {
     content: none;
   }
+
   .modal-title {
     font-size: 2rem;
     line-height: 2.5rem;
     color: $theme-cyan;
   }
+
   .close {
     opacity: 1;
     text-shadow: 0 3px 0 #7113e3;
@@ -75,9 +86,11 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   p {
     font-size: 1.4rem;
   }
+
   form {
     width: 100%;
     display: flex;
@@ -85,18 +98,23 @@ footer {
     justify-content: center;
     align-content: center;
     padding: 4rem 8rem;
+
     .form-group {
       width: 100%;
+
       label {
         width: 100%;
+
         input {
           width: 100%;
         }
+
         textarea {
           width: 100%;
         }
       }
     }
+
     button {
       width: auto;
     }
@@ -106,13 +124,14 @@ footer {
 .modal-footer {
   border-top: solid #3430904d 2px;
 }
+
 @media (max-width: $bp-movil-lg) {
   footer {
     justify-content: center;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-      "rrss" "contact"
+      "rrss""contact"
       "credits";
 
     h3 {
@@ -121,17 +140,42 @@ footer {
 
     .credits {
       padding: 2rem;
+
       p {
         font-size: 1rem;
       }
     }
   }
+
   .modal-body {
     form {
       padding: 4rem;
     }
   }
+
   .btn-footer {
     font-size: 1.1rem;
+  }
+}
+
+.upbutton {
+  background-color: #343090;
+  border-radius: 57px;
+  padding: 1rem 1.3rem;
+  position: sticky;
+  bottom: 20px;
+  left: 60em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #d8d6d6;
+  transition: color 23s;
+  margin-bottom: 1rem;
+
+  &:hover {
+    font-size: 2rem;
+    background-color: #35309093;
+    color: $theme-cyan;
   }
 }
