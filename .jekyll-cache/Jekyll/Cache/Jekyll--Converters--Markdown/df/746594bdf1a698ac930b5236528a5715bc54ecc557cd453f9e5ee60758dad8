@@ -1,0 +1,52 @@
+I"�<p>Tailwinds CSS es un framework de código abierto, con una filosofía diferente a otros framework, como bootstrap, no se enfoca en definir clases definidas para componentes como botones o alertas. En cambio, prioriza la funcionalidad, de tal manera que se puedan definir estilos de manera individual a cada elemento, dándole más versatilidad al desarrollo.</p>
+
+<p>En su <a href="https://tailwindcss.com/">página oficial</a> se declara como rápido, flexible, confiable, sin tiempo de ejecución.</p>
+
+<p>Otra de las características, es que tailwinds funciona con PostCSS, para la generación de código CSS, esto le brinda un desarrollo avanzado, personalizable y altamente optimizado.</p>
+
+<h2 id="filosofía">Filosofía</h2>
+
+<p>Su filosofía radica en <em>utility-first</em> (la útilidad primero), esta es su característica principal. Eso se ve en que en un framework convencional, las clases se desarrollan al rededor de un componente concreto: botones, inputs, navbar y más, en cambio, tailwinds se crean pensando en las cualidades: color de fuente gris, fondo azul, tamaño de font grande, centrar texto, y así.</p>
+
+<p>Haciendo que las clases disponibles son bastante extendidas, ya que hay una clase básicamente por cada propiedad de CSS.</p>
+
+<h2 id="instalación">Instalación</h2>
+
+<p>Tailwinds CSS está desarrollado con JavaScript, se instala con NPM o Yarn y se ejecuta a través de NodeJs. Además, que deja a disposición un archivo de configuración llamado <code class="language-plaintext highlighter-rouge">tailwind.config.js</code></p>
+
+<p>En este caso, repasaremos los pasos de instalación en un proyecto hipotético de ReactJs</p>
+
+<p>Para empezar debemos colocar en la consola, encima de la dirección del proyecto, necesitamos también, postCSS, para que interprete y optimice tailwids:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install</span> <span class="nt">-D</span> tailwindcss@latest postcss@latest autoprefixer@latest
+</code></pre></div></div>
+
+<p>Una vez instalado, debemos iniciar tailwinds, que nos generara el documento <code class="language-plaintext highlighter-rouge">tailwinds.config.js</code> y <code class="language-plaintext highlighter-rouge">postcss.config.js</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npx tailwindcss init <span class="nt">-p</span>
+</code></pre></div></div>
+
+<p>Dentro de del documento <code class="language-plaintext highlighter-rouge">tailwinds.config.js</code> necesitamos agregar el arreglo purge, en donde vamos a definir los archivos en donde vamos a incluir clases de tailwinds:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">purge</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">./index.html</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">./src/**/*.jsx</span><span class="dl">"</span><span class="p">],</span>
+  <span class="na">darkMode</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// or 'media' or 'class'</span>
+  <span class="na">theme</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">extend</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="p">},</span>
+  <span class="na">variants</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">extend</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="p">},</span>
+  <span class="na">plugins</span><span class="p">:</span> <span class="p">[],</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Por otra parte, vamos a importar los elementos tailwinds</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@import</span> <span class="s1">"tailwindcss/base"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">"tailwindcss/components"</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s1">"tailwindcss/utilities"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Y ya con esto puedes empezar a útilizar tailwinds.</p>
+:ET
