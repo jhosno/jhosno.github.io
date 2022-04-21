@@ -8,7 +8,7 @@ alt: "ReactJS, como hacer un CRUD | Crédito: CSS Generative Pattern Circles cra
 extract: "¿Quiéres hacer un CRUD en reactJS y no sabes como empezar? Aquí puedes hacerte una idea de como funciona la librería, a parte de usar tailwindsCSS . ¿Quieres saber más? Sigue leyendo"
 ---
 
-El objetivo es hacer un CRUD básico con React.js, usando Vite.js, LocalStorage, Tailwinds CSS. El resultado será un pequeño módulo que nos ayudará a registrar los monsties que tenemos en nuestro equipo, inspirado en el juego Monster Hunter Stories. Aquí puedes ver el resultado final -> [[link]](https://jhosno.github.io/MHST-monster/), por el otro lado, aquí puedes encontrar el repo [[link]](https://github.com/jhosno/MHST-monster)
+El objetivo es hacer un CRUD básico con React.js, usando Vite.js, LocalStorage, Tailwinds CSS. El resultado será un pequeño módulo que nos ayudará a registrar los monsties que tenemos en nuestro equipo, inspirado en el juego Monster Hunter Stories. Aquí puedes ver el resultado final -> [[link]](https://jhosno.github.io/MHST-monster/), por el otro lado, aquí puedes encontrar el repo [[link]](https://jhosno.github.io/equipo-monstie/)
 
 ## Requerimientos:
 
