@@ -1,4 +1,4 @@
-I"�<<p>El objetivo es hacer un CRUD básico con React.js, usando Vite.js, LocalStorage, Tailwinds CSS. El resultado será un pequeño módulo que nos ayudará a registrar los monsties que tenemos en nuestro equipo, inspirado en el juego Monster Hunter Stories. Aquí puedes ver el resultado final -&gt; <a href="https://jhosno.github.io/MHST-monster/">[link]</a>, por el otro lado, aquí puedes encontrar el repo <a href="https://github.com/jhosno/MHST-monster">[link]</a></p>
+I">9<p>El objetivo es hacer un CRUD básico con React.js, usando Vite.js, LocalStorage, Tailwinds CSS. El resultado será un pequeño módulo que nos ayudará a registrar los monsties que tenemos en nuestro equipo, inspirado en el juego Monster Hunter Stories. Aquí puedes ver el resultado final -&gt; <a href="https://jhosno.github.io/MHST-monster/">[link]</a>, por el otro lado, aquí puedes encontrar el repo <a href="https://jhosno.github.io/equipo-monstie/">[link]</a></p>
 
 <h2 id="requerimientos">Requerimientos:</h2>
 
@@ -97,8 +97,8 @@ Dentro del documento <strong><em>/tailwind.config.js</em></strong> agregaremos e
 
 <span class="kd">const</span> <span class="nx">Header</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span> 
-        <span class="p">&lt;</span><span class="nt">header</span> <span class="na">className</span><span class="p">=</span><span class="err">"</span><span class="na">mx</span><span class="err">-</span><span class="na">auto</span> 
-        <span class="na">p</span><span class="err">-</span><span class="na">3</span><span class="err">"</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">header</span> <span class="na">className</span><span class="p">=</span><span class="err">"</span><span class="na">mx-auto</span> 
+        <span class="na">p-3</span><span class="err">"</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">h1</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-green-800 font-black text-center text-4xl uppercase p-10"</span><span class="p">&gt;</span>
             🐱‍🐉🐲 Monsties 🦎🐉<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
             <span class="p">&lt;</span><span class="nt">p</span> <span class="na">className</span><span class="p">=</span><span class="s">"text-md font-bold text-center text-green-600"</span><span class="p">&gt;</span>
@@ -210,8 +210,8 @@ Dentro del documento <strong><em>/tailwind.config.js</em></strong> agregaremos e
         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">className</span><span class="p">=</span><span class="s">"flex justify-items-end"</span><span class="p">&gt;</span>
           <span class="p">&lt;</span><span class="nt">input</span>
-            <span class="na">className</span><span class="p">=</span><span class="err">"</span><span class="na">bg</span><span class="err">-</span><span class="na">green</span><span class="err">-</span><span class="na">900</span> <span class="na">rounded</span><span class="err">-</span><span class="na">md</span> <span class="na">shadow</span><span class="err">-</span><span class="na">3xl</span> <span class="na">border</span><span class="err">-</span><span class="na">3</span> <span class="na">border</span><span class="err">-</span><span class="na">white</span> <span class="na">text</span><span class="err">-</span><span class="na">green</span><span class="err">-</span><span class="na">300</span> <span class="na">py</span><span class="err">-</span><span class="na">2</span> <span class="na">px</span><span class="err">-</span><span class="na">4</span> <span class="na">font</span><span class="err">-</span><span class="na">semibold</span> <span class="na">uppercase</span> 
-          <span class="na">hover</span><span class="err">:</span><span class="na">text</span><span class="err">-</span><span class="na">green</span><span class="err">-</span><span class="na">900</span> <span class="na">hover</span><span class="err">:</span><span class="na">bg</span><span class="err">-</span><span class="na">green</span><span class="err">-</span><span class="na">300</span> <span class="na">cursor</span><span class="err">-</span><span class="na">pointer</span><span class="err">"</span>
+            <span class="na">className</span><span class="p">=</span><span class="err">"</span><span class="na">bg-green-900</span> <span class="na">rounded-md</span> <span class="na">shadow-3xl</span> <span class="na">border-3</span> <span class="na">border-white</span> <span class="na">text-green-300</span> <span class="na">py-2</span> <span class="na">px-4</span> <span class="na">font-semibold</span> <span class="na">uppercase</span> 
+          <span class="na">hover</span><span class="err">:</span><span class="na">text-green-900</span> <span class="na">hover</span><span class="err">:</span><span class="na">bg-green-300</span> <span class="na">cursor-pointer</span><span class="err">"</span>
             <span class="na">type</span><span class="p">=</span><span class="s">"submit"</span>
             <span class="na">value</span><span class="p">=</span><span class="s">"Agregar"</span>
           <span class="p">/&gt;</span>
