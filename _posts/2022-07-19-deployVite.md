@@ -45,7 +45,7 @@ Esto nos genera una carpeta /dist, lo siguiente que corresponde es asegurarse qu
 ```bash
 $ git add dist -f
 $ git commit -m "agregando la carpeta dist"
-$ git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
+$ git push -f https://github.com/<USERNAME>/<REPO>.git main:gh-pages
 ```
 Con esto creamos una rama en nuestro repositorio llamada gh-pages.
 Lo siguiente, es ir a nuestro repositorio en `github.com` en la pestaña de `Settings` y luego a la sección de `Pages`. y seleccionar en `Source` -> `Branch: gh-pages` -> `/(root)` y guardar cambios.
