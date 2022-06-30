@@ -21,9 +21,7 @@
 title: Jhosno
 email: jhosnoirlit@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Jhosno | ReactJS | Web dev | MERN | Laravel | Grimorio de programación: cosas de react, web dev, frontend, y cualquier cosa que este aprendiendo. Aprender a programar es difícil, pero aprender cosas nuevas es divertido.
 #baseurl: "" # the subpath of your site, e.g. /blog
 path: "/"
 
@@ -42,7 +40,14 @@ defaults:
 theme: minima
 plugins:
   - jekyll-feed
+  - jemoji
+  - jekyll-seo-tag
 
+
+jekyll_admin:
+  hidden_links:
+ 
+  homepage: "post"
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

@@ -1,0 +1,96 @@
+I"�<p>Los formularios son componentes recurrentes en el desarrollo de aplicaciones, y su extensión y complejidad puede variar según las necesidades, algunos son cortos, con validaciones predeterminadas del navegador, y otras pueden ser muy largas, con condicionales y validaciones personalizadas bastante elaboradas. Esto puede traducirse muchas líneas de código, que después de un tiempo se vuelven engorrosas de mantener.</p>
+
+<p>Por esto, es conveniente usar librerías, como Formik que te permite hacer formularios robustos con pocas líneas de código, teniendo esto en mente, vamos a explorar que es, cuáles son sus virtudes y como implementarlo.</p>
+
+<p>Formik es una librería de React para manejar formularios, desarrollado por Jared Palmer, que ha dejado en la documentación oficial más información relevante que puede que quieras consultar [<a href="https://formik.org/docs/overview">link</a>]. Entre herramientas que nos brinda formik están: manejar en las validaciones y los mensajes de error, manejar los states del formulario, y manejar en los envíos de los mismos. Aparte de ser una manera declarativa, intuitiva y adaptable.</p>
+
+<h2 id="características">Características</h2>
+
+<ul>
+  <li>Es extremadamente flexible, te permite decidir como y cuanto utilizar la librería. Puedes agregar reglas de validación personalizadas, con Yup. Para quienes aún no están familiarizados, Yup es una librería de JS para construir, analizar y validar patrones.</li>
+  <li>Código menos redundante.</li>
+</ul>
+
+<h3 id="desventajas-de-formik">desventajas de Formik</h3>
+
+<ul>
+  <li>Es exclusivo para react y react native</li>
+  <li>Los controladores de los componentes generan re-rendering</li>
+</ul>
+
+<h2 id="cómo-aplicarlo">Cómo aplicarlo</h2>
+
+<p>Para instalarlo basta con escribir en la consola sobre la carpeta de tu proyecto react la siguiente línea en tu proyecto de react:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>formik
+</code></pre></div></div>
+
+<p>Vamos a hacer un pequeño form emulando una agenda de direcciones, pero antes vamos a revisar los elementos más comunes a utilizar con Formik:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Formik</code> es el label principal que va a contener el resto del los elementos de del formulario, como valores iniciales o la función onSubmit. Estos son alguno de los atributos más usados de <code class="language-plaintext highlighter-rouge">formik</code>:</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">initialvalues</code> es un state propio de formik para manejar el estado de los valores contenidos en los inputs</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">validationSchema</code> este es una propiedad que permite recibir esquemas de validación anudas a los valores iniciales.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">onSubmit</code> es la función que maneja los valores enviados por el formulario</p>
+  </li>
+  <li>
+    <p><em><code class="language-plaintext highlighter-rouge">enableReinitialize</code></em> es una función que permite reiniciar los valores del form, una vez noté que hay algún cambio, es ideal para cuando se usa el mismo componente de form para crear y editar</p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">Form</code> Es el contenedor de los elementos de formulario, pero que toma automáticamente los atributos y configuraciones definidas en el contenedor <code class="language-plaintext highlighter-rouge">Formik</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Field</code> es el equivalente de input, incluso puedes pasarle los mismos atributos que una etiqueta input</p>
+
+<p>Y la estructura</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Formik</span><span class="p">,</span> <span class="nx">Form</span><span class="p">,</span> <span class="nx">Field</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">formik</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">FormClient</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+		<span class="p">&lt;</span><span class="nc">Formik</span>
+			<span class="na">initialValues</span><span class="p">=</span>
+			<span class="si">{</span>
+        <span class="nx">name</span><span class="p">:</span> <span class="dl">''</span>
+        <span class="nx">direccion</span><span class="p">:</span> <span class="dl">''</span>
+      <span class="si">}</span>
+	  <span class="err">}</span>
+			<span class="na">onSubmit</span><span class="p">=</span><span class="si">{</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+				<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span>
+			<span class="p">}</span><span class="si">}</span>
+		<span class="p">&gt;</span>
+<span class="si">{</span><span class="cm">/*para conectar con el initialValue vamos
+a retornar el form a través de una función*/</span><span class="si">}</span>
+		<span class="si">{</span><span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+		        <span class="k">return</span> <span class="p">(</span>
+		<span class="p">&lt;</span><span class="nc">Form</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>nombre<span class="p">&lt;/</span><span class="nt">labe</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nc">Field</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"nombre"</span><span class="p">/&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+			<span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span>Dirección<span class="p">&lt;/</span><span class="nt">labe</span><span class="p">&gt;</span>
+				<span class="p">&lt;</span><span class="nc">Field</span> <span class="na">as</span><span class="p">=</span><span class="s">"textarea"</span> <span class="na">type</span><span class="p">=</span><span class="s">"text"</span> <span class="na">name</span><span class="p">=</span><span class="s">"direccion"</span><span class="p">/&gt;</span>
+			<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+		<span class="p">&lt;/</span><span class="nc">Form</span><span class="p">&gt;</span>
+		<span class="p">)}</span>
+		<span class="p">&lt;</span><span class="err">/</span><span class="na">Formik</span><span class="p">&gt;</span>
+
+);
+};
+
+export default FormClient;
+
+</code></pre></div></div>
+
+<p>Como verás, empezar a utilizar Formik en tus proyectos es bastante sencillo y poderoso.</p>
+
+<p>Creditos de la img: Test Snowflake by yuanchuan <a href="https://codepen.io/yuanchuan/full/LYzoawW">[link]</a></p>
+:ET
