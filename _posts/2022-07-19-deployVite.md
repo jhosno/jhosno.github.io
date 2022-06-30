@@ -45,7 +45,7 @@ Esto nos genera una carpeta /dist, lo siguiente que corresponde es asegurarse qu
 ```bash
 $ git add dist -f
 $ git commit -m "agregando la carpeta dist"
-$ git subtree push --prefix dist origin gh-pages
+$ git push -f git@github.com:<USERNAME>/<REPO>.git main:gh-pages
 ```
 y ya con esto puedes acceder a tu repositorio  http:// <<username>>.github.io/<<repo>>
 
