@@ -1,5 +1,4 @@
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +9,6 @@
 
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#420992">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181818">
-
 
     <link rel="icon" href="/assets/images/faviconc.png" type="image/gif" sizes="16x16">
     
@@ -25,29 +23,32 @@
     </script>
     -->
     
-    
     <title>Jhosno | {{ page.title }}</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración personalizada de Tailwind (opcional) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#420992',
+                        dark: '#181818',
+                    }
+                }
+            }
+        }
+    </script>
 
- 
-
-    <!-- Plugin CSS -->
+    <!-- Plugin CSS - Mantener para animaciones si las necesitas -->
     <link rel="stylesheet" href="/assets/css/animate.min.css" type="text/css">
- 
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS - Para estilos específicos que no se puedan hacer con Tailwind -->
     <link rel="stylesheet" href="/assets/css/main.css" type="text/css">
     <link rel="stylesheet" href="/assets/css/flaticon.css" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- jQuery -->
-<script src="/assets/js/jquery.js"></script>
-
+    <!-- jQuery - Mover al final del body es mejor para performance, pero lo dejo aquí si lo necesitas antes -->
+    <script src="/assets/js/jquery.js"></script>
 </head>
