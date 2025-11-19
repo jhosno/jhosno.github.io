@@ -114,6 +114,55 @@ button, .btn {
   background: #f9f9f9;
 }
 
+/* Expertise Section */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.expertise-card {
+  border: 2px solid #ddd;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+.expertise-icon {
+  width: 80px;
+  height: 80px;
+  background: #e0e0e0;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.expertise-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.expertise-card p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.expertise-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.expertise-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.expertise-list li:last-child {
+  border-bottom: none;
+}
+
 /* Projects Section */
 .projects-grid {
   display: grid;
