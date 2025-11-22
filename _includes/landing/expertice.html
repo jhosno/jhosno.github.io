@@ -1,53 +1,77 @@
  <!-- Expertise Section -->
- <section id="expertise">
-    <h2>Áreas de Expertise</h2>
-    <div class="expertise-grid">
-        <div class="expertise-card">
-            <div class="expertise-icon">[Icono]</div>
-            <h3>Frontend Development</h3>
-            <p>Desarrollo de interfaces modernas y responsivas con React, Vue.js y tecnologías web actuales.</p>
-            <ul class="expertise-list">
-                <li>HTML5, CSS3, JavaScript</li>
-                <li>React, Vue.js, Angular</li>
-                <li>Responsive Design</li>
-                <li>Tailwind CSS, Bootstrap</li>
-            </ul>
-        </div>
-        
-        <div class="expertise-card">
-            <div class="expertise-icon">[Icono]</div>
-            <h3>Backend Development</h3>
-            <p>Creación de APIs robustas y escalables con Node.js, Python y bases de datos modernas.</p>
-            <ul class="expertise-list">
-                <li>Node.js, Express</li>
-                <li>Python, Django, Flask</li>
-                <li>MongoDB, PostgreSQL</li>
-                <li>RESTful APIs, GraphQL</li>
-            </ul>
-        </div>
-        
-        <div class="expertise-card">
-            <div class="expertise-icon">[Icono]</div>
-            <h3>DevOps & Cloud</h3>
-            <p>Implementación y gestión de infraestructura en la nube con prácticas de CI/CD.</p>
-            <ul class="expertise-list">
-                <li>AWS, Google Cloud, Azure</li>
-                <li>Docker, Kubernetes</li>
-                <li>Git, GitHub Actions</li>
-                <li>CI/CD Pipelines</li>
-            </ul>
-        </div>
-        
-        <div class="expertise-card">
-            <div class="expertise-icon">[Icono]</div>
-            <h3>UI/UX Design</h3>
-            <p>Diseño centrado en el usuario con enfoque en usabilidad y experiencia visual.</p>
-            <ul class="expertise-list">
-                <li>Figma, Adobe XD</li>
-                <li>Wireframing, Prototyping</li>
-                <li>User Research</li>
-                <li>Design Systems</li>
-            </ul>
+ <section id="expertise" class="py-20 px-6 bg-black pixel-grid">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-6xl font-black mb-16 text-center">
+            <span class="text-magenta">ÁREAS DE</span> <span class="text-neon">EXPERTISE</span>
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-gray-900 border-4 border-neon p-8 hover:neon-border transition-all transform hover:-translate-y-2">
+                <div class="w-20 h-20 bg-neon mb-6 pixel-art flex items-center justify-center text-4xl">
+                    💻
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-neon">FRONTEND</h3>
+                <p class="text-gray-400 mb-6">
+                    Interfaces modernas y responsivas con las últimas tecnologías web.
+                </p>
+                <ul class="space-y-2 text-sm">
+                    <li class="border-l-4 border-neon pl-4">HTML5, CSS3, JavaScript</li>
+                    <li class="border-l-4 border-neon pl-4">React, Vue.js, Angular</li>
+                    <li class="border-l-4 border-neon pl-4">Responsive Design</li>
+                    <li class="border-l-4 border-neon pl-4">Tailwind CSS</li>
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-gray-900 border-4 border-magenta p-8 hover:neon-border transition-all transform hover:-translate-y-2">
+                <div class="w-20 h-20 bg-magenta mb-6 pixel-art flex items-center justify-center text-4xl">
+                    ⚙️
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-magenta">BACKEND</h3>
+                <p class="text-gray-400 mb-6">
+                    APIs robustas y escalables con arquitecturas modernas.
+                </p>
+                <ul class="space-y-2 text-sm">
+                    <li class="border-l-4 border-magenta pl-4">Node.js, Express</li>
+                    <li class="border-l-4 border-magenta pl-4">Python, Django</li>
+                    <li class="border-l-4 border-magenta pl-4">MongoDB, PostgreSQL</li>
+                    <li class="border-l-4 border-magenta pl-4">RESTful APIs</li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-gray-900 border-4 border-neon p-8 hover:neon-border transition-all transform hover:-translate-y-2">
+                <div class="w-20 h-20 bg-white mb-6 pixel-art flex items-center justify-center text-4xl">
+                    ☁️
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-white">DEVOPS</h3>
+                <p class="text-gray-400 mb-6">
+                    Infraestructura cloud con prácticas de CI/CD.
+                </p>
+                <ul class="space-y-2 text-sm">
+                    <li class="border-l-4 border-white pl-4">AWS, Google Cloud</li>
+                    <li class="border-l-4 border-white pl-4">Docker, Kubernetes</li>
+                    <li class="border-l-4 border-white pl-4">GitHub Actions</li>
+                    <li class="border-l-4 border-white pl-4">CI/CD Pipelines</li>
+                </ul>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-gray-900 border-4 border-magenta p-8 hover:neon-border transition-all transform hover:-translate-y-2">
+                <div class="w-20 h-20 bg-magenta mb-6 pixel-art flex items-center justify-center text-4xl">
+                    🎨
+                </div>
+                <h3 class="text-2xl font-bold mb-4 text-magenta">UI/UX</h3>
+                <p class="text-gray-400 mb-6">
+                    Diseño centrado en el usuario con estética moderna.
+                </p>
+                <ul class="space-y-2 text-sm">
+                    <li class="border-l-4 border-magenta pl-4">Figma, Adobe XD</li>
+                    <li class="border-l-4 border-magenta pl-4">Wireframing</li>
+                    <li class="border-l-4 border-magenta pl-4">User Research</li>
+                    <li class="border-l-4 border-magenta pl-4">Design Systems</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>

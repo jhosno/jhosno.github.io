@@ -1,47 +1,66 @@
- <!-- Blog Section -->
- <section id="blog">
-  <h2>Blog</h2>
-  <div class="blog-grid">
-      <article class="blog-post">
-          <div class="blog-date">
-              <strong>15</strong><br>ENE<br>2025
-          </div>
-          <div>
-              <h3>Título del Artículo del Blog</h3>
-              <p>
-                  Resumen del artículo o extracto introductorio. Lorem ipsum dolor sit amet, 
-                  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore...
-              </p>
-              <button style="margin-top: 1rem;">Leer más</button>
-          </div>
-      </article>
-      
-      <article class="blog-post">
-          <div class="blog-date">
-              <strong>08</strong><br>ENE<br>2025
-          </div>
-          <div>
-              <h3>Otro Artículo Interesante</h3>
-              <p>
-                  Resumen del artículo o extracto introductorio. Lorem ipsum dolor sit amet, 
-                  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore...
-              </p>
-              <button style="margin-top: 1rem;">Leer más</button>
-          </div>
-      </article>
-      
-      <article class="blog-post">
-          <div class="blog-date">
-              <strong>22</strong><br>DIC<br>2024
-          </div>
-          <div>
-              <h3>Aprendiendo Nuevas Tecnologías</h3>
-              <p>
-                  Resumen del artículo o extracto introductorio. Lorem ipsum dolor sit amet, 
-                  consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore...
-              </p>
-              <button style="margin-top: 1rem;">Leer más</button>
-          </div>
-      </article>
-  </div>
+  <!-- Blog Section -->
+  <section id="blog" class="py-20 px-6 bg-black">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="text-6xl font-black mb-16 text-center">
+            <span class="text-magenta">MI</span> <span class="text-neon">BLOG</span>
+        </h2>
+        <div class="space-y-8">
+            <!-- Blog Post 1 -->
+            <article class="bg-gray-900 border-4 border-neon p-8 grid md:grid-cols-5 gap-8 hover:neon-border transition-all">
+                <div class="bg-neon text-black p-6 flex flex-col items-center justify-center text-center">
+                    <div class="text-5xl font-black">15</div>
+                    <div class="text-xl font-bold">ENE</div>
+                    <div class="text-lg">2025</div>
+                </div>
+                <div class="md:col-span-4">
+                    <h3 class="text-3xl font-bold mb-4 text-neon">Tendencias en Desarrollo Web 2025</h3>
+                    <p class="text-gray-400 text-lg mb-6">
+                        Explora las tecnologías emergentes y frameworks que están revolucionando 
+                        el desarrollo web este año. Desde WebAssembly hasta AI integrada.
+                    </p>
+                    <button class="bg-neon text-black px-8 py-3 font-bold hover:bg-magenta hover:text-white transition-colors">
+                        LEER MÁS →
+                    </button>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="bg-gray-900 border-4 border-magenta p-8 grid md:grid-cols-5 gap-8 hover:neon-border transition-all">
+                <div class="bg-magenta text-white p-6 flex flex-col items-center justify-center text-center">
+                    <div class="text-5xl font-black">08</div>
+                    <div class="text-xl font-bold">ENE</div>
+                    <div class="text-lg">2025</div>
+                </div>
+                <div class="md:col-span-4">
+                    <h3 class="text-3xl font-bold mb-4 text-magenta">Optimización de Performance en React</h3>
+                    <p class="text-gray-400 text-lg mb-6">
+                        Técnicas avanzadas para mejorar el rendimiento de tus aplicaciones React. 
+                        Code splitting, lazy loading y más.
+                    </p>
+                    <button class="bg-magenta text-white px-8 py-3 font-bold hover:bg-neon hover:text-black transition-colors">
+                        LEER MÁS →
+                    </button>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="bg-gray-900 border-4 border-cyber p-8 grid md:grid-cols-5 gap-8 hover:neon-border transition-all">
+                <div class="bg-cyber text-black p-6 flex flex-col items-center justify-center text-center">
+                    <div class="text-5xl font-black">22</div>
+                    <div class="text-xl font-bold">DIC</div>
+                    <div class="text-lg">2024</div>
+                </div>
+                <div class="md:col-span-4">
+                    <h3 class="text-3xl font-bold mb-4 text-cyber">Pixel Art en Desarrollo Web</h3>
+                    <p class="text-gray-400 text-lg mb-6">
+                        Cómo integrar estética retro pixel art en proyectos web modernos. 
+                        CSS tricks y mejores prácticas.
+                    </p>
+                    <button class="bg-cyber text-black px-8 py-3 font-bold hover:bg-magenta hover:text-white transition-colors">
+                        LEER MÁS →
+                    </button>
+                </div>
+            </article>
+        </div>
+    </div>
 </section>
