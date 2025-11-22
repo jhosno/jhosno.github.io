@@ -4,4 +4,5 @@
 
 layout: front
 title: 👩‍💻 Fullstack Dev
+permalink: /
 ---
