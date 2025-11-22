@@ -27,17 +27,21 @@
     sizes="16x16"
   />
 
-  <!-- TODO agregar google analytics tag -->
-  <!-- Global site tag (gtag.js) - Google Analytics 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135334829-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
 
-        gtag('config', 'UA-135334829-1');
-    </script>
-    -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-618JXX6MET"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-618JXX6MET");
+  </script>
 
   <title>Jhosno | {{ page.title }}</title>
 
@@ -71,6 +75,4 @@
 
   <!-- Custom CSS - Para estilos específicos que no se puedan hacer con Tailwind -->
   <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
-
-
 </head>
