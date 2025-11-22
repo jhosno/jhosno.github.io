@@ -1,18 +1,34 @@
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="description"
-        content="👾👩‍💻 Developer y designer frontend, React / MERN stack, Laravel/PHP, Wordpress">
-    <meta name="author" content="Jhosno Hernández">
+  <meta
+    name="description"
+    content="👾👩‍💻 Developer y designer frontend, React / MERN stack, Laravel/PHP, Wordpress"
+  />
+  <meta name="author" content="Jhosno Hernández" />
 
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#420992">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181818">
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: light)"
+    content="#420992"
+  />
+  <meta
+    name="theme-color"
+    media="(prefers-color-scheme: dark)"
+    content="#181818"
+  />
 
-    <link rel="icon" href="/assets/images/faviconc.png" type="image/gif" sizes="16x16">
-    
-    <!-- Global site tag (gtag.js) - Google Analytics 
+  <link
+    rel="icon"
+    href="/assets/images/faviconc.png"
+    type="image/gif"
+    sizes="16x16"
+  />
+
+  <!-- TODO agregar google analytics tag -->
+  <!-- Global site tag (gtag.js) - Google Analytics 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135334829-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -22,33 +38,39 @@
         gtag('config', 'UA-135334829-1');
     </script>
     -->
-    
-    <title>Jhosno | {{ page.title }}</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Configuración personalizada de Tailwind (opcional) -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#420992',
-                        dark: '#181818',
-                    }
-                }
-            }
-        }
-    </script>
+  <title>Jhosno | {{ page.title }}</title>
 
-    <!-- Plugin CSS - Mantener para animaciones si las necesitas -->
-    <link rel="stylesheet" href="/assets/css/animate.min.css" type="text/css">
+  <!-- TODO actualizar estos enlaces para producción -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Custom CSS - Para estilos específicos que no se puedan hacer con Tailwind -->
-    <link rel="stylesheet" href="/assets/css/main.css" type="text/css">
-    <link rel="stylesheet" href="/assets/css/flaticon.css" type="text/css">
+  <!-- Configuración personalizada de Tailwind (opcional) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: "#FFFF00",
+            magenta: "#FF00FF",
+          },
+          fontFamily: {
+            space: ["Space Grotesk", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
 
-    <!-- jQuery - Mover al final del body es mejor para performance, pero lo dejo aquí si lo necesitas antes -->
-    <script src="/assets/js/jquery.js"></script>
+  <!-- Custom CSS - Para estilos específicos que no se puedan hacer con Tailwind -->
+  <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
+
+
 </head>
