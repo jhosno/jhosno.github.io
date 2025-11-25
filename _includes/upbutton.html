@@ -1,3 +1,29 @@
-<button   onclick="topFunction()" id="topBtn" title="Go to top" class="upbutton">
-	▲
-</button >
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="scrollToTopBtn" class="go-to-top-btn fixed bottom-8 right-8 w-20 h-20  hover:border-neon transition-all duration-300 font-black flex items-center justify-center cursor-pointer z-50 group opacity-0 pointer-events-none 	">
+	<!-- Anillo de progreso -->
+	<svg class="progress-ring absolute inset-0 w-full h-full" width="80" height="80">
+		<circle
+			class="progress-ring-circle"
+			stroke="#FFFF00"
+			stroke-width="4"
+			fill="transparent"
+			r="36"
+			cx="40"
+			cy="40"
+			style="stroke-dasharray: 226.2; stroke-dashoffset: 226.2;"
+		/>
+	</svg>
+
+	<!-- Icono con animación -->
+	<div class="relative z-10">
+		<i data-lucide="arrow-up" class="w-10 h-10 text-magenta group-hover:text-white arrow-icon transition-colors"></i>
+	</div>
+
+	<!-- Partículas pixel -->
+	<div class="pixel-particles"></div>
+
+	<!-- Texto tooltip -->
+	<div class="absolute bottom-full mb-3 bg-black border-4 border-neon px-4 py-2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+		<span class="text-neon font-bold text-sm">VOLVER ARRIBA</span>
+	</div>
+</button>
