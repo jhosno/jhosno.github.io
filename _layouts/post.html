@@ -2,9 +2,16 @@
 <html lang="es">
   {% include head.html %}
 
-  <body class="bg-black text-white">
-    {% include hero-blog.html %} {% include navbar.html %}
-    <section id="post">
+  <body class="bg-black text-white min-h-screen py-12 px-6">
+     {% include navbar.html %}
+     <div class="container mx-auto max-w-7xl">
+     {% include post/hero.html %}
+     {% include post/image.html %}
+     {% include post/content.html %}
+     {% include post/related-posts.html %}
+     </div>
+
+  <!--   <section id="post">
       <div class="post-header">
         <img src="/assets/images/post/{{page.image}}" alt="{{ page.alt }}" />
         <div>
@@ -17,7 +24,7 @@
       </div>
 
       <div class="post-content">{{content}}</div>
-    </section>
+    </section> -->
 
     {% include upbutton.html %} {% include footer.html %} {% include
     scripts.html %}
