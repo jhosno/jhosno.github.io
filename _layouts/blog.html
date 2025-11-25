@@ -1,71 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
   {% include head.html %}
-
-  <body class="bg-black text-white">
+  <body class="bg-black text-white min-h-screen py-12 px-6">
     {% include navbar.html %}
-     {% include hero-blog.html %}
-
-    <section class="blog-body" id="blog-body">
-      <div class="last-post">
-        {% if site.posts.size > 0 %} {% for post in site.posts limit:1 %} {% if
-        post.project == null %}
-        <div class="card">
-          <div class="card-img">
-            <a href="{{ site.url }}{{ post.url }}">
-              <img
-                src="/assets/images/post/{{post.image}}"
-                alt="{{ post.alt }}"
-              />
-            </a>
+    <div class="container mx-auto max-w-7xl">
+      <!--   <section class="blog-body" id="blog-body">
+        <div class="last-post">
+          {% if site.posts.size > 0 %} {% for post in site.posts limit:1 %} {% if
+          post.project == null %}
+          <div class="card">
+            <div class="card-img">
+              <a href="{{ site.url }}{{ post.url }}">
+                <img
+                  src="/assets/images/post/{{post.image}}"
+                  alt="{{ post.alt }}"
+                />
+              </a>
+            </div>
+            <div class="card-content">
+              {% for cat in post.categories%}
+              <span>{{cat | capitalize | join:', '}}</span>
+              {% endfor %}
+              <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
+                <h2>{{ post.title }}</h2>
+              </a>
+              <p>{{ post.extract | slice: 0, 350}}</p>
+              <p class="date-string">{{ post.date | date_to_string}}</p>
+            </div>
           </div>
-          <div class="card-content">
-            {% for cat in post.categories%}
-            <span>{{cat | capitalize | join:', '}}</span>
-            {% endfor %}
-            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
-              <h2>{{ post.title }}</h2>
-            </a>
-            <p>{{ post.extract | slice: 0, 350}}</p>
-            <p class="date-string">{{ post.date | date_to_string}}</p>
-          </div>
+          {% endif %} {% endfor %} {% else %}
+          <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
+  
+          {% endif %}
         </div>
-        {% endif %} {% endfor %} {% else %}
-        <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
-
-        {% endif %}
-      </div>
-
-      <hr />
-
-      <div class="list-post">
-        {% for post in site.posts offset:1 %} {% if post.project == null %}
-        <div class="card">
-          <div class="card-img">
-            <a href="{{ site.url }}{{ post.url }}">
-              <img
-                src="/assets/images/post/{{post.image}}"
-                alt="{{ post.alt }}"
-              />
-            </a>
+  
+        <hr />
+  
+        <div class="list-post">
+          {% for post in site.posts offset:1 %} {% if post.project == null %}
+          <div class="card">
+            <div class="card-img">
+              <a href="{{ site.url }}{{ post.url }}">
+                <img
+                  src="/assets/images/post/{{post.image}}"
+                  alt="{{ post.alt }}"
+                />
+              </a>
+            </div>
+            <div class="card-content">
+              {% for cat in post.categories%}
+              <span>{{cat | capitalize | join:', '}}</span>
+              {% endfor %}
+              <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
+                <h2>{{ post.title }}</h2>
+              </a>
+              <p>{{ post.extract | slice: 0, 350}}</p>
+              <p class="date-string">{{ post.date | date_to_string}}</p>
+            </div>
           </div>
-          <div class="card-content">
-            {% for cat in post.categories%}
-            <span>{{cat | capitalize | join:', '}}</span>
-            {% endfor %}
-            <a class="zoombtn" href="{{ site.url }}{{ post.url }}">
-              <h2>{{ post.title }}</h2>
-            </a>
-            <p>{{ post.extract | slice: 0, 350}}</p>
-            <p class="date-string">{{ post.date | date_to_string}}</p>
-          </div>
+          {% endif %} {% endfor %}
         </div>
-        {% endif %} {% endfor %}
-      </div>
-    </section>
-    {% include upbutton.html %}
-
-    {% include footer.html %}
+      </section> -->
+      {% include blog/header.html %} {% include blog/featured-post.html %} {%
+      include blog/post-list.html %}
+    </div>
+    {% include upbutton.html %} {% include footer.html %}
   </body>
   {% include scripts.html %}
 </html>
