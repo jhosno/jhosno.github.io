@@ -1,66 +1,97 @@
-  <!-- Blog Section -->
-  <section id="blog" class="py-20 px-6 bg-black">
-    <div class="container mx-auto max-w-6xl">
-        <h2 class="text-6xl font-black mb-16 text-center">
-            <span class="text-magenta">MI</span> <span class="text-neon">BLOG</span>
-        </h2>
-        <div class="space-y-8">
-            <!-- Blog Post 1 -->
-            <article class="bg-gray-900 border-4 border-neon p-8 grid md:grid-cols-5 gap-8 hover:neon-border transition-all">
-                <div class="bg-neon text-black p-6 flex flex-col items-center justify-center text-center">
+<!-- Blog Section -->
+<section id="blog" class="py-20 px-6 bg-black">
+  <div class="container mx-auto max-w-6xl">
+    <h2 class="text-6xl font-black mb-16 text-center">
+      <span class="text-salmon">MI</span> <span class="text-golden">BLOG</span>
+    </h2>
+    <div class="space-y-8">
+      {% if site.posts.size > 0 %} {% for post in site.posts limit:3 %}
+      <article
+        class="bg-gray-900 border-4 border-golden p-8 grid md:grid-cols-5 gap-8 hover:golden-border transition-all"
+      >
+        <div
+          class="bg-golden text-black p-6 flex flex-col items-center justify-center text-center"
+        >
+          <div class="text-5xl font-black">15</div>
+          <div class="text-xl font-bold">ENE</div>
+          <div class="text-lg">2025</div>
+        </div>
+        <div class="md:col-span-4">
+          <h3 class="text-3xl font-bold mb-4 text-golden">
+            Tendencias en Desarrollo Web 2025
+          </h3>
+          <p class="text-gray-400 text-lg mb-6">
+            Explora las tecnologías emergentes y frameworks que están
+            revolucionando el desarrollo web este año. Desde WebAssembly hasta
+            AI integrada.
+          </p>
+          <button
+            class="bg-golden text-black px-8 py-3 font-bold hover:bg-salmon hover:text-white transition-colors"
+          >
+            LEER MÁS →
+          </button>
+        </div>
+      </article>
+      {% endfor %} {% else %}
+      <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
+
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Blog Post 1 -->
+<!--  <article class="bg-gray-900 border-4 border-golden p-8 grid md:grid-cols-5 gap-8 hover:golden-border transition-all">
+                <div class="bg-golden text-black p-6 flex flex-col items-center justify-center text-center">
                     <div class="text-5xl font-black">15</div>
                     <div class="text-xl font-bold">ENE</div>
                     <div class="text-lg">2025</div>
                 </div>
                 <div class="md:col-span-4">
-                    <h3 class="text-3xl font-bold mb-4 text-neon">Tendencias en Desarrollo Web 2025</h3>
+                    <h3 class="text-3xl font-bold mb-4 text-golden">Tendencias en Desarrollo Web 2025</h3>
                     <p class="text-gray-400 text-lg mb-6">
                         Explora las tecnologías emergentes y frameworks que están revolucionando 
                         el desarrollo web este año. Desde WebAssembly hasta AI integrada.
                     </p>
-                    <button class="bg-neon text-black px-8 py-3 font-bold hover:bg-magenta hover:text-white transition-colors">
+                    <button class="bg-golden text-black px-8 py-3 font-bold hover:bg-salmon hover:text-white transition-colors">
                         LEER MÁS →
                     </button>
                 </div>
-            </article>
-
-            <!-- Blog Post 2 -->
-            <article class="bg-gray-900 border-4 border-magenta p-8 grid md:grid-cols-5 gap-8 hover:neon-border transition-all">
-                <div class="bg-magenta text-white p-6 flex flex-col items-center justify-center text-center">
+            </article> -->
+<!-- Blog Post 2 -->
+<!--      <article class="bg-gray-900 border-4 border-salmon p-8 grid md:grid-cols-5 gap-8 hover:golden-border transition-all">
+                <div class="bg-salmon text-white p-6 flex flex-col items-center justify-center text-center">
                     <div class="text-5xl font-black">08</div>
                     <div class="text-xl font-bold">ENE</div>
                     <div class="text-lg">2025</div>
                 </div>
                 <div class="md:col-span-4">
-                    <h3 class="text-3xl font-bold mb-4 text-magenta">Optimización de Performance en React</h3>
+                    <h3 class="text-3xl font-bold mb-4 text-salmon">Optimización de Performance en React</h3>
                     <p class="text-gray-400 text-lg mb-6">
                         Técnicas avanzadas para mejorar el rendimiento de tus aplicaciones React. 
                         Code splitting, lazy loading y más.
                     </p>
-                    <button class="bg-magenta text-white px-8 py-3 font-bold hover:bg-neon hover:text-black transition-colors">
+                    <button class="bg-salmon text-white px-8 py-3 font-bold hover:bg-golden hover:text-black transition-colors">
                         LEER MÁS →
                     </button>
                 </div>
-            </article>
+            </article> -->
 
-            <!-- Blog Post 3 -->
-            <article class="bg-gray-900 border-4 border-cyber p-8 grid md:grid-cols-5 gap-8 hover:neon-border transition-all">
-                <div class="bg-cyber text-black p-6 flex flex-col items-center justify-center text-center">
+<!-- Blog Post 3 -->
+<!--       <article class="bg-gray-900 border-4 border-purple p-8 grid md:grid-cols-5 gap-8 hover:golden-border transition-all">
+                <div class="bg-purple text-black p-6 flex flex-col items-center justify-center text-center">
                     <div class="text-5xl font-black">22</div>
                     <div class="text-xl font-bold">DIC</div>
                     <div class="text-lg">2024</div>
                 </div>
                 <div class="md:col-span-4">
-                    <h3 class="text-3xl font-bold mb-4 text-cyber">Pixel Art en Desarrollo Web</h3>
+                    <h3 class="text-3xl font-bold mb-4 text-purple">Pixel Art en Desarrollo Web</h3>
                     <p class="text-gray-400 text-lg mb-6">
                         Cómo integrar estética retro pixel art en proyectos web modernos. 
                         CSS tricks y mejores prácticas.
                     </p>
-                    <button class="bg-cyber text-black px-8 py-3 font-bold hover:bg-magenta hover:text-white transition-colors">
+                    <button class="bg-purple text-black px-8 py-3 font-bold hover:bg-salmon hover:text-white transition-colors">
                         LEER MÁS →
                     </button>
                 </div>
-            </article>
-        </div>
-    </div>
-</section>
+            </article> -->

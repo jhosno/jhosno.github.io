@@ -10,11 +10,11 @@ body {
 }
 
 .glitch {
-    text-shadow: 2px 2px 0 #FF00FF, -2px -2px 0 #FFFF00;
+    text-shadow: 2px 2px 0 #8B5CF6, -2px -2px 0 #FBBF24;
 }
 
 .neon-border {
-    box-shadow: 0 0 20px rgba(255, 255, 0, 0.5), 0 0 40px rgba(255, 0, 255, 0.3);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.502), 0 0 40px #8B5CF64d;
 }
 
 .pixel-grid {
@@ -61,7 +61,7 @@ body {
     }
     50% {
         box-shadow: 0 0 30px rgba(255, 255, 0, 0.8), 
-                    0 0 60px rgba(255, 0, 255, 0.6),
+                    0 0 60px #8B5CF699,
                     0 0 90px rgba(255, 255, 0, 0.4);
     }
 }
