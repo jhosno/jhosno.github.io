@@ -1,53 +1,67 @@
-  <!-- Blog Layout 3: Featured Post -->
-  <div>
-    <h3 class="text-2xl font-bold mb-6 text-salmon">→ Layout 3: Featured Post</h3>
-    <article class="bg-gray-900 border-4 border-salmon overflow-hidden hover:golden-border transition-all">
-        <div class="h-96 bg-gradient-to-br from-salmon via-golden to-white flex items-center justify-center pixel-grid relative">
-            <i data-lucide="book-open" class="w-32 h-32 text-black"></i>
-            <div class="absolute top-6 left-6 bg-black px-6 py-3 border-4 border-salmon">
-                <span class="text-salmon font-black text-lg">DESTACADO</span>
-            </div>
-        </div>
-        <div class="p-8">
-            <div class="flex items-center gap-4 mb-4">
-                <span class="bg-salmon text-white px-4 py-2 font-bold">ARQUITECTURA</span>
-                <span class="text-gray-500 flex items-center gap-2">
-                    <i data-lucide="calendar" class="w-4 h-4"></i>
-                    24 de Noviembre, 2025
-                </span>
-                <span class="text-gray-500 flex items-center gap-2">
-                    <i data-lucide="clock" class="w-4 h-4"></i>
-                    20 min lectura
-                </span>
-            </div>
-            <h3 class="text-5xl font-black mb-6 text-salmon">
-                Microservicios: Arquitectura Moderna para Aplicaciones Escalables
-            </h3>
-            <p class="text-gray-300 text-xl mb-8 leading-relaxed">
-                Una guía profunda sobre cómo diseñar, implementar y mantener arquitecturas de 
-                microservicios. Desde los conceptos básicos hasta patrones avanzados, comunicación 
-                entre servicios, orquestación con Kubernetes y mejores prácticas de la industria.
-            </p>
-            <div class="flex items-center gap-6">
-                <button class="bg-salmon text-white px-8 py-4 text-lg font-bold hover:bg-golden hover:text-black transition-colors flex items-center gap-2">
-                    LEER ARTÍCULO COMPLETO
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </button>
-                <div class="flex items-center gap-6 text-gray-400">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="heart" class="w-6 h-6"></i>
-                        <span class="font-bold text-lg">1.2K</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="message-circle" class="w-6 h-6"></i>
-                        <span class="font-bold text-lg">89</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="share-2" class="w-6 h-6"></i>
-                        <span class="font-bold text-lg">COMPARTIR</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
+<!-- Blog Layout 3: Featured Post -->
+{% assign last_post = site.posts | last %}
+<div>
+  <h3 class="text-2xl font-bold mb-6 text-salmon">Último post</h3>
+  <article
+    class="bg-gray-900 border-4 border-salmon overflow-hidden hover:golden-border transition-all"
+  >
+    <div
+      class="h-96 bg-gradient-to-br from-salmon via-golden to-white flex items-center justify-center pixel-grid relative"
+    >
+      <i data-lucide="book-open" class="w-32 h-32 text-black"></i>
+      <div
+        class="absolute top-6 left-6 bg-black px-6 py-3 border-4 border-salmon"
+      >
+        <span class="text-salmon font-black text-lg">DESTACADO</span>
+      </div>
+    </div>
+    <div class="p-8">
+      <div class="flex items-center gap-4 mb-4">
+        {% for category in last_post.categories %}
+        <span class="bg-purple text-white px-4 py-2 font-bold"
+          >{{category}}</span
+        >
+        {%endfor%}
+        <span class="text-gray-500 flex items-center gap-2">
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <p class="date-string">{{ last_post.date | date_to_string}}</p>
+        </span>
+           <!-- NOTE comentado por que no tiene funcionalidad -->
+        <!-- TODO agregar funcionalidad -->
+        <!-- <span class="text-gray-500 flex items-center gap-2">
+          <i data-lucide="clock" class="w-4 h-4"></i>
+          20 min lectura
+        </span> -->
+      </div>
+      <h3 class="text-5xl font-black mb-6 text-salmon">{{last_post.title}}</h3>
+      <p class="text-gray-300 text-xl mb-8 leading-relaxed">
+        {{ last_post.extract | strip_html  }}
+      </p>
+      <div class="flex items-center gap-6">
+        <a
+          class="bg-salmon text-white px-8 py-4 text-lg font-bold hover:bg-golden hover:text-black transition-colors flex items-center gap-2"
+          href="{{ site.url }}{{ last_post.url }}"
+        >
+          LEER ARTÍCULO COMPLETO
+          <i data-lucide="arrow-right" class="w-5 h-5"></i>
+        </a>
+        <!-- NOTE comentado por que no tiene funcionalidad -->
+        <!-- TODO agregar funcionalidad -->
+   <!--      <div class="flex items-center gap-6 text-gray-400">
+          <div class="flex items-center gap-2">
+            <i data-lucide="heart" class="w-6 h-6"></i>
+            <span class="font-bold text-lg">1.2K</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+            <span class="font-bold text-lg">89</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <i data-lucide="share-2" class="w-6 h-6"></i>
+            <span class="font-bold text-lg">COMPARTIR</span>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </article>
 </div>

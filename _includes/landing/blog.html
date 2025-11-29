@@ -19,7 +19,6 @@
         
         <article class="bg-gray-900 border-4 {{ classes[0] }} p-8 grid md:grid-cols-5 gap-8 hover:brightness-110 transition-all">
           <div class="{{ classes[1] }} text-black p-6 flex flex-col items-center justify-center text-center">
-            <p class="date-string">{{ post.date | date_to_string}}</p>
             <div class="text-5xl font-black">{{ post.date | date: "%d" }}</div>
             <div class="text-xl font-bold">{{ post.date | date: "%b" | upcase }}</div>
             <div class="text-lg">{{ post.date | date: "%Y" }}</div>
