@@ -9,44 +9,41 @@
       <span class="text-salmon">PROYECTOS</span>
     </h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {{site.projects.size}}
-      {% if site.projects.size > 0 %} {% assign color_classes = "
-      golden:border-golden bg-golden text-golden bg-gradient-to-br from-golden to-salmon, purple:border-purple
-      bg-purple text-purple bg-gradient-to-br from-white to-gray-400 , salmon:border-salmon bg-salmon text-salmon bg-gradient-to-br from-salmon to-purple " |
-      split: "," %} {% for project in site.projects limit:3 %} {% assign index =
-      forloop.index0 | modulo: 3 %} {% assign color_set = color_classes[index] |
-      split: ":" %} {% assign color_name = color_set[0] %} {% assign classes =
-      color_set[1] | split: " " %}
-      <!-- Project 3 -->
-      <div
-        class="bg-gray-900 border-4 border-white overflow-hidden group hover:golden-border transition-all"
-      >
-        <div
-          class="h-64 bg-gradient-to-br from-white to-gray-400 flex items-center justify-center text-6xl pixel-art"
-        >
-          ⚡
-        </div>
-        <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 text-white">PROYECTO TRES</h3>
-          <p class="text-gray-400 mb-4">
-            E-commerce completo con pasarela de pagos y panel de administración.
-          </p>
-          <div class="flex gap-4">
-            <button
-              class="bg-white text-black px-6 py-2 font-bold hover:bg-golden hover:text-black transition-colors"
-            >
-              DEMO
-            </button>
-            <button
-              class="border-2 border-white text-white px-6 py-2 font-bold hover:bg-white hover:text-black transition-colors"
-            >
-              GITHUB
-            </button>
+      {% if site.projects.size > 0 %}
+      {% assign color_classes = "golden:border-golden:bg-golden:text-golden:from-golden:to-salmon,purple:border-purple:bg-purple:text-purple:from-purple:to-pink-500,salmon:border-salmon:bg-salmon:text-salmon:from-salmon:to-orange-500" | split: "," %}
+<!--         {% assign color_classes = "golden:border-golden bg-golden text-golden from-golden to-salmon,purple:border-purple bg-purple text-purple from-white to-gray-400,salmon:border-salmon bg-salmon text-salmon from-salmon to-purple" | split: "," %} -->
+        
+        {% for project in site.projects limit:3 %}
+          {% assign index = forloop.index0 | modulo: 3 %}
+          {% assign color_set = color_classes[index] | split: ":" %}
+          {% assign color_name = color_set[0] %}
+          {% assign classes = color_set[1] | split: " " %}
+          
+          <!-- Project {{ forloop.index }} -->
+          <div class="bg-gray-900 border-4 {{ classes[0] }} overflow-hidden group hover:brightness-110 transition-all">
+            <div class="h-64 bg-gradient-to-br {{ classes[4] }} {{ classes[5] }} flex items-center justify-center text-6xl pixel-art">
+              ⚡
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-bold mb-3 {{ classes[2] }}">
+                {{ project.title | upcase }}
+              </h3>
+              <p class="text-gray-400 mb-4">
+                {{ project.excerpt | strip_html | truncate: 100 }}
+              </p>
+              <div class="flex gap-4">
+                <button class="{{ classes[1] }} text-black px-6 py-2 font-bold hover:opacity-90 transition-colors">
+                  DEMO
+                </button>
+                <button class="border-2 {{ classes[0] }} {{ classes[2] }} px-6 py-2 font-bold hover:{{ classes[1] }} hover:text-black transition-colors">
+                  GITHUB
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      {% endfor %} {% else %}
-      <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
+        {% endfor %}
+      {% else %}
+        <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
       {% endif %}
       <!-- Project 1 -->
       <!--    <div class="bg-gray-900 border-4 border-golden overflow-hidden group hover:golden-border transition-all">
