@@ -3,9 +3,10 @@
   <h3 class="text-2xl font-bold mb-6 text-salmon">→ Otros proyectos</h3>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     {% if site.projects.size > 0 %} {% assign color_classes = "
-    golden:border-golden bg-golden text-golden bg-golden/20 from-golden to-salmon, 
     purple:border-purple bg-purple text-purple bg-purple/20 from-salmon to-purple, 
-    salmon:border-salmon bg-salmon text-salmon bg-salmon/20 from-purple to-salmon " | split: "," %}
+    salmon:border-salmon bg-salmon text-salmon bg-salmon/20 from-purple to-salmon,
+    golden:border-golden bg-golden text-golden bg-golden/20 from-salmon to-golden, 
+     " | split: "," %}
     {% for project in site.projects limit:3 %} {% assign index = forloop.index0
     | modulo: 3 %} {% assign color_set = color_classes[index] | split: ":" %} {%
     assign color_name = color_set[0] %} {% assign classes = color_set[1] |

@@ -24,18 +24,10 @@
           {{featured_project.extract}}
         </p>
         <div class="flex flex-wrap gap-3 mb-6">
-          {% assign color_classes = "
-          golden:bg-golden text-black ,
-          purple:bg-purple text-white ,
-          salmon:bg-salmon text-black, 
-          salmon:bg-bg-gray-700 text-white ,
-          " | split: "," %}
+
           {% for category in featured_project.categories %}
-          {% assign index = forloop.index0 | modulo: 3 %}
-          {% assign color_set = color_classes[index] | split: ":" %}
-          {% assign color_name = color_set[0] %}
-          {% assign classes = color_set[1] | split: " " %}
-          <span class="{{classes[0]}} {{classes[1]}} px-4 py-2 font-bold">{{category}}</span>
+
+          <span class="bg-golden/20 border border-golden text-golden {{classes[1]}} px-4 py-2 font-bold">{{category}}</span>
           {%endfor%}
           
         </div>
