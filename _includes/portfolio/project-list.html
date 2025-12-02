@@ -3,14 +3,17 @@
   <h3 class="text-2xl font-bold mb-6 text-salmon">→ Otros proyectos</h3>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
     {% if site.projects.size > 0 %} {% assign color_classes = "
-    purple:border-purple bg-purple text-purple bg-purple/20 from-salmon to-purple, 
-    salmon:border-salmon bg-salmon text-salmon bg-salmon/20 from-purple to-salmon,
-    golden:border-golden bg-golden text-golden bg-golden/20 from-salmon to-golden, 
-     " | split: "," %}
-    {% for project in site.projects limit:3 %} {% assign index = forloop.index0
-    | modulo: 3 %} {% assign color_set = color_classes[index] | split: ":" %} {%
-    assign color_name = color_set[0] %} {% assign classes = color_set[1] |
-    split: " " %} {% if projects.url != featured_project.url %}
+    purple:border-purple bg-purple text-purple bg-purple/20 from-salmon
+    to-purple, salmon:border-salmon bg-salmon text-salmon bg-salmon/20
+    from-purple to-salmon, golden:border-golden bg-golden text-golden
+    bg-golden/20 from-salmon to-golden, " | split: "," %}
+     {% assign projects =
+    site.projects | sort: "date" | reverse %} 
+    {% for project in projects
+    limit:4 %} {% assign index = forloop.index0 | modulo: 3 %} {% assign
+    color_set = color_classes[index] | split: ":" %} {% assign color_name =
+    color_set[0] %} {% assign classes = color_set[1] | split: " " %} {% if
+    project.url != featured_project.url %}
     <div
       class="bg-gray-900 border-4 {{classes[0]}} overflow-hidden group hover:{{classes[0]}} transition-all transform hover:-translate-y-2"
     >
@@ -25,7 +28,9 @@
         </div>
       </div>
       <div class="p-6">
-        <h4 class="text-2xl font-bold mb-3 {{classes[2]}}">{{project.title}}</h4>
+        <h4 class="text-2xl font-bold mb-3 {{classes[2]}}">
+          {{project.title}}
+        </h4>
         <p class="text-gray-400 mb-4 text-sm">{{project.extract}}</p>
         <div class="flex flex-wrap gap-2 mb-4">
           {% for category in project.categories %}
@@ -37,7 +42,6 @@
           </span>
 
           {%endfor%}
-      
         </div>
         <div class="flex gap-3">
           <button
@@ -47,7 +51,9 @@
             DEMO
           </button>
           <a
-            class="flex-1 border-2 {{classes[0]}} {{classes[2]}} py-2 font-bold hover:bg-golden hover:text-black transition-colors flex items-center justify-center gap-2 " href="{{project.github}}" target="_blank"
+            class="flex-1 border-2 {{classes[0]}} {{classes[2]}} py-2 font-bold hover:bg-golden hover:text-black transition-colors flex items-center justify-center gap-2 "
+            href="{{project.github}}"
+            target="_blank"
           >
             <i data-lucide="github" class="w-4 h-4"></i>
             CODE
