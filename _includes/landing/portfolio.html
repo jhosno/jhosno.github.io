@@ -12,8 +12,9 @@
       {% if site.projects.size > 0 %}
       {% assign color_classes = "golden:border-golden:bg-golden:text-golden:from-golden:to-salmon,purple:border-purple:bg-purple:text-purple:from-purple:to-pink-500,salmon:border-salmon:bg-salmon:text-salmon:from-salmon:to-orange-500" | split: "," %}
 <!--         {% assign color_classes = "golden:border-golden bg-golden text-golden from-golden to-salmon,purple:border-purple bg-purple text-purple from-white to-gray-400,salmon:border-salmon bg-salmon text-salmon from-salmon to-purple" | split: "," %} -->
-        
-        {% for project in site.projects limit:3 %}
+{% assign projects =
+  site.projects | sort: "date" | reverse %} 
+        {% for project in projects limit:3 %}
           {% assign index = forloop.index0 | modulo: 3 %}
           {% assign color_set = color_classes[index] | split: ":" %}
           {% assign color_name = color_set[0] %}
