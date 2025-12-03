@@ -11,7 +11,6 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {% if site.projects.size > 0 %}
       {% assign color_classes = "golden:border-golden:bg-golden:text-golden:from-golden:to-salmon,purple:border-purple:bg-purple:text-purple:from-purple:to-pink-500,salmon:border-salmon:bg-salmon:text-salmon:from-salmon:to-orange-500" | split: "," %}
-<!--         {% assign color_classes = "golden:border-golden bg-golden text-golden from-golden to-salmon,purple:border-purple bg-purple text-purple from-white to-gray-400,salmon:border-salmon bg-salmon text-salmon from-salmon to-purple" | split: "," %} -->
 {% assign projects =
   site.projects | sort: "date" | reverse %} 
         {% for project in projects limit:3 %}

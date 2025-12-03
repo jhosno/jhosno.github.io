@@ -1,0 +1,18 @@
+  <!-- Tus meta tags existentes -->
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:description" content="{{ page.exatract | default: site.description }}">
+  <meta property="og:image" content="{{ page.image | default: site.image | absolute_url }}">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
+  <meta name="twitter:description" content="{{ page.exatract | default: site.description }}">
+  <meta name="twitter:image" content="{{ page.image | default: site.image | absolute_url }}">
+  
+  <!-- LinkedIn -->
+  <meta property="og:site_name" content="{{ site.title }}">

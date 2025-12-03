@@ -28,20 +28,10 @@
   />
 
   <!-- Google tag (gtag.js) -->
-
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-618JXX6MET"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-618JXX6MET");
-  </script>
+  {%include /head/google-analytics.html %}
+  
+  <!-- Open Graph tags -->
+  {%include /head/open-graph-metadata.html %}
 
   <title>Jhosno | {{ page.title }}</title>
 

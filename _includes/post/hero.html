@@ -3,43 +3,41 @@
   <div class="container mx-auto max-w-4xl">
     <!-- Breadcrumb -->
     <div class="flex items-center gap-3 text-sm mb-8 text-gray-400">
-      <a href="#" class="hover:text-golden transition-colors">Inicio</a>
+      <a href="/" class="hover:text-golden transition-colors">Inicio</a>
       <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      <!-- TODO actualizar -->
       <a href="#" class="hover:text-salmon transition-colors"
-        >Desarrollo Web</a
+      >Desarrollo Web</a
       >
+      <!-- TODO actualizar -->
       <i data-lucide="chevron-right" class="w-4 h-4"></i>
       <span class="text-white">Este Artículo</span>
     </div>
 
     <!-- Categoría y fecha -->
     <div class="flex flex-wrap items-center gap-4 mb-6">
-      <span class="bg-golden text-black px-6 py-2 font-black text-sm"
-        >DESARROLLO WEB</span
+      <span class="bg-golden text-black px-6 py-2 font-black text-sm uppercase"
+        >{{page.tag}}</span
       >
       <span class="flex items-center gap-2 text-gray-400">
         <i data-lucide="calendar" class="w-4 h-4"></i>
-        24 de Noviembre, 2025
+        {{ page.date | date_to_string}}
       </span>
-      <span class="flex items-center gap-2 text-gray-400">
+    <!--   <span class="flex items-center gap-2 text-gray-400">
         <i data-lucide="clock" class="w-4 h-4"></i>
         15 min de lectura
-      </span>
+      </span> -->
     </div>
 
     <!-- Título Principal -->
     <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight">
-      <span class="text-golden">Guía Completa de</span>
-      <br />
-      <span class="text-salmon glitch">Tailwind CSS</span>
-      <br />
-      <span class="text-white">en 2025</span>
+      {{page.title-stylized}}
+
     </h1>
 
     <!-- Descripción corta -->
     <p class="text-2xl text-gray-300 mb-8 leading-relaxed">
-      Aprende a dominar Tailwind CSS desde cero hasta configuraciones avanzadas.
-      Descubre las mejores prácticas, optimización y trucos profesionales.
+      {{page.extract}}
     </p>
 
     <!-- Autor y stats -->
@@ -48,7 +46,7 @@
     >
       <div class="flex items-center gap-4">
         <div
-          class="w-16 h-16 bg-gradient-to-br from-golden to-salmon flex items-center justify-center text-2xl font-black border-4 border-white"
+          class="w-16 h-16 bg-gradient-to-br from-golden to-purple flex items-center justify-center text-2xl font-black border-4 border-salmon text-black"
         >
           JH
         </div>
@@ -58,7 +56,7 @@
         </div>
       </div>
       <div class="flex items-center gap-6">
-        <div
+     <!--    <div
           class="flex items-center gap-2 text-gray-400 hover:text-golden transition-colors cursor-pointer"
         >
           <i data-lucide="heart" class="w-6 h-6"></i>
@@ -69,7 +67,8 @@
         >
           <i data-lucide="message-circle" class="w-6 h-6"></i>
           <span class="font-bold">89</span>
-        </div>
+        </div> -->
+        
         <div
           class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer"
         >
