@@ -44,14 +44,14 @@
           {%endfor%}
         </div>
         <div class="flex gap-3">
-          <button
-            class="flex-1 {{classes[1]}} text-black py-2 font-bold hover:bg-salmon hover:text-white transition-colors flex items-center justify-center gap-2"
+          <a href="{{site.url}}{{project.url}}"
+            class="flex-1 {{classes[1]}} text-black py-2 font-bold hover:{{classes[1]}} hover:text-white transition-colors flex items-center justify-center gap-2 uppercase"
           >
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-            DEMO
-          </button>
+            <i data-lucide="external-link" class="w-4 h-4  "></i>
+            ver
+          </a>
           <a
-            class="flex-1 border-2 {{classes[0]}} {{classes[2]}} py-2 font-bold hover:bg-golden hover:text-black transition-colors flex items-center justify-center gap-2 "
+            class="flex-1 border-2 {{classes[0]}} {{classes[2]}} py-2 font-bold hover:{{classes[1]}} hover:text-black transition-colors flex items-center justify-center gap-2 "
             href="{{project.github}}"
             target="_blank"
           >
@@ -64,148 +64,6 @@
     {% endif %} {% endfor %} {% else %}
     <h3>¡Has llegado antes! Pronto publicaré proyectos 👾</h3>
     {% endif %}
-    <!-- 
-    <div
-      class="bg-gray-900 border-4 border-golden overflow-hidden group hover:golden-border transition-all transform hover:-translate-y-2"
-    >
-      <div
-        class="h-48 bg-gradient-to-br from-golden to-salmon flex items-center justify-center relative overflow-hidden"
-      >
-        <i data-lucide="code-2" class="w-20 h-20 text-black"></i>
-        <div
-          class="absolute top-4 right-4 bg-black px-3 py-1 text-golden text-sm font-bold"
-        >
-          WEB APP
-        </div>
-      </div>
-      <div class="p-6">
-        <h4 class="text-2xl font-bold mb-3 text-golden">E-Commerce Platform</h4>
-        <p class="text-gray-400 mb-4 text-sm">
-          Full-stack e-commerce con React, Node.js y Stripe. Sistema de
-          inventario en tiempo real.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span
-            class="bg-golden/20 text-golden px-3 py-1 text-xs font-bold border border-golden"
-            >REACT</span
-          >
-          <span
-            class="bg-golden/20 text-golden px-3 py-1 text-xs font-bold border border-golden"
-            >NODE.JS</span
-          >
-          <span
-            class="bg-golden/20 text-golden px-3 py-1 text-xs font-bold border border-golden"
-            >MONGODB</span
-          >
-        </div>
-        <div class="flex gap-3">
-          <button
-            class="flex-1 bg-golden text-black py-2 font-bold hover:bg-salmon hover:text-white transition-colors flex items-center justify-center gap-2"
-          >
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-            DEMO
-          </button>
-          <button
-            class="flex-1 border-2 border-golden text-golden py-2 font-bold hover:bg-golden hover:text-black transition-colors flex items-center justify-center gap-2"
-          >
-            <i data-lucide="github" class="w-4 h-4"></i>
-            CODE
-          </button>
-        </div>
-      </div>
-    </div>
 
-    <div
-      class="bg-gray-900 border-4 border-salmon overflow-hidden group hover:golden-border transition-all transform hover:-translate-y-2"
-    >
-      <div
-        class="h-48 bg-gradient-to-br from-salmon to-white flex items-center justify-center relative overflow-hidden"
-      >
-        <i data-lucide="smartphone" class="w-20 h-20 text-white"></i>
-        <div
-          class="absolute top-4 right-4 bg-black px-3 py-1 text-salmon text-sm font-bold"
-        >
-          MOBILE
-        </div>
-      </div>
-      <div class="p-6">
-        <h4 class="text-2xl font-bold mb-3 text-salmon">
-          Fitness Tracker App
-        </h4>
-        <p class="text-gray-400 mb-4 text-sm">
-          App móvil con React Native para seguimiento de ejercicios y nutrición.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span
-            class="bg-salmon/20 text-salmon px-3 py-1 text-xs font-bold border border-salmon"
-            >REACT NATIVE</span
-          >
-          <span
-            class="bg-salmon/20 text-salmon px-3 py-1 text-xs font-bold border border-salmon"
-            >FIREBASE</span
-          >
-        </div>
-        <div class="flex gap-3">
-          <button
-            class="flex-1 bg-salmon text-white py-2 font-bold hover:bg-golden hover:text-black transition-colors flex items-center justify-center gap-2"
-          >
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-            DEMO
-          </button>
-          <button
-            class="flex-1 border-2 border-salmon text-salmon py-2 font-bold hover:bg-salmon hover:text-white transition-colors flex items-center justify-center gap-2"
-          >
-            <i data-lucide="github" class="w-4 h-4"></i>
-            CODE
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="bg-gray-900 border-4 border-white overflow-hidden group hover:golden-border transition-all transform hover:-translate-y-2"
-    >
-      <div
-        class="h-48 bg-gradient-to-br from-white to-gray-400 flex items-center justify-center relative overflow-hidden"
-      >
-        <i data-lucide="brain" class="w-20 h-20 text-black"></i>
-        <div
-          class="absolute top-4 right-4 bg-black px-3 py-1 text-white text-sm font-bold"
-        >
-          AI/ML
-        </div>
-      </div>
-      <div class="p-6">
-        <h4 class="text-2xl font-bold mb-3 text-white">AI Image Generator</h4>
-        <p class="text-gray-400 mb-4 text-sm">
-          Generador de imágenes con IA usando modelos de difusión y API de
-          OpenAI.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-4">
-          <span
-            class="bg-white/20 text-white px-3 py-1 text-xs font-bold border border-white"
-            >PYTHON</span
-          >
-          <span
-            class="bg-white/20 text-white px-3 py-1 text-xs font-bold border border-white"
-            >OPENAI</span
-          >
-        </div>
-        <div class="flex gap-3">
-          <button
-            class="flex-1 bg-white text-black py-2 font-bold hover:bg-golden hover:text-black transition-colors flex items-center justify-center gap-2"
-          >
-            <i data-lucide="external-link" class="w-4 h-4"></i>
-            DEMO
-          </button>
-          <button
-            class="flex-1 border-2 border-white text-white py-2 font-bold hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
-          >
-            <i data-lucide="github" class="w-4 h-4"></i>
-            CODE
-          </button>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>
