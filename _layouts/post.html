@@ -11,21 +11,6 @@
      {% include post/related-posts.html %}
      </div>
 
-  <!--   <section id="post">
-      <div class="post-header">
-        <img src="/assets/images/post/{{page.image}}" alt="{{ page.alt }}" />
-        <div>
-          {% for cat in page.categories%}
-          <span class="category"> {{cat | capitalize }} </span>
-          {% endfor %}
-          <h2>{{page.title}}</h2>
-        </div>
-        <p class="date-string">{{ page.date | date_to_string}}</p>
-      </div>
-
-      <div class="post-content">{{content}}</div>
-    </section> -->
-
     {% include upbutton.html %} {% include footer.html %} {% include
     scripts.html %}
   </body>

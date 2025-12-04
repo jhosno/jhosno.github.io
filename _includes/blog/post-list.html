@@ -2,15 +2,13 @@
 <div class="mb-16 pt-20">
   <h3 class="text-2xl font-bold mb-6 text-golden">→ Más posts</h3>
   <div class="space-y-6">
-    {% if site.posts.size > 0 %}
-     {% assign color_classes = "
+    {% if site.posts.size > 0 %} {% assign color_classes = "
     golden:border-golden bg-golden text-golden , purple:border-purple bg-purple
     text-purple , salmon:border-salmon bg-salmon text-salmon " | split: "," %}
-    {% for post in site.posts limit:3 %} {% assign index = forloop.index0 |
-    modulo: 3 %} {% assign color_set = color_classes[index] | split: ":" %} {%
-    assign color_name = color_set[0] %} {% assign classes = color_set[1] |
-    split: " " %}
-    {% if posts.url != last_post.url %}
+    {% for post in site.posts %} {% assign index = forloop.index0 | modulo: 3 %}
+    {% assign color_set = color_classes[index] | split: ":" %} {% assign
+    color_name = color_set[0] %} {% assign classes = color_set[1] | split: " "
+    %} {% if posts.url != last_post.url %}
     <article
       class="bg-gray-900 border-4 {{ classes[0] }} p-6 grid md:grid-cols-5 gap-6 hover:golden-border transition-all"
     >
@@ -65,47 +63,8 @@
         </div>
       </div>
     </article>
-    {% endif %}
-    {% endfor %}
-     {% else %}
+    {% endif %} {% endfor %} {% else %}
     <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
     {% endif %}
-
-            <div class="bg-salmon text-white p-4 flex flex-col items-center justify-center text-center">
-                <div class="text-4xl font-black">20</div>
-                <div class="text-lg font-bold">NOV</div>
-                <div class="text-sm">2025</div>
-            </div>
-            <div class="md:col-span-4">
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="bg-salmon text-white px-3 py-1 text-xs font-bold">DESARROLLO</span>
-                    <span class="text-gray-500 text-sm flex items-center gap-1">
-                        <i data-lucide="clock" class="w-4 h-4"></i>
-                        12 min lectura
-                    </span>
-                </div>
-                <h3 class="text-3xl font-bold mb-3 text-salmon hover:text-golden transition-colors cursor-pointer">
-                    Optimización de Performance en React
-                </h3>
-                <p class="text-gray-400 mb-4 leading-relaxed">
-                    Técnicas avanzadas para mejorar el rendimiento de tus aplicaciones React. 
-                    Desde memoization hasta code splitting y lazy loading.
-                </p>
-                <div class="flex items-center gap-4">
-                    <button class="bg-salmon text-white px-6 py-2 font-bold hover:bg-golden hover:text-black transition-colors flex items-center gap-2">
-                        LEER MÁS
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                    <div class="flex items-center gap-2 text-gray-500">
-                        <i data-lucide="heart" class="w-5 h-5"></i>
-                        <span class="font-bold">567</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-gray-500">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        <span class="font-bold">43</span>
-                    </div>
-                </div>
-            </div>
-        </article> -->
   </div>
 </div>

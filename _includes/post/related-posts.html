@@ -5,81 +5,90 @@
       <span class="text-golden">ARTÍCULOS</span>
       <span class="text-salmon">RELACIONADOS</span>
     </h2>
+
     <div class="grid md:grid-cols-3 gap-8">
-      <article
-        class="bg-black border-4 border-golden overflow-hidden hover:golden-border transition-all transform hover:-translate-y-2"
-      >
-        <div
-          class="h-48 bg-gradient-to-br from-golden to-black flex items-center justify-center"
-        >
-          <i data-lucide="palette" class="w-16 h-16 text-black"></i>
-        </div>
-        <div class="p-6">
-          <span class="bg-golden text-black px-3 py-1 text-xs font-bold"
-            >DESIGN</span
-          >
-          <h3 class="text-xl font-bold my-3 text-golden">Pixel Art en CSS</h3>
-          <p class="text-gray-400 text-sm mb-4">
-            Crea arte pixel perfecto usando solo CSS y HTML.
-          </p>
-          <button
-            class="text-golden font-bold hover:text-salmon transition-colors flex items-center gap-1"
-          >
-            LEER MÁS
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-      </article>
-
-      <article
-        class="bg-black border-4 border-salmon overflow-hidden hover:golden-border transition-all transform hover:-translate-y-2"
-      >
-        <div
-          class="h-48 bg-gradient-to-br from-salmon to-black flex items-center justify-center"
-        >
-          <i data-lucide="smartphone" class="w-16 h-16 text-white"></i>
-        </div>
-        <div class="p-6">
-          <span class="bg-salmon text-white px-3 py-1 text-xs font-bold"
-            >MOBILE</span
-          >
-          <h3 class="text-xl font-bold my-3 text-salmon">React Native Tips</h3>
-          <p class="text-gray-400 text-sm mb-4">
-            Optimiza tus apps móviles con estos trucos.
-          </p>
-          <button
-            class="text-salmon font-bold hover:text-golden transition-colors flex items-center gap-1"
-          >
-            LEER MÁS
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-      </article>
-
-      <article
-        class="bg-black border-4 border-white overflow-hidden hover:golden-border transition-all transform hover:-translate-y-2"
-      >
-        <div
-          class="h-48 bg-gradient-to-br from-white to-gray-600 flex items-center justify-center"
-        >
-          <i data-lucide="code-2" class="w-16 h-16 text-black"></i>
-        </div>
-        <div class="p-6">
-          <span class="bg-white text-black px-3 py-1 text-xs font-bold"
-            >BACKEND</span
-          >
-          <h3 class="text-xl font-bold my-3 text-white">Node.js APIs</h3>
-          <p class="text-gray-400 text-sm mb-4">
-            Construye APIs REST profesionales paso a paso.
-          </p>
-          <button
-            class="text-white font-bold hover:text-golden transition-colors flex items-center gap-1"
-          >
-            LEER MÁS
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-      </article>
+      {% assign color_classes = "
+      golden:border-golden bg-golden text-golden from-golden , 
+      purple:border-purple bg-purple text-purple from-purple , 
+      salmon:border-salmon bg-salmon text-salmon from-salmon 
+      " | split: "," %}
+      {% assign tag = page.tag %} 
+      {% assign related_posts = site.tags[tag] %} 
+      {% if related_posts.size > 0%} 
+        {% for post in related_posts limit:4 %}
+          {% if post.url != page.url %}
+            {% assign index = forloop.index0 | modulo: 3 %}
+            {% assign color_set = color_classes[index] | split: ":" %} 
+            {% assign color_name = color_set[0] %} 
+            {% assign classes = color_set[1] | split: " " %}     
+              <article
+                class="bg-black border-4 {{classes[0]}} overflow-hidden hover:golden-border transition-all transform hover:-translate-y-2"
+              >
+                <div
+                  class="h-48 bg-gradient-to-br {{classes[3]}} to-black flex items-center justify-center"
+                >
+                  <i data-lucide="palette" class="w-16 h-16 text-black"></i>
+                </div>
+                <div class="p-6">
+                  {% for category in post.categories %}
+                  <span class="{{classes[1]}} text-black px-3 py-1 text-xs font-bold uppercase"
+                  >{{category}}</span
+                >
+                
+                  {%endfor%}
+                
+                  <h3 class="text-xl font-bold my-3 {{classes[2]}}">{{post.title}}</h3>
+                  <p class="text-gray-400 text-sm mb-4">
+                    {{post.extract}}
+                  </p>
+                  <a  href="{{ site.url }}{{ post.url }}"
+                    class="{{classes[2]}} font-bold hover:{{classes[2]}} transition-colors flex items-center gap-1"
+                  >
+                    LEER MÁS
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </a>
+                </div>
+              </article>
+          {% endif %}
+       {% endfor %} 
+      {% else %}
+        {% for post in site.posts limit:4 %}
+          {% if post.url != page.url %}
+            {% assign index = forloop.index0 | modulo: 3 %}
+            {% assign color_set = color_classes[index] | split: ":" %} 
+            {% assign color_name = color_set[0] %} 
+            {% assign classes = color_set[1] | split: " " %}  
+            <article
+              class="bg-black border-4 {{classes[0]}} overflow-hidden hover:golden-border transition-all transform hover:-translate-y-2"
+            >
+              <div
+                class="h-48 bg-gradient-to-br {{classes[3]}} to-black flex items-center justify-center"
+              >
+                <i data-lucide="palette" class="w-16 h-16 text-black"></i>
+              </div>
+              <div class="p-6">
+                {% for category in post.categories %}
+                <span class="{{classes[1]}} text-black px-3 py-1 text-xs font-bold uppercase"
+                >{{category}}</span
+              >
+              
+                {%endfor%}
+              
+                <h3 class="text-xl font-bold my-3 {{classes[2]}}">{{post.title}}</h3>
+                <p class="text-gray-400 text-sm mb-4">
+                  {{post.extract}}
+                </p>
+                <a  href="{{ site.url }}{{ post.url }}"
+                  class="{{classes[2]}} font-bold hover:{{classes[2]}} transition-colors flex items-center gap-1"
+                >
+                  LEER MÁS
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </article>
+          {% endif %}
+        {% endfor %} 
+      {% endif %}
     </div>
   </div>
 </section>
