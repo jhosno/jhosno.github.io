@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
   {% include head.html %}
-  <body class="bg-black text-white min-h-screen py-12 px-6">
+  <body class="bg-black text-white">
     {% include navbar.html %}
-    <div class="container mx-auto max-w-7xl">
 
+    <div class="container mx-auto max-w-7xl">
       {% include blog/header.html %} 
       {% include blog/featured-post.html %} 
       {% include blog/post-list.html %}
-    </div>
+</div>
+
     {% include upbutton.html %} {% include footer.html %}
   </body>
   {% include scripts.html %}
