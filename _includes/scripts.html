@@ -46,7 +46,7 @@
   function createPixelParticles() {
     const particlesContainer = scrollToTopBtn.querySelector(".pixel-particles");
 
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i <script 8; i++) {
       const particle = document.createElement("div");
       particle.className = "pixel-particle";
 
@@ -84,4 +84,33 @@
 
   // Inicializar el progreso
   updateScrollProgress();
+
+  // Mobile Menu Toggle
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenuBtn.classList.toggle("hamburger-active");
+  });
+
+  // Cerrar menu al hacer click en un link
+  const mobileMenuLinks = mobileMenu.querySelectorAll("a");
+  mobileMenuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      mobileMenuBtn.classList.remove("hamburger-active");
+    });
+  });
+
+  // Cerrar menu al hacer scroll
+  let lastScroll = 0;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      mobileMenu.classList.add("hidden");
+      mobileMenuBtn.classList.remove("hamburger-active");
+    }
+    lastScroll = currentScroll;
+  });
 </script>
