@@ -3,11 +3,11 @@
     <div class="container mx-auto max-w-7xl">
         <!-- Breadcrumb -->
         <div class="flex items-center gap-3 text-sm mb-8 text-gray-400">
-            <a href="#" class="hover:text-golden transition-colors">Inicio</a>
+            <a href="/" class="hover:text-golden transition-colors">Inicio</a>
             <i data-lucide="chevron-right" class="w-4 h-4"></i>
-            <a href="#" class="hover:text-salmon transition-colors">Proyectos</a>
+            <a href="/projects" class="hover:text-salmon transition-colors">Proyectos</a>
             <i data-lucide="chevron-right" class="w-4 h-4"></i>
-            <span class="text-purple">E-Commerce Platform</span>
+            <span class="text-purple">{{page.title}}</span>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -15,24 +15,19 @@
             <div>
                 <!-- Categoría y Status -->
                 <div class="flex flex-wrap items-center gap-4 mb-6">
-                    <span class="bg-golden text-black px-6 py-2 font-black text-sm">WEB APPLICATION</span>
-                    <span class="flex items-center gap-2 text-green-400 font-bold">
-                        <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                        EN PRODUCCIÓN
+                    <span class="bg-golden text-black px-6 py-2 font-black text-sm uppercase">{{page.category}}</span>
+                    <span class="flex items-center gap-2 text-{{page.status}}-400 font-bold">
+                        <div class="w-3 h-3 bg-{{page.status-color}}-400 rounded-full animate-pulse"></div>
+                        {{page.status}}
                     </span>
                 </div>
 
                 <!-- Título del Proyecto -->
-                <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-                    <span class="text-golden">E-Commerce</span>
-                    <br>
-                    <span class="text-salmon glitch">Platform Pro</span>
-                </h1>
+                {{page.title-stilized}}
 
                 <!-- Descripción corta -->
                 <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                    Plataforma completa de e-commerce con gestión de inventario en tiempo real, 
-                    sistema de pagos integrado, dashboard de analytics y panel administrativo.
+                    {{page.extract}}
                 </p>
 
                 <!-- Quick Stats -->
@@ -53,24 +48,29 @@
 
                 <!-- Action Buttons -->
                 <div class="flex flex-wrap gap-4">
-                    <button class="bg-golden text-black px-8 py-4 text-lg font-bold hover:bg-salmon hover:text-purple transition-colors flex items-center gap-2 border-4 border-golden hover:border-salmon">
+                    {%if has-demo %}
+                    <a href="{{page.demo}}" class="bg-golden text-black px-8 py-4 text-lg font-bold hover:bg-salmon hover:text-white transition-colors flex items-center gap-2 border-4 border-golden hover:border-salmon">
                         <i data-lucide="external-link" class="w-5 h-5"></i>
                         VER DEMO EN VIVO
-                    </button>
-                    <button class="border-4 border-golden text-golden px-8 py-4 text-lg font-bold hover:bg-golden hover:text-black transition-colors flex items-center gap-2">
+                    </a>
+                    {%endif%}
+                    <a href="{{page.github}}" class="border-4 border-golden text-golden px-8 py-4 text-lg font-bold hover:bg-golden hover:text-black transition-colors flex items-center gap-2">
                         <i data-lucide="github" class="w-5 h-5"></i>
                         CÓDIGO FUENTE
-                    </button>
+                    </a>
                 </div>
             </div>
 
             <!-- Columna Derecha: Imagen Principal -->
             <div>
                 <div class="bg-gradient-to-br from-golden via-salmon to-purple border-4 border-golden p-8 h-96 flex items-center justify-center pixel-art relative overflow-hidden">
+                    <!-- TODO agregar la img del proyecto -->
                     <i data-lucide="shopping-cart" class="w-40 h-40 text-black"></i>
+                    {%if featured %}
                     <div class="absolute top-4 right-4 bg-black px-4 py-2 border-2 border-golden">
-                        <span class="text-golden font-black">FEATURED</span>
+                        <span class="text-golden font-black uppercase">destacado</span>
                     </div>
+                    {%endif%}
                 </div>
             </div>
         </div>

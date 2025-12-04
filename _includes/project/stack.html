@@ -5,33 +5,21 @@
             <span class="text-golden">STACK</span> <span class="text-salmon">TECNOLÓGICO</span>
         </h2>
         <div class="flex flex-wrap justify-center gap-4">
-            <span class="bg-black border-2 border-golden text-golden px-6 py-3 font-bold hover:bg-golden hover:text-black transition-colors cursor-pointer">
-                REACT
-            </span>
-            <span class="bg-black border-2 border-salmon text-salmon px-6 py-3 font-bold hover:bg-salmon hover:text-purple transition-colors cursor-pointer">
-                NEXT.JS
-            </span>
-            <span class="bg-black border-2 border-purple text-purple px-6 py-3 font-bold hover:bg-purple hover:text-black transition-colors cursor-pointer">
-                TYPESCRIPT
-            </span>
-            <span class="bg-black border-2 border-golden text-golden px-6 py-3 font-bold hover:bg-golden hover:text-black transition-colors cursor-pointer">
-                NODE.JS
-            </span>
-            <span class="bg-black border-2 border-salmon text-salmon px-6 py-3 font-bold hover:bg-salmon hover:text-purple transition-colors cursor-pointer">
-                EXPRESS
-            </span>
-            <span class="bg-black border-2 border-purple text-purple px-6 py-3 font-bold hover:bg-purple hover:text-black transition-colors cursor-pointer">
-                MONGODB
-            </span>
-            <span class="bg-black border-2 border-golden text-golden px-6 py-3 font-bold hover:bg-golden hover:text-black transition-colors cursor-pointer">
-                STRIPE
-            </span>
-            <span class="bg-black border-2 border-salmon text-salmon px-6 py-3 font-bold hover:bg-salmon hover:text-purple transition-colors cursor-pointer">
-                DOCKER
-            </span>
-            <span class="bg-black border-2 border-purple text-purple px-6 py-3 font-bold hover:bg-purple hover:text-black transition-colors cursor-pointer">
-                AWS
-            </span>
+            {% assign color_classes = "
+                purple:border-purple bg-purple text-purple, 
+                salmon:border-salmon bg-salmon text-salmon, 
+                golden:border-golden bg-golden text-golden, 
+                " | split: "," %}
+            {% for stack in page.stack %}
+                {% assign index = forloop.index0 | modulo: 3 %} 
+                {% assign color_set = color_classes[index] | split: ":" %} 
+                {% assign color_name = color_set[0] %} 
+                {% assign classes = color_set[1] | split: " " %}
+                <span class="bg-black border-2 {{classes[0]}} {{classes[2]}} px-6 py-3 font-bold hover:{{classes[1]}} hover:text-black transition-colors cursor-pointer uppercase">
+                    {{stack}}
+                </span>
+            {% endfor %}
+        
         </div>
     </div>
 </section>
