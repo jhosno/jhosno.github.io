@@ -1,9 +1,7 @@
 <!-- Project Layout 2: Featured Large -->
 {% assign featured_project = site.projects | last %}
 <div class="mb-16">
-  <h3 class="text-2xl font-bold mb-6 text-salmon">
-    → Proyecto destacado
-  </h3>
+  <h3 class="text-2xl font-bold mb-6 text-salmon">→ Proyecto destacado</h3>
   <div
     class="bg-gray-900 border-4 border-golden overflow-hidden hover:golden-border transition-all"
   >
@@ -19,32 +17,39 @@
         >
           DESTACADO
         </div>
-        <h4 class="text-4xl font-black mb-4 text-golden">{{featured_project.title}}</h4>
+        <h4 class="text-4xl font-black mb-4 text-golden">
+          {{featured_project.title}}
+        </h4>
         <p class="text-gray-300 mb-6 text-lg leading-relaxed">
           {{featured_project.extract}}
         </p>
         <div class="flex flex-wrap gap-3 mb-6">
-
           {% for category in featured_project.categories %}
 
-          <span class="bg-golden/20 border border-golden text-golden {{classes[1]}} px-4 py-2 font-bold">{{category}}</span>
+          <span
+            class="bg-golden/20 border border-golden text-golden {{classes[1]}} px-4 py-2 font-bold"
+            >{{category}}</span
+          >
           {%endfor%}
-          
         </div>
         <div class="flex gap-4">
           <!-- TODO actualizar enlaces -->
-          <button
+          <a
+            href="{{site.url}}{{featured_project.url}}"
             class="bg-golden text-black px-8 py-3 text-lg font-bold hover:bg-salmon hover:text-white transition-colors flex items-center gap-2"
           >
             <i data-lucide="play" class="w-5 h-5"></i>
-            VER DEMO
-          </button>
-          <button
+            VER
+          </a>
+          {% if(featured_project.hasGithub)%}
+          <a
+            href="{{site.url}}{{featured_project.gihtub}}"
             class="border-2 border-golden text-golden px-8 py-3 text-lg font-bold hover:bg-golden hover:text-black transition-colors flex items-center gap-2"
           >
             <i data-lucide="github" class="w-5 h-5"></i>
             GITHUB
-          </button>
+          </a>
+          {%endif%}
         </div>
       </div>
     </div>
