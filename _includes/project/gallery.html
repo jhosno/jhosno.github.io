@@ -2,38 +2,51 @@
   <section class="py-20 px-6">
     <div class="container mx-auto max-w-7xl">
         <h2 class="text-4xl font-black mb-12">
+            
             <span class="text-golden">CAPTURAS DE</span> <span class="text-salmon">PANTALLA</span>
         </h2>
         <div class="grid md:grid-cols-2 gap-6">
             <!-- Screenshot 1 -->
             <div class="gallery-img bg-gradient-to-br from-golden to-black border-4 border-golden h-80 flex items-center justify-center pixel-grid">
                 <div class="text-center">
-                    <i data-lucide="layout-dashboard" class="w-24 h-24 text-black mx-auto mb-4"></i>
-                    <p class="text-black font-bold text-xl">Dashboard Principal</p>
+                    <img
+            src="{{site.url}}{{page.assets-image-base-url}}{{ page.images[0] | relative_url }}"
+            alt="{{page.title}}"
+          />
+                    <!-- <p class="text-white font-bold text-xl">Dashboard Principal</p> -->
                 </div>
             </div>
 
             <!-- Screenshot 2 -->
             <div class="gallery-img bg-gradient-to-br from-salmon to-black border-4 border-salmon h-80 flex items-center justify-center pixel-grid">
                 <div class="text-center">
-                    <i data-lucide="shopping-bag" class="w-24 h-24 text-purple mx-auto mb-4"></i>
-                    <p class="text-purple font-bold text-xl">Catálogo de Productos</p>
+                    <img
+            src="{{site.url}}{{page.assets-image-base-url}}{{ page.images[1] | relative_url }}"
+            alt="{{page.title}}"
+          />
+                    <!-- <p class="text-white font-bold text-xl">Catálogo de Productos</p> -->
                 </div>
             </div>
 
             <!-- Screenshot 3 -->
             <div class="gallery-img bg-gradient-to-br from-purple to-gray-600 border-4 border-purple h-80 flex items-center justify-center pixel-grid">
                 <div class="text-center">
-                    <i data-lucide="credit-card" class="w-24 h-24 text-black mx-auto mb-4"></i>
-                    <p class="text-black font-bold text-xl">Sistema de Pagos</p>
+                    <img
+                    src="{{site.url}}{{page.assets-image-base-url}}{{ page.images[2] | relative_url }}"
+                    alt="{{page.title}}"
+                  />
+                    <!-- <p class="text-white font-bold text-xl">Sistema de Pagos</p> -->
                 </div>
             </div>
 
             <!-- Screenshot 4 -->
             <div class="gallery-img bg-gradient-to-br from-golden via-salmon to-purple border-4 border-golden h-80 flex items-center justify-center pixel-grid">
                 <div class="text-center">
-                    <i data-lucide="bar-chart-3" class="w-24 h-24 text-black mx-auto mb-4"></i>
-                    <p class="text-black font-bold text-xl">Analytics Dashboard</p>
+                    <img
+            src="{{site.url}}{{page.assets-image-base-url}}{{ page.images[3] | relative_url }}"
+            alt="{{page.title}}"
+          />
+                    <!-- <p class="text-white font-bold text-xl">Analytics Dashboard</p> -->
                 </div>
             </div>
         </div>
