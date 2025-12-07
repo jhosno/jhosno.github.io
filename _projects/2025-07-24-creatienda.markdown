@@ -52,7 +52,29 @@ features:
   - icon: bar-chart
     title: Analytics Integrados
     content: Dashboard completo con métricas de ventas, usuarios activos, conversión y más.
-
-
+architecture:
+  - icon: layers
+    title: Microservicios
+    content: Arquitectura basada en microservicios con API Gateway para 
+                            escalabilidad y mantenibilidad.
+  - icon: server
+    title: API RESTful
+    content: API REST bien documentada con Swagger/OpenAPI para fácil 
+                            integración con terceros.
+  - icon: cloud
+    title: Cloud Infrastructure
+    content: Desplegado en AWS con EC2, S3, CloudFront CDN y RDS para 
+                            alta disponibilidad.
+process:
+  - title: Investigación & Planificación
+    content: Análisis de mercado, definición de requisitos y diseño de UX/UI.
+  - title: Desarrollo Ágil
+    content: Sprints de 2 semanas con entregas incrementales y testing continuo.
+  - title: Testing & QA
+    content: Tests unitarios, integración y E2E con Jest y Cypress. CI/CD con GitHub Actions.
+  - title: Despliegue & Monitoreo
+    content: Despliegue automatizado con monitoreo 24/7 y alertas en tiempo real.
+  - title: Mantenimiento & Soporte
+    content: Updates regulares, optimización continua y soporte técnico dedicado.
 
 ---

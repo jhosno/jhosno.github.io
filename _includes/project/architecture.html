@@ -2,45 +2,36 @@
   <section class="py-20 px-6">
     <div class="container mx-auto max-w-7xl">
         <div class="grid lg:grid-cols-2 gap-12">
-            
+
             <!-- Architecture -->
             <div>
                 <h2 class="text-4xl font-black mb-8">
                     <span class="text-golden">ARQUITECTURA</span>
                 </h2>
                 <div class="space-y-6">
-                    <div class="bg-gray-900 border-l-8 border-golden p-6">
-                        <h3 class="text-xl font-bold mb-2 text-golden flex items-center gap-2">
-                            <i data-lucide="layers" class="w-6 h-6"></i>
-                            Microservicios
+                    {% assign color_classes = "
+                    golden:border-golden bg-golden text-golden, 
+                    purple:border-purple bg-purple text-purple, 
+                    salmon:border-salmon bg-salmon text-salmon, 
+                            " | split: "," %}
+                  
+                    {% for architecture in page.architecture %}
+                        {% assign index = forloop.index0 | modulo: 3 %} 
+                        {% assign color_set = color_classes[index] | split: ":" %} 
+                        {% assign color_name = color_set[0] %} 
+                        {% assign classes = color_set[1] | split: " " %}
+                    <div class="bg-gray-900 border-l-8 {{classes[0]}} p-6">
+                        <h3 class="text-xl font-bold mb-2 {{classes[2]}} flex items-center gap-2">
+                            <i data-lucide="{{architecture.icon}}" class="w-6 h-6"></i>
+                            {{architecture.title}}
                         </h3>
                         <p class="text-gray-400">
-                            Arquitectura basada en microservicios con API Gateway para 
-                            escalabilidad y mantenibilidad.
+                            {{architecture.content}}
                         </p>
                     </div>
+                    {%endfor%}
 
-                    <div class="bg-gray-900 border-l-8 border-salmon p-6">
-                        <h3 class="text-xl font-bold mb-2 text-salmon flex items-center gap-2">
-                            <i data-lucide="server" class="w-6 h-6"></i>
-                            API RESTful
-                        </h3>
-                        <p class="text-gray-400">
-                            API REST bien documentada con Swagger/OpenAPI para fácil 
-                            integración con terceros.
-                        </p>
-                    </div>
-
-                    <div class="bg-gray-900 border-l-8 border-purple p-6">
-                        <h3 class="text-xl font-bold mb-2 text-purple flex items-center gap-2">
-                            <i data-lucide="cloud" class="w-6 h-6"></i>
-                            Cloud Infrastructure
-                        </h3>
-                        <p class="text-gray-400">
-                            Desplegado en AWS con EC2, S3, CloudFront CDN y RDS para 
-                            alta disponibilidad.
-                        </p>
-                    </div>
+                    
                 </div>
             </div>
 
@@ -50,65 +41,24 @@
                     <span class="text-salmon">PROCESO</span>
                 </h2>
                 <div class="space-y-4">
+                    {% for process in page.process%}
+                    {% assign index = forloop.index0 | modulo: 3 %} 
+                        {% assign color_set = color_classes[index] | split: ":" %} 
+                        {% assign color_name = color_set[0] %} 
+                        {% assign classes = color_set[1] | split: " " %}
                     <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-golden text-black font-black text-xl flex items-center justify-center">
-                            1
+                        <div class="flex-shrink-0 w-12 h-12 {{classes[1]}} text-black font-black text-xl flex items-center justify-center">
+                            {{forloop.index}}
                         </div>
                         <div>
-                            <h3 class="font-bold text-lg mb-1">Investigación & Planificación</h3>
+                            <h3 class="font-bold text-lg mb-1">{{process.title}}</h3>
                             <p class="text-gray-400 text-sm">
-                                Análisis de mercado, definición de requisitos y diseño de UX/UI.
+                                {{process.content}}
                             </p>
                         </div>
                     </div>
-
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-salmon text-black font-black text-xl flex items-center justify-center">
-                            2
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Desarrollo Ágil</h3>
-                            <p class="text-gray-400 text-sm">
-                                Sprints de 2 semanas con entregas incrementales y testing continuo.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-purple text-black font-black text-xl flex items-center justify-center">
-                            3
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Testing & QA</h3>
-                            <p class="text-gray-400 text-sm">
-                                Tests unitarios, integración y E2E con Jest y Cypress. CI/CD con GitHub Actions.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-golden text-black font-black text-xl flex items-center justify-center">
-                            4
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Despliegue & Monitoreo</h3>
-                            <p class="text-gray-400 text-sm">
-                                Despliegue automatizado con monitoreo 24/7 y alertas en tiempo real.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-4">
-                        <div class="flex-shrink-0 w-12 h-12 bg-salmon text-black font-black text-xl flex items-center justify-center">
-                            5
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-lg mb-1">Mantenimiento & Soporte</h3>
-                            <p class="text-gray-400 text-sm">
-                                Updates regulares, optimización continua y soporte técnico dedicado.
-                            </p>
-                        </div>
-                    </div>
+{%endfor%}
+                    
                 </div>
             </div>
 
