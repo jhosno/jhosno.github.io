@@ -5,31 +5,23 @@
             <span class="text-salmon">RESULTADOS</span> <span class="text-golden">&</span> <span class="text-purple">MÉTRICAS</span>
         </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div class="bg-gray-900 border-4 border-golden p-8 text-center hover:golden-border transition-all">
-                <i data-lucide="trending-up" class="w-12 h-12 text-golden mx-auto mb-4"></i>
-                <div class="text-5xl font-black text-golden mb-2">+250%</div>
-                <div class="text-gray-400 font-bold">Aumento en Ventas</div>
-            </div>
 
-            <div class="bg-gray-900 border-4 border-salmon p-8 text-center hover:golden-border transition-all">
-                <i data-lucide="users" class="w-12 h-12 text-salmon mx-auto mb-4"></i>
-                <div class="text-5xl font-black text-salmon mb-2">100K+</div>
-                <div class="text-gray-400 font-bold">Usuarios Activos</div>
-            </div>
-
-            <div class="bg-gray-900 border-4 border-purple p-8 text-center hover:golden-border transition-all">
-                <i data-lucide="zap" class="w-12 h-12 text-purple mx-auto mb-4"></i>
-                <div class="text-5xl font-black text-purple mb-2">0.8s</div>
-                <div class="text-gray-400 font-bold">Tiempo de Carga</div>
-            </div>
-
-            <div class="bg-gray-900 border-4 border-golden p-8 text-center hover:golden-border transition-all">
-                <i data-lucide="award" class="w-12 h-12 text-golden mx-auto mb-4"></i>
-                <div class="text-5xl font-black text-golden mb-2">99.9%</div>
-                <div class="text-gray-400 font-bold">Disponibilidad</div>
-            </div>
-
+            {% for result in page.results %}
+            {% assign color_classes = "
+            golden:border-golden text-golden, 
+            salmon:border-salmon text-salmon, 
+            purple:border-purple text-purple, 
+                    " | split: "," %}
+            {% assign index = forloop.index0 | modulo: 3 %} 
+            {% assign color_set = color_classes[index] | split: ":" %} 
+            {% assign color_name = color_set[0] %} 
+            {% assign classes = color_set[1] | split: " " %}
+                <div class="bg-gray-900 border-4 {{classes[0]}} p-8 text-center hover:{{classes[0]}} transition-all">
+                    <i data-lucide="{{result.icon}}" class="w-12 h-12 {{classes[1]}} mx-auto mb-4"></i>
+                    <div class="text-5xl font-black {{classes[1]}} mb-2">{{result.stat}}</div>
+                    <div class="text-gray-400 font-bold">{{result.title}}</div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
