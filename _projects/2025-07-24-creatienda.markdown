@@ -77,4 +77,23 @@ process:
   - title: Mantenimiento & Soporte
     content: Updates regulares, optimización continua y soporte técnico dedicado.
 
+challenges:
+  - challenge: Escalabilidad para manejar 100K+ usuarios concurrentes durante temporadas de alta demanda (Black Friday, purple Monday).
+    solution: Implementación de auto-scaling en AWS, Redis para caching, CDN para assets estáticos y optimización de queries con indexación estratégica.
+  - challenge: Sincronización en tiempo real del inventario entre múltiples canales de venta (web, mobile, físico).
+    solution: Sistema de eventos con WebSockets y message queue (RabbitMQ) para actualizaciones instantáneas sin pérdida de datos.
+
+results: 
+  - icon: trending-up
+    stat: +250%
+    title: Aumento en Ventas
+  - icon: users
+    stat: 100K+
+    title: Usuarios Activos
+  - icon: zap
+    stat: 0.8ss
+    title: Tiempo de Carga
+  - icon: award
+    stat: 99.9%
+    title: Disponibilidad
 ---
