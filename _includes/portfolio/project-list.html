@@ -20,7 +20,10 @@
       <div
         class="h-48 bg-gradient-to-br {{classes[4]}} {{classes[5]}} flex items-center justify-center relative overflow-hidden"
       >
-        <i data-lucide="code-2" class="w-20 h-20 text-black"></i>
+      <img
+      src="{{site.url}}{{project.assets-image-base-url}}{{ project.image | relative_url }}"
+      alt="{{project.title}}"
+    />
         <div
           class="absolute top-4 right-4 uppercase bg-black px-3 py-1 {{classes[2]}} text-sm font-bold"
         >

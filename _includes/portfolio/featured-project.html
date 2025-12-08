@@ -9,7 +9,10 @@
       <div
         class="h-96 bg-gradient-to-br from-golden via-salmon to-white flex items-center justify-center pixel-art"
       >
-        <i data-lucide="rocket" class="w-32 h-32 text-black"></i>
+      <img
+      src="{{site.url}}{{featured_project.assets-image-base-url}}{{ featured_project.image | relative_url }}"
+      alt="{{featured_project.title}}"
+    />
       </div>
       <div class="p-8 flex flex-col justify-center">
         <div
@@ -33,7 +36,6 @@
           {%endfor%}
         </div>
         <div class="flex gap-4">
-          <!-- TODO actualizar enlaces -->
           <a
             href="{{site.url}}{{featured_project.url}}"
             class="bg-golden text-black px-8 py-3 text-lg font-bold hover:bg-salmon hover:text-white transition-colors flex items-center gap-2"
