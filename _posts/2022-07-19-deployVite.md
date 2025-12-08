@@ -4,6 +4,7 @@ title:  "Deploy Vite en Github Pages"
 date:   2022-07-20 10:00:00 -0400
 categories: [Deploy, tutorial]
 image: 24.png
+tag: diseño web
 alt: "Vite - Deploy en Github Pages"
 extract: "Github pages es una forma gratuita y rápida de alojar un proyecto, como portafolio o showcase, en esta oportunidad vamos a ver como alojar un proyecto vite + reactJS en Github Pages"
 ---
