@@ -27,7 +27,7 @@ quickStats:
     value: 7.8min
 stack: [Fullstack, PHP, laravel, livewire, MySQL, Javascript]
 assets-image-base-url: /assets/images/portfolio/creatienda/
-image: login.png
+image: principal.png
 images: ['stats.png', 'theme_editor.png', 'ui.png', 'gateways.png']
 has-testimonial: false
 testimonials: []
