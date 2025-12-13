@@ -116,26 +116,17 @@ my_contribution:
     Lideré el desarrollo completo del frontend, transformando wireframes en una interfaz moderna y funcional. Mi enfoque principal fue crear un MVP robusto y visualmente atractivo para la captación de clientes e inversionistas.
     
     
-    Responsabilidades clave:
-    
+  features: >   
     • Desarrollo de la arquitectura frontend con Next.js y TypeScript
-    
     • Implementación del sistema de diseño con Tailwind CSS y Daisy UI
-    
     • Creación de componentes reutilizables y escalables
-    
     • Integración de D3.js para visualizaciones de analytics
-    
     • Optimización de imágenes y performance para móviles
-    
     • Implementación de dark/light mode con persistencia
-    
     • Sistema de localización multi-idioma
-    
     • SEO on-page con meta tags dinámicos y schema markup
-    
     • Testing responsivo exhaustivo en dispositivos reales
     
     
-    El resultado fue una aplicación sólida, eficaz, estéticamente superior y versátil que sirvió como pieza fundamental para la presentación a stakeholders y la validación del modelo de negocio.
+  impact: El resultado fue una aplicación sólida, eficaz, estéticamente superior y versátil que sirvió como pieza fundamental para la presentación a stakeholders y la validación del modelo de negocio.
 ---

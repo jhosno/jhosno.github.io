@@ -116,28 +116,18 @@ my_contribution:
   content: >
     Lideré el área de frontend desde la conceptualización visual hasta la implementación técnica, siendo responsable del diseño de interfaz y la arquitectura del cliente. Mi enfoque fue crear un marketplace intuitivo que empoderara a desarrolladores mientras mantenía una experiencia de usuario coherente y profesional.
     
-    Responsabilidades clave:
-    
+  features:
     • Diseño completo de la interfaz de usuario en Figma, incluyendo sistema de componentes, flujos de navegación y prototipos interactivos
-    
     • Arquitectura frontend con Next.js (App Router) estableciendo patrones de componentes y estructura de proyecto escalable
-    
     • Implementación del design system con NextUI y TailwindCSS, asegurando consistencia visual en toda la plataforma
-    
-    • Desarrollo de páginas críticas: marketplace, perfiles de usuario, páginas de proyecto individuales y dashboard de vendedor
-    
+    • Desarrollo de páginas críticas marketplace, perfiles de usuario, páginas de proyecto individuales y dashboard de vendedor
     • Integración de Redux para gestión de estado global (autenticación, carrito, notificaciones)
-    
     • Implementación del sistema de comentarios y feed de actualizaciones con actualización optimista
-    
     • Integración de Recharts para dashboard de analytics de ventas con visualizaciones interactivas
-    
     • Optimización de assets con Cloudinary (lazy loading, responsive images, transformaciones automáticas)
-    
     • Coordinación con equipo backend para definición de contratos de API mediante axios
-    
     • Code reviews y establecimiento de estándares de código para el equipo frontend
     
     
-    El resultado fue una interfaz que equilibra la autonomía creativa de los vendedores con una experiencia de compra consistente, facilitando que el equipo validara el concepto del marketplace con usuarios reales durante la fase de MVP.
+  impact: El resultado fue una interfaz que equilibra la autonomía creativa de los vendedores con una experiencia de compra consistente, facilitando que el equipo validara el concepto del marketplace con usuarios reales durante la fase de MVP.
 ---

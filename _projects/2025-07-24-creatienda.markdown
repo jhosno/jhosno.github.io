@@ -120,28 +120,18 @@ my_contribution:
   content: >
     Lideré el desarrollo e implementación de features críticas de la plataforma, desde refactorización de arquitectura legacy hasta optimizaciones de performance y mejoras de UX. Mi enfoque fue transformar una plataforma monolítica acoplada en un sistema escalable, mantenible y orientado a conversión.
     
-    Responsabilidades clave:
-    
+  features: >
     • Refactorización completa de arquitectura de pagos aplicando Factory Pattern y principios SOLID, habilitando integración de múltiples gateways (Webpay, Flow, Mercado Pago)
-    
     • Desarrollo del editor de temas modular con componentes dinámicos, permitiendo personalización sin fragmentación de código
-    
     • Implementación de sistema de búsqueda de alta performance con Laravel Scout/Meilisearch, mejorando velocidad en 97%
-    
     • Optimización de proceso de provisioning multi-tenant mediante queue jobs asincrónicos, reduciendo tiempo en 93%
-    
     • Rediseño completo de interfaz con enfoque responsive-first, incrementando tráfico móvil de 23% a 58%
-    
     • Mejora de flujos de autenticación y onboarding, reduciendo abandono de 41% a 18%
-    
     • Implementación de dashboards analíticos con métricas en tiempo real para administradores y propietarios
-    
     • Integración de Google Analytics con eventos personalizados para tracking avanzado de conversión
-    
     • Optimización general de código y refactorización para mejorar mantenibilidad y escalabilidad
-    
     • Implementación de manejo robusto de errores y validaciones asíncronas para mejorar UX
     
     
-    El resultado fue una plataforma robusta que incrementó retención mensual a 82%, mejoró NPS de 31 a 56 puntos, y permitió escalar el negocio con incremento de 180% en throughput de transacciones, validando la propuesta de valor en el mercado chileno de e-commerce para PyMES.
+  impact: El resultado fue una plataforma robusta que incrementó retención mensual a 82%, mejoró NPS de 31 a 56 puntos, y permitió escalar el negocio con incremento de 180% en throughput de transacciones, validando la propuesta de valor en el mercado chileno de e-commerce para PyMES.
 ---
