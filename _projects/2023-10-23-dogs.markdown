@@ -1,0 +1,142 @@
+---
+layout: project
+title: "Dogs SPA"
+
+title-stilized: '<h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
+  <span class="text-golden">Dogs SPA</span>
+  <br/>
+  <span class="text-salmon glitch">Aplicación Web para Explorar Razas Caninas</span>
+  </h1>'
+featured: false
+category: web app
+status: "Completado"
+status-color: green
+has-demo: false
+demo: "https://github.com/jhosnodev/PI-Dogs-main"
+date: 2023-10-23 15:00:00 -0400
+has-quick-stats: true
+quickStats:
+  - icon: database
+    title: API Externa
+    value: TheDogApi
+  - icon: layout
+    title: Interfaz
+    value: SPA
+  - icon: code
+    title: Stack Full
+    value: PERN
+stack: [Fullstack, React, Redux, PostgreSQL, Express.js, Sequelize, CSS Vanilla]
+assets-image-base-url: /assets/images/portfolio/dogs/
+image: dogs.jpeg
+images: ["dogs_principal.jpeg", "dogs_quiz-de-personalidad.jpeg", "dogs_detail.jpeg"]
+has-testimonial: false
+testimonials: []
+type: "web app"
+extract: "Dogs SPA es una Single Page Application que consume TheDogApi para explorar, filtrar y gestionar información de razas caninas. Desarrollada como proyecto de práctica intensiva, la aplicación demuestra dominio de tecnologías del stack PERN con especial énfasis en diseño UI/UX y arquitectura de estado con Redux."
+has-github: true
+github: URL_DE_TU_REPOSITORIO
+features:
+  - icon: search
+    title: Búsqueda Inteligente
+    content: Sistema de búsqueda en tiempo real que permite encontrar razas específicas con resultados instantáneos y sugerencias dinámicas.
+  - icon: filter
+    title: Filtros Avanzados
+    content: Múltiples criterios de filtrado por temperamento, grupo de raza y origen, con combinaciones flexibles para exploración personalizada.
+  - icon: sort-asc
+    title: Ordenamiento Dinámico
+    content: Capacidad de ordenar resultados alfabéticamente o por características físicas, facilitando comparaciones y navegación intuitiva.
+  - icon: plus-circle
+    title: Creación de Razas
+    content: Formulario completo para registrar nuevas razas en la base de datos local con validaciones y preview en tiempo real.
+  - icon: eye
+    title: Vistas Detalladas
+    content: Páginas individuales por raza mostrando características completas, temperamento, métricas físicas y datos de origen.
+  - icon: palette
+    title: Interfaz Cuidada
+    content: Diseño visual limpio y atractivo desarrollado con CSS vanilla, priorizando experiencia de usuario y estética moderna.
+architecture:
+  - icon: layout
+    title: Frontend
+    content: React con arquitectura de componentes funcionales, hooks personalizados y CSS modular vanilla
+  - icon: workflow
+    title: Estado Global
+    content: Redux para gestión centralizada de razas, filtros activos y estado de búsqueda
+  - icon: server
+    title: Backend
+    content: Express.js con arquitectura RESTful, endpoints para CRUD y proxy de TheDogApi
+  - icon: database
+    title: Base de Datos
+    content: PostgreSQL con Sequelize ORM para modelado de razas creadas por usuarios
+  - icon: link
+    title: Integración API
+    content: Consumo de TheDogApi con manejo de rate limits y cache de respuestas
+  - icon: check-square
+    title: Testing
+    content: Suite de pruebas para componentes críticos y flujos principales de la aplicación
+process:
+  - title: Planificación & Diseño
+    content: Definición de funcionalidades core, wireframing de vistas principales y diseño del modelo de datos para integración API + DB local.
+  - title: Setup & Arquitectura
+    content: Configuración del stack PERN, estructura de carpetas escalable y definición de flujo de datos entre frontend y backend.
+  - title: Desarrollo de Features
+    content: Implementación iterativa de búsqueda, filtros, ordenamiento, vistas detalladas y formulario de creación con validaciones.
+  - title: Diseño UI/UX
+    content: Desarrollo de estilos personalizados en CSS vanilla, focus en jerarquía visual, microinteracciones y responsive design.
+  - title: Testing & Refinamiento
+    content: Pruebas funcionales de flujos completos, optimización de performance y ajustes finales de usabilidad.
+
+challenges:
+  - challenge: Integración API Externa + DB Local - Combinar datos de TheDogApi con razas creadas localmente manteniendo una experiencia unificada
+    solution: Implementación de capa de normalización de datos en el backend que unifica estructura de respuestas de ambas fuentes, con flag de origen para diferenciar fuente cuando sea necesario.
+  - challenge: Gestión de Estado Complejo - Sincronizar múltiples filtros, búsqueda y ordenamiento sin perder performance ni causar renders innecesarios
+    solution: Arquitectura Redux con slices específicos para filtros, reducers que componen lógica de filtrado/ordenamiento y selectors memoizados para computación eficiente.
+  - challenge: Diseño Visual sin Frameworks CSS - Crear interfaz atractiva y responsive usando únicamente CSS vanilla sin dependencias externas
+    solution: Sistema de variables CSS custom para theming consistente, arquitectura BEM para nomenclatura escalable y uso estratégico de Grid/Flexbox para layouts responsivos.
+  - challenge: Validación de Formularios - Asegurar integridad de datos al crear nuevas razas con feedback claro al usuario
+    solution: Validaciones en frontend con mensajes contextuales en tiempo real y validaciones adicionales en backend antes de persistir en DB.
+
+results:
+  - icon: check-circle
+    stat: 100%
+    title: Funcionalidades implementadas
+  - icon: palette
+    stat: CSS
+    title: Vanilla - Sin frameworks
+  - icon: zap
+    stat: Óptimo
+    title: Renders memoizados
+  - icon: test-tube
+    stat: Testing
+    title: Implementado en flujos críticos
+  - icon: heart
+    stat: Orgullo
+    title: Diseño visual excepcional
+
+my_contribution:
+  title: Proyecto Individual de Práctica Intensiva
+  content: >
+    Este proyecto representa un hito personal en mi desarrollo como programadora fullstack, siendo una práctica integral donde consolidé conocimientos de arquitectura web moderna mientras desarrollaba mis habilidades de diseño UI/UX.
+
+    Aspectos destacados de mi trabajo:
+
+    • Diseño e implementación completa del frontend en React, priorizando componentes reutilizables y código limpio
+
+    • Arquitectura de estado global con Redux, aplicando patrones de normalización y selectors para performance
+
+    • Desarrollo del backend RESTful con Express y Sequelize, incluyendo endpoints CRUD y proxy de API externa
+
+    • Creación de toda la capa visual usando CSS vanilla, demostrando dominio de fundamentos sin dependencias de frameworks
+
+    • Implementación de sistema de filtros y ordenamiento con lógica compleja de combinación de criterios
+
+    • Integración de TheDogApi con manejo robusto de errores y estados de carga
+
+    • Aplicación de mejores prácticas de Git con commits semánticos y workflow organizado
+
+    • Testing de componentes y funciones críticas para asegurar estabilidad
+
+
+    Aunque es un proyecto académico, lo conservo con especial cariño porque representa el momento donde la programación y el diseño convergieron en mi proceso creativo. La interfaz resultante refleja mi visión de que las aplicaciones funcionales también pueden ser visualmente hermosas, y me siento genuinamente orgullosa del resultado estético logrado sin herramientas de diseño preestablecidas.
+
+    Este proyecto fortaleció mi confianza para abordar desafíos técnicos complejos mientras mantengo un estándar alto en experiencia de usuario y presentación visual.
+---
