@@ -12,11 +12,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* golden: "#FBBF24", */
         golden: "#f6b931",
-        /* purple: "#8B5CF6", */
         purple: "#8B5CF6",
-        /* salmon: "#F19593 ", */
         salmon: "#A6357D ",
       },
       fontFamily: {
