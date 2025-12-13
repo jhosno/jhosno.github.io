@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify",
+    "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch"
   },
+  
   "keywords": [],
   "author": "Jhosno Dev",
   "license": "ISC",
   "description": "Jhosno Dev portfolio to Github Page",
-
   "devDependencies": {
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^3.4.19"
   }
 }
