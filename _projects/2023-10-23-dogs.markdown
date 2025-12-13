@@ -123,25 +123,33 @@ my_contribution:
   content: >
     Este proyecto representa un hito personal en mi desarrollo como programadora fullstack, siendo una práctica integral donde consolidé conocimientos de arquitectura web moderna mientras desarrollaba mis habilidades de diseño UI/UX.
 
-    Aspectos destacados de mi trabajo:
+  features:
+    - icon: palette
+      title: Frontend
+      content: Diseño e implementación completa del frontend en React, priorizando componentes reutilizables y código limpio
+    - icon:
+      title: Diseño
+      content: Arquitectura de estado global con Redux, aplicando patrones de normalización y selectors para performance
+    - icon:
+      title: Backend
+      content: Desarrollo del backend RESTful con Express y Sequelize, incluyendo endpoints CRUD y proxy de API externa
+    - icon:
+      title: Frontend
+      content: Creación de toda la capa visual usando CSS vanilla, demostrando dominio de fundamentos sin dependencias de frameworks
+    - icon:
+      title: filtros
+      content: Implementación de sistema de filtros y ordenamiento con lógica compleja de combinación de criterios
+    - icon:
+      title:
+      content: Integración de TheDogApi con manejo robusto de errores y estados de carga
+    - icon:
+      title:
+      content: Aplicación de mejores prácticas de Git con commits semánticos y workflow organizado
+    - icon:
+      title:
+      content: Testing de componentes y funciones críticas para asegurar estabilidad
 
-    • Diseño e implementación completa del frontend en React, priorizando componentes reutilizables y código limpio
-
-    • Arquitectura de estado global con Redux, aplicando patrones de normalización y selectors para performance
-
-    • Desarrollo del backend RESTful con Express y Sequelize, incluyendo endpoints CRUD y proxy de API externa
-
-    • Creación de toda la capa visual usando CSS vanilla, demostrando dominio de fundamentos sin dependencias de frameworks
-
-    • Implementación de sistema de filtros y ordenamiento con lógica compleja de combinación de criterios
-
-    • Integración de TheDogApi con manejo robusto de errores y estados de carga
-
-    • Aplicación de mejores prácticas de Git con commits semánticos y workflow organizado
-
-    • Testing de componentes y funciones críticas para asegurar estabilidad
-
-
+  impact: >
     Aunque es un proyecto académico, lo conservo con especial cariño porque representa el momento donde la programación y el diseño convergieron en mi proceso creativo. La interfaz resultante refleja mi visión de que las aplicaciones funcionales también pueden ser visualmente hermosas, y me siento genuinamente orgullosa del resultado estético logrado sin herramientas de diseño preestablecidas.
 
     Este proyecto fortaleció mi confianza para abordar desafíos técnicos complejos mientras mantengo un estándar alto en experiencia de usuario y presentación visual.
