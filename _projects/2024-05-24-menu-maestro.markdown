@@ -3,7 +3,7 @@ layout: project
 title: "MenuMaestro"
 title-stilized:
   '   <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-  <span class="text-golden">MenuMaestro</span><br/><span class="text-salmon glitch">Crea tu menú digital en solo 4 pasos</span>
+  <span class="text-golden glitch">MenuMaestro</span><br/><span class="text-salmon ">Crea tu menú digital en solo 4 pasos</span>
   </h1>'
 featured: false
 category: web app
@@ -111,7 +111,7 @@ results:
     title: Light & Dark
 
 my_contribution:
-  title: Mi Rol como Frontend Developer
+  title: Frontend Developer
   content: >
     Lideré el desarrollo completo del frontend, transformando wireframes en una interfaz moderna y funcional. Mi enfoque principal fue crear un MVP robusto y visualmente atractivo para la captación de clientes e inversionistas.
     

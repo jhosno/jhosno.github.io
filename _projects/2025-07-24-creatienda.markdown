@@ -3,9 +3,9 @@ layout: project
 title:  "Creatienda"
 
 title-stilized: '<h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-                    <span class="text-golden">Creatienda</span> 
+                    <span class="text-golden glitch">Creatienda</span> 
                     <br/>
-                    <span class="text-salmon glitch">Plataforma E-commerce SaaS para PyMES</span>
+                    <span class="text-salmon ">Plataforma E-commerce SaaS para PyMES</span>
                 </h1>'
 featured: true
 category: web app
@@ -116,7 +116,7 @@ results:
     title: Tráfico orgánico
 
 my_contribution:
-  title: Mi Rol como Full Stack Developer
+  title: Full Stack Developer
   content: >
     Lideré el desarrollo e implementación de features críticas de la plataforma, desde refactorización de arquitectura legacy hasta optimizaciones de performance y mejoras de UX. Mi enfoque fue transformar una plataforma monolítica acoplada en un sistema escalable, mantenible y orientado a conversión.
     

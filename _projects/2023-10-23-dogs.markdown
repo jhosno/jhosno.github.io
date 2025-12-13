@@ -3,9 +3,9 @@ layout: project
 title: "Dogs SPA"
 
 title-stilized: '<h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-  <span class="text-golden">Dogs SPA</span>
+  <span class="text-golden glitch">Dogs SPA</span>
   <br/>
-  <span class="text-salmon glitch">Aplicación Web para Explorar Razas Caninas</span>
+  <span class="text-salmon ">Aplicación Web para Explorar Razas Caninas</span>
   </h1>'
 featured: false
 category: web app
@@ -28,7 +28,13 @@ quickStats:
 stack: [Fullstack, React, Redux, PostgreSQL, Express.js, Sequelize, CSS Vanilla]
 assets-image-base-url: /assets/images/portfolio/dogs/
 image: dogs.jpeg
-images: ["dogs_principal.jpeg", "dogs_quiz-de-personalidad.jpeg", "dogs_detail.jpeg"]
+images:
+  [
+    "dogs_principal.jpeg",
+    "dogs_quiz-de-personalidad.jpeg",
+    "dogs_detail.jpeg",
+    "dogs_principal.jpeg",
+  ]
 has-testimonial: false
 testimonials: []
 type: "web app"

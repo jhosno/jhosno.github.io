@@ -3,9 +3,9 @@ layout: project
 title: "ProjUnity"
 
 title-stilized: '<h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-                    <span class="text-golden">ProjUnity</span> 
+                    <span class="text-golden glitch">ProjUnity</span> 
                     <br/>
-                    <span class="text-salmon glitch">Marketplace de Recursos Digitales para Desarrolladores</span>
+                    <span class="text-salmon">Marketplace de Recursos Digitales para Desarrolladores</span>
                 </h1>'
 featured: false
 category: web app
@@ -112,7 +112,7 @@ results:
     title: Integración Mercado Pago funcional
 
 my_contribution:
-  title: Mi Rol como Frontend Lead & UI Designer
+  title: Frontend Lead & UI Designer
   content: >
     Lideré el área de frontend desde la conceptualización visual hasta la implementación técnica, siendo responsable del diseño de interfaz y la arquitectura del cliente. Mi enfoque fue crear un marketplace intuitivo que empoderara a desarrolladores mientras mantenía una experiencia de usuario coherente y profesional.
     
