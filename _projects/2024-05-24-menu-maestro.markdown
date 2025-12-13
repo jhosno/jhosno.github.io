@@ -5,7 +5,7 @@ title-stilized:
   '   <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
   <span class="text-golden">MenuMaestro</span><br/><span class="text-salmon glitch">Crea tu menú digital en solo 4 pasos</span>
   </h1>'
-featured: true
+featured: false
 category: web app
 status: "MVP completado"
 status-color: green
