@@ -11,7 +11,7 @@ status: "MVP completado"
 status-color: green
 has-demo: false
 demo: 
-date: 2023-10-24 15:00:00 -0400
+date: 2024-05-24 15:00:00 -0400
 has-quick-stats: true
 quickStats:
   - icon: store

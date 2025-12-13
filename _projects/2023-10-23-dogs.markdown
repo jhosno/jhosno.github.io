@@ -13,7 +13,7 @@ status: "Completado"
 status-color: green
 has-demo: false
 demo: "https://github.com/jhosnodev/PI-Dogs-main"
-date: 2023-10-23 15:00:00 -0400
+date: 2023-11-24 15:00:00 -0400
 has-quick-stats: true
 quickStats:
   - icon: database

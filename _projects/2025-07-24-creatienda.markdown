@@ -13,7 +13,7 @@ status: 'En producción'
 status-color: green
 has-demo: true
 demo: 'https://creatienda.cl'
-date: 2023-10-24 15:00:00 -0400
+date: 2025-07-24 15:00:00 -0400
 has-quick-stats: true
 quickStats:
   - icon: search

@@ -13,7 +13,7 @@ status: 'Completado'
 status-color: green
 has-demo: false
 demo: 'https://projunity.vercel.app'
-date: 2024-03-15 15:00:00 -0400
+date: 2023-10-24 15:00:00 -0400
 has-quick-stats: true
 quickStats:
   - icon: users
@@ -27,8 +27,8 @@ quickStats:
     value: <2s
 stack: [Fullstack, Next.js, PostgreSQL, Express.js, NextUI, TailwindCSS, Redux, Mercado Pago]
 assets-image-base-url: /assets/images/portfolio/projunity/
-image: projunity_Brand.jpeg
-images: ['projunity_landing.jpeg', 'projunity_trending.jpeg', 'projunity_brand.jpeg', 'projunity_brand.jpeg']
+image: projunity_landing.jpeg
+images: ['projunity_landing.jpeg', 'projunity_trending.jpeg', 'projunity_landing.jpeg', 'projunity_landing.jpeg']
 has-testimonial: false
 testimonials: []
 type: "web app"
