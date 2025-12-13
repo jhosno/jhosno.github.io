@@ -1,0 +1,16 @@
+{
+  "name": "jhosno.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jhosno Dev",
+  "license": "ISC",
+  "description": "Jhosno Dev portfolio to Github Page",
+
+  "devDependencies": {
+    "tailwindcss": "^4.1.18"
+  }
+}
