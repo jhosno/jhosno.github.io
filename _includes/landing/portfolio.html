@@ -1,0 +1,106 @@
+<!-- Projects Section -->
+<section
+  id="projects"
+  class="py-20 px-6 bg-gradient-to-b from-black to-gray-900"
+>
+  <div class="container mx-auto max-w-7xl">
+    <h2 class="text-6xl font-black mb-16 text-center">
+      <span class="text-golden">MIS</span>
+      <span class="text-salmon">PROYECTOS</span>
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% if site.projects.size > 0 %}
+       {% assign color_classes =
+      "golden:border-golden bg-golden text-golden from-golden
+      to-salmon,purple:border-purple bg-purple text-purple from-purple
+      to-pink-500,salmon:border-salmon bg-salmon text-salmon from-salmon
+      to-orange-500" | split: "," %} 
+      {% assign projects = site.projects | sort:
+      "date" | reverse %} 
+      {% for project in projects limit:3 %} {% assign index
+      = forloop.index0 | modulo: 3 %} {% assign color_set = color_classes[index]
+      | split: ":" %} {% assign color_name = color_set[0] %} {% assign classes =
+      color_set[1] | split: " " %}
+
+      <!-- Project {{ forloop.index }} -->
+      <div
+        class="bg-gray-900 border-4 {{ classes[0] }} overflow-hidden group hover:brightness-110 transition-all"
+      >
+        <div
+          class="h-64 bg-gradient-to-br {{ classes[4] }} {{ classes[5] }} flex items-center justify-center text-6xl pixel-art"
+        >
+          <img
+            src="{{site.url}}{{project.assets-image-base-url}}{{ project.image | relative_url }}"
+            alt="{{project.title}}"
+          />
+        </div>
+        <div class="p-6">
+          <a  href="{{site.url}}{{project.url}}">
+            <h3 class="text-2xl font-bold mb-3 {{ classes[2] }}">
+              {{ project.title | upcase }}
+            </h3>
+          </a>
+          <p class="text-gray-400 mb-4">{{ project.extract}}</p>
+          <div class="flex gap-4">
+       <!--      <a
+              href="{{site.url}}{{project.url}}"
+              class="{{ classes[2] }} text-black px-6 py-2 font-bold hover:opacity-90 transition-colors"
+            >
+              VER
+            </a> -->
+            <a
+              class="border-2 {{ classes[0] }} {{ classes[2] }} px-6 py-2 font-bold hover:{{ classes[1] }} hover:text-black transition-colors"
+              href="{{site.url}}{{project.url}}"
+            >
+            Ampliar  →
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %} {% else %}
+      <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
+      {% endif %}
+      <!-- Project 1 -->
+      <!--    <div class="bg-gray-900 border-4 border-golden overflow-hidden group hover:golden-border transition-all">
+                    <div class="h-64 bg-gradient-to-br from-golden to-salmon flex items-center justify-center text-6xl pixel-art">
+                        🎮
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-golden">PROYECTO UNO</h3>
+                        <p class="text-gray-400 mb-4">
+                            Aplicación web moderna con React y Node.js. Interfaz intuitiva y diseño pixel art.
+                        </p>
+                        <div class="flex gap-4">
+                            <button class="bg-golden text-black px-6 py-2 font-bold hover:bg-salmon hover:text-white transition-colors">
+                                DEMO
+                            </button>
+                            <button class="border-2 border-golden text-golden px-6 py-2 font-bold hover:bg-golden hover:text-black transition-colors">
+                                GITHUB
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+
+      <!-- Project 2 -->
+      <!--  <div class="bg-gray-900 border-4 border-salmon overflow-hidden group hover:golden-border transition-all">
+                    <div class="h-64 bg-gradient-to-br from-salmon to-purple flex items-center justify-center text-6xl pixel-art">
+                        🚀
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-salmon">PROYECTO DOS</h3>
+                        <p class="text-gray-400 mb-4">
+                            Dashboard interactivo con visualización de datos en tiempo real y animaciones.
+                        </p>
+                        <div class="flex gap-4">
+                            <button class="bg-salmon text-white px-6 py-2 font-bold hover:bg-golden hover:text-black transition-colors">
+                                DEMO
+                            </button>
+                            <button class="border-2 border-salmon text-salmon px-6 py-2 font-bold hover:bg-salmon hover:text-white transition-colors">
+                                GITHUB
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+    </div>
+  </div>
+</section>

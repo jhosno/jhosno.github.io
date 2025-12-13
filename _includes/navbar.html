@@ -1,38 +1,192 @@
-<nav id="mainNav" class="navbar navbar-expand-lg navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand page-scroll" href="/#page-top">
-                <img src="/assets/images/jh-white-1.png" alt="Logo">
-            </a>
+<!-- Navigation -->
+<nav
+  class="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b-4 border-golden z-50"
+>
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div
+          class="w-12 h-12 bg-gradient-to-br from-golden to-purple flex items-center justify-center font-black text-2xl border-4 border-salmon pixel-art group-hover:rotate-12 transition-transform text-black"
+        >
+          JH
         </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="page-scroll btn btn-info" href="/#portfolio">Portafolio</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/blog">Blog</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/about">Acerca</a>
-                </li>
-          
-
-                <li>
-                    <a class="page-scroll" href="/#contact">Contacto</a>
-                </li>
-            </ul>
+        <div class="hidden md:block">
+          <div class="text-xl font-black leading-tight">
+            <span class="text-salmon uppercase">Jhos</span
+            ><span class="text-white uppercase">no</span>
+          </div>
+          <div class="text-xs text-gray-400">Full Stack Developer</div>
         </div>
-        <!-- /.navbar-collapse -->
+      </a>
+
+      <!-- Menu Central (Desktop) -->
+     
+      <ul class="hidden lg:flex justify-center gap-8 text-lg font-bold">
+     <!--    <li>
+          <a href="/" class="link hover:text-golden transition-colors">INICIO</a>
+        </li> -->
+  
+        <li>
+          <a href="/about" class="link hover:text-salmon transition-colors"
+            >SOBRE MÍ</a
+          >
+        </li>
+        <li>
+          <a href="/#expertise" class="link hover:text-golden transition-colors"
+            >EXPERIENCIA</a
+          >
+        </li>
+        <li>
+          <a href="/projects" class="link hover:text-salmon transition-colors"
+            >PROYECTOS</a
+          >
+        </li>
+  
+        <li>
+          <a href="/blog" class="link hover:text-golden transition-colors"
+            >BLOG</a
+          >
+        </li>
+        <li>
+          <a href="/#contact" class="link hover:text-salmon transition-colors"
+            >CONTACTO</a
+          >
+        </li>
+      </ul>
+
+      <!-- Right Side: Open to Work + Hamburger -->
+      <div class="flex items-center gap-4">
+        <!-- Open to Work Badge -->
+        <a class="relative hidden sm:block" href="/#contact">
+          <div
+            class="flex items-center gap-2 bg-gray-900 border-4 border-salmon px-4 py-2 group cursor-pointer"
+          >
+            <!-- Dot animado -->
+            <div class="relative">
+              <div class="w-3 h-3 bg-salmon pixel-art animate-pulse"></div>
+              <div
+                class="absolute inset-0 w-3 h-3 bg-salmon pixel-art animate-ping"
+              ></div>
+            </div>
+            <!-- Texto -->
+            <span class="font-black text-sm text-salmon hidden xl:inline"
+              >OPEN TO WORK</span
+            >
+            <!-- Icono -->
+            <div
+              class="w-6 h-6 bg-salmon pixel-art flex items-center justify-center text-xs group-hover:bg-purple transition-colors"
+            >
+              💼
+            </div>
+          </div>
+          <!-- Tooltip flotante -->
+          <div
+            class="absolute top-full mt-2 right-0 bg-black border-4 border-purple px-6 py-4 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap"
+          >
+            <div class="text-purple font-bold text-sm mb-1">
+              ¡Disponible para proyectos!
+            </div>
+            <div class="text-gray-400 text-xs">Freelance & Full-time</div>
+          </div>
+        </a>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button
+          id="mobileMenuBtn"
+          class="lg:hidden flex flex-col gap-1.5 p-2 border-4 border-salmon bg-gray-900 hover:bg-salmon transition-colors group"
+        >
+          <div
+            class="hamburger-line w-6 h-1 bg-salmon group-hover:bg-black pixel-art"
+          ></div>
+          <div
+            class="hamburger-line w-6 h-1 bg-salmon group-hover:bg-black pixel-art"
+          ></div>
+          <div
+            class="hamburger-line w-6 h-1 bg-salmon group-hover:bg-black pixel-art"
+          ></div>
+        </button>
+      </div>
     </div>
-    <!-- /.container-fluid -->
+
+    <!-- Mobile Menu (Full Width) -->
+    <div id="mobileMenu" class="hidden lg:hidden mobile-menu mt-6 pb-6">
+      <ul class="space-y-4 mb-4">
+        <li class="mobile-menu-item">
+          <a
+            href="/"
+            class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-salmon hover:bg-salmon hover:text-black transition-all font-bold text-lg"
+          >
+            <div class="w-2 h-2 bg-salmon pixel-art"></div>
+            INICIO
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a
+            href="/about"
+            class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-purple hover:bg-purple hover:text-white transition-all font-bold text-lg"
+          >
+            <div class="w-2 h-2 bg-purple pixel-art"></div>
+            SOBRE MÍ
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a
+            href="/#expertise"
+            class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-golden hover:bg-golden hover:text-black transition-all font-bold text-lg"
+          >
+            <div class="w-2 h-2 bg-golden pixel-art"></div>
+            EXPERTISE
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a
+            href="/projects"
+            class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-salmon hover:bg-salmon hover:text-black transition-all font-bold text-lg"
+          >
+            <div class="w-2 h-2 bg-salmon pixel-art"></div>
+            PROYECTOS
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a
+            href="/blog"
+            class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-purple hover:bg-purple hover:text-white transition-all font-bold text-lg"
+          >
+            <div class="w-2 h-2 bg-purple pixel-art"></div>
+            BLOG
+          </a>
+        </li>
+        <li class="mobile-menu-item">
+          <a
+            href="/#contact"
+            class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-golden hover:bg-golden hover:text-black transition-all font-bold text-lg"
+          >
+            <div class="w-2 h-2 bg-golden pixel-art"></div>
+            CONTACTO
+          </a>
+        </li>
+      </ul>
+
+      <!-- Open to Work en Mobile (si estaba oculto) -->
+      <a class="sm:hidden mt-5" href="/#contact">
+        <div
+          class="flex items-center justify-center gap-3 p-4 bg-gray-900 border-4 border-salmon"
+        >
+          <div class="relative">
+            <div class="w-3 h-3 bg-salmon pixel-art animate-pulse"></div>
+            <div
+              class="absolute inset-0 w-3 h-3 bg-salmon pixel-art animate-ping"
+            ></div>
+          </div>
+          <span class="font-black text-salmon">OPEN TO WORK</span>
+          <div
+            class="w-6 h-6 bg-salmon pixel-art flex items-center justify-center text-xs"
+          >
+            💼
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
 </nav>

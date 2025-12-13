@@ -1,0 +1,42 @@
+<!-- Challenges & Solutions -->
+<section class="py-20 px-6 bg-gray-900">
+  <div class="container mx-auto max-w-7xl">
+    <h2 class="text-4xl font-black mb-12 text-center">
+      <span class="text-golden">DESAFÍOS</span>
+      <span class="text-salmon">&</span>
+      <span class="text-purple">SOLUCIONES</span>
+    </h2>
+    <div class="space-y-8">
+      {% assign color_classes = " golden:border-golden bg-golden text-golden
+      text-purple, purple:border-purple bg-purple text-purple text-salmon,
+      salmon:border-salmon bg-salmon text-salmon text-golden, " | split: "," %}
+      <!-- Challenge 1 -->
+      {% for challenge in page.challenges %} {% assign index = forloop.index0 |
+      modulo: 3 %} {% assign color_set = color_classes[index] | split: ":" %} {%
+      assign color_name = color_set[0] %} {% assign classes = color_set[1] |
+      split: " " %}
+      <div class="bg-black border-4 {{classes[0]}} p-8">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <i
+                data-lucide="alert-triangle"
+                class="w-8 h-8 {{classes[2]}}"
+              ></i>
+              <h3 class="text-2xl font-bold {{classes[2]}}">DESAFÍO</h3>
+            </div>
+            <p class="text-gray-300 text-lg">{{challenge.challenge}}</p>
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <i data-lucide="check-circle" class="w-8 h-8 {{classes[3]}}"></i>
+              <h3 class="text-2xl font-bold {{classes[3]}}">SOLUCIÓN</h3>
+            </div>
+            <p class="text-gray-300 text-lg">{{challenge.solution}}</p>
+          </div>
+        </div>
+      </div>
+      {%endfor%}
+    </div>
+  </div>
+</section>

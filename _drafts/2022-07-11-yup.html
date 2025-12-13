@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "Yup"
+title-stylized: '<span class="text-golden">Guía Completa de</span>
+  <br />
+  <span class="text-salmon glitch">Tailwind CSS</span>
+  <br />
+  <span class="text-white">en 2025</span>'
+date:   2022-07-11 10:00:00 -0400
+categories: [Yup, tutorial]
+tag: diseño web
+
+content-table:
+  intro: "Introducción"
+  instalacion: "Instalación"
+  conceptos: "Conceptos Básicos"
+  utilidades: "Clases Útiles"
+  responsive: "Diseño Responsive"
+  personalizacion: "Personalización"
+  optimizacion: "Optimización"
+  conclusion: "Conclusión"
+extract: "Las validaciones de formularios pueden llegar a ser bastante complejas, por suerte, existe Yup, una librería con múltiples opciones de validación que, además, es altamente compatible con Formik"
+---
+Yup es una librería que no permite crear patrones para validar los datos que recibimos en un formulario, está muy bien acoplada a formik, y nos dedicaremos a crear unas validaciones para los campos que tenemos. Puedes compaginar este artículo con el anterior sobre Formik[[link]](http://jhosno.github.io/formik/tutorial/formik)
+
+## Primeros pasos
+Para usar las validaciones solo tenemos que importar todo el contenido de yup
+
+```bash
+import * as Yup from 'yup'
+```
+
+Una vez hecho esto podemos crear esquemas de validaciones para los inputs que estamos manejando, si necesitas más información puedes consultar en la documentación oficial de yup [[link]](https://github.com/jquense/yup) , Para generar los esquemas vamos a usar los siguientes elementos:
+- Instanciamos Yup
+- Creamos un nuevo objeto → `object()`
+- Y definimos la forma de los esquemas → `shape()`
+- dentro vamos a definir un objeto, por cada `input`, indexandolo por el `name` del `input` en donde vamos a establecer las validaciones
+- `required()` → si no se agrega una validación se retorna una validación genérica en inglés.
+
+Así quedaría la estructura de nuestra validaciones:
+```jsx
+const newClientSchema = Yup.object().shape({
+    nombre: Yup.string().required('El nombre del cliente es obligatorio'),
+    direccion : Yup.string..min(2)required('La dirección es necesaria')
+  });
+```
+Para hacer que esto trabaje en conjunto con formik, lo que necesitamos es tomar esta nueva variable `newClientSchema` e igualarlo con el atributo predeterminado llamado `ValidationSchema`
+```jsx
+<Formik
+      initialValues={
+        {
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: '',
+        corporation: '',
+        note: ''
+      }
+      }
+      onSubmit={(values) => {
+        handleSubmit(values)
+      }}
+      ValidationSchema = { newClientSchema}
+    >
+```
+## Mostrando los errores de validación
+Una vez tenemos todo esto definido, vamos a visualizar el objeto que nos devuelve, de todos los valores que nos muestra este arreglo `data`, podemos resctar `error` y `touched`, que nos permitira manejar las alertas de error
+```jsx
+<Formik
+   (...)
+      ValidationSchema = { newClientSchema}
+    >
+      {(data) => {
+        return (<Form>
+            {console.log(data)}
+            [...]
+        </Form>)
+```
+Esto nos va a mostrar en consola los objetos que devuelve Yup. Para mostrar los errores, vamos a utilizar una herramienta de Formik para mostrar los elementos de error
+```jsx
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+```
+Con este elemento ErrorMessage podemos mostrar un mensaje de error con una simple línea de código:`<ErrorMessage name=inputName'/>`
+
+Aunque puede llegar a ser problemático con el tema de los estilos, así que puedes construir tu propio elemento de alertas, con un operador ternario, a este nuevo elemento le puedes aplicar los estilos que quieras:
+```jsx
+{errors.name && touched.name ?
+	(<div>{errors.name}</div>) : null}
+```
+Ya con esto terminamos el tema de las validaciones
+Creditos de la img: Example from official website #5 by yuanchuan [[link]](https://codepen.io/yuanchuan/full/dyprLgO)

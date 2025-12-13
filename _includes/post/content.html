@@ -1,0 +1,36 @@
+<!-- Contenido del Post -->
+<section class="px-6 pb-20">
+  <div class="container mx-auto max-w-4xl">
+    <div class="grid lg:grid-cols-4 gap-12">
+      <!-- Tabla de contenidos (Sidebar) -->
+      {%include post/aside.html%}
+
+      <!-- Contenido principal -->
+      <article class="lg:col-span-3 order-1 lg:order-2 post-content">
+        {{content}}
+
+        <!-- Tags del post -->
+        {% if page.categories.size > 0 %}
+        <div class="flex flex-wrap gap-3 py-8 border-t-2 border-gray-800">
+          <span class="text-gray-500 font-bold">TAGS:</span>
+          {% assign color_classes = " golden:bg-golden/20 text-golden
+          border-golden, purple:bg-purple/20 text-purple border-purple ,
+          salmon:bg-salmon/20 text-salmon border-salmon " | split: "," %} {% for
+          category in page.categories %} {% assign index = forloop.index0 |
+          modulo: 3 %} {% assign color_set = color_classes[index] | split: ":"
+          %} {% assign color_name = color_set[0] %} {% assign classes =
+          color_set[1] | split: " " %}
+          <span
+            class="{{classes[0]}} {{classes[1]}} {{classes[2]}} px-4 py-2 font-bold border uppercase text-sm"
+            >#{{category}}</span
+          >
+          {%endfor%}
+        </div>
+        {%endif%}
+
+        <!-- Author Box -->
+        {%include post/author-box.html%}
+      </article>
+    </div>
+  </div>
+</section>

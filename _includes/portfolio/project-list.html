@@ -1,0 +1,76 @@
+<!-- Project Layout 1: Card Grid -->
+<div class="mb-16">
+  <h3 class="text-2xl font-bold mb-6 text-salmon">→ Otros proyectos</h3>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% if site.projects.size > 0 %} {% assign color_classes = "
+    purple:border-purple bg-purple text-purple bg-purple/20 from-golden
+    to-purple, salmon:border-salmon bg-salmon text-salmon bg-salmon/20
+    from-purple to-salmon, golden:border-golden bg-golden text-golden
+    bg-golden/20 from-salmon to-golden, " | split: "," %}
+     {% assign projects =
+    site.projects | sort: "date" | reverse %} 
+    {% for project in projects
+    limit:4 %} {% assign index = forloop.index0 | modulo: 3 %} {% assign
+    color_set = color_classes[index] | split: ":" %} {% assign color_name =
+    color_set[0] %} {% assign classes = color_set[1] | split: " " %} {% if
+    project.url != featured_project.url %}
+    <div
+      class="bg-gray-900 border-4 {{classes[0]}} overflow-hidden group hover:{{classes[0]}} transition-all transform hover:-translate-y-2"
+    >
+      <div
+        class="h-48 bg-gradient-to-br {{classes[4]}} {{classes[5]}} flex items-center justify-center relative overflow-hidden"
+      >
+      <img
+      src="{{site.url}}{{project.assets-image-base-url}}{{ project.image | relative_url }}"
+      alt="{{project.title}}"
+    />
+        <div
+          class="absolute top-4 right-4 uppercase bg-black px-3 py-1 {{classes[2]}} text-sm font-bold"
+        >
+          {{project.type}}
+        </div>
+      </div>
+      <div class="p-6">
+        <a href="{{site.url}}{{project.url}}">
+        <h4 class="text-2xl font-bold mb-3 {{classes[2]}}">
+          {{project.title}}
+        </h4>
+      </a>
+        <p class="text-gray-400 mb-4 text-sm">{{project.extract}}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          {% for stack in project.stack %}
+
+          <span
+            class="{{classes[3]}} {{classes[2]}} px-3 py-1 text-xs font-bold border {{classes[0]}} "
+          >
+            {{stack}}
+          </span>
+
+          {%endfor%}
+        </div>
+        <div class="flex gap-3">
+          <a href="{{site.url}}{{project.url}}"
+            class="flex-1 {{classes[1]}} text-black py-2 font-bold hover:{{classes[1]}} hover:text-white transition-colors flex items-center justify-center gap-2 uppercase"
+          >
+            <i data-lucide="external-link" class="w-4 h-4  "></i>
+            ver
+          </a>
+          {% if(featured_project.hasGithub)%}
+          <a
+            class="flex-1 border-2 {{classes[0]}} {{classes[2]}} py-2 font-bold hover:{{classes[1]}} hover:text-black transition-colors flex items-center justify-center gap-2 "
+            href="{{project.github}}"
+            target="_blank"
+          >
+            <i data-lucide="github" class="w-4 h-4"></i>
+            GITHUB
+          </a>
+          {%endif%}
+        </div>
+      </div>
+    </div>
+    {% endif %} {% endfor %} {% else %}
+    <h3>¡Has llegado antes! Pronto publicaré proyectos 👾</h3>
+    {% endif %}
+
+  </div>
+</div>

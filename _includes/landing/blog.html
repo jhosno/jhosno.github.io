@@ -1,0 +1,44 @@
+<!-- Blog Section -->
+<section id="blog" class="py-20 px-6 bg-black">
+  <div class="container mx-auto max-w-6xl">
+    <h2 class="text-6xl font-black mb-16 text-center">
+      <span class="text-salmon">MI</span> <span class="text-golden">BLOG</span>
+    </h2>
+    <div class="space-y-8">
+      {% if site.posts.size > 0 %}
+      {% assign color_classes = "
+      golden:border-golden bg-golden text-golden ,
+      purple:border-purple bg-purple text-purple ,
+      salmon:border-salmon bg-salmon text-salmon " | split: "," %}
+      
+      {% for post in site.posts limit:3 %}
+        {% assign index = forloop.index0 | modulo: 3 %}
+        {% assign color_set = color_classes[index] | split: ":" %}
+        {% assign color_name = color_set[0] %}
+        {% assign classes = color_set[1] | split: " " %}
+        
+        <article class="bg-gray-900 border-4 {{ classes[0] }} p-8 grid md:grid-cols-5 gap-8 hover:brightness-110 transition-all">
+          <div class="{{ classes[1] }} text-black p-6 flex flex-col items-center justify-center text-center">
+            <div class="text-5xl font-black">{{ post.date | date: "%d" }}</div>
+            <div class="text-xl font-bold">{{ post.date | date: "%b" | upcase }}</div>
+            <div class="text-lg">{{ post.date | date: "%Y" }}</div>
+          </div>
+          <div class="md:col-span-4">
+            <h3 class="text-3xl font-bold mb-4 {{ classes[2] }}">
+              {{ post.title }}
+            </h3>
+            <p class="text-gray-400 text-lg mb-6">
+              {{ post.excerpt | strip_html | truncate: 150 }}
+            </p>
+            <a class="{{ classes[1] }} text-black px-8 py-3 hover:bg-black hover:border-white font-bold hover:text-white transition-colors" href="{{ site.url }}{{ post.url }}">
+              LEER MÁS →
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    {% else %}
+      <h3>¡Has llegado antes! Pronto publicaré contenido 👾</h3>
+    {% endif %}
+    </div>
+  </div>
+</section>

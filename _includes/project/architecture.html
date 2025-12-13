@@ -1,0 +1,67 @@
+  <!-- Architecture & Process -->
+  <section class="py-20 px-6">
+    <div class="container mx-auto max-w-7xl">
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Architecture -->
+            <div>
+                <h2 class="text-4xl font-black mb-8">
+                    <span class="text-golden">ARQUITECTURA</span>
+                </h2>
+                <div class="space-y-6">
+                    {% assign color_classes = "
+                    golden:border-golden bg-golden text-golden, 
+                    purple:border-purple bg-purple text-purple, 
+                    salmon:border-salmon bg-salmon text-salmon, 
+                            " | split: "," %}
+                  
+                    {% for architecture in page.architecture %}
+                        {% assign index = forloop.index0 | modulo: 3 %} 
+                        {% assign color_set = color_classes[index] | split: ":" %} 
+                        {% assign color_name = color_set[0] %} 
+                        {% assign classes = color_set[1] | split: " " %}
+                    <div class="bg-gray-900 border-l-8 {{classes[0]}} p-6">
+                        <h3 class="text-xl font-bold mb-2 {{classes[2]}} flex items-center gap-2">
+                            <i data-lucide="{{architecture.icon}}" class="w-6 h-6"></i>
+                            {{architecture.title}}
+                        </h3>
+                        <p class="text-gray-400">
+                            {{architecture.content}}
+                        </p>
+                    </div>
+                    {%endfor%}
+
+                    
+                </div>
+            </div>
+
+            <!-- Development Process -->
+            <div>
+                <h2 class="text-4xl font-black mb-8">
+                    <span class="text-salmon">PROCESO</span>
+                </h2>
+                <div class="space-y-4">
+                    {% for process in page.process%}
+                    {% assign index = forloop.index0 | modulo: 3 %} 
+                        {% assign color_set = color_classes[index] | split: ":" %} 
+                        {% assign color_name = color_set[0] %} 
+                        {% assign classes = color_set[1] | split: " " %}
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 {{classes[1]}} text-black font-black text-xl flex items-center justify-center">
+                            {{forloop.index}}
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-1">{{process.title}}</h3>
+                            <p class="text-gray-400 text-sm">
+                                {{process.content}}
+                            </p>
+                        </div>
+                    </div>
+{%endfor%}
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

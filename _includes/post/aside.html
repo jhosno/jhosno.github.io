@@ -1,0 +1,51 @@
+<aside class="lg:col-span-1 order-2 lg:order-1">
+  <div class="sticky top-24 bg-gray-900 border-4 border-salmon p-6">
+    <h3 class="text-xl font-black mb-4 text-salmon flex items-center gap-2">
+      <i data-lucide="list" class="w-5 h-5"></i>
+      CONTENIDOS
+    </h3>
+    <nav class="space-y-3">
+      {% for item in page.content-table %}
+      <a
+        href="#{{ item[0] }}"
+        class="block text-gray-400 hover:text-golden transition-colors text-sm font-bold"
+      >
+        → {{ item[1] }}
+      </a>
+      {% endfor %}
+    </nav>
+
+    <!-- Social Share -->
+    <div class="mt-8 pt-6 border-t-2 border-gray-800">
+      <p class="text-sm font-bold mb-3 text-gray-400">COMPARTIR:</p>
+      <div class="flex gap-3">
+        <a
+          href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | url_encode }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 bg-golden text-black flex items-center justify-center hover:bg-salmon hover:text-white transition-colors"
+        >
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 bg-salmon text-black flex items-center justify-center hover:bg-purple hover:text-white transition-colors"
+        >
+          <i data-lucide="facebook" class="w-5 h-5"></i>
+        </a>
+
+        <a
+          href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 bg-purple text-black flex items-center justify-center hover:bg-golden hover:text-white transition-colors"
+        >
+          <i data-lucide="twitter" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,220 @@
+---
+layout: post
+title: "ViteJS"
+tag: diseño web
+date: 2022-02-15 15:00:00 -0400
+categories: [vitejs, automatizador]
+image: vitejs2.png
+alt: "ViteJS, acelera tu código | Crédito: Dimensioni by Alka Cappellazzo at OpenProcessing"
+extract: "Vitejs es una herramienta frontend, que destaca por la rápidez que brinda a la hora de derrollar proyectos. Está creado por Evan You, el mismo que creó VueJS. Dentro de las virtudes de esta herramienta está su gran velocidad y agnosticismo. ¿Quieres saber más? Sigue leyendo"
+---
+
+<article class="lg:col-span-3 order-1 lg:order-2 post-content">
+  <div id="que-es-vite" class="mb-12">
+    <h2>¿Qué es Vite?</h2>
+    <p>
+      Es una herramienta frontend, que destaca por la rápidez que brinda a la
+      hora de desarrollar proyectos. Está creado por
+      <a href="https://evanyou.me/" target="_blank">Evan You</a>, el mismo que
+      creó <a href="https://vuejs.org/" target="_blank">VueJS</a>. Dentro de las
+      virtudes de esta herramienta está su gran velocidad y agnosticismo (con
+      esto quiero aclarar que no está atado a ningún otro framework específico),
+      capaz de soportar proyectos JS vainilla, o, por otro lado, diferentes
+      frameworks: Vue.js, Angular, React, tanto como si quieres que sean JS o
+      TS.
+    </p>
+  </div>
+
+  <div id="beneficios" class="mb-12">
+    <h2>Beneficios</h2>
+    <ul>
+      <li>Puedes crear un server instantáneo sin lidiar con buildings.</li>
+      <li>Actualiza los cambios en la app súper rápido.</li>
+      <li>Soporta el uso de JS, CSS y TS.</li>
+      <li>
+        Soporte server side render (para navegadores que no soporten node
+        modules).
+      </li>
+    </ul>
+    <p>
+      Esto nos ayuda a crear proyectos mucho más eficaces a la hora de iniciar,
+      mostrar cambios y depurar.
+    </p>
+  </div>
+
+  <!-- Callout Box -->
+  <div class="bg-gray-900 border-l-8 border-gold p-6 mb-12">
+    <div class="flex items-start gap-4">
+      <i data-lucide="zap" class="w-8 h-8 text-gold flex-shrink-0 mt-1"></i>
+      <div>
+        <h4 class="text-xl font-bold mb-2 text-gold">
+          ¿Por qué es tan rápido?
+        </h4>
+        <p class="text-gray-300">
+          Vite utiliza ES modules nativos del navegador, lo que permite un Hot
+          Module Replacement (HMR) extremadamente rápido sin importar el tamaño
+          de tu aplicación.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="vite-react" class="mb-12">
+    <h2>Vite + React</h2>
+    <p>Escribimos en consola lo siguiente, para instalar vite:</p>
+
+    <pre><code>npm init vite@latest</code></pre>
+
+    <p>Una vez instalado, puedes colocar el nombre de tu nuevo proyecto...</p>
+
+    <img
+      src="/assets/images/content/vitejs1.png"
+      alt="Instalación de vite - Paso 1"
+      class="img-responsive"
+    />
+
+    <p>
+      ...Lo siguiente será definir cual va a ser la tecnología con la que
+      trabajaremos....
+    </p>
+
+    <img
+      src="/assets/images/content/vitejs2.png"
+      alt="Instalación de vite - Paso 2"
+      class="img-responsive"
+    />
+
+    <p>
+      ...En este caso, será un proyecto de react, podemos escoger si será un
+      proyecto con typeScript o JavaScript....
+    </p>
+
+    <img
+      src="/assets/images/content/vitejs3.png"
+      alt="Instalación de vite - Paso 3"
+      class="img-responsive"
+    />
+
+    <p>
+      ...Para finalizar el proceso seguimos los pasos indicados en la consola,
+      que serían los siguientes:
+    </p>
+
+    <pre><code>cd thunder-project
+npm install
+npm run dev</code></pre>
+
+    <p>
+      <strong>¡Y ya con esto puedes empezar a programar!</strong>
+    </p>
+  </div>
+
+  <div id="estructura" class="mb-12">
+    <h3>Estructura de un proyecto Vite/React</h3>
+
+    <img
+      src="/assets/images/content/vitejs4.png"
+      alt="Directorio de Vite/React"
+      class="img-responsive"
+    />
+
+    <h4>Directorio de Vite/React</h4>
+
+    <ul>
+      <li>
+        En la carpeta <code>/src/</code> es donde nos enfocaremos la mayor parte
+        del proyecto, aquí tendremos nuestro archivo <code>/App.jsx</code>, que
+        es nuestro archivo principal y el padre de todos nuestros componentes,
+        aparte, podremos crear el resto de nuestros componentes.
+      </li>
+      <li>
+        El archivo <code>/.gitignore</code>, es un archivo de configuración para
+        definir los archivos que queremos excluir a la hora de llevar nuestro
+        control de versiones, o crear repositorios en host externos como github,
+        gitlab o bitbucket.
+      </li>
+      <li>
+        El documento <code>/index.html</code>, es el documento base en donde se
+        verá el sistema.
+      </li>
+      <li>
+        El archivo <code>/package.json</code>, es un archivo de configuración,
+        ahí están definidos los paquetes de node que se requieren, comandos de
+        compilación, ejecución o depuración que fueran necesarios.
+      </li>
+      <li>
+        Luego está el archivo <code>/vite.config</code>, que tiene las
+        configuraciones propias de este building-tool, que es una herramienta
+        sencilla y rápida para configurar tus proyectos.
+      </li>
+    </ul>
+  </div>
+
+  <!-- Credits Box -->
+  <div class="bg-gray-900 border-4 border-coral p-6 text-center my-12">
+    <i data-lucide="image" class="w-12 h-12 text-coral mx-auto mb-4"></i>
+    <p class="text-gray-400 text-sm">
+      <strong class="text-coral">Créditos de la imagen:</strong><br />
+      Dimensioni by Alka Cappellazzo at OpenProcessing
+    </p>
+  </div>
+
+  <!-- Tags del post -->
+  <div class="flex flex-wrap gap-3 py-8 border-t-2 border-gray-800">
+    <span class="text-gray-500 font-bold">TAGS:</span>
+    <span
+      class="bg-coral/20 text-coral px-4 py-2 font-bold border border-coral text-sm"
+      >#VITEJS</span
+    >
+    <span
+      class="bg-purple-500/20 text-purple-500 px-4 py-2 font-bold border border-purple-500 text-sm"
+      >#REACT</span
+    >
+    <span
+      class="bg-gold/20 text-gold px-4 py-2 font-bold border border-gold text-sm"
+      >#FRONTEND</span
+    >
+    <span
+      class="bg-coral/20 text-coral px-4 py-2 font-bold border border-coral text-sm"
+      >#WEBDEV</span
+    >
+  </div>
+
+  <!-- Author Box -->
+  <div class="bg-gray-900 border-4 border-purple-500 p-8 my-12">
+    <div class="flex items-start gap-6">
+      <div
+        class="w-24 h-24 bg-gradient-to-br from-coral via-purple-500 to-gold flex items-center justify-center text-3xl font-black border-4 border-white flex-shrink-0"
+      >
+        JH
+      </div>
+      <div>
+        <h4 class="text-2xl font-black mb-2 text-purple-500">
+          Jhosno Hernández
+        </h4>
+        <p class="text-gray-400 mb-4">
+          Full Stack Developer apasionado por crear experiencias web modernas.
+          Especializado en React, Node.js y diseño pixel art. Escribo sobre
+          desarrollo web, arquitectura de software y las últimas tendencias
+          tech.
+        </p>
+        <div class="flex gap-4">
+          <a
+            href="#"
+            class="text-coral hover:text-purple-500 transition-colors flex items-center gap-2"
+          >
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+            @jhosno
+          </a>
+          <a
+            href="#"
+            class="text-coral hover:text-gold transition-colors flex items-center gap-2"
+          >
+            <i data-lucide="github" class="w-5 h-5"></i>
+            github.com/jhosno
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

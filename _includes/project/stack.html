@@ -1,0 +1,25 @@
+  <!-- Tech Stack -->
+  <section class="py-12 px-6 bg-gray-900">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-3xl font-black mb-8 text-center">
+            <span class="text-golden">STACK</span> <span class="text-salmon">TECNOLÓGICO</span>
+        </h2>
+        <div class="flex flex-wrap justify-center gap-4">
+            {% assign color_classes = "
+                purple:border-purple bg-purple text-purple, 
+                salmon:border-salmon bg-salmon text-salmon, 
+                golden:border-golden bg-golden text-golden, 
+                " | split: "," %}
+            {% for stack in page.stack %}
+                {% assign index = forloop.index0 | modulo: 3 %} 
+                {% assign color_set = color_classes[index] | split: ":" %} 
+                {% assign color_name = color_set[0] %} 
+                {% assign classes = color_set[1] | split: " " %}
+                <span class="bg-black border-2 {{classes[0]}} {{classes[2]}} px-6 py-3 font-bold hover:{{classes[1]}} hover:text-black transition-colors cursor-pointer uppercase">
+                    {{stack}}
+                </span>
+            {% endfor %}
+        
+        </div>
+    </div>
+</section>

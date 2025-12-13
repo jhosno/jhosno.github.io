@@ -1,0 +1,40 @@
+<!-- Results & Metrics -->
+<section class="py-20 px-6">
+       <!-- Impact/Results Section -->
+       <div class="bg-gradient-to-br from-gray-900 via-black to-gray-900 border-4 border-purple p-8 md:p-12  mb-12">
+        <div class="text-center mb-8">
+            <i data-lucide="trophy" class="w-16 h-16 text-golden mx-auto mb-4"></i>
+            <h3 class="text-3xl font-black text-golden mb-2">IMPACTO Y RESULTADOS</h3>
+            <div class="w-24 h-1 bg-golden mx-auto"></div>
+        </div>
+
+        <p class="text-lg text-gray-300 leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+           {{page.my_contribution.impact}}
+        </p>
+
+    </div>
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-4xl font-black mb-12 text-center">
+            <span class="text-salmon">RESULTADOS</span> <span class="text-golden">&</span> <span class="text-purple">MÉTRICAS</span>
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            {% for result in page.results %}
+            {% assign color_classes = "
+            golden:border-golden text-golden, 
+            salmon:border-salmon text-salmon, 
+            purple:border-purple text-purple, 
+                    " | split: "," %}
+            {% assign index = forloop.index0 | modulo: 3 %} 
+            {% assign color_set = color_classes[index] | split: ":" %} 
+            {% assign color_name = color_set[0] %} 
+            {% assign classes = color_set[1] | split: " " %}
+                <div class="bg-gray-900 border-4 {{classes[0]}} p-8 text-center hover:{{classes[0]}} transition-all">
+                    <i data-lucide="{{result.icon}}" class="w-12 h-12 {{classes[1]}} mx-auto mb-4"></i>
+                    <div class="text-5xl font-black {{classes[1]}} mb-2">{{result.stat}}</div>
+                    <div class="text-gray-400 font-bold">{{result.title}}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

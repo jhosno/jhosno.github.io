@@ -1,0 +1,62 @@
+ <!-- About Section -->
+ <section id="about" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+    <div class="container mx-auto max-w-6xl">
+        <h2 class="text-6xl font-black mb-16 text-center mb-16 pt-16">
+            <span class="text-golden">SOBRE</span> <span class="text-salmon">MÍ</span>
+        </h2>
+        <div class="grid md:grid-cols-3 gap-12 items-center md:items-start">
+            <div class="flex justify-center lg:align-start">
+                <div class="w-64 h-64 bg-gradient-to-br from-golden to-salmon p-1 transform rotate-3 hover:rotate-0 transition-transform">
+                    <img src="{{site.url}}/assets/images/about/about.png" alt="{{site.title}}"/>
+               <!--      <div class="w-full h-full bg-gray-800 flex items-center justify-center text-4xl font-bold pixel-art">
+                        [FOTO]
+                    </div> -->
+                </div>
+            </div>
+            <div class="md:col-span-2">
+                <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+                    Hola, soy Jhosno, desarrolladora radicada en Colombia.
+                    <br>
+                    Siempre estoy intentando mejorar como profesional, recientemente mi reto personal es hacer código limpio con principios SOLID.
+                    <br>
+                    Aparte, estoy empezando aprender sobre AWS y N8N.
+                    <br>
+                    Mi stack principal es MERN, typescript y Laravel.
+                    <br>
+                    Mis herramientas favoritas son VSCode, DBeaver, Figma y Obsidian para desarrollar mis ideas.
+                </p>
+                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Transformo ideas en código limpio y eficiente, combinando creatividad con 
+                    soluciones técnicas robustas.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-4">
+                    {% assign techs = "typescript,REACT, NODE.JS, PHP, laravel, tailwindCSS, nest.js, next.js, SASS,  CSS, GIT, SQL" | split: "," %}
+                    {% assign color_classes = "
+                    purple:bg-purple text-black, 
+                    salmon:bg-salmon text-black, 
+                    golden:bg-golden text-black, 
+                    " | split: "," %}
+
+                    {% for tech in techs %}
+                         {% assign index = forloop.index0 | modulo: 3 %} {% assign
+                        color_set = color_classes[index] | split: ":" %} {% assign color_name =
+                        color_set[0] %} {% assign classes = color_set[1] | split: " " %} 
+                        <span class="{{classes[0]}} {{classes[1]}} px-6 py-3 text-lg font-bold uppercase">{{tech}}</span>
+                    {% endfor %}
+                    
+                </div>
+                <p class=" font-bold text-xl mb-2 text-salmon text-xl  mb-6 leading-relaxed">
+
+                    Fun Facts:
+                </p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="border-l-4 border-salmon pl-4">Tengo una gata llamada Hela</li>
+                        <li class="border-l-4 border-salmon pl-4">Prefiero el chocolate caliente por sobre el café</li>
+                        <li class="border-l-4 border-salmon pl-4">Me gustan los tatuajes y piercings</li>
+                        <li class="border-l-4 border-salmon pl-4">Me encantan lo digimons (V-pets) y los tamagotchis</li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</section>
+

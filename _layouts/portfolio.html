@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+  {% include head.html %}
+  <body class="bg-black text-white">
+    {% include navbar.html %}
+    <div class="container mx-auto max-w-7xl mt-12">
+        {% include portfolio/header.html %} 
+        {% include portfolio/featured-project.html %}
+        {% include portfolio/project-list.html %}
+    </div>
+
+    {% include upbutton.html %} {% include footer.html %}
+  </body>
+  {% include scripts.html %}
+</html>

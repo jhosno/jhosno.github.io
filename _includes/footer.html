@@ -1,88 +1,35 @@
-<footer>
-  <div class="rrss">
-    <h3>Sigueme</h3>
-    <a href="https://github.com/jhosno" target="_blank">
-      <i class="flaticon-github" target></i>
-    </a>
-    <a href="https://codepen.io/jhosno" target="_blank">
-      <i class="flaticon-codepen"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/jhosno/" target="_blank">
-      <i class="flaticon-linkedin"></i>
-    </a>
-    <a href="https://twitter.com/jhosno" target="_blank">
-      <i class="flaticon-twitter"></i>
-    </a>
-    <a href="https://twitter.com/jhosno" target="_blank"></a>
-  </div>
+  <!-- Footer -->
+  <footer class="bg-black border-t-4 border-golden py-8 text-center flex lg:flex-row flex-col ">
+    <p class="text-left text-2xl font-bold w-full lg:w-1/2">
+        <span class="text-golden">©</span> 2025 <span class="text-salmon">Jhosno Hernández</span> 
+        <span class="text-gray-400">- TODOS LOS DERECHOS RESERVADOS</span>
+    </p>
+    <div class="flex flex-row gap-2 w-full lg:w-1/2 items-center justify-end">
+      <a
+          href="https://linkedin.com/in/jhosno"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 bg-salmon text-black flex items-center justify-center hover:bg-purple hover:text-white transition-colors"
+        >
+          <i data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
 
-  <div class="contact">
-    <h3>Contacto</h3>
-    <button
-      type="button"
-      class="btn btn-primary btn-lg btn-footer"
-      data-toggle="modal"
-      data-target="#contactModal"
-    >
-      ¡Hablame de tu proyecto!
-    </button>
-  </div>
+      <a
+          href="https://github.com/jhosnodev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 bg-golden text-black flex items-center justify-center hover:bg-salmon hover:text-white transition-colors"
+        >
+          <i data-lucide="github" class="w-5 h-5"></i>
+        </a>
 
-  <hr />
-
-  <div class="credits">
-    <p>Made with ❤ by Jhosno | Hosted in Github Pages</p>
-  </div>
-
-  <div class="modal" tabindex="-1" role="dialog" id="contactModal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Contáctame</h5>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>
-            Si tienes algún proyecto, comentario o sugerencia, puedes
-            contactarme directamente a través de este formulario
-          </p>
-          <form action="https://formspree.io/f/mpzorqzq" method="POST">
-            <div class="form-group">
-              <label>
-                Tú correo:
-                <input
-                  type="email"
-                  class="form-control"
-                  name="_replyto"
-                  required
-                />
-              </label>
-            </div>
-            <div class="form-group">
-              <label>
-                Tú mensaje:
-                <textarea
-                  name="message"
-                  class="form-control"
-                  required
-                ></textarea>
-              </label>
-            </div>
-
-            <!-- your other form fields go here -->
-
-            <button type="submit" class="btn btn-primary">¡Enviar!</button>
-          </form>
-        </div>
-      </div>
+        <a
+          href="https://twitter.com/jhosno"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-10 h-10 bg-purple text-black flex items-center justify-center hover:bg-golden hover:text-white transition-colors"
+        >
+          <i data-lucide="twitter" class="w-5 h-5"></i>
+        </a>
     </div>
-
-  </div>
 </footer>

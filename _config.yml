@@ -43,7 +43,11 @@ plugins:
   - jemoji
   - jekyll-seo-tag
 
+collections:
+  projects:
+    output: true
 
+    
 jekyll_admin:
   hidden_links:
  

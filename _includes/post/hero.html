@@ -1,0 +1,81 @@
+<!-- Hero Section del Post -->
+<section class="pt-32 pb-20 px-6 pixel-grid">
+  <div class="container mx-auto max-w-4xl">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-3 text-sm mb-8 text-gray-400">
+      <a href="/" class="hover:text-golden transition-colors">Inicio</a>
+      <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      <!-- TODO actualizar -->
+      <a href="/blog" class="hover:text-salmon transition-colors"
+      >blog</a
+      >
+      <!-- TODO actualizar -->
+      <i data-lucide="chevron-right" class="w-4 h-4"></i>
+      <span class="text-white">Este Artículo</span>
+    </div>
+
+    <!-- Categoría y fecha -->
+    <div class="flex flex-wrap items-center gap-4 mb-6">
+      <span class="bg-golden text-black px-6 py-2 font-black text-sm uppercase"
+        >{{page.tag}}</span
+      >
+      <span class="flex items-center gap-2 text-gray-400">
+        <i data-lucide="calendar" class="w-4 h-4"></i>
+        {{ page.date | date_to_string}}
+      </span>
+    <!--   <span class="flex items-center gap-2 text-gray-400">
+        <i data-lucide="clock" class="w-4 h-4"></i>
+        15 min de lectura
+      </span> -->
+    </div>
+
+    <!-- Título Principal -->
+    <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight">
+      {{page.title-stylized}}
+
+    </h1>
+
+    <!-- Descripción corta -->
+    <p class="text-2xl text-gray-300 mb-8 leading-relaxed">
+      {{page.extract}}
+    </p>
+
+    <!-- Autor y stats -->
+    <div
+      class="flex items-center justify-between flex-wrap gap-6 py-6 border-t-2 border-b-2 border-gray-800"
+    >
+      <div class="flex items-center gap-4">
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-golden to-purple flex items-center justify-center text-2xl font-black border-4 border-salmon text-black"
+        >
+          JH
+        </div>
+        <div>
+          <div class="font-bold text-lg">Jhosno Hernández</div>
+          <div class="text-gray-400 text-sm">Full Stack Developer</div>
+        </div>
+      </div>
+      <div class="flex items-center gap-6">
+     <!--    <div
+          class="flex items-center gap-2 text-gray-400 hover:text-golden transition-colors cursor-pointer"
+        >
+          <i data-lucide="heart" class="w-6 h-6"></i>
+          <span class="font-bold">1.2K</span>
+        </div>
+        <div
+          class="flex items-center gap-2 text-gray-400 hover:text-salmon transition-colors cursor-pointer"
+        >
+          <i data-lucide="message-circle" class="w-6 h-6"></i>
+          <span class="font-bold">89</span>
+        </div> -->
+        
+        <div
+          class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer"
+        >
+          <i data-lucide="share-2" class="w-6 h-6"></i>
+          <span class="font-bold">COMPARTIR</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
