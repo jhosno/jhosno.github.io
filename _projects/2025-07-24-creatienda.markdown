@@ -10,7 +10,7 @@ title-stilized: '<h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
 featured: true
 category: web app
 status: 'En desarrollo'
-status-color: cyan
+status-color: amber
 has-demo: true
 demo: 'https://creatienda.cl'
 date: 2023-10-24 15:00:00 -0400
