@@ -27,8 +27,8 @@ quickStats:
     value: <2s
 stack: [Fullstack, Next.js, PostgreSQL, Express.js, NextUI, TailwindCSS, Redux, Mercado Pago]
 assets-image-base-url: /assets/images/portfolio/projunity/
-image: principal.png
-images: ['marketplace.png', 'project-page.png', 'user-profile.png', 'dashboard.png']
+image: projunity_Brand.jpeg
+images: ['projunity_landing.jpeg', 'projunity_trending.jpeg', 'projunity_brand.jpeg', 'projunity_brand.jpeg']
 has-testimonial: false
 testimonials: []
 type: "web app"
