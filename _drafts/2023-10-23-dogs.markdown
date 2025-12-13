@@ -9,7 +9,7 @@ category: web app
 status: 'En desarrollo'
 status-color: cyan
 has-demo: true
-demo: 'https://creatienda.cl'
+demo: 'https://qa.creatienda.cl'
 date: 2023-10-24 15:00:00 -0400
 has-quick-stats: true
 quickStats:
@@ -24,8 +24,8 @@ quickStats:
     value: 5000
 stack: [Fullstack, PHP, laravel, livewire, MySQL, Javascript]
 assets-image-base-url: /assets/images/portfolio/dogs/
-image: dogs.jpeg
-images: ['dogs.jpeg', 'dogs.jpeg', 'dogs.jpeg', 'dogs.jpeg']
+image: dogs.png
+images: ['dogs.png', 'dogs.png', 'dogs.png', 'dogs.png']
 has-testimonial: false
 testimonials: []
 type: "web app"
@@ -78,9 +78,9 @@ process:
     content: Updates regulares, optimización continua y soporte técnico dedicado.
 
 challenges:
-  - challenge: Escalabilidad para manejar 100K+ usuarios concurrentes durante temporadas de alta demanda (Black Friday, purple Monday).
+  - challenge: Diseñar e implementar un editor de temas de tienda que permita ver los resultados en tiempo real.
     solution: Implementación de auto-scaling en AWS, Redis para caching, CDN para assets estáticos y optimización de queries con indexación estratégica.
-  - challenge: Sincronización en tiempo real del inventario entre múltiples canales de venta (web, mobile, físico).
+  - challenge: Generar estádisticas para el administrador de general de creatienda y para los dueños de cada una de las tiendas para la toma de decisiones gerenciales.
     solution: Sistema de eventos con WebSockets y message queue (RabbitMQ) para actualizaciones instantáneas sin pérdida de datos.
 
 results: 

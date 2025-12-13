@@ -1,15 +1,16 @@
 ---
 layout: project
-title:  "Creatienda"
-title-stilized: '   <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
-                    <span class="text-golden">Crea</span><span class="text-salmon glitch">tienda</span>
-                </h1>'
+title: "Menumaestro"
+title-stilized:
+  '   <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
+  <span class="text-golden">MenuMaestro</span><br/><span class="text-salmon glitch">Crea tú menú en solo 4 pasos</span>
+  </h1>'
 featured: false
 category: web app
-status: 'En desarrollo'
-status-color: cyan
-has-demo: true
-demo: 'https://creatienda.cl'
+status: "abandonado"
+status-color: gray
+has-demo: false
+demo: 
 date: 2023-10-24 15:00:00 -0400
 has-quick-stats: true
 quickStats:
@@ -22,17 +23,17 @@ quickStats:
   - icon: download
     title: Descargas
     value: 5000
-stack: [Fullstack, PHP, laravel, livewire, MySQL, Javascript]
-assets-image-base-url: /assets/images/portfolio/dogs/
-image: dogs.jpeg
-images: ['dogs.jpeg', 'dogs.jpeg', 'dogs.jpeg', 'dogs.jpeg']
+stack: [Typescript, Next.JS, Daisy.JS, UX/UI, Analytics and SEO, D3.JS]
+assets-image-base-url: /assets/images/portfolio/menumaestro/
+image: principal.jpeg
+images: ["dashboard.jpeg", "products.jpeg", "detalle.jpeg", "menu.webp"]
 has-testimonial: false
 testimonials: []
 type: "web app"
 alt: "ViteJS, acelera tu código | Crédito: Dimensioni by Alka Cappellazzo at OpenProcessing"
 extract: "Aplicativo web, para conocer las razas de perritos. Enfocado en dar una experiencia usuario agradable, solo usando CSS puro. Cuenta como evaluación académica individual para el curso de SoyHerny"
 has-github: false
-github: 
+github:
 features:
   - icon: zap
     title: Performance Extremo
@@ -55,16 +56,16 @@ features:
 architecture:
   - icon: layers
     title: Microservicios
-    content: Arquitectura basada en microservicios con API Gateway para 
-                            escalabilidad y mantenibilidad.
+    content: Arquitectura basada en microservicios con API Gateway para
+      escalabilidad y mantenibilidad.
   - icon: server
     title: API RESTful
-    content: API REST bien documentada con Swagger/OpenAPI para fácil 
-                            integración con terceros.
+    content: API REST bien documentada con Swagger/OpenAPI para fácil
+      integración con terceros.
   - icon: cloud
     title: Cloud Infrastructure
-    content: Desplegado en AWS con EC2, S3, CloudFront CDN y RDS para 
-                            alta disponibilidad.
+    content: Desplegado en AWS con EC2, S3, CloudFront CDN y RDS para
+      alta disponibilidad.
 process:
   - title: Investigación & Planificación
     content: Análisis de mercado, definición de requisitos y diseño de UX/UI.
@@ -83,7 +84,7 @@ challenges:
   - challenge: Sincronización en tiempo real del inventario entre múltiples canales de venta (web, mobile, físico).
     solution: Sistema de eventos con WebSockets y message queue (RabbitMQ) para actualizaciones instantáneas sin pérdida de datos.
 
-results: 
+results:
   - icon: trending-up
     stat: +250%
     title: Aumento en Ventas
