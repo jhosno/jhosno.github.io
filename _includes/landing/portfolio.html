@@ -9,12 +9,15 @@
       <span class="text-salmon">PROYECTOS</span>
     </h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {% if site.projects.size > 0 %} {% assign color_classes =
+      {% if site.projects.size > 0 %}
+       {% assign color_classes =
       "golden:border-golden bg-golden text-golden from-golden
       to-salmon,purple:border-purple bg-purple text-purple from-purple
       to-pink-500,salmon:border-salmon bg-salmon text-salmon from-salmon
-      to-orange-500" | split: "," %} {% assign projects = site.projects | sort:
-      "date" | reverse %} {% for project in projects limit:3 %} {% assign index
+      to-orange-500" | split: "," %} 
+      {% assign projects = site.projects | sort:
+      "date" | reverse %} 
+      {% for project in projects limit:3 %} {% assign index
       = forloop.index0 | modulo: 3 %} {% assign color_set = color_classes[index]
       | split: ":" %} {% assign color_name = color_set[0] %} {% assign classes =
       color_set[1] | split: " " %}
@@ -32,22 +35,24 @@
           />
         </div>
         <div class="p-6">
-          <h3 class="text-2xl font-bold mb-3 {{ classes[2] }}">
-            {{ project.title | upcase }}
-          </h3>
+          <a  href="{{site.url}}{{project.url}}">
+            <h3 class="text-2xl font-bold mb-3 {{ classes[2] }}">
+              {{ project.title | upcase }}
+            </h3>
+          </a>
           <p class="text-gray-400 mb-4">{{ project.extract}}</p>
           <div class="flex gap-4">
-            <a
+       <!--      <a
               href="{{site.url}}{{project.url}}"
               class="{{ classes[2] }} text-black px-6 py-2 font-bold hover:opacity-90 transition-colors"
             >
               VER
-            </a>
+            </a> -->
             <a
               class="border-2 {{ classes[0] }} {{ classes[2] }} px-6 py-2 font-bold hover:{{ classes[1] }} hover:text-black transition-colors"
-              href="{{project.github}}"
+              href="{{site.url}}{{project.url}}"
             >
-              GITHUB
+            Ampliar  →
             </a>
           </div>
         </div>
