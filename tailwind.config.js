@@ -12,9 +12,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        golden: "#f6b931",
+        /* Palette - Lave GB -> https://lospec.com/palette-list/lava-gb */
+        golden: "#ff8e80",
         purple: "#8B5CF6",
-        salmon: "#A6357D ",
+        salmon: "#c53a9d ",
       },
       fontFamily: {
         space: ["Space Grotesk", "sans-serif"],
