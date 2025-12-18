@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "ProjUnity"
-
+tag: projects
 title-stilized: '<h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
                     <span class="text-golden glitch">ProjUnity</span> 
                     <br/>

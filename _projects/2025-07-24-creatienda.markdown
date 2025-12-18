@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Creatienda"
-
+tag: projects
 title-stilized: '<h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
                     <span class="text-golden glitch">Creatienda</span> 
                     <br/>

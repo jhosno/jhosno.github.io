@@ -30,7 +30,7 @@ url: "https://jhosno.github.io/" # the base hostname & protocol for your site, e
 twitter_username: jhosno
 github_username:  jhosno
 
-permalink: :tag/:title
+permalink: :categories/:title
 defaults:
   - scope:
       path: "assets/images"

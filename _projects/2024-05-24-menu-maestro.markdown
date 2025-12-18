@@ -1,6 +1,7 @@
 ---
 layout: project
 title: "MenuMaestro"
+tag: projects
 title-stilized:
   '   <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">
   <span class="text-golden glitch">MenuMaestro</span><br/><span class="text-salmon ">Crea tu menú digital en solo 4 pasos</span>

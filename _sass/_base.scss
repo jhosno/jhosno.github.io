@@ -17,8 +17,8 @@ body {
 }
 
 .pixel-grid {
-  background-image: linear-gradient(rgba(255, 255, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 0, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(#ff8e801a 1px, transparent 1px),
+    linear-gradient(90deg, #c53a9d1a 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
@@ -37,12 +37,6 @@ body {
 }
 
 /* Go to up btn */
-
-.pixel-art {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
 
 /* Animaciones personalizadas */
 @keyframes bounce-up {
@@ -164,11 +158,6 @@ body {
 .progress-ring-circle {
   transition: stroke-dashoffset 0.35s;
 }
-.pixel-art {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
 
 .glitch {
   text-shadow: 2px 2px 0 #d65aa0, -2px -2px 0 #c53a9d;
@@ -187,14 +176,14 @@ body {
   box-shadow: 0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3);
 }
 
-.pixel-grid {
+/* .pixel-grid {
   background-image: linear-gradient(
       rgba(241, 149, 147, 0.1) 1px,
       transparent 1px
     ),
     linear-gradient(90deg, rgba(241, 149, 147, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
-}
+} */
 
 @keyframes float {
   0%,
@@ -287,12 +276,6 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.pixel-art {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
-
 .glitched {
   animation: glitch 1s infinite;
 }
@@ -356,7 +339,7 @@ body {
   animation: rotate-slow 20s linear infinite;
 }
 
-.pixel-grid {
+/* .pixel-grid {
   background-image: linear-gradient(
       rgba(241, 149, 147, 0.1) 1px,
       transparent 1px
@@ -364,7 +347,7 @@ body {
     linear-gradient(90deg, rgba(241, 149, 147, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
-
+ */
 /* Pixel Art 404 Number */
 .pixel-404 {
   display: grid;
