@@ -9,7 +9,7 @@ body {
 }
 
 .glitch {
-  text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #fbbf24;
+  text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #ff8e80;
 }
 
 .neon-border {
@@ -17,8 +17,8 @@ body {
 }
 
 .pixel-grid {
-  background-image: linear-gradient(rgba(255, 255, 0, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 0, 0.1) 1px, transparent 1px);
+  background-image: linear-gradient(#ff8e801a 1px, transparent 1px),
+    linear-gradient(90deg, #c53a9d1a 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
@@ -37,12 +37,6 @@ body {
 }
 
 /* Go to up btn */
-
-.pixel-art {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
 
 /* Animaciones personalizadas */
 @keyframes bounce-up {
@@ -89,19 +83,19 @@ body {
 
 @keyframes glitch {
   0% {
-    text-shadow: 2px 2px 0 #f19593, -2px -2px 0 #fbbf24;
+    text-shadow: 2px 2px 0 #c53a9d, -2px -2px 0 #ff8e80;
   }
   25% {
-    text-shadow: -2px 2px 0 #fbbf24, 2px -2px 0 #f19593;
+    text-shadow: -2px 2px 0 #ff8e80, 2px -2px 0 #c53a9d;
   }
   50% {
-    text-shadow: 2px -2px 0 #f19593, -2px 2px 0 #fbbf24;
+    text-shadow: 2px -2px 0 #c53a9d, -2px 2px 0 #ff8e80;
   }
   75% {
-    text-shadow: -2px -2px 0 #fbbf24, 2px 2px 0 #f19593;
+    text-shadow: -2px -2px 0 #ff8e80, 2px 2px 0 #c53a9d;
   }
   100% {
-    text-shadow: 2px 2px 0 #f19593, -2px -2px 0 #fbbf24;
+    text-shadow: 2px 2px 0 #c53a9d, -2px -2px 0 #ff8e80;
   }
 }
 
@@ -125,7 +119,7 @@ body {
   content: "";
   position: absolute;
   inset: -4px;
-  background: linear-gradient(45deg, #fbbf24, #f19593, #fbbf24);
+  background: linear-gradient(45deg, #ff8e80, #c53a9d, #ff8e80);
   border-radius: inherit;
   animation: rotate-border 3s linear infinite;
   z-index: -1;
@@ -142,7 +136,7 @@ body {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #fbbf24;
+  background: #ff8e80;
   opacity: 0;
 }
 
@@ -164,14 +158,9 @@ body {
 .progress-ring-circle {
   transition: stroke-dashoffset 0.35s;
 }
-.pixel-art {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
 
 .glitch {
-  text-shadow: 2px 2px 0 #d65aa0, -2px -2px 0 #f19593;
+  text-shadow: 2px 2px 0 #d65aa0, -2px -2px 0 #c53a9d;
 }
 
 .neon-border-salmon {
@@ -187,14 +176,14 @@ body {
   box-shadow: 0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3);
 }
 
-.pixel-grid {
+/* .pixel-grid {
   background-image: linear-gradient(
       rgba(241, 149, 147, 0.1) 1px,
       transparent 1px
     ),
     linear-gradient(90deg, rgba(241, 149, 147, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
-}
+} */
 
 @keyframes float {
   0%,
@@ -287,31 +276,25 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.pixel-art {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-}
-
 .glitched {
   animation: glitch 1s infinite;
 }
 
 @keyframes glitch {
   0% {
-    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #f19593;
+    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #c53a9d;
   }
   25% {
-    text-shadow: -2px 2px 0 #f19593, 2px -2px 0 #8b5cf6;
+    text-shadow: -2px 2px 0 #c53a9d, 2px -2px 0 #8b5cf6;
   }
   50% {
-    text-shadow: 2px -2px 0 #fbbf24, -2px 2px 0 #8b5cf6;
+    text-shadow: 2px -2px 0 #ff8e80, -2px 2px 0 #8b5cf6;
   }
   75% {
-    text-shadow: -2px -2px 0 #8b5cf6, 2px 2px 0 #f19593;
+    text-shadow: -2px -2px 0 #8b5cf6, 2px 2px 0 #c53a9d;
   }
   100% {
-    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #f19593;
+    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #c53a9d;
   }
 }
 
@@ -356,7 +339,7 @@ body {
   animation: rotate-slow 20s linear infinite;
 }
 
-.pixel-grid {
+/* .pixel-grid {
   background-image: linear-gradient(
       rgba(241, 149, 147, 0.1) 1px,
       transparent 1px
@@ -364,7 +347,7 @@ body {
     linear-gradient(90deg, rgba(241, 149, 147, 0.1) 1px, transparent 1px);
   background-size: 20px 20px;
 }
-
+ */
 /* Pixel Art 404 Number */
 .pixel-404 {
   display: grid;
@@ -376,7 +359,7 @@ body {
 
 .pixel {
   aspect-ratio: 1;
-  background: #f19593;
+  background: #c53a9d;
 }
 
 @keyframes blink {
