@@ -118,7 +118,7 @@ results:
 my_contribution:
   title: Full Stack Developer
   content: >
-    Lideré el desarrollo e implementación de features críticas de la plataforma, desde refactorización de arquitectura legacy hasta optimizaciones de performance y mejoras de UX. Mi enfoque fue transformar una plataforma monolítica acoplada en un sistema escalable, mantenible y orientado a conversión.
+    Desarrollé e implementé features críticas de la plataforma, desde refactorización de arquitectura legacy hasta optimizaciones de performance y mejoras de UX. Mi enfoque fue transformar una plataforma monolítica acoplada en un sistema escalable, mantenible y orientado a conversión.
     
   features: >
     • Refactorización completa de arquitectura de pagos aplicando Factory Pattern y principios SOLID, habilitando integración de múltiples gateways (Webpay, Flow, Mercado Pago)
