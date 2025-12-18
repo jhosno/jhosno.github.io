@@ -21,7 +21,7 @@
 title: Jhosno
 email: jhosnoirlit@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Jhosno | ReactJS | Web dev | MERN | Laravel | Grimorio de programación: cosas de react, web dev, frontend, y cualquier cosa que este aprendiendo. Aprender a programar es difícil, pero aprender cosas nuevas es divertido.
+  Jhosno | ReactJS | Web dev | MERN | Laravel | Grimorio de programación: cosas de react, web dev, frontend, ingenieria de siftware y cualquier cosa que este aprendiendo. Aprender a programar es difícil, pero aprender cosas nuevas es divertido.
 #baseurl: "" # the subpath of your site, e.g. /blog
 path: "/"
 
@@ -30,7 +30,7 @@ url: "https://jhosno.github.io/" # the base hostname & protocol for your site, e
 twitter_username: jhosno
 github_username:  jhosno
 
-permalink: :categories/:title
+permalink: posts/:title
 defaults:
   - scope:
       path: "assets/images"
@@ -46,6 +46,7 @@ plugins:
 collections:
   projects:
     output: true
+    permalink: projects/:title
 
     
 jekyll_admin:
