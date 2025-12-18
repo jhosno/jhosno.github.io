@@ -9,7 +9,7 @@ body {
 }
 
 .glitch {
-  text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #fbbf24;
+  text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #ff8e80;
 }
 
 .neon-border {
@@ -89,19 +89,19 @@ body {
 
 @keyframes glitch {
   0% {
-    text-shadow: 2px 2px 0 #f19593, -2px -2px 0 #fbbf24;
+    text-shadow: 2px 2px 0 #c53a9d, -2px -2px 0 #ff8e80;
   }
   25% {
-    text-shadow: -2px 2px 0 #fbbf24, 2px -2px 0 #f19593;
+    text-shadow: -2px 2px 0 #ff8e80, 2px -2px 0 #c53a9d;
   }
   50% {
-    text-shadow: 2px -2px 0 #f19593, -2px 2px 0 #fbbf24;
+    text-shadow: 2px -2px 0 #c53a9d, -2px 2px 0 #ff8e80;
   }
   75% {
-    text-shadow: -2px -2px 0 #fbbf24, 2px 2px 0 #f19593;
+    text-shadow: -2px -2px 0 #ff8e80, 2px 2px 0 #c53a9d;
   }
   100% {
-    text-shadow: 2px 2px 0 #f19593, -2px -2px 0 #fbbf24;
+    text-shadow: 2px 2px 0 #c53a9d, -2px -2px 0 #ff8e80;
   }
 }
 
@@ -125,7 +125,7 @@ body {
   content: "";
   position: absolute;
   inset: -4px;
-  background: linear-gradient(45deg, #fbbf24, #f19593, #fbbf24);
+  background: linear-gradient(45deg, #ff8e80, #c53a9d, #ff8e80);
   border-radius: inherit;
   animation: rotate-border 3s linear infinite;
   z-index: -1;
@@ -142,7 +142,7 @@ body {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: #fbbf24;
+  background: #ff8e80;
   opacity: 0;
 }
 
@@ -171,7 +171,7 @@ body {
 }
 
 .glitch {
-  text-shadow: 2px 2px 0 #d65aa0, -2px -2px 0 #f19593;
+  text-shadow: 2px 2px 0 #d65aa0, -2px -2px 0 #c53a9d;
 }
 
 .neon-border-salmon {
@@ -299,19 +299,19 @@ body {
 
 @keyframes glitch {
   0% {
-    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #f19593;
+    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #c53a9d;
   }
   25% {
-    text-shadow: -2px 2px 0 #f19593, 2px -2px 0 #8b5cf6;
+    text-shadow: -2px 2px 0 #c53a9d, 2px -2px 0 #8b5cf6;
   }
   50% {
-    text-shadow: 2px -2px 0 #fbbf24, -2px 2px 0 #8b5cf6;
+    text-shadow: 2px -2px 0 #ff8e80, -2px 2px 0 #8b5cf6;
   }
   75% {
-    text-shadow: -2px -2px 0 #8b5cf6, 2px 2px 0 #f19593;
+    text-shadow: -2px -2px 0 #8b5cf6, 2px 2px 0 #c53a9d;
   }
   100% {
-    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #f19593;
+    text-shadow: 2px 2px 0 #8b5cf6, -2px -2px 0 #c53a9d;
   }
 }
 
@@ -376,7 +376,7 @@ body {
 
 .pixel {
   aspect-ratio: 1;
-  background: #f19593;
+  background: #c53a9d;
 }
 
 @keyframes blink {
