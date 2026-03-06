@@ -1,57 +1,69 @@
 <!-- Navigation -->
 <nav
-  class="fixed top-0 w-full bg-black/90 backdrop-blur-sm border-b-4 border-golden z-50"
+  class="fixed top-0 w-full bg-black/95 backdrop-blur-sm border-b-4 border-golden z-50"
 >
-  <div class="container mx-auto px-6 py-4">
+  <!-- Floating Pixel Particles -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="pixel-particle bg-golden/60" style="animation-delay: 0s;"></div>
+    <div class="pixel-particle bg-purple/60" style="animation-delay: 0.7s;"></div>
+    <div class="pixel-particle bg-salmon/60" style="animation-delay: 1.4s;"></div>
+    <div class="pixel-particle bg-golden/60" style="animation-delay: 2.1s;"></div>
+    <div class="pixel-particle bg-purple/60" style="animation-delay: 2.8s;"></div>
+  </div>
+  
+  <div class="container mx-auto px-6 py-4 relative">
     <div class="flex justify-between items-center">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
+      <a href="/" class="flex items-center gap-3 group logo-glitch cursor-pointer">
         <div
-          class="w-12 h-12 bg-gradient-to-br from-golden to-purple flex items-center justify-center font-black text-2xl border-4 border-salmon pixel-art group-hover:rotate-12 transition-transform text-black"
+          class="w-12 h-12 bg-gradient-to-br from-golden to-purple flex items-center justify-center font-black text-2xl border-4 border-salmon pixel-art group-hover:rotate-12 transition-transform text-black relative overflow-hidden"
         >
-          JH
+          <span class="relative z-10">JH</span>
+          <span class="absolute inset-0 bg-white/30 opacity-0 group-hover:opacity-100 transition-opacity"></span>
         </div>
         <div class="hidden md:block">
           <div class="text-xl font-black leading-tight">
             <span class="text-salmon uppercase">Jhos</span
             ><span class="text-white uppercase">no</span>
           </div>
-          <div class="text-xs text-gray-400">Full Stack Developer</div>
+          <div class="text-xs text-gray-400 hud-bar inline-block px-2 py-0.5 text-[10px] mt-1">
+            LVL 99 • FULL STACK
+          </div>
         </div>
       </a>
 
       <!-- Menu Central (Desktop) -->
      
-      <ul class="hidden lg:flex justify-center gap-8 text-lg font-bold">
+      <ul class="hidden lg:flex justify-center gap-6 text-lg font-bold">
      <!--    <li>
-          <a href="/" class="link hover:text-golden transition-colors">INICIO</a>
-        </li> -->
+           <a href="/" class="link hover:text-golden transition-colors">INICIO</a>
+         </li> -->
   
         <li>
-          <a href="/about" class="link hover:text-salmon transition-colors"
-            >SOBRE MÍ</a
-          >
+          <a href="/about" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
+            ><span class="relative z-10">SOBRE MÍ</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
+          </a>
         </li>
         <li>
-          <a href="/#expertise" class="link hover:text-golden transition-colors"
-            >EXPERIENCIA</a
-          >
+          <a href="/#expertise" class="relative px-3 py-1 link hover:text-golden transition-colors group"
+            ><span class="relative z-10">EXPERIENCIA</span><span class="absolute inset-0 bg-golden/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-golden/50"></span>
+          </a>
         </li>
         <li>
-          <a href="/projects" class="link hover:text-salmon transition-colors"
-            >PROYECTOS</a
-          >
+          <a href="/projects" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
+            ><span class="relative z-10">PROYECTOS</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
+          </a>
         </li>
   
         <li>
-          <a href="/blog" class="link hover:text-golden transition-colors"
-            >BLOG</a
-          >
+          <a href="/blog" class="relative px-3 py-1 link hover:text-golden transition-colors group"
+            ><span class="relative z-10">BLOG</span><span class="absolute inset-0 bg-golden/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-golden/50"></span>
+          </a>
         </li>
         <li>
-          <a href="/#contact" class="link hover:text-salmon transition-colors"
-            >CONTACTO</a
-          >
+          <a href="/#contact" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
+            ><span class="relative z-10">CONTACTO</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
+          </a>
         </li>
       </ul>
 
@@ -97,13 +109,13 @@
           class="lg:hidden flex flex-col gap-1.5 p-2 border-4 border-salmon bg-gray-900 hover:bg-salmon transition-colors group"
         >
           <div
-            class="hamburger-line w-6 h-1 bg-salmon group-hover:bg-black pixel-art"
+            class="hamburger-line w-6 h-1.5 bg-salmon group-hover:bg-black pixel-art"
           ></div>
           <div
-            class="hamburger-line w-6 h-1 bg-salmon group-hover:bg-black pixel-art"
+            class="hamburger-line w-6 h-1.5 bg-salmon group-hover:bg-black pixel-art"
           ></div>
           <div
-            class="hamburger-line w-6 h-1 bg-salmon group-hover:bg-black pixel-art"
+            class="hamburger-line w-6 h-1.5 bg-salmon group-hover:bg-black pixel-art"
           ></div>
         </button>
       </div>

@@ -1,80 +1,116 @@
 <!-- Hero Section del Post -->
-<section class="pt-32 pb-20 px-6 pixel-grid">
-  <div class="container mx-auto max-w-4xl">
+<section class="pt-32 pb-12 px-6 pixel-grid relative overflow-hidden">
+  <!-- Background decorations -->
+  <div
+    class="absolute top-20 left-10 w-12 h-12 bg-golden/10 pixel-art float-animation"
+  ></div>
+  <div
+    class="absolute bottom-20 right-10 w-16 h-12 bg-salmon/10 pixel-art float-animation"
+    style="animation-delay: 1s"
+  ></div>
+
+  <div class="container mx-auto max-w-4xl relative z-10">
     <!-- Breadcrumb -->
-    <div class="flex items-center gap-3 text-sm mb-8 text-gray-400">
-      <a href="/" class="hover:text-golden transition-colors">Inicio</a>
-      <i data-lucide="chevron-right" class="w-4 h-4"></i>
-      <!-- TODO actualizar -->
-      <a href="/blog" class="hover:text-salmon transition-colors"
-      >blog</a
-      >
-      <!-- TODO actualizar -->
-      <i data-lucide="chevron-right" class="w-4 h-4"></i>
-      <span class="text-white">Este Artículo</span>
+    <div class="flex items-center gap-2 text-sm mb-8 text-gray-500 font-mono">
+      <a href="/" class="hover:text-golden transition-colors">/</a>
+      <span class="text-gray-600">/</span>
+      <a href="/blog" class="hover:text-salmon transition-colors">blog</a>
+      <span class="text-gray-600">/</span>
+      <span class="text-white truncate max-w-[200px]">{{page.title}}</span>
     </div>
 
     <!-- Categoría y fecha -->
     <div class="flex flex-wrap items-center gap-4 mb-6">
-      <span class="bg-golden text-black px-6 py-2 font-black text-sm uppercase"
+      <span
+        class="bg-golden text-black px-4 py-1.5 font-black text-xs uppercase pixel-art"
         >{{page.tag}}</span
       >
-      <span class="flex items-center gap-2 text-gray-400">
-        <i data-lucide="calendar" class="w-4 h-4"></i>
+      <span class="flex items-center gap-2 text-gray-400 text-sm">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          />
+        </svg>
         {{ page.date | date_to_string}}
       </span>
-    <!--   <span class="flex items-center gap-2 text-gray-400">
-        <i data-lucide="clock" class="w-4 h-4"></i>
-        15 min de lectura
-      </span> -->
     </div>
 
     <!-- Título Principal -->
-    <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight">
+    <h1
+      class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white"
+      style="color: #ffffff"
+    >
       {{page.title-stylized}}
-
     </h1>
+    <!-- Decorative line below -->
+    <div class="flex items-center gap-2 mt-4">
+      <div class="w-8 h-1 bg-golden"></div>
+      <div class="w-2 h-2 bg-golden pixel-art"></div>
+      <div
+        class="w-2 h-2 bg-salmon pixel-art"
+        style="animation-delay: 0.2s"
+      ></div>
+      <div
+        class="w-2 h-2 bg-purple pixel-art"
+        style="animation-delay: 0.4s"
+      ></div>
+      <div
+        class="flex-1 h-0.5 bg-gradient-to-r from-golden via-salmon to-purple"
+      ></div>
+    </div>
 
     <!-- Descripción corta -->
-    <p class="text-2xl text-gray-300 mb-8 leading-relaxed">
+    <p
+      class="text-xl text-gray-300 mt-10 mb-10 leading-relaxed border-l-4 border-golden pl-4"
+    >
       {{page.extract}}
     </p>
 
     <!-- Autor y stats -->
     <div
-      class="flex items-center justify-between flex-wrap gap-6 py-6 border-t-2 border-b-2 border-gray-800"
+      class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 py-6 border-t-2 border-b-2 border-gray-800"
     >
       <div class="flex items-center gap-4">
         <div
-          class="w-16 h-16 bg-gradient-to-br from-golden to-purple flex items-center justify-center text-2xl font-black border-4 border-salmon text-black"
+          class="w-12 h-12 bg-gradient-to-br from-golden to-purple flex items-center justify-center font-black text-lg border-2 border-salmon pixel-art"
         >
           JH
         </div>
         <div>
-          <div class="font-bold text-lg">Jhosno Hernández</div>
-          <div class="text-gray-400 text-sm">Full Stack Developer</div>
+          <div class="font-bold text-white">Jhosno Hernández</div>
+          <div class="text-gray-500 text-sm">Full Stack Developer</div>
         </div>
       </div>
-      <div class="flex items-center gap-6">
-     <!--    <div
-          class="flex items-center gap-2 text-gray-400 hover:text-golden transition-colors cursor-pointer"
+
+      <div class="flex items-center gap-4">
+        <button
+          class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer text-sm font-bold"
         >
-          <i data-lucide="heart" class="w-6 h-6"></i>
-          <span class="font-bold">1.2K</span>
-        </div>
-        <div
-          class="flex items-center gap-2 text-gray-400 hover:text-salmon transition-colors cursor-pointer"
-        >
-          <i data-lucide="message-circle" class="w-6 h-6"></i>
-          <span class="font-bold">89</span>
-        </div> -->
-        
-        <div
-          class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer"
-        >
-          <i data-lucide="share-2" class="w-6 h-6"></i>
-          <span class="font-bold">COMPARTIR</span>
-        </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+            />
+          </svg>
+          COMPARTIR
+        </button>
       </div>
     </div>
   </div>
