@@ -1,73 +1,121 @@
   <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900 pixel-grid">
-    <div class="container mx-auto max-w-6xl">
-        <h2 class="text-6xl font-black mb-16 text-center">
+  <section id="contact" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900 pixel-grid relative overflow-hidden">
+    <!-- Background decorations -->
+    <div class="absolute top-10 left-10 w-20 h-20 bg-purple/20 pixel-art float-animation"></div>
+    <div class="absolute bottom-10 right-10 w-16 h-16 bg-salmon/20 pixel-art float-animation" style="animation-delay: 1s;"></div>
+    
+    <div class="container mx-auto max-w-6xl relative z-10">
+        <h2 class="text-6xl md:text-7xl font-black mb-4 text-center glitch">
             <span class="text-golden">HABLEMOS</span> <span class="text-salmon">!</span>
         </h2>
+        <p class="text-center text-gray-400 text-lg mb-12 font-mono">// Inicia una nueva quest_</p>
+        
         <div class="grid md:grid-cols-2 gap-12">
             <!-- Contact Form -->
-            <div class="bg-gray-900 border-4 border-golden p-8">
-                <form action="https://formspree.io/f/mpzorqzq" method="POST" class="space-y-6">
-                    <div>
-                        <input type="text" placeholder="NOMBRE" required 
-                            class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-golden focus:outline-none transition-colors">
+            <div class="bg-gray-900/80 border-4 border-golden p-8 relative pixel-art">
+                <!-- Corner decorations -->
+                <div class="absolute -top-2 -left-2 w-4 h-4 bg-golden"></div>
+                <div class="absolute -top-2 -right-2 w-4 h-4 bg-golden"></div>
+                <div class="absolute -bottom-2 -left-2 w-4 h-4 bg-golden"></div>
+                <div class="absolute -bottom-2 -right-2 w-4 h-4 bg-golden"></div>
+                
+                <form action="https://formspree.io/f/mpzorqzq" method="POST" class="space-y-5">
+                    <div class="relative">
+                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-golden">NOMBRE</label>
+                        <input type="text" placeholder="Tu nombre" required 
+                            class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-golden focus:outline-none transition-colors placeholder:text-gray-600">
                     </div>
-                    <div>
-                        <input type="email" placeholder="EMAIL"  name="_replyto" required 
-                            class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-golden focus:outline-none transition-colors">
+                    <div class="relative">
+                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-purple">EMAIL</label>
+                        <input type="email" placeholder="tu@email.com" name="_replyto" required 
+                            class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-purple focus:outline-none transition-colors placeholder:text-gray-600">
                     </div>
-                 <!--    <div>
-                        <input type="text" placeholder="ASUNTO" required 
-                            class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-golden focus:outline-none transition-colors">
-                    </div> -->
-                    <div>
-                        <textarea placeholder="MENSAJE" name="message"  required rows="6"
-                            class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-golden focus:outline-none transition-colors resize-none"></textarea>
+                    <div class="relative">
+                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-salmon">MENSAJE</label>
+                        <textarea placeholder="¿En qué puedo ayudarte?" name="message" required rows="5"
+                            class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-salmon focus:outline-none transition-colors resize-none placeholder:text-gray-600"></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-golden text-black px-8 py-4 text-xl font-bold hover:bg-salmon hover:text-white transition-colors">
-                        ENVIAR MENSAJE
+                    <button type="submit" class="group relative w-full bg-golden text-black px-8 py-4 text-xl font-bold hover:bg-salmon hover:text-white transition-all transform hover:scale-[1.02] border-4 border-transparent hover:border-golden">
+                        <span class="relative z-10 flex items-center justify-center gap-3">
+                            <span>ENVIAR MENSAJE</span>
+                            <span class="text-lg">►</span>
+                        </span>
+                        <!-- Pixel decoration -->
+                        <div class="absolute right-4 top-1/2 -translate-y-1/2 w-3 h-3 bg-black/20 group-hover:bg-white/30 transition-colors"></div>
                     </button>
                 </form>
             </div>
 
             <!-- Contact Info -->
-            <div class="space-y-6">
-                <div class="bg-gray-900 border-4 border-salmon p-6 hover:golden-border transition-all">
-                    <div class="text-4xl mb-4">📧</div>
-                    <div class="font-bold text-xl mb-2 text-salmon">EMAIL</div>
-                    <div class="text-gray-400 text-lg cursor-pointer hover:text-salmon hover:text-xl">
-                        <a href="mailto:jhosno.dev@gmail.com">
-                            jhosno.dev@gmail.com
-                        </a>
+            <div class="space-y-4">
+                <div class="group bg-gray-900/80 border-4 border-salmon p-6 hover:border-salmon hover:bg-salmon/10 transition-all cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-salmon/10 transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform"></div>
+                    <div class="relative z-10 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-salmon/20 flex items-center justify-center border-2 border-salmon pixel-art group-hover:bg-salmon group-hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xl mb-1 text-salmon">EMAIL</div>
+                            <div class="text-gray-400 group-hover:text-white transition-colors">jhosno.dev@gmail.com</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="bg-gray-900 border-4 border-golden p-6 hover:golden-border transition-all">
-                    <div class="text-4xl mb-4">💼</div>
-                    <div class="font-bold text-xl mb-2 text-golden">LINKEDIN</div>
-                    <div class="text-gray-400 text-lg cursor-pointer hover:text-golden hover:text-xl">
-                        <a href="https://linkedin.com/in/jhosno" target="_blank" rel="noopener noreferrer">
-                            linkedin.com/in/jhosno
-                        </a>
+                <div class="group bg-gray-900/80 border-4 border-golden p-6 hover:border-golden hover:bg-golden/10 transition-all cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-golden/10 transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform"></div>
+                    <div class="relative z-10 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-golden/20 flex items-center justify-center border-2 border-golden pixel-art group-hover:bg-golden group-hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xl mb-1 text-golden">LINKEDIN</div>
+                            <div class="text-gray-400 group-hover:text-white transition-colors">linkedin.com/in/jhosno</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="bg-gray-900 border-4 border-purple p-6 hover:golden-border transition-all">
-                    <div class="text-4xl mb-4">💻</div>
-                    <div class="font-bold text-xl mb-2 text-purple">GITHUB</div>
-                    <div class="text-gray-400 text-lg cursor-pointer hover:text-purple hover:text-xl">
-                        <a href="https://github.com/jhosnodev" target="_blank" rel="noopener noreferrer">
-                        github.com/jhosnodev
-                        </a>
+                <div class="group bg-gray-900/80 border-4 border-purple p-6 hover:border-purple hover:bg-purple/10 transition-all cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-purple/10 transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform"></div>
+                    <div class="relative z-10 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-purple/20 flex items-center justify-center border-2 border-purple pixel-art group-hover:bg-purple group-hover:text-white transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xl mb-1 text-purple">GITHUB</div>
+                            <div class="text-gray-400 group-hover:text-white transition-colors">github.com/jhosnodev</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="bg-gray-900 border-4 border-white p-6 hover:golden-border transition-all">
-                    <div class="text-4xl mb-4">📍</div>
-                    <div class="font-bold text-xl mb-2 text-white">UBICACIÓN</div>
-                    <div class="text-gray-400 text-lg">Bogotá, Colombia</div>
+                <div class="group bg-gray-900/80 border-4 border-white/30 p-6 hover:border-white hover:bg-white/10 transition-all cursor-pointer relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-16 h-16 bg-white/5 transform translate-x-8 -translate-y-8 group-hover:translate-x-4 group-hover:-translate-y-4 transition-transform"></div>
+                    <div class="relative z-10 flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white/10 flex items-center justify-center border-2 border-white/30 pixel-art group-hover:bg-white group-hover:text-black transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xl mb-1 text-white">UBICACIÓN</div>
+                            <div class="text-gray-400 group-hover:text-white transition-colors">Bogotá, Colombia</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Decorative pixel art -->
+                <div class="flex justify-center gap-2 mt-8">
+                    <div class="w-3 h-3 bg-golden pixel-art animate-pulse"></div>
+                    <div class="w-3 h-3 bg-salmon pixel-art animate-pulse" style="animation-delay: 0.3s;"></div>
+                    <div class="w-3 h-3 bg-purple pixel-art animate-pulse" style="animation-delay: 0.6s;"></div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+  </section>
