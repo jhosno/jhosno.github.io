@@ -1,8 +1,13 @@
 <!-- Hero Section del Post -->
 <section class="pt-32 pb-12 px-6 pixel-grid relative overflow-hidden">
   <!-- Background decorations -->
-  <div class="absolute top-20 left-10 w-12 h-12 bg-golden/10 pixel-art float-animation"></div>
-  <div class="absolute bottom-20 right-10 w-16 h-12 bg-salmon/10 pixel-art float-animation" style="animation-delay: 1s;"></div>
+  <div
+    class="absolute top-20 left-10 w-12 h-12 bg-golden/10 pixel-art float-animation"
+  ></div>
+  <div
+    class="absolute bottom-20 right-10 w-16 h-12 bg-salmon/10 pixel-art float-animation"
+    style="animation-delay: 1s"
+  ></div>
 
   <div class="container mx-auto max-w-4xl relative z-10">
     <!-- Breadcrumb -->
@@ -16,47 +21,57 @@
 
     <!-- Categoría y fecha -->
     <div class="flex flex-wrap items-center gap-4 mb-6">
-      <span class="bg-golden text-black px-4 py-1.5 font-black text-xs uppercase pixel-art"
+      <span
+        class="bg-golden text-black px-4 py-1.5 font-black text-xs uppercase pixel-art"
         >{{page.tag}}</span
       >
       <span class="flex items-center gap-2 text-gray-400 text-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          />
         </svg>
         {{ page.date | date_to_string}}
       </span>
     </div>
 
     <!-- Título Principal -->
-    <div class="mb-8 relative">
-      <!-- Decorative line above -->
-      <div class="flex items-center gap-4 mb-4">
-        <div class="h-1 flex-1 bg-gradient-to-r from-transparent via-golden to-transparent"></div>
-        <div class="w-3 h-3 bg-golden pixel-art rotate-45"></div>
-        <div class="w-3 h-3 bg-salmon pixel-art rotate-45"></div>
-        <div class="w-3 h-3 bg-purple pixel-art rotate-45"></div>
-        <div class="h-1 flex-1 bg-gradient-to-r from-transparent via-purple to-transparent"></div>
-      </div>
-      
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight relative">
-        <!-- Glitch layers -->
-        <span class="absolute inset-0 text-salmon opacity-30 animate-pulse" aria-hidden="true">{{page.title-stylized}}</span>
-        <span class="absolute inset-0 text-purple opacity-20 translate-x-[2px]" aria-hidden="true">{{page.title-stylized}}</span>
-        <span class="relative z-10 text-white">{{page.title-stilized}}</span>
-      </h1>
-      
-      <!-- Decorative line below -->
-      <div class="flex items-center gap-2 mt-4">
-        <div class="w-8 h-1 bg-golden"></div>
-        <div class="w-2 h-2 bg-golden pixel-art"></div>
-        <div class="w-2 h-2 bg-salmon pixel-art" style="animation-delay: 0.2s;"></div>
-        <div class="w-2 h-2 bg-purple pixel-art" style="animation-delay: 0.4s;"></div>
-        <div class="flex-1 h-0.5 bg-gradient-to-r from-golden via-salmon to-purple"></div>
-      </div>
+    <h1
+      class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white"
+      style="color: #ffffff"
+    >
+      {{page.title-stylized}}
+    </h1>
+    <!-- Decorative line below -->
+    <div class="flex items-center gap-2 mt-4">
+      <div class="w-8 h-1 bg-golden"></div>
+      <div class="w-2 h-2 bg-golden pixel-art"></div>
+      <div
+        class="w-2 h-2 bg-salmon pixel-art"
+        style="animation-delay: 0.2s"
+      ></div>
+      <div
+        class="w-2 h-2 bg-purple pixel-art"
+        style="animation-delay: 0.4s"
+      ></div>
+      <div
+        class="flex-1 h-0.5 bg-gradient-to-r from-golden via-salmon to-purple"
+      ></div>
     </div>
 
     <!-- Descripción corta -->
-    <p class="text-xl text-gray-300 mt-10 mb-10 leading-relaxed border-l-4 border-golden pl-4">
+    <p
+      class="text-xl text-gray-300 mt-10 mb-10 leading-relaxed border-l-4 border-golden pl-4"
+    >
       {{page.extract}}
     </p>
 
@@ -75,13 +90,24 @@
           <div class="text-gray-500 text-sm">Full Stack Developer</div>
         </div>
       </div>
-      
+
       <div class="flex items-center gap-4">
         <button
           class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer text-sm font-bold"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+            />
           </svg>
           COMPARTIR
         </button>
