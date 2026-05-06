@@ -37,6 +37,10 @@ defaults:
     values:
       image: true
 # Build settings
+sass:
+  style: compressed
+  sourcemap: true
+
 theme: minima
 plugins:
   - jekyll-feed
