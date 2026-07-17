@@ -1,3 +1,6 @@
+{% assign t = site.data.translations[page.lang] %}
+{% if page.lang == 'en' %}{% assign prefix = '/en' %}{% else %}{% assign prefix = '' %}{% endif %}
+
 <!-- Navigation -->
 <nav
   class="fixed top-0 w-full bg-black/95 backdrop-blur-sm border-b-4 border-golden z-50"
@@ -14,7 +17,7 @@
   <div class="container mx-auto px-6 py-4 relative">
     <div class="flex justify-between items-center">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group logo-glitch cursor-pointer">
+      <a href="{{ prefix }}/" class="flex items-center gap-3 group logo-glitch cursor-pointer">
         <div
           class="w-12 h-12 bg-gradient-to-br from-golden to-purple flex items-center justify-center font-black text-2xl border-4 border-salmon pixel-art group-hover:rotate-12 transition-transform text-black relative overflow-hidden"
         >
@@ -27,7 +30,7 @@
             ><span class="text-white uppercase">no</span>
           </div>
           <div class="text-xs text-gray-400 hud-bar inline-block px-2 py-0.5 text-[10px] mt-1">
-            3+ años en Laravel · 6 años en desarrollo
+            {{ t.nav.experience_badge }}
           </div>
         </div>
       </a>
@@ -35,37 +38,41 @@
       <!-- Menu Central (Desktop) -->
      
       <ul class="hidden lg:flex justify-center gap-6 text-lg font-bold">
-     <!--    <li>
-           <a href="/" class="link hover:text-golden transition-colors">INICIO</a>
-         </li> -->
-  
         <li>
-          <a href="/about" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
-            ><span class="relative z-10">SOBRE MÍ</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
+          <a href="{{ prefix }}/about" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
+            ><span class="relative z-10">{{ t.nav.about }}</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
           </a>
         </li>
         <li>
-          <a href="/#expertise" class="relative px-3 py-1 link hover:text-golden transition-colors group"
-            ><span class="relative z-10">EXPERIENCIA</span><span class="absolute inset-0 bg-golden/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-golden/50"></span>
+          <a href="{{ prefix }}/#expertise" class="relative px-3 py-1 link hover:text-golden transition-colors group"
+            ><span class="relative z-10">{{ t.nav.expertise }}</span><span class="absolute inset-0 bg-golden/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-golden/50"></span>
           </a>
         </li>
         <li>
-          <a href="/projects" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
-            ><span class="relative z-10">PROYECTOS</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
+          <a href="{{ prefix }}/projects" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
+            ><span class="relative z-10">{{ t.nav.projects }}</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
           </a>
         </li>
   
         <li>
-          <a href="/#contact" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
-            ><span class="relative z-10">CONTACTO</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
+          <a href="{{ prefix }}/#contact" class="relative px-3 py-1 link hover:text-salmon transition-colors group"
+            ><span class="relative z-10">{{ t.nav.contact }}</span><span class="absolute inset-0 bg-salmon/10 opacity-0 group-hover:opacity-100 transition-opacity border-2 border-salmon/50"></span>
           </a>
         </li>
       </ul>
 
-      <!-- Right Side: Open to Work + Hamburger -->
+      <!-- Right Side: Language Toggle + Open to Work + Hamburger -->
       <div class="flex items-center gap-4">
+        <!-- Language Toggle -->
+        {% if page.lang == 'es' %}
+          <a href="/en{{ page.url }}" class="text-[0.75rem] font-bold px-2 py-1 border border-white/20 text-white/80 hover:border-golden hover:text-golden transition-colors" style="text-decoration:none;">EN</a>
+        {% else %}
+          {% assign es_url = page.url | remove_first: '/en' %}
+          <a href="{{ es_url }}" class="text-[0.75rem] font-bold px-2 py-1 border border-white/20 text-white/80 hover:border-golden hover:text-golden transition-colors" style="text-decoration:none;">ES</a>
+        {% endif %}
+
         <!-- Open to Work Badge -->
-        <a class="relative hidden sm:block" href="/#contact">
+        <a class="relative hidden sm:block" href="{{ prefix }}/#contact">
           <div
             class="flex items-center gap-2 bg-gray-900 border-4 border-salmon px-4 py-2 group cursor-pointer"
           >
@@ -78,7 +85,7 @@
             </div>
             <!-- Texto -->
             <span class="font-black text-sm text-salmon hidden xl:inline"
-              >OPEN TO WORK</span
+              >{{ t.nav.open_to_work }}</span
             >
             <!-- Icono -->
             <div
@@ -92,9 +99,9 @@
             class="absolute top-full mt-2 right-0 bg-black border-4 border-purple px-6 py-4 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap"
           >
             <div class="text-purple font-bold text-sm mb-1">
-              ¡Disponible para proyectos!
+              {{ t.nav.open_to_work_tooltip }}
             </div>
-            <div class="text-gray-400 text-xs">Freelance & Full-time</div>
+            <div class="text-gray-400 text-xs">{{ t.nav.open_to_work_sub }}</div>
           </div>
         </a>
 
@@ -121,53 +128,44 @@
       <ul class="space-y-4 mb-4">
         <li class="mobile-menu-item">
           <a
-            href="/"
+            href="{{ prefix }}/"
             class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-salmon hover:bg-salmon hover:text-black transition-all font-bold text-lg"
           >
             <div class="w-2 h-2 bg-salmon pixel-art"></div>
-            INICIO
+            {{ t.nav.about }}
           </a>
         </li>
         <li class="mobile-menu-item">
           <a
-            href="/about"
-            class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-purple hover:bg-purple hover:text-white transition-all font-bold text-lg"
-          >
-            <div class="w-2 h-2 bg-purple pixel-art"></div>
-            SOBRE MÍ
-          </a>
-        </li>
-        <li class="mobile-menu-item">
-          <a
-            href="/#expertise"
+            href="{{ prefix }}/#expertise"
             class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-golden hover:bg-golden hover:text-black transition-all font-bold text-lg"
           >
             <div class="w-2 h-2 bg-golden pixel-art"></div>
-            EXPERTISE
+            {{ t.nav.expertise }}
           </a>
         </li>
         <li class="mobile-menu-item">
           <a
-            href="/projects"
+            href="{{ prefix }}/projects"
             class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-salmon hover:bg-salmon hover:text-black transition-all font-bold text-lg"
           >
             <div class="w-2 h-2 bg-salmon pixel-art"></div>
-            PROYECTOS
+            {{ t.nav.projects }}
           </a>
         </li>
         <li class="mobile-menu-item">
           <a
-            href="/#contact"
+            href="{{ prefix }}/#contact"
             class="flex items-center gap-3 p-4 bg-gray-900 border-4 border-golden hover:bg-golden hover:text-black transition-all font-bold text-lg"
           >
             <div class="w-2 h-2 bg-golden pixel-art"></div>
-            CONTACTO
+            {{ t.nav.contact }}
           </a>
         </li>
       </ul>
 
       <!-- Open to Work en Mobile (si estaba oculto) -->
-      <a class="sm:hidden mt-5" href="/#contact">
+      <a class="sm:hidden mt-5" href="{{ prefix }}/#contact">
         <div
           class="flex items-center justify-center gap-3 p-4 bg-gray-900 border-4 border-salmon"
         >
@@ -177,7 +175,7 @@
               class="absolute inset-0 w-3 h-3 bg-salmon pixel-art animate-ping"
             ></div>
           </div>
-          <span class="font-black text-salmon">OPEN TO WORK</span>
+          <span class="font-black text-salmon">{{ t.nav.open_to_work }}</span>
           <div
             class="w-6 h-6 bg-salmon pixel-art flex items-center justify-center text-xs"
           >

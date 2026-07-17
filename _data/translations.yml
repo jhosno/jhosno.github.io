@@ -1,0 +1,139 @@
+es:
+  nav:
+    about: SOBRE MÍ
+    expertise: EXPERIENCIA
+    projects: PROYECTOS
+    contact: CONTACTO
+    open_to_work: OPEN TO WORK
+    open_to_work_tooltip: "¡Disponible para proyectos!"
+    open_to_work_sub: Freelance & Full-time
+    experience_badge: "3+ años en Laravel · 6 años en desarrollo"
+  hero:
+    cta_projects: PROYECTOS
+    cta_contact: CONTÁCTAME
+    scroll: SCROLL
+  about:
+    title: SOBRE
+    title_accent: MÍ
+    subtitle: "// Mi historia_"
+    bio_1: "Hola, soy Jhosno, desarrolladora radicada en Colombia."
+    bio_2: "Siempre estoy intentando mejorar como profesional, recientemente mi reto personal es hacer código limpio con principios SOLID."
+    bio_3: "Aparte, estoy empezando aprender sobre AWS y N8N."
+    bio_4: "Mi stack principal es MERN, typescript y Laravel."
+    bio_5: "Mis herramientas favoritas son VSCode, DBeaver, Figma y Obsidian para desarrollar mis ideas."
+    tagline: "Transformo ideas en código limpio y eficiente, combinando creatividad con soluciones técnicas robustas."
+    fun_facts: "Fun Facts:"
+    fact_1: "Tengo una gata llamada Hela"
+    fact_2: "Prefiero el chocolate caliente"
+    fact_3: "Me gustan los tatuajes y piercings"
+    fact_4: "Me encantan los V-pets y Tamagotchis"
+    location: COLOMBIA
+    years: "6+ AÑOS"
+  contact:
+    title: HABLEMOS
+    title_accent: "!"
+    subtitle: "// Hagamos algo increíble_"
+    form_name: NOMBRE
+    form_name_placeholder: "Tu nombre"
+    form_email: EMAIL
+    form_message: MENSAJE
+    form_message_placeholder: "¿En qué puedo ayudarte?"
+    form_submit: ENVIAR MENSAJE
+    email: EMAIL
+    linkedin: LINKEDIN
+    github: GITHUB
+    location: UBICACIÓN
+    location_value: "Bogotá, Colombia"
+  footer:
+    rights: "// Todos los derechos reservados_"
+    connect: "// Conectemos_"
+    cta: "¿Tienes un proyecto Laravel/SaaS interesante? Hablemos →"
+  cta:
+    view_projects: VER PROYECTO
+    view_all: Ver todos
+    github: GitHub
+    demo: DEMO
+    read_more: LEER MÁS
+    read_full: LEER ARTÍCULO COMPLETO
+    back_to_top: VOLVER ARRIBA
+  404:
+    title: PÁGINA NO ENCONTRADA
+    message: "¡Oops! Parece que esta página se perdió en el ciberespacio. El enlace que buscas no existe o fue movido a otra dimensión."
+    go_home: IR AL INICIO
+    go_back: VOLVER ATRÁS
+    projects: PROYECTOS
+    projects_desc: "Explora mis trabajos"
+    blog: BLOG
+    blog_desc: "Lee mis artículos"
+    contact: CONTACTO
+    contact_desc: "Envíame un mensaje"
+
+en:
+  nav:
+    about: ABOUT
+    expertise: EXPERTISE
+    projects: PROJECTS
+    contact: CONTACT
+    open_to_work: OPEN TO WORK
+    open_to_work_tooltip: "Available for projects!"
+    open_to_work_sub: Freelance & Full-time
+    experience_badge: "3+ years in Laravel · 6 years in development"
+  hero:
+    cta_projects: PROJECTS
+    cta_contact: CONTACT ME
+    scroll: SCROLL
+  about:
+    title: ABOUT
+    title_accent: ME
+    subtitle: "// My story_"
+    bio_1: "Hi, I'm Jhosno, a developer based in Colombia."
+    bio_2: "I'm always trying to improve as a professional, recently my personal challenge is writing clean code with SOLID principles."
+    bio_3: "Besides that, I'm starting to learn about AWS and N8N."
+    bio_4: "My main stack is MERN, TypeScript and Laravel."
+    bio_5: "My favorite tools are VSCode, DBeaver, Figma and Obsidian to develop my ideas."
+    tagline: "I turn ideas into clean and efficient code, combining creativity with robust technical solutions."
+    fun_facts: "Fun Facts:"
+    fact_1: "I have a cat named Hela"
+    fact_2: "I prefer hot chocolate"
+    fact_3: "I like tattoos and piercings"
+    fact_4: "I love V-pets and Tamagotchis"
+    location: COLOMBIA
+    years: "6+ YEARS"
+  contact:
+    title: LET'S TALK
+    title_accent: "!"
+    subtitle: "// Let's build something amazing_"
+    form_name: NAME
+    form_name_placeholder: "Your name"
+    form_email: EMAIL
+    form_message: MESSAGE
+    form_message_placeholder: "How can I help you?"
+    form_submit: SEND MESSAGE
+    email: EMAIL
+    linkedin: LINKEDIN
+    github: GITHUB
+    location: LOCATION
+    location_value: "Bogotá, Colombia"
+  footer:
+    rights: "// All rights reserved_"
+    connect: "// Let's connect_"
+    cta: "Have an interesting Laravel/SaaS project? Let's talk →"
+  cta:
+    view_projects: VIEW PROJECT
+    view_all: View all
+    github: GitHub
+    demo: DEMO
+    read_more: READ MORE
+    read_full: READ FULL ARTICLE
+    back_to_top: BACK TO TOP
+  404:
+    title: PAGE NOT FOUND
+    message: "Oops! It looks like this page got lost in cyberspace. The link you're looking for doesn't exist or was moved to another dimension."
+    go_home: GO HOME
+    go_back: GO BACK
+    projects: PROJECTS
+    projects_desc: "Explore my work"
+    blog: BLOG
+    blog_desc: "Read my articles"
+    contact: CONTACT
+    contact_desc: "Send me a message"

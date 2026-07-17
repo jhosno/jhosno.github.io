@@ -1,4 +1,17 @@
 <script>
+  // Auto-detect browser language and redirect to EN if applicable
+  (function() {
+    if (window.location.pathname.startsWith('/en/')) return;
+    var savedLang = localStorage.getItem('preferred_lang');
+    if (savedLang === 'es') return;
+    var lang = navigator.language || navigator.userLanguage;
+    if (lang && lang.toLowerCase().startsWith('en') && !sessionStorage.getItem('lang_redirect')) {
+      localStorage.setItem('preferred_lang', 'en');
+      sessionStorage.setItem('lang_redirect', '1');
+      window.location.href = '/en/';
+    }
+  })();
+
   lucide.createIcons();
   // Obtener el botón principal
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");

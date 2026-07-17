@@ -34,6 +34,17 @@
 
   <title>Jhosno | {{ page.title }}</title>
 
+  <!-- hreflang for multilingual SEO -->
+  {% if page.lang == 'es' %}
+    <link rel="alternate" hreflang="en" href="https://jhosno.github.io/en{{ page.url }}">
+    <link rel="alternate" hreflang="es" href="https://jhosno.github.io{{ page.url }}">
+  {% elsif page.lang == 'en' %}
+    {% assign es_url = page.url | remove_first: '/en' %}
+    <link rel="alternate" hreflang="es" href="https://jhosno.github.io{{ es_url }}">
+    <link rel="alternate" hreflang="en" href="https://jhosno.github.io{{ page.url }}">
+  {% endif %}
+  <link rel="alternate" hreflang="x-default" href="https://jhosno.github.io{{ page.url | remove_first: '/en' }}">
+
   <!-- TODO actualizar estos enlaces para producción -->
 
   <link rel="stylesheet" href="{{site.url}}//assets/css/tailwind.css"/>

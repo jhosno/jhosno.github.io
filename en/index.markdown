@@ -1,7 +1,7 @@
 ---
 layout: front
 title: 👩‍💻 Fullstack Dev
-permalink: /
-lang: es
+permalink: /en/
+lang: en
 ref: home
 ---

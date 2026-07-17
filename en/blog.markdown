@@ -2,6 +2,6 @@
 layout: blog
 title: Blog
 category: blog
-lang: es
+lang: en
 ref: blog
 ---
