@@ -1,3 +1,5 @@
+{% assign t = site.data.translations[page.lang] %}
+
 <!-- Header -->
 <div class="text-center mb-16 pt-20 relative">
   <!-- Background decorations -->
@@ -6,9 +8,9 @@
   
   <div class="relative z-10">
     <h1 class="text-5xl md:text-6xl font-black mb-4 uppercase glitch">
-      <span class="text-golden">Mis</span> <span class="text-salmon">proyectos</span>
+      <span class="text-golden">{{ t.portfolio_page.title_1 }}</span> <span class="text-salmon">{{ t.portfolio_page.title_2 }}</span>
     </h1>
-    <p class="text-lg text-gray-400 font-mono">// Aquí dejo algunos de mis proyectos_</p>
+    <p class="text-lg text-gray-400 font-mono">{{ t.portfolio_page.subtitle }}</p>
   </div>
   
   <!-- Decorative pixels -->

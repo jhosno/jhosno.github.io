@@ -1,14 +1,16 @@
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900 pixel-grid relative overflow-hidden">
+{% assign t = site.data.translations[page.lang] %}
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900 pixel-grid relative overflow-hidden">
     <!-- Background decorations -->
     <div class="absolute top-10 left-10 w-20 h-20 bg-purple/20 pixel-art float-animation"></div>
     <div class="absolute bottom-10 right-10 w-16 h-16 bg-salmon/20 pixel-art float-animation" style="animation-delay: 1s;"></div>
     
     <div class="container mx-auto max-w-6xl relative z-10">
         <h2 class="text-6xl md:text-7xl font-black mb-4 text-center glitch">
-            <span class="text-golden">HABLEMOS</span> <span class="text-salmon">!</span>
+            <span class="text-golden">{{ t.contact.title }}</span> <span class="text-salmon">{{ t.contact.title_accent }}</span>
         </h2>
-        <p class="text-center text-gray-400 text-lg mb-12 font-mono">// Hagamos algo increíble_</p>
+        <p class="text-center text-gray-400 text-lg mb-12 font-mono">{{ t.contact.subtitle }}</p>
         
         <div class="grid md:grid-cols-2 gap-12">
             <!-- Contact Form -->
@@ -21,23 +23,23 @@
                 
                 <form action="https://formspree.io/f/mpzorqzq" method="POST" class="space-y-5">
                     <div class="relative">
-                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-golden">NOMBRE</label>
-                        <input type="text" placeholder="Tu nombre" required 
+                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-golden">{{ t.contact.form_name }}</label>
+                        <input type="text" placeholder="{{ t.contact.form_name_placeholder }}" required 
                             class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-golden focus:outline-none transition-colors placeholder:text-gray-600">
                     </div>
                     <div class="relative">
-                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-purple">EMAIL</label>
+                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-purple">{{ t.contact.form_email }}</label>
                         <input type="email" placeholder="tu@email.com" name="_replyto" required 
                             class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-purple focus:outline-none transition-colors placeholder:text-gray-600">
                     </div>
                     <div class="relative">
-                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-salmon">MENSAJE</label>
-                        <textarea placeholder="¿En qué puedo ayudarte?" name="message" required rows="5"
+                        <label class="absolute -top-3 left-4 bg-gray-900 px-2 text-xs font-bold text-salmon">{{ t.contact.form_message }}</label>
+                        <textarea placeholder="{{ t.contact.form_message_placeholder }}" name="message" required rows="5"
                             class="w-full bg-black border-2 border-gray-700 px-6 py-4 text-lg font-bold focus:border-salmon focus:outline-none transition-colors resize-none placeholder:text-gray-600"></textarea>
                     </div>
                     <button type="submit" class="group relative w-full bg-golden text-black px-8 py-4 text-xl font-bold hover:bg-salmon hover:text-white transition-all transform hover:scale-[1.02] border-4 border-transparent hover:border-golden">
                         <span class="relative z-10 flex items-center justify-center gap-3">
-                            <span>ENVIAR MENSAJE</span>
+                            <span>{{ t.contact.form_submit }}</span>
                             <span class="text-lg">►</span>
                         </span>
                         <!-- Pixel decoration -->
@@ -57,7 +59,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="font-bold text-xl mb-1 text-salmon">EMAIL</div>
+                            <div class="font-bold text-xl mb-1 text-salmon">{{ t.contact.email }}</div>
                             <div class="text-gray-400 group-hover:text-white transition-colors">jhosno.dev@gmail.com</div>
                         </div>
                     </div>
@@ -72,7 +74,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="font-bold text-xl mb-1 text-golden">LINKEDIN</div>
+                            <div class="font-bold text-xl mb-1 text-golden">{{ t.contact.linkedin }}</div>
                             <div class="text-gray-400 group-hover:text-white transition-colors">linkedin.com/in/jhosno</div>
                         </div>
                     </div>
@@ -87,7 +89,7 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="font-bold text-xl mb-1 text-purple">GITHUB</div>
+                            <div class="font-bold text-xl mb-1 text-purple">{{ t.contact.github }}</div>
                             <div class="text-gray-400 group-hover:text-white transition-colors">github.com/jhosnodev</div>
                         </div>
                     </div>
@@ -103,8 +105,8 @@
                             </svg>
                         </div>
                         <div>
-                            <div class="font-bold text-xl mb-1 text-white">UBICACIÓN</div>
-                            <div class="text-gray-400 group-hover:text-white transition-colors">Bogotá, Colombia</div>
+                            <div class="font-bold text-xl mb-1 text-white">{{ t.contact.location }}</div>
+                            <div class="text-gray-400 group-hover:text-white transition-colors">{{ t.contact.location_value }}</div>
                         </div>
                     </div>
                 </div>
@@ -118,4 +120,4 @@
             </div>
         </div>
     </div>
-  </section>
+</section>

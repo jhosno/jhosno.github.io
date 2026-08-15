@@ -1,7 +1,9 @@
+{% assign t = site.data.translations[page.lang] %}
+
 <!-- Header -->
 <div class="text-center mb-16 pt-20">
   <h1 class="text-6xl font-black mb-4">
-    <span class="text-golden">GRIMORIO</span> <span class="text-salmon">DE PROGRAMACIÓN</span>
+    <span class="text-golden">{{ t.blog.title_1 }}</span> <span class="text-salmon">{{ t.blog.title_2 }}</span>
   </h1>
-  <p class="text-xl text-gray-400">Diseños para Posts y Proyectos</p>
+  <p class="text-xl text-gray-400">{{ t.blog.subtitle }}</p>
 </div>

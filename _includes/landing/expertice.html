@@ -1,5 +1,7 @@
- <!-- Expertise Section -->
- <section id="expertise" class="py-20 px-6 bg-black pixel-grid relative overflow-hidden">
+{% assign t = site.data.translations[page.lang] %}
+
+<!-- Expertise Section -->
+<section id="expertise" class="py-20 px-6 bg-black pixel-grid relative overflow-hidden">
     <!-- Background decorations -->
     <div class="absolute top-20 left-5 w-12 h-12 bg-golden/10 pixel-art float-animation"></div>
     <div class="absolute bottom-20 right-5 w-16 h-16 bg-salmon/10 pixel-art float-animation" style="animation-delay: 1.5s;"></div>
@@ -7,18 +9,16 @@
     
     <div class="container mx-auto max-w-7xl relative z-10">
         <h2 class="text-5xl md:text-6xl font-black mb-4 text-center glitch">
-            <span class="text-salmon">ÁREAS DE</span> <span class="text-golden">EXPERTISE</span>
+            <span class="text-salmon">{{ t.expertise.title_1 }}</span> <span class="text-golden">{{ t.expertise.title_2 }}</span>
         </h2>
-        <p class="text-center text-gray-400 text-lg mb-12 font-mono">// Lo que domino_</p>
+        <p class="text-center text-gray-400 text-lg mb-12 font-mono">{{ t.expertise.subtitle }}</p>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Card 1 - FRONTEND -->
             <div class="group bg-gray-900/80 border-4 border-golden p-6 hover:border-golden hover:bg-golden/5 transition-all transform hover:-translate-y-2 relative overflow-hidden">
-                <!-- HP Bar decoration -->
                 <div class="absolute top-0 left-0 right-0 h-1 bg-gray-800">
                     <div class="h-full bg-golden" style="width: 85%;"></div>
                 </div>
-                <!-- Corner pixels -->
                 <div class="absolute top-2 right-2 w-2 h-2 bg-golden opacity-50"></div>
                 <div class="absolute bottom-2 left-2 w-2 h-2 bg-golden opacity-50"></div>
                 
@@ -30,10 +30,8 @@
                     </div>
                     <div class="text-xs font-mono text-golden px-2 py-1 border border-golden">LVL 85</div>
                 </div>
-                <h3 class="text-2xl font-bold mb-3 text-golden group-hover:underline decoration-4 underline-offset-4">FRONTEND</h3>
-                <p class="text-gray-400 mb-4 text-sm">
-                    Interfaces modernas y responsivas con las últimas tecnologías.
-                </p>
+                <h3 class="text-2xl font-bold mb-3 text-golden group-hover:underline decoration-4 underline-offset-4">{{ t.expertise.frontend }}</h3>
+                <p class="text-gray-400 mb-4 text-sm">{{ t.expertise.frontend_desc }}</p>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 bg-golden/20 text-golden text-xs font-bold border border-golden/30">React</span>
                     <span class="px-2 py-1 bg-golden/20 text-golden text-xs font-bold border border-golden/30">Tailwind</span>
@@ -59,10 +57,8 @@
                     </div>
                     <div class="text-xs font-mono text-salmon px-2 py-1 border border-salmon">LVL 88</div>
                 </div>
-                <h3 class="text-2xl font-bold mb-3 text-salmon group-hover:underline decoration-4 underline-offset-4">BACKEND</h3>
-                <p class="text-gray-400 mb-4 text-sm">
-                    APIs robustas y escalables con arquitecturas modernas.
-                </p>
+                <h3 class="text-2xl font-bold mb-3 text-salmon group-hover:underline decoration-4 underline-offset-4">{{ t.expertise.backend }}</h3>
+                <p class="text-gray-400 mb-4 text-sm">{{ t.expertise.backend_desc }}</p>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 bg-salmon/20 text-salmon text-xs font-bold border border-salmon/30">Node.js</span>
                     <span class="px-2 py-1 bg-salmon/20 text-salmon text-xs font-bold border border-salmon/30">PHP</span>
@@ -71,7 +67,7 @@
                     <span class="px-2 py-1 bg-salmon/20 text-salmon text-xs font-bold border border-salmon/30">NestJS</span>
                     <span class="px-2 py-1 bg-salmon/20 text-salmon text-xs font-bold border border-salmon/30">Supabase</span>
                     <span class="px-2 py-1 bg-salmon/20 text-salmon text-xs font-bold border border-salmon/30">MySQL/MariaDB</span>
-                    <span class="px-2 py-1 bg-salmon/20 text-salmon text-xs font-bold border border-salmon/30">Patrones</span>
+                    <span class="px-2 py-1 bg-salmon/20 text-salmon text-xs font-bold border border-salmon/30">Patterns</span>
                 </div>
             </div>
 
@@ -91,17 +87,15 @@
                     </div>
                     <div class="text-xs font-mono text-purple px-2 py-1 border border-purple">LVL 65</div>
                 </div>
-                <h3 class="text-2xl font-bold mb-3 text-purple group-hover:underline decoration-4 underline-offset-4">WORDPRESS</h3>
-                <p class="text-gray-400 mb-4 text-sm">
-                    Mantenimiento, optimización y desarrollo de sitios WP. Seguridad y rendimiento.
-                </p>
+                <h3 class="text-2xl font-bold mb-3 text-purple group-hover:underline decoration-4 underline-offset-4">{{ t.expertise.wordpress }}</h3>
+                <p class="text-gray-400 mb-4 text-sm">{{ t.expertise.wordpress_desc }}</p>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">Themes</span>
                     <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">Plugins</span>
                     <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">SEO</span>
                     <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">WooCommerce</span>
-                    <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">Optimización</span>
-                    <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">Seguridad</span>
+                    <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">Optimization</span>
+                    <span class="px-2 py-1 bg-purple/20 text-purple text-xs font-bold border border-purple/30">Security</span>
                 </div>
             </div>
 
@@ -121,10 +115,8 @@
                     </div>
                     <div class="text-xs font-mono text-pink-500 px-2 py-1 border border-pink-500">LVL 60</div>
                 </div>
-                <h3 class="text-2xl font-bold mb-3 text-pink-500 group-hover:underline decoration-4 underline-offset-4">UI/UX</h3>
-                <p class="text-gray-400 mb-4 text-sm">
-                    Diseño centrado en el usuario con estética moderna.
-                </p>
+                <h3 class="text-2xl font-bold mb-3 text-pink-500 group-hover:underline decoration-4 underline-offset-4">{{ t.expertise.uiux }}</h3>
+                <p class="text-gray-400 mb-4 text-sm">{{ t.expertise.uiux_desc }}</p>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 bg-pink-500/20 text-pink-500 text-xs font-bold border border-pink-500/30">Figma</span>
                     <span class="px-2 py-1 bg-pink-500/20 text-pink-500 text-xs font-bold border border-pink-500/30">Wireframing</span>
@@ -133,9 +125,7 @@
                 </div>
             </div>
 
-            
-            
-            <!-- Card 6 - HERRAMIENTAS -->
+            <!-- Card 5 - TOOLS -->
             <div class="group bg-gray-900/80 border-4 border-yellow-500 p-6 hover:border-yellow-500 hover:bg-yellow-500/5 transition-all transform hover:-translate-y-2 relative overflow-hidden">
                 <div class="absolute top-0 left-0 right-0 h-1 bg-gray-800">
                     <div class="h-full bg-yellow-500" style="width: 85%;"></div>
@@ -151,10 +141,8 @@
                     </div>
                     <div class="text-xs font-mono text-yellow-500 px-2 py-1 border border-yellow-500">LVL 85</div>
                 </div>
-                <h3 class="text-2xl font-bold mb-3 text-yellow-500 group-hover:underline decoration-4 underline-offset-4">HERRAMIENTAS</h3>
-                <p class="text-gray-400 mb-4 text-sm">
-                    Tools que uso a diario para desarrollar.
-                </p>
+                <h3 class="text-2xl font-bold mb-3 text-yellow-500 group-hover:underline decoration-4 underline-offset-4">{{ t.expertise.tools }}</h3>
+                <p class="text-gray-400 mb-4 text-sm">{{ t.expertise.tools_desc }}</p>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-2 py-1 bg-yellow-500/20 text-yellow-500 text-xs font-bold border border-yellow-500/30">VS Code</span>
                     <span class="px-2 py-1 bg-yellow-500/20 text-yellow-500 text-xs font-bold border border-yellow-500/30">Git</span>
@@ -173,8 +161,8 @@
         <div class="flex justify-center mt-12 gap-8">
             <div class="flex items-center gap-2">
                 <div class="w-3 h-3 bg-golden pixel-art animate-pulse"></div>
-                <span class="text-gray-500 text-sm font-mono">EXP TOTAL: 383</span>
+                <span class="text-gray-500 text-sm font-mono">{{ t.expertise.exp_total }}</span>
             </div>
         </div>
     </div>
- </section>
+</section>

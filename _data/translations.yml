@@ -9,26 +9,36 @@ es:
     open_to_work_sub: Freelance & Full-time
     experience_badge: "3+ años en Laravel · 6 años en desarrollo"
   hero:
+    title_1: "Laravel & SaaS"
+    title_2: "Multi-tenant Specialist"
+    name: JHOSNO
+    name_accent: HERNÁNDEZ
     cta_projects: PROYECTOS
     cta_contact: CONTÁCTAME
     scroll: SCROLL
-  about:
-    title: SOBRE
-    title_accent: MÍ
-    subtitle: "// Mi historia_"
-    bio_1: "Hola, soy Jhosno, desarrolladora radicada en Colombia."
-    bio_2: "Siempre estoy intentando mejorar como profesional, recientemente mi reto personal es hacer código limpio con principios SOLID."
-    bio_3: "Aparte, estoy empezando aprender sobre AWS y N8N."
-    bio_4: "Mi stack principal es MERN, typescript y Laravel."
-    bio_5: "Mis herramientas favoritas son VSCode, DBeaver, Figma y Obsidian para desarrollar mis ideas."
-    tagline: "Transformo ideas en código limpio y eficiente, combinando creatividad con soluciones técnicas robustas."
-    fun_facts: "Fun Facts:"
-    fact_1: "Tengo una gata llamada Hela"
-    fact_2: "Prefiero el chocolate caliente"
-    fact_3: "Me gustan los tatuajes y piercings"
-    fact_4: "Me encantan los V-pets y Tamagotchis"
-    location: COLOMBIA
-    years: "6+ AÑOS"
+  expertise:
+    title_1: ÁREAS DE
+    title_2: EXPERTISE
+    subtitle: "// Lo que domino_"
+    frontend: FRONTEND
+    frontend_desc: "Interfaces modernas y responsivas con las últimas tecnologías."
+    backend: BACKEND
+    backend_desc: "APIs robustas y escalables con arquitecturas modernas."
+    wordpress: WORDPRESS
+    wordpress_desc: "Mantenimiento, optimización y desarrollo de sitios WP. Seguridad y rendimiento."
+    uiux: UI/UX
+    uiux_desc: "Diseño centrado en el usuario con estética moderna."
+    tools: HERRAMIENTAS
+    tools_desc: "Tools que uso a diario para desarrollar."
+    exp_total: "EXP TOTAL: 383"
+  portfolio:
+    title_1: MIS
+    title_2: PROYECTOS
+    subtitle: "// Mis creaciones_"
+    view_project: VER PROYECTO
+    expand: Ampliar
+    empty_title: "¡Has llegado antes! Pronto publicaré contenido"
+    counter: "PROYECTOS:"
   contact:
     title: HABLEMOS
     title_accent: "!"
@@ -44,10 +54,38 @@ es:
     github: GITHUB
     location: UBICACIÓN
     location_value: "Bogotá, Colombia"
+  about:
+    title: SOBRE
+    title_accent: MÍ
+    subtitle: "// Mi historia_"
+    experience_badge: "3+ años en Laravel · 6 años en desarrollo"
+    bio_1: "Hola, soy Jhosno, desarrolladora radicada en Colombia."
+    bio_2: "Siempre estoy intentando mejorar como profesional, recientemente mi reto personal es hacer código limpio con principios SOLID."
+    bio_3: "Aparte, estoy empezando aprender sobre AWS y N8N."
+    bio_4: "Mi stack principal es MERN, typescript y Laravel."
+    bio_5: "Mis herramientas favoritas son VSCode, DBeaver, Figma y Obsidian para desarrollar mis ideas."
+    tagline: "Transformo ideas en código limpio y eficiente, combinando creatividad con soluciones técnicas robustas."
+    fun_facts: "Fun Facts:"
+    fact_1: "Tengo una gata llamada Hela"
+    fact_2: "Prefiero el chocolate caliente"
+    fact_3: "Me gustan los tatuajes y piercings"
+    fact_4: "Me encantan los V-pets y Tamagotchis"
+    location: COLOMBIA
+    years: "6+ AÑOS"
+  blog:
+    title_1: GRIMORIO
+    title_2: "DE PROGRAMACIÓN"
+    subtitle: "Diseños para Posts y Proyectos"
+  portfolio_page:
+    title_1: Mis
+    title_2: proyectos
+    subtitle: "// Aquí dejo algunos de mis proyectos_"
   footer:
     rights: "// Todos los derechos reservados_"
     connect: "// Conectemos_"
     cta: "¿Tienes un proyecto Laravel/SaaS interesante? Hablemos →"
+  upbutton:
+    tooltip: VOLVER ARRIBA
   cta:
     view_projects: VER PROYECTO
     view_all: Ver todos
@@ -79,26 +117,36 @@ en:
     open_to_work_sub: Freelance & Full-time
     experience_badge: "3+ years in Laravel · 6 years in development"
   hero:
+    title_1: "Laravel & SaaS"
+    title_2: "Multi-tenant Specialist"
+    name: JHOSNO
+    name_accent: HERNÁNDEZ
     cta_projects: PROJECTS
     cta_contact: CONTACT ME
     scroll: SCROLL
-  about:
-    title: ABOUT
-    title_accent: ME
-    subtitle: "// My story_"
-    bio_1: "Hi, I'm Jhosno, a developer based in Colombia."
-    bio_2: "I'm always trying to improve as a professional, recently my personal challenge is writing clean code with SOLID principles."
-    bio_3: "Besides that, I'm starting to learn about AWS and N8N."
-    bio_4: "My main stack is MERN, TypeScript and Laravel."
-    bio_5: "My favorite tools are VSCode, DBeaver, Figma and Obsidian to develop my ideas."
-    tagline: "I turn ideas into clean and efficient code, combining creativity with robust technical solutions."
-    fun_facts: "Fun Facts:"
-    fact_1: "I have a cat named Hela"
-    fact_2: "I prefer hot chocolate"
-    fact_3: "I like tattoos and piercings"
-    fact_4: "I love V-pets and Tamagotchis"
-    location: COLOMBIA
-    years: "6+ YEARS"
+  expertise:
+    title_1: AREAS OF
+    title_2: EXPERTISE
+    subtitle: "// What I master_"
+    frontend: FRONTEND
+    frontend_desc: "Modern and responsive interfaces with the latest technologies."
+    backend: BACKEND
+    backend_desc: "Robust and scalable APIs with modern architectures."
+    wordpress: WORDPRESS
+    wordpress_desc: "Maintenance, optimization and WP site development. Security and performance."
+    uiux: UI/UX
+    uiux_desc: "User-centered design with modern aesthetics."
+    tools: TOOLS
+    tools_desc: "Tools I use daily for development."
+    exp_total: "EXP TOTAL: 383"
+  portfolio:
+    title_1: MY
+    title_2: PROJECTS
+    subtitle: "// My creations_"
+    view_project: VIEW PROJECT
+    expand: Expand
+    empty_title: "You're early! I'll publish content soon"
+    counter: "PROJECTS:"
   contact:
     title: LET'S TALK
     title_accent: "!"
@@ -114,10 +162,38 @@ en:
     github: GITHUB
     location: LOCATION
     location_value: "Bogotá, Colombia"
+  about:
+    title: ABOUT
+    title_accent: ME
+    subtitle: "// My story_"
+    experience_badge: "3+ years in Laravel · 6 years in development"
+    bio_1: "Hi, I'm Jhosno, a developer based in Colombia."
+    bio_2: "I'm always trying to improve as a professional, recently my personal challenge is writing clean code with SOLID principles."
+    bio_3: "Besides that, I'm starting to learn about AWS and N8N."
+    bio_4: "My main stack is MERN, TypeScript and Laravel."
+    bio_5: "My favorite tools are VSCode, DBeaver, Figma and Obsidian to develop my ideas."
+    tagline: "I turn ideas into clean and efficient code, combining creativity with robust technical solutions."
+    fun_facts: "Fun Facts:"
+    fact_1: "I have a cat named Hela"
+    fact_2: "I prefer hot chocolate"
+    fact_3: "I like tattoos and piercings"
+    fact_4: "I love V-pets and Tamagotchis"
+    location: COLOMBIA
+    years: "6+ YEARS"
+  blog:
+    title_1: PROGRAMMING
+    title_2: GRIMOIRE
+    subtitle: "Designs for Posts and Projects"
+  portfolio_page:
+    title_1: My
+    title_2: projects
+    subtitle: "// Here are some of my projects_"
   footer:
     rights: "// All rights reserved_"
     connect: "// Let's connect_"
     cta: "Have an interesting Laravel/SaaS project? Let's talk →"
+  upbutton:
+    tooltip: BACK TO TOP
   cta:
     view_projects: VIEW PROJECT
     view_all: View all

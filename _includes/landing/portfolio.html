@@ -1,3 +1,6 @@
+{% assign t = site.data.translations[page.lang] %}
+{% if page.lang == 'en' %}{% assign prefix = '/en' %}{% else %}{% assign prefix = '' %}{% endif %}
+
 <!-- Projects Section -->
 <section
   id="projects"
@@ -9,10 +12,10 @@
   
   <div class="container mx-auto max-w-7xl relative z-10">
     <h2 class="text-5xl md:text-6xl font-black mb-4 text-center glitch">
-      <span class="text-golden">MIS</span>
-      <span class="text-salmon">PROYECTOS</span>
+      <span class="text-golden">{{ t.portfolio.title_1 }}</span>
+      <span class="text-salmon">{{ t.portfolio.title_2 }}</span>
     </h2>
-    <p class="text-center text-gray-400 text-lg mb-12 font-mono">// Mis creaciones_</p>
+    <p class="text-center text-gray-400 text-lg mb-12 font-mono">{{ t.portfolio.subtitle }}</p>
     
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {% if site.projects.size > 0 %}
@@ -51,7 +54,7 @@
           />
           <!-- Overlay -->
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="px-4 py-2 bg-black border-2 {{ classes[0] }} text-{{ color_name }} font-bold text-sm">VER PROYECTO</span>
+            <span class="px-4 py-2 bg-black border-2 {{ classes[0] }} text-{{ color_name }} font-bold text-sm">{{ t.portfolio.view_project }}</span>
           </div>
         </div>
         
@@ -79,14 +82,14 @@
             class="inline-flex items-center gap-2 {{ classes[2] }} text-sm font-bold hover:gap-3 transition-all"
             href="{{site.url}}{{project.url}}"
           >
-            Ampliar <span>→</span>
+            {{ t.portfolio.expand }} <span>→</span>
           </a>
         </div>
       </div>
       {% endfor %} {% else %}
       <div class="col-span-3 text-center py-12">
         <div class="text-6xl mb-4">👾</div>
-        <h3 class="text-2xl font-bold text-gray-400">¡Has llegado antes! Pronto publicaré contenido</h3>
+        <h3 class="text-2xl font-bold text-gray-400">{{ t.portfolio.empty_title }}</h3>
       </div>
       {% endif %}
     </div>
@@ -95,7 +98,7 @@
     <div class="flex justify-center mt-12 gap-8">
       <div class="flex items-center gap-2">
         <div class="w-3 h-3 bg-golden pixel-art animate-pulse"></div>
-        <span class="text-gray-500 text-sm font-mono">PROYECTOS: {{ site.projects.size | default: 0 }}</span>
+        <span class="text-gray-500 text-sm font-mono">{{ t.portfolio.counter }} {{ site.projects.size | default: 0 }}</span>
       </div>
     </div>
   </div>

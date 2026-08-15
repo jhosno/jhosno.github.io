@@ -65,10 +65,10 @@
       <div class="flex items-center gap-4">
         <!-- Language Toggle -->
         {% if page.lang == 'es' %}
-          <a href="/en{{ page.url }}" class="text-[0.75rem] font-bold px-2 py-1 border border-white/20 text-white/80 hover:border-golden hover:text-golden transition-colors" style="text-decoration:none;">EN</a>
+          <a href="/en{{ page.url }}" class="text-xs font-bold px-3 py-1.5 border-2 border-white/40 text-white hover:border-golden hover:text-golden transition-colors bg-white/5 hover:bg-golden/10">EN</a>
         {% else %}
           {% assign es_url = page.url | remove_first: '/en' %}
-          <a href="{{ es_url }}" class="text-[0.75rem] font-bold px-2 py-1 border border-white/20 text-white/80 hover:border-golden hover:text-golden transition-colors" style="text-decoration:none;">ES</a>
+          <a href="{{ es_url }}" class="text-xs font-bold px-3 py-1.5 border-2 border-white/40 text-white hover:border-golden hover:text-golden transition-colors bg-white/5 hover:bg-golden/10">ES</a>
         {% endif %}
 
         <!-- Open to Work Badge -->
@@ -163,6 +163,16 @@
           </a>
         </li>
       </ul>
+
+      <!-- Language Toggle (Mobile) -->
+      <div class="flex justify-center mt-4 mb-4">
+        {% if page.lang == 'es' %}
+          <a href="/en{{ page.url }}" class="text-sm font-bold px-4 py-2 border-2 border-white/40 text-white hover:border-golden hover:text-golden transition-colors bg-white/5 hover:bg-golden/10">EN</a>
+        {% else %}
+          {% assign es_url = page.url | remove_first: '/en' %}
+          <a href="{{ es_url }}" class="text-sm font-bold px-4 py-2 border-2 border-white/40 text-white hover:border-golden hover:text-golden transition-colors bg-white/5 hover:bg-golden/10">ES</a>
+        {% endif %}
+      </div>
 
       <!-- Open to Work en Mobile (si estaba oculto) -->
       <a class="sm:hidden mt-5" href="{{ prefix }}/#contact">

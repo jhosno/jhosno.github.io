@@ -1,5 +1,7 @@
- <!-- About Section -->
- <section id="about" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900 pixel-grid relative overflow-hidden">
+{% assign t = site.data.translations[page.lang] %}
+
+<!-- About Section -->
+<section id="about" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900 pixel-grid relative overflow-hidden">
     <!-- Background decorations -->
     <div class="absolute top-20 left-10 w-16 h-16 bg-golden/10 pixel-art float-animation"></div>
     <div class="absolute bottom-20 right-10 w-20 h-20 bg-salmon/10 pixel-art float-animation" style="animation-delay: 1s;"></div>
@@ -7,9 +9,9 @@
     
     <div class="container mx-auto max-w-6xl relative z-10">
         <h2 class="text-5xl md:text-6xl font-black mb-4 text-center pt-16 glitch">
-            <span class="text-golden">SOBRE</span> <span class="text-salmon">MÍ</span>
+            <span class="text-golden">{{ t.about.title }}</span> <span class="text-salmon">{{ t.about.title_accent }}</span>
         </h2>
-        <p class="text-center text-gray-400 text-lg mb-12 font-mono">// Mi historia_</p>
+        <p class="text-center text-gray-400 text-lg mb-12 font-mono">{{ t.about.subtitle }}</p>
         
         <div class="grid md:grid-cols-3 gap-12 items-center md:items-start">
             <div class="flex justify-center lg:align-start">
@@ -23,34 +25,33 @@
                     <div class="w-56 h-56 md:w-64 md:h-64 bg-gradient-to-br from-golden to-salmon p-1 transform rotate-2 group-hover:rotate-0 transition-transform pixel-art">
                         <img src="{{site.url}}/assets/images/about/about.avif" alt="{{site.title}}" class="w-full h-full object-cover pixel-art"/>
                     </div>
-<!-- Experience badge -->
+                    <!-- Experience badge -->
                     <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-gray-900 border-2 border-golden px-4 py-1 font-bold text-golden text-sm">
-                        3+ años en Laravel · 6 años en desarrollo
+                        {{ t.about.experience_badge }}
                     </div>
                 </div>
             </div>
             <div class="md:col-span-2">
                 <div class="bg-gray-900/80 border-4 border-golden/50 p-6 mb-8">
                     <p class="text-lg text-gray-300 mb-4 leading-relaxed">
-                        Hola, soy Jhosno, desarrolladora radicada en Colombia.
+                        {{ t.about.bio_1 }}
                     </p>
                     <p class="text-lg text-gray-300 mb-4 leading-relaxed">
-                        Siempre estoy intentando mejorar como profesional, recientemente mi reto personal es hacer código limpio con principios SOLID.
+                        {{ t.about.bio_2 }}
                     </p>
                     <p class="text-lg text-gray-300 mb-4 leading-relaxed">
-                        Aparte, estoy empezando aprender sobre AWS y N8N.
+                        {{ t.about.bio_3 }}
                     </p>
                     <p class="text-lg text-gray-300 mb-4 leading-relaxed">
-                        Mi stack principal es MERN, typescript y Laravel.
+                        {{ t.about.bio_4 }}
                     </p>
                     <p class="text-lg text-gray-300 leading-relaxed">
-                        Mis herramientas favoritas son VSCode, DBeaver, Figma y Obsidian para desarrollar mis ideas.
+                        {{ t.about.bio_5 }}
                     </p>
                 </div>
                 
                 <p class="text-xl text-gray-300 mb-6 leading-relaxed border-l-4 border-golden pl-4">
-                    Transformo ideas en código limpio y eficiente, combinando creatividad con 
-                    soluciones técnicas robustas.
+                    {{ t.about.tagline }}
                 </p>
                 
                 <div class="flex flex-wrap gap-3 mb-8">
@@ -72,20 +73,20 @@
                 <div class="bg-gray-900/80 border-4 border-salmon/50 p-6">
                     <p class="font-bold text-lg mb-4 text-salmon flex items-center gap-2">
                         <span class="w-3 h-3 bg-salmon pixel-art"></span>
-                        Fun Facts:
+                        {{ t.about.fun_facts }}
                     </p>
                     <div class="grid sm:grid-cols-2 gap-3">
                         <li class="flex items-center gap-2 text-gray-300 text-sm border-l-2 border-salmon pl-3">
-                            <span class="text-salmon">♦</span> Tengo una gata llamada Hela
+                            <span class="text-salmon">♦</span> {{ t.about.fact_1 }}
                         </li>
                         <li class="flex items-center gap-2 text-gray-300 text-sm border-l-2 border-salmon pl-3">
-                            <span class="text-salmon">♦</span> Prefiero el chocolate caliente
+                            <span class="text-salmon">♦</span> {{ t.about.fact_2 }}
                         </li>
                         <li class="flex items-center gap-2 text-gray-300 text-sm border-l-2 border-salmon pl-3">
-                            <span class="text-salmon">♦</span> Me gustan los tatuajes y piercings
+                            <span class="text-salmon">♦</span> {{ t.about.fact_3 }}
                         </li>
                         <li class="flex items-center gap-2 text-gray-300 text-sm border-l-2 border-salmon pl-3">
-                            <span class="text-salmon">♦</span> Me encantan los V-pets y Tamagotchis
+                            <span class="text-salmon">♦</span> {{ t.about.fact_4 }}
                         </li>
                     </div>
                 </div>
@@ -96,13 +97,12 @@
         <div class="flex justify-center mt-12 gap-6">
             <div class="flex items-center gap-2">
                 <div class="w-3 h-3 bg-golden pixel-art animate-pulse"></div>
-                <span class="text-gray-500 text-sm font-mono">COLOMBIA</span>
+                <span class="text-gray-500 text-sm font-mono">{{ t.about.location }}</span>
             </div>
             <div class="flex items-center gap-2">
                 <div class="w-3 h-3 bg-salmon pixel-art animate-pulse" style="animation-delay: 0.3s;"></div>
-                <span class="text-gray-500 text-sm font-mono">6+ AÑOS</span>
+                <span class="text-gray-500 text-sm font-mono">{{ t.about.years }}</span>
             </div>
         </div>
     </div>
- </section>
-
+</section>
