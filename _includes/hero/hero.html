@@ -11,7 +11,7 @@
 
     <!-- fila 1: etiqueta + array -->
     <div class="hero__top">
-      <span class="hero__fn">function() randomfacts array:</span>
+      <span class="hero__fn">{{ t.hero.fn }}</span>
       <span class="hero__array">[<b id="fact">wordpress</b>]</span>
     </div>
 
@@ -37,7 +37,7 @@
         <span>[timezone <b>GMT-5</b>]</span>
         <span>since <b>2018</b></span>
       </div>
-      <div class="cue"><i id="cueLine"></i><span>Scroll</span></div>
+      <div class="cue"><i id="cueLine"></i><span>{{ t.hero.scroll }}</span></div>
     </div>
   </div>
 
@@ -62,7 +62,7 @@
         <div class="marquee__group">
           <span>jhosno.dev@gmail.com</span>
           <span><em>++++----</em></span>
-          <span>copy email</span>
+          <span>{{ t.home.copy_email }}</span>
           <span><em>++++----</em></span>
           <span>jhosno.dev@gmail.com</span>
           <span><em>++++----</em></span>

@@ -1,11 +1,11 @@
 <!-- CONTACT — cepo de contacto -->
 <section class="sec connect" id="contacto" data-section="contact">
   <h2 class="sec__head">
-    <span>04 — contact</span><span>reach out</span>
+    <span>{{ t.home.contact_title }}</span><span>{{ t.home.contact_subtitle }}</span>
   </h2>
 
   <p class="connect__reveal">
-    The trap is <em>open</em>. It always is.
+    {{ t.home.contact_trap }}
   </p>
 
   <div class="trap">
@@ -19,7 +19,7 @@
     <pre class="trap__cilia trap__cilia--bot" aria-hidden="true">    |____|  |____|  |____|  |____|  |____|
      \__/    \__/    \__/    \__/    \__/</pre>
 
-    <button class="copy" id="copyBtn" type="button">copy email</button>
+    <button class="copy" id="copyBtn" type="button">{{ t.home.copy_email }}</button>
   </div>
 
   <div class="status">
@@ -47,8 +47,8 @@
   if (!btn) return;
   btn.addEventListener("click", function() {
     navigator.clipboard.writeText("jhosno.dev@gmail.com").then(function() {
-      btn.textContent = "copied!";
-      setTimeout(function() { btn.textContent = "copy email"; }, 2000);
+      btn.textContent = "{{ t.home.copied }}";
+      setTimeout(function() { btn.textContent = "{{ t.home.copy_email }}"; }, 2000);
     });
   });
 })();

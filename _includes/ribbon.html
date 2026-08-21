@@ -24,15 +24,17 @@
     </a>
 
     <nav class="ribbon__nav" aria-label="Principal">
-      <a href="#quien" data-scroll data-nav="quien">about</a>
-      <a href="#trabajo" data-scroll data-nav="trabajo">works</a>
+      <a href="#quien" data-scroll data-nav="quien">{{ t.nav.about }}</a>
+      <a href="#trabajo" data-scroll data-nav="trabajo">{{ t.nav.projects }}</a>
       <a href="#labs" data-scroll data-nav="labs">labs</a>
-      <a href="#contacto" data-scroll data-nav="contacto">contact me</a>
+      <a href="#contacto" data-scroll data-nav="contacto">{{ t.nav.contact }}</a>
     </nav>
 
     <div class="ribbon__aside">
-      <button class="lang" id="langBtn" type="button" aria-label="Cambiar a espanol">ES</button>
-      <span class="ribbon__readout" id="readout">home</span>
+      <button class="lang" id="langBtn" type="button" aria-label="Cambiar a espanol">
+        {% if page.lang == 'en' %}ES{% else %}EN{% endif %}
+      </button>
+      <span class="ribbon__readout" id="readout">{{ t.ribbon.readout_home }}</span>
       <span class="ribbon__clock" id="clock">--:--:--</span>
       <span class="ribbon__live"><i></i>live</span>
     </div>

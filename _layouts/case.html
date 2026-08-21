@@ -1,3 +1,4 @@
+{% assign t = site.data.translations[page.lang] %}
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'es' }}">
 <head>
@@ -42,7 +43,7 @@
 </head>
 <body>
 
-<a class="skip" href="#case" data-i18n="skip">Skip to content</a>
+<a class="skip" href="#case">{{ t.case.skip }}</a>
 <div class="grain" aria-hidden="true"></div>
 
 <!-- Ribbon simplificado para caso -->
@@ -52,8 +53,10 @@
       <span>jhosno</span>
     </a>
     <div class="ribbon__aside">
-      <button class="lang" id="langBtn" type="button" aria-label="Cambiar a espanol">ES</button>
-      <span class="ribbon__readout" id="readout">case</span>
+      <button class="lang" id="langBtn" type="button">
+        {% if page.lang == 'en' %}ES{% else %}EN{% endif %}
+      </button>
+      <span class="ribbon__readout" id="readout">{{ t.case.skip }}</span>
       <a href="{{ '/#trabajo' | relative_url }}" style="text-decoration:none;opacity:.7">← all work</a>
     </div>
   </div>
