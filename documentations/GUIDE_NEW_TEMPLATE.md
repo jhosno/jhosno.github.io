@@ -1,3 +1,4 @@
+{% raw %}
 # Guia Paso a Paso: Crear una Nueva Plantilla
 
 ## Objetivo
@@ -232,3 +233,4 @@ order: 1
 - `portfolio/header.html` - Header del portfolio
 - `portfolio/project-list.html` - Lista de proyectos
 - `portfolio/featured-project.html` - Proyecto destacado
+{% endraw %}
