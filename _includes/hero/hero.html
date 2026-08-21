@@ -1,0 +1,74 @@
+<!-- HERO — seccion principal -->
+<section class="hero" id="top">
+
+  <!-- capa 0: el dither a sangre -->
+  {% include hero/noise.html %}
+
+  <!-- capa 1: la planta -->
+  {% include hero/plant.html %}
+
+  <div class="hero__inner">
+
+    <!-- fila 1: etiqueta + array -->
+    <div class="hero__top">
+      <span class="hero__fn">function() randomfacts array:</span>
+      <span class="hero__array">[<b id="fact">wordpress</b>]</span>
+    </div>
+
+    <!-- fila 2: la marca gigante -->
+    <div class="hero__mid">
+      <div>
+        <h1 class="wordmark" id="wordmark">
+          <span class="wordmark__row"><span class="wordmark__glyphs">jhosno</span></span>
+          <span class="u-sr">Jhosno Hernandez — full-stack developer and art director. WordPress, Laravel and brand identity.</span>
+        </h1>
+        <span class="wordmark__tail">
+          I read what is already there before touching anything. Sometimes it is
+          broken code someone else wrote. Sometimes it is a brand that does not
+          exist yet.
+        </span>
+      </div>
+    </div>
+
+    <!-- fila 3: metadatos + cue -->
+    <div class="hero__bottom">
+      <div class="hero__meta">
+        <span>Bogota, Col</span>
+        <span>[timezone <b>GMT-5</b>]</span>
+        <span>since <b>2018</b></span>
+      </div>
+      <div class="cue"><i id="cueLine"></i><span>Scroll</span></div>
+    </div>
+  </div>
+
+  <!-- placa senal/ruido -->
+  {% include hero/ascii.html %}
+
+  <!-- stickers -->
+  <div class="sticker sticker--note" data-depth="0.06">
+    WordPress + Laravel + bug catcher
+  </div>
+  <div class="sticker sticker--tape" data-depth="0.11">
+    + Open to work
+  </div>
+
+  <!-- sello giratorio -->
+  {% include hero/seal.html %}
+
+  <!-- ticker inferior -->
+  <div class="hero__ticker">
+    <div class="marquee" data-marquee data-speed="60" data-dir="-1">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>jhosno.dev@gmail.com</span>
+          <span><em>++++----</em></span>
+          <span>copy email</span>
+          <span><em>++++----</em></span>
+          <span>jhosno.dev@gmail.com</span>
+          <span><em>++++----</em></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
