@@ -1,0 +1,11 @@
+<!-- METRIC — metrica con barras -->
+<div class="metric">
+  <div>
+    <p class="metric__big">{{ include.value }}</p>
+    <p class="metric__lbl">{{ include.label }}</p>
+  </div>
+  <div class="bars">
+    <div><span><i>before</i></span><i style="width:{{ include.before | default: 100 }}%"></i></div>
+    <div class="after"><span><i>after</i></span><i style="width:{{ include.after | default: 80 }}%"></i></div>
+  </div>
+</div>

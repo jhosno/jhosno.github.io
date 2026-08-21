@@ -1,0 +1,16 @@
+<!-- LEDE — portada del caso -->
+<div class="wrap">
+  <div class="lede">
+    <span class="lede__idx">{{ include.category }}</span>
+    <h1 style="--title-ch:{{ include.title-ch | default: 12 }}">{{ include.title }}</h1>
+    <p class="lede__thesis">{{ include.thesis }}</p>
+
+    <dl class="facts">
+      {% if include.fact1 %}<div><dt>what it is</dt><dd>{{ include.fact1 }}</dd></div>{% endif %}
+      {% if include.fact2 %}<div><dt>my role</dt><dd>{{ include.fact2 }}</dd></div>{% endif %}
+      {% if include.fact3 %}<div><dt>stack</dt><dd>{{ include.fact3 }}</dd></div>{% endif %}
+      {% if include.fact4 %}<div><dt>period</dt><dd>{{ include.fact4 }}</dd></div>{% endif %}
+      {% if include.fact5 %}<div><dt>outcome</dt><dd>{{ include.fact5 }}</dd></div>{% endif %}
+    </dl>
+  </div>
+</div>
