@@ -18,10 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Jhosno
-email: jhosnoirlit@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Jhosno | ReactJS | Web dev | MERN | Laravel | Grimorio de programación: cosas de react, web dev, frontend, ingenieria de software y cualquier cosa que este aprendiendo. Aprender a programar es difícil, pero aprender cosas nuevas es divertido.
+title: jhosno
+email: jhosno.dev@gmail.com
+description: >-
+  Full-stack developer and art director. WordPress, Laravel, brand identity.
+  White-label for agencies. Bogota, GMT-5.
 #baseurl: "" # the subpath of your site, e.g. /blog
 path: "/"
 
@@ -51,6 +52,9 @@ collections:
   projects:
     output: true
     permalink: projects/:title
+  cases:
+    output: true
+    permalink: cases/:title
 
     
 jekyll_admin:
