@@ -1,0 +1,174 @@
+/* ============================================================
+   CINTILLO FIJO (muta con el scroll)
+   ============================================================ */
+.ribbon{
+  position: fixed; inset: 0 0 auto 0; z-index: 900;
+  color: var(--hero-ink);
+  transition: color .45s var(--ease), background-color .45s var(--ease);
+  will-change: background-color;
+}
+
+/* tira superior con marquee */
+.ribbon__strip{
+  height: var(--strip-h);
+  overflow: hidden;
+  border-bottom: var(--line) solid currentColor;
+  transition: height .5s var(--ease), opacity .35s linear;
+}
+.ribbon__strip .marquee{ height: var(--strip-h); }
+
+.ribbon__bar{
+  height: var(--ribbon-h);
+  padding: 0 var(--pad);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  transition: height .5s var(--ease);
+}
+
+.ribbon__mark{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(17px, 1.7vw, 22px);
+  letter-spacing: -.03em;
+  line-height:1;
+  display:flex; align-items:center; gap:.45em;
+  white-space: nowrap;
+}
+
+.ribbon__bud{
+  margin:0;
+  font-family: var(--mono);
+  font-size: clamp(3.8px, .42vw, 5.2px);
+  line-height:1;
+  letter-spacing:0;
+  white-space:pre;
+  color: inherit;
+  transition: color .45s var(--ease), transform .35s var(--ease);
+}
+.ribbon__mark:hover .ribbon__bud{ transform: scale(1.22) rotate(-10deg); }
+
+.ribbon__mark::after{
+  content:"";
+  width:7px; height:7px;
+  background: var(--ink);
+  transform: rotate(45deg);
+  transition: background-color .45s var(--ease);
+}
+
+.ribbon__nav{
+  display:flex; justify-content:center; gap: clamp(10px, 2.4vw, 34px);
+  font-family: var(--mono);
+  font-size: clamp(9px, .8vw, 11px);
+  letter-spacing:.1em;
+  text-transform: uppercase;
+}
+.ribbon__nav a{
+  position:relative;
+  padding: 6px 2px;
+  opacity:.72;
+  transition: opacity .25s;
+}
+.ribbon__nav a::after{
+  content:"";
+  position:absolute; left:0; bottom:2px;
+  width:100%; height: var(--line);
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .4s var(--ease);
+}
+.ribbon__nav a:hover,
+.ribbon__nav a[data-active="true"]{ opacity:1; }
+.ribbon__nav a:hover::after,
+.ribbon__nav a[data-active="true"]::after{ transform: scaleX(1); }
+
+.ribbon__aside{
+  display:flex; align-items:center; gap: clamp(8px,1.4vw,18px);
+  font-family: var(--mono);
+  font-size: clamp(9px, .78vw, 11px);
+  letter-spacing:.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ribbon__readout{
+  border:var(--line) solid currentColor;
+  padding:4px 9px;
+  min-width: 10ch;
+  text-align:center;
+}
+.lang{
+  border: var(--line) solid currentColor;
+  padding: 4px 8px;
+  font-family: var(--mono);
+  font-size: inherit; letter-spacing:.12em; text-transform:uppercase;
+  line-height:1;
+  opacity:.72;
+  transition: opacity .25s, background-color .25s, color .25s;
+}
+.lang:hover{ opacity:1; }
+.ribbon[data-state="stuck"] .lang{ color: var(--acid-hi); }
+.ribbon[data-state="stuck"] .lang:hover{ background: var(--acid-hi); color: var(--bg); }
+.ribbon[data-state="top"] .lang:hover{ background: var(--hero-ink); color: var(--hero-bg); }
+
+.ribbon__clock{ opacity:.7; font-variant-numeric: tabular-nums; }
+.ribbon__live{ display:flex; align-items:center; gap:6px; }
+.ribbon__live i{
+  width:8px; height:8px; border-radius:50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 0 currentColor;
+  animation: pulse 2.4s infinite;
+}
+@keyframes pulse{
+  0%,100%{ opacity:1; transform:scale(1); }
+  50%{ opacity:.35; transform:scale(.72); }
+}
+
+/* riel de progreso */
+.ribbon__rail{
+  height: 3px;
+  background: transparent;
+  border-top: var(--line) solid currentColor;
+  transition: border-color .45s var(--ease);
+}
+.ribbon__rail i{
+  display:block; height:100%; width:0%;
+  background: var(--ink);
+  transition: background-color .45s var(--ease);
+}
+
+/* estado: sobre el hero (arriba del todo) */
+.ribbon[data-state="top"]{
+  background: transparent;
+}
+
+/* estado: pegado / fuera del hero */
+.ribbon[data-state="stuck"]{
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 10px 40px -18px #000;
+}
+.ribbon[data-state="stuck"] .ribbon__strip{ height:0; opacity:0; }
+.ribbon[data-state="stuck"] .ribbon__bar{ height: calc(var(--ribbon-h) * .8); }
+.ribbon[data-state="stuck"] .ribbon__mark::after{ background: var(--acid-hi); }
+.ribbon[data-state="stuck"] .ribbon__rail i{ background: var(--acid-hi); }
+.ribbon[data-state="stuck"] .ribbon__live i{ background: var(--acid-hi); }
+.ribbon[data-state="stuck"] .ribbon__readout{ color: var(--acid-hi); }
+
+/* responsive ribbon */
+@media (max-width: 720px){
+  .ribbon__bar{ grid-template-columns: auto auto; gap:10px; }
+  .ribbon__nav{
+    grid-column: 1 / -1;
+    order:3;
+    justify-content:flex-start;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding-bottom:2px;
+  }
+  .ribbon__nav::-webkit-scrollbar{ display:none; }
+  .ribbon__bar{ height:auto; padding-block:9px; }
+  .ribbon[data-state="stuck"] .ribbon__bar{ height:auto; }
+  .ribbon__readout{ display:none; }
+}
