@@ -1,3 +1,4 @@
+{% raw %}
 # Implementación de Plantilla - Jhosno Portfolio
 
 ## 📋 Visión General
@@ -392,3 +393,4 @@ Contenido del proyecto aquí...
 - [Documentación de Jekyll](https://jekyllrb.com/docs/)
 - [Tailwind CSS Docs](https://tailwindcss.com/docs)
 - [Liquid Template Language](https://shopify.github.io/liquid/)
+{% endraw %}
