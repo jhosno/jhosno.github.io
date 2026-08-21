@@ -1,3 +1,4 @@
+{% raw %}
 # PLAN: Migracion del Nuevo Portafolio a Jekyll
 
 ## Resumen Ejecutivo
@@ -123,3 +124,4 @@ Uso: `{{ t.section.key }}` en vez de texto hardcodeado.
 - `assets/css/output.css` (Tailwind compilado)
 - `assets/css/main.scss` (SCSS existente)
 - `assets/js/lucide.min.js` (iconos)
+{% endraw %}
