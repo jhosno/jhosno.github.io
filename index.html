@@ -1868,8 +1868,13 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   }
 
   function goTo(target) {
-    if (lenis) lenis.scrollTo(target, { offset: 0, duration: 1.15 });
-    else gsap.to(window, { duration: 0.9, scrollTo: target, ease: "power2.inOut" });
+    if (lenis) { lenis.scrollTo(target, { offset: 0, duration: 1.15 }); return; }
+    if (typeof ScrollToPlugin !== "undefined") {
+      gsap.to(window, { duration: 0.9, scrollTo: target, ease: "power2.inOut" });
+    } else {
+      var y = (target instanceof HTMLElement) ? target.getBoundingClientRect().top + window.pageYOffset : 0;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   }
 
   document.querySelectorAll("[data-scroll]").forEach(function (a) {
