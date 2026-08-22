@@ -1,8 +1,0 @@
-/* MARQUEE — reutilizable */
-.marquee{ display:flex; align-items:center; overflow:hidden; white-space:nowrap; width:100%; }
-.marquee__track{ display:flex; flex:none; will-change:transform; }
-.marquee__group{ display:flex; align-items:center; flex:none; padding-right: 0; }
-.marquee__group > span{
-  padding: 0 clamp(14px, 1.8vw, 28px);
-  display:inline-flex; align-items:center; gap:.7em;
-}

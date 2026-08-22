@@ -1,120 +1,763 @@
 ---
+layout: none
 permalink: /404.html
-layout: default
-title: '¡Ups! Esta página se perdió'
 ---
-<main class="flex-1 flex items-center justify-center px-6 py-20 pixel-grid relative overflow-hidden mt-20">
-        
-  <!-- Elementos flotantes decorativos -->
-  <div class="absolute top-10 left-10 w-16 h-16 bg-salmon pixel-art float-animation opacity-20"></div>
-  <div class="absolute top-40 right-20 w-12 h-12 bg-purple pixel-art float-animation opacity-20" style="animation-delay: 1s;"></div>
-  <div class="absolute bottom-20 left-1/4 w-20 h-20 bg-golden pixel-art float-animation opacity-20" style="animation-delay: 2s;"></div>
-  <div class="absolute bottom-40 right-1/3 w-14 h-14 bg-salmon pixel-art float-animation opacity-20" style="animation-delay: 1.5s;"></div>
+{% raw %}
 
-  <div class="container mx-auto max-w-4xl text-center relative z-10">
-      
-      <!-- Pixel Art Icon -->
-      <div class="mb-12 flex justify-center">
-          <div class="relative">
-              <!-- Círculo exterior rotante -->
-              <div class="w-40 h-40 border-8 border-salmon border-t-purple border-r-golden rounded-full rotate-slow absolute inset-0"></div>
-              <!-- Icono central -->
-              <div class="w-40 h-40 bg-gray-900 border-8 border-white flex items-center justify-center relative">
-                  <div class="text-7xl blink">❌</div>
-              </div>
-          </div>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>404 — nothing here · jhosno</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-      <!-- Título 404 -->
-      <h1 class="text-8xl md:text-9xl font-black mb-6 glitched">
-          <span class="text-salmon">4</span><span class="text-purple">0</span><span class="text-golden">4</span>
-      </h1>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-      <!-- Subtítulo -->
-      <h2 class="text-3xl md:text-5xl font-black mb-8">
-          <span class="text-white">PÁGINA</span> <span class="text-salmon">NO</span> <span class="text-purple">ENCONTRADA</span>
-      </h2>
+<style>
+/* ============================================================
+   404 — EL HUEVO DE PASCUA
 
-      <!-- Mensaje -->
-      <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-          ¡Oops! Parece que esta página se perdió en el ciberespacio. 
-          <br class="hidden md:inline">
-          El enlace que buscas no existe o fue movido a otra dimensión.
-      </p>
+   Es la página con menos contenido del sitio, así que es donde la
+   maquinaria puede hacer todo el trabajo. Al revés que una página de
+   caso: allá hay algo que leer y el procedimiento estorba.
 
-      <!-- Pixel Art Decoration -->
-      <div class="mb-12 flex justify-center gap-2">
-          <div class="w-4 h-4 bg-salmon pixel-art pixel-fade"></div>
-          <div class="w-4 h-4 bg-purple pixel-art pixel-fade" style="animation-delay: 0.3s;"></div>
-          <div class="w-4 h-4 bg-golden pixel-art pixel-fade" style="animation-delay: 0.6s;"></div>
-          <div class="w-4 h-4 bg-salmon pixel-art pixel-fade" style="animation-delay: 0.9s;"></div>
-          <div class="w-4 h-4 bg-purple pixel-art pixel-fade" style="animation-delay: 1.2s;"></div>
-      </div>
+   Trae la única cosa del portafolio que no se repite en ninguna otra
+   parte —el campo de dither a sangre del hero— y encima le monta el
+   único juego: el cepo te sigue y te muerde. El cursor lleva siendo un
+   bicho desde la primera pantalla; acá se juega con eso.
 
-      <!-- Action Buttons -->
-      <div class="flex flex-col sm:flex-row gap-6 justify-center mb-16">
-          <a href="/" class="bg-salmon text-white px-10 py-5 text-xl font-bold border-4 border-salmon hover:bg-purple hover:border-purple transition-all transform hover:scale-105 flex items-center justify-center gap-3 ">
-              <i data-lucide="home" class="w-6 h-6"></i>
-              IR AL INICIO
-          </a>
-          <button onclick="window.history.back()" class="bg-purple text-white px-10 py-5 text-xl font-bold border-4 border-purple hover:bg-golden hover:border-golden hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-3">
-              <i data-lucide="arrow-left" class="w-6 h-6"></i>
-              VOLVER ATRÁS
-          </button>
-      </div>
+   Reparto: barra de contador arriba, escenario partido en dos (planta a
+   la izquierda, texto a la derecha), pie estático abajo.
+   ============================================================ */
+:root{
+  --bg:#1a1a1a; --ink:#C53A9D; --acid:#5a2bc7;
+  --ink-hi:#E86BBE; --ink-dim:#7d2764; --acid-hi:#B9BE2A; --paper:#f2f0d8;
+  /* los mismos del hero: la losa es violeta, la tinta encima es negra y
+     la planta va en un magenta rebajado para no competir con ella */
+  --hero-bg:var(--acid); --hero-ink:#1a1a1a; --bloom-ink:#8E2E72;
+  --mono:"Martian Mono",ui-monospace,monospace;
+  --display:"Syne",system-ui,sans-serif;
+  --pad:clamp(14px,2.6vw,34px);
+  --line:1.5px;
+}
+*{ box-sizing:border-box; }
+html,body{ height:100%; margin:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--mono); overflow:hidden;
+  display:grid; grid-template-rows:auto minmax(0,1fr) auto;
+  height:100dvh;
+}
+a{ color:inherit; }
+::selection{ background:var(--ink); color:var(--bg); }
+:focus-visible{ outline:2px dashed var(--acid-hi); outline-offset:3px; }
 
-      <!-- Enlaces útiles -->
-      <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-          
-          <!-- Card 1 -->
-          <a href="/projects" class="bg-gray-900 border-4 border-salmon p-6 hover:glow-salmon transition-all group">
-              <i data-lucide="briefcase" class="w-12 h-12 text-salmon mx-auto mb-4 group-hover:scale-110 transition-transform"></i>
-              <h3 class="font-bold text-lg mb-2 text-salmon">PROYECTOS</h3>
-              <p class="text-gray-400 text-sm">Explora mis trabajos</p>
-          </a>
+/* --- el dither a sangre: la capa del hero, que no aparece en ningún
+       otro sitio del portafolio. Ésta es su segunda vez. --- */
+.dither{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  display:grid; place-items:end start;
+  overflow:hidden; contain:layout paint style;
+}
+.dither pre{
+  margin:0; white-space:pre; line-height:1; letter-spacing:0;
+  font-family:var(--mono); font-size:var(--dcell,11px);
+  color:var(--hero-ink); opacity:.26;      /* subordinado: la planta manda */
+}
+.grain{
+  position:fixed; inset:-120px; z-index:7; pointer-events:none;
+  opacity:.15; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.scan{
+  position:fixed; inset:0; z-index:6; pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 4px);
+}
 
-          <!-- Card 2 -->
-          <a href="/blog" class="bg-gray-900 border-4 border-purple p-6 hover:glow-purple transition-all group">
-              <i data-lucide="book-open" class="w-12 h-12 text-purple mx-auto mb-4 group-hover:scale-110 transition-transform"></i>
-              <h3 class="font-bold text-lg mb-2 text-purple">BLOG</h3>
-              <p class="text-gray-400 text-sm">Lee mis artículos</p>
-          </a>
+/* --- barra del contador --- */
+.top{
+  position:relative; z-index:5;
+  border-bottom:var(--line) solid var(--ink-dim);
+  padding:11px var(--pad);
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  font-size:clamp(9px,.82vw,11px); letter-spacing:.18em; text-transform:uppercase;
+  background:linear-gradient(var(--bg),rgba(26,26,26,.82));
+}
+.top__c{ display:flex; align-items:baseline; gap:.8em; }
+.top__c b{
+  font-family:var(--display); font-weight:800; letter-spacing:-.02em;
+  font-size:clamp(17px,2.1vw,26px); line-height:1;
+  color:var(--acid-hi); font-variant-numeric:tabular-nums;
+}
+.top__c b.hit{ color:var(--paper); }
+.top__r{ opacity:.55; }
 
-          <!-- Card 3 -->
-          <a href="/#contact" class="bg-gray-900 border-4 border-golden p-6 hover:glow-golden transition-all group">
-              <i data-lucide="mail" class="w-12 h-12 text-golden mx-auto mb-4 group-hover:scale-110 transition-transform"></i>
-              <h3 class="font-bold text-lg mb-2 text-golden">CONTACTO</h3>
-              <p class="text-gray-400 text-sm">Envíame un mensaje</p>
-          </a>
+/* --- escenario partido --- */
+.stage{
+  position:relative; z-index:5;
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);
+  min-height:0;
+}
+.stage > *{ min-height:0; }
 
-      </div>
+/* La losa: el bloque de color sólido del hero, que es el gesto más fuerte
+   del sitio y que aquí no estaba apareciendo por ningún lado. */
+.game{
+  position:relative; overflow:hidden; isolation:isolate;
+  background:var(--hero-bg); color:var(--hero-ink);
+  border-right:var(--line) solid var(--hero-ink);
+  display:grid; place-items:center;
+  touch-action:manipulation;
+}
+.game::after{                              /* la trama sutil del hero */
+  content:""; position:absolute; inset:0; z-index:3; pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(26,26,26,.055) 0 1px,transparent 1px 4px);
+  mix-blend-mode:multiply;
+}
+.game #plant{
+  position:relative; z-index:1;
+  margin:0; white-space:pre; line-height:1; letter-spacing:0;
+  font-family:var(--mono); font-size:var(--pcell,11px);
+  /* En el hero la planta va en --bloom-ink porque es TEXTURA detrás de la
+     marca. Aquí es la protagonista, así que toma el papel de la marca:
+     negra sobre la losa, con las mismas franjas cromáticas del wordmark. */
+  color:var(--hero-ink); user-select:none;
+  text-shadow:.05em 0 rgba(197,58,157,.55),-.05em 0 rgba(242,240,216,.30);
+}
+.game__hint{
+  position:absolute; left:var(--pad); bottom:var(--pad); z-index:4;
+  font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--hero-ink); opacity:.62; max-width:22ch; line-height:1.6;
+  pointer-events:none;
+}
 
-  </div>
+/* --- el sello del hero, pero marcando el estado --- */
+.seal{
+  position:absolute; top:var(--pad); right:clamp(18px,3.4vw,54px);
+  width:clamp(84px,9vw,124px); aspect-ratio:1;
+  display:grid; place-items:center; pointer-events:none;
+  /* el dither pasa por detrás y lo ensuciaba: su propio hueco */
+  background:radial-gradient(circle at 50% 50%,
+    var(--bg) 0 52%, rgba(26,26,26,.9) 74%, rgba(26,26,26,0) 100%);
+}
+.seal__ring{ position:absolute; inset:0; animation:gira 30s linear infinite; }
+@keyframes gira{ to{ transform:rotate(360deg); } }
+.seal__ring text{
+  font-family:var(--mono); font-size:8.6px; letter-spacing:.19em;
+  fill:var(--ink-dim); text-transform:uppercase;
+  transition:fill .3s;
+}
+.seal__ring tspan.on{ fill:var(--acid-hi); }
+.seal__core{
+  width:46%; aspect-ratio:1; border-radius:50%;
+  background:var(--bg); color:var(--ink);
+  display:grid; place-items:center;
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(14px,1.7vw,22px);
+  transition:color .2s, transform .2s;
+}
+.seal__core.snap{ color:var(--acid-hi); transform:scale(.82); }
+
+.side{
+  position:relative;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:var(--pad) clamp(18px,3.4vw,54px);
+  gap:clamp(12px,2vh,22px); min-width:0;
+}
+.side__num{
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(56px,11vw,150px); line-height:.8; letter-spacing:-.05em;
+  color:var(--paper); margin:0; position:relative; display:block;
+  user-select:none;
+}
+.side__num::before,.side__num::after{
+  content:attr(data-t); position:absolute; inset:0; opacity:0;
+}
+.side__num::before{ color:var(--ink);  transform:translate3d(-.035em,-.012em,0); }
+.side__num::after { color:var(--acid); transform:translate3d(.035em,.012em,0); }
+.side__num.glitch::before,.side__num.glitch::after{ opacity:.9; }
+
+.row{
+  display:flex; align-items:baseline; gap:1em;
+  border-top:var(--line) solid var(--ink-dim); padding-top:9px;
+  font-size:clamp(9px,.82vw,11px); letter-spacing:.14em; text-transform:uppercase;
+}
+.row dt{ opacity:.5; flex:none; min-width:9ch; }
+.row dd{ margin:0; color:var(--acid-hi); min-width:0; overflow:hidden;
+         text-overflow:ellipsis; white-space:nowrap; }
+.row dd.path{ letter-spacing:.02em; text-transform:none; }
+
+.say{
+  font-family:var(--display); font-weight:800;
+  font-size:clamp(17px,2.1vw,30px); line-height:1.12; letter-spacing:-.02em;
+  color:var(--ink-hi); margin:clamp(4px,1vh,10px) 0 0; max-width:20ch;
+}
+.say b{ color:var(--acid-hi); font-weight:800; }
+
+.back{
+  align-self:flex-start; margin-top:clamp(6px,1.4vh,16px);
+  color:var(--acid-hi); text-decoration:none; background:var(--bg);
+  font-size:clamp(10px,.95vw,12px); letter-spacing:.16em; text-transform:uppercase;
+  border:var(--line) solid var(--acid-hi); padding:12px 22px;
+  transition:background-color .25s,color .25s;
+}
+.back:hover{ background:var(--acid-hi); color:var(--bg); }
+
+/* --- pie estático --- */
+.foot{
+  position:relative; z-index:5;
+  border-top:var(--line) solid var(--ink-dim);
+  padding:12px var(--pad);
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  font-size:clamp(8.5px,.78vw,10px); letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink); opacity:.62;
+  background:linear-gradient(rgba(26,26,26,.82),var(--bg));
+}
+.foot span{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.foot a{ text-decoration:none; flex:none; }
+.foot a:hover{ color:var(--acid-hi); opacity:1; }
+
+/* --- el cursor bicho --- */
+.bug{
+  position:fixed; left:0; top:0; z-index:20; pointer-events:none;
+  font-family:var(--mono); font-weight:700; font-size:17px; line-height:1;
+  color:var(--acid-hi); white-space:pre;
+  text-shadow:0 0 7px var(--bg),0 0 7px var(--bg),.07em 0 rgba(197,58,157,.9);
+  opacity:0; transition:opacity .16s linear;
+}
+.bug.on{ opacity:1; }
+/* sobre la losa el bicho va en negro con halo violeta, igual que en el
+   hero; sobre el campo oscuro va en lima */
+.bug.losa{
+  color:var(--hero-ink);
+  text-shadow:0 0 7px var(--hero-bg),0 0 7px var(--hero-bg),0 0 3px var(--hero-bg),
+              .07em 0 rgba(197,58,157,.9);
+}
+
+@media (max-width:1100px){ .seal{ width:clamp(74px,8vw,96px); } }
+@media (max-width:820px){
+  .seal{ top:auto; bottom:var(--pad); right:var(--pad); width:78px; }
+}
+@media (max-width:820px){
+  .stage{ grid-template-columns:1fr; grid-template-rows:minmax(0,1fr) auto; }
+  .game{ border-right:0; border-bottom:var(--line) solid var(--ink-dim); }
+  .game__hint{ display:none; }
+  .side{ justify-content:flex-start; padding-top:clamp(16px,3vh,28px); }
+  .foot span:nth-child(2){ display:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  .dither,.bug{ display:none; }
+  .seal__ring{ animation:none; }
+  *{ transition:none!important; }
+}
+</style>
+</head>
+<body>
+
+<div class="scan" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="bug" id="bug" aria-hidden="true">\#/</div>
+
+<header class="top">
+  <span class="top__c">Counter: <b id="counter">00</b></span>
+  <span class="top__r" id="topRight">404 · not found</span>
+</header>
+
+<main class="stage">
+  <section class="game" id="game" aria-label="A Venus flytrap that follows your cursor">
+    <div class="dither" aria-hidden="true"><pre id="dither"></pre></div>
+    <pre id="plant" aria-hidden="true"></pre>
+    <p class="game__hint" id="hint">it follows the cursor. don't get too close.</p>
+  </section>
+
+  <section class="side">
+    <!-- El mismo sello giratorio del hero, pero acá no anuncia: marca.
+         Los cuatro estados de la planta en el aro, y el que está activo
+         se enciende. Es el reloj de la máquina de estados. -->
+    <div class="seal" aria-hidden="true">
+      <svg class="seal__ring" viewBox="0 0 100 100">
+        <defs>
+          <path id="aro" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+        </defs>
+        <text><textPath href="#aro" startOffset="0" textLength="238.7" lengthAdjust="spacing"
+          ><tspan id="s-wait">wait</tspan> &#8594; <tspan id="s-fly">fly</tspan> &#8594; <tspan id="s-caught">caught</tspan> &#8594; <tspan id="s-reopen">reopen</tspan> &#8594; </textPath></text>
+      </svg>
+      <span class="seal__core" id="sealCore">&#10039;</span>
+    </div>
+
+    <h1 class="side__num" data-t="404">404</h1>
+
+    <dl style="margin:0;display:grid;gap:9px">
+      <div class="row"><dt>plant</dt><dd id="status">open · waiting</dd></div>
+      <div class="row"><dt>you asked</dt><dd class="path" id="path">/</dd></div>
+      <div class="row"><dt>we found</dt><dd id="found">nothing</dd></div>
+    </dl>
+
+    <p class="say" id="say">The trap is <b>open</b>. It always is.</p>
+
+    <a class="back" href="/">Back to the portfolio &rarr;</a>
+  </section>
 </main>
-<script>
-        const icon = document.querySelector('.blink').parentElement;
-        let clickCount = 0;
-        
-        icon.addEventListener('click', () => {
-            clickCount++;
-            if (clickCount === 3) {
-                icon.innerHTML = '<div class="text-7xl">🎮</div>';
-                setTimeout(() => {
-                    icon.innerHTML = '<div class="text-7xl blink">❌</div>';
-                    clickCount = 0;
-                }, 2000);
-            }
-        });
 
-        // Animación de colores aleatorios en elementos flotantes
-        setInterval(() => {
-            const floaters = document.querySelectorAll('.float-animation');
-            floaters.forEach(floater => {
-                const colors = ['bg-purple', 'bg-purple', 'bg-golden'];
-                const currentColor = floater.classList[3];
-                floater.classList.remove(currentColor);
-                const newColor = colors[Math.floor(Math.random() * colors.length)];
-                floater.classList.add(newColor);
-            });
-        }, 5000);
+<footer class="foot">
+  <span>jhosno &mdash; 404</span>
+  <span>nothing here except the thing that's been watching you</span>
+  <a href="/#contacto">say hello &rarr;</a>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var RAMPA = " .:-=+*#%@", RN = RAMPA.length - 1;
+
+  function ruido(i) {                       /* barato y estable por celda */
+    var n = Math.sin(i * 12.9898) * 43758.5453;
+    return n - Math.floor(n);
+  }
+  function medirCelda(px) {
+    var s = document.createElement("span");
+    s.style.cssText = "position:absolute;visibility:hidden;white-space:pre;line-height:1;" +
+      "letter-spacing:0;font-size:" + px + "px;font-family:" +
+      getComputedStyle(document.body).fontFamily;
+    s.textContent = "0000000000";
+    document.body.appendChild(s);
+    var r = s.getBoundingClientRect();
+    document.body.removeChild(s);
+    return { w: (r.width / 10) || px * 0.6, h: r.height || px };
+  }
+
+
+  /* ================================================================
+     1. EL DITHER A SANGRE
+
+     La capa del hero. Es lo único del portafolio que no vuelve a
+     aparecer en ninguna otra página, así que ésta es su segunda y
+     última vez: un huevo de pascua tiene que traer algo que no esté
+     en el resto.
+     ================================================================ */
+  var dEl = document.getElementById("dither");
+  var DC = 0, DR = 0, dbuf = [];
+
+  function medirDither() {
+    /* se mide contra la losa, no contra la ventana: el dither es de la
+       losa, igual que en el hero */
+    var caja = document.getElementById("game").getBoundingClientRect();
+    var px = Math.max(7, Math.min(13, caja.width / 78));
+    dEl.style.setProperty("--dcell", px + "px");
+    var c = medirCelda(px);
+    DC = Math.ceil(caja.width / c.w) + 1;
+    DR = Math.ceil(caja.height / c.h) + 1;
+  }
+  function tri(x){ x = x - Math.floor(x); return x < .5 ? x * 2 : 2 - x * 2; }
+
+  function pintarDither(t) {
+    for (var y = 0; y < DR; y++) {
+      var fila = "";
+      for (var x = 0; x < DC; x++) {
+        var v = 0.5 * tri(x * 0.052 + y * 0.030 + t * 0.055)
+              + 0.5 * tri(x * 0.031 - y * 0.047 - t * 0.032);
+        v = v * 0.72 + ruido(y * DC + x) * 0.28;
+        fila += v <= 0.42 ? " " : RAMPA.charAt(((v - 0.42) / 0.58 * RN) | 0);
+      }
+      dbuf[y] = fila;
+    }
+    dbuf.length = DR;
+    dEl.textContent = dbuf.join("\n");
+  }
+
+
+  /* ================================================================
+     2. EL CEPO — el minijuego
+
+     Abierto siempre: es lo único que hace en todo el sitio, esperar.
+     Pero acá SIGUE al cursor, y si te metés en la boca muerde con las
+     constantes de la planta del hero: 0.09 s / power4.in al morder,
+     2.4 s / power2.inOut al reabrir. Lleva el mismo seguro: no vuelve
+     a morder hasta que salís de su alcance.
+     ================================================================ */
+  var gEl = document.getElementById("game");
+  var pEl = document.getElementById("plant");
+  var PC = 0, PR = 0, M = null, AR = 0.55, pbuf = [], CW = 6, CH = 11;
+
+  /* ----------------------------------------------------------------
+     La geometría es la de la Dionaea del hero, portada tal cual: una
+     corona abajo a la izquierda y cuatro peciolos en abanico hacia
+     arriba-derecha, cada uno con su cabeza de dos lóbulos y dientes.
+     El cuarto es un capullo joven que nunca abre.
+
+     Los números son los mismos del index. `SP` cierra el abanico hacia
+     la vertical cuando el panel es estrecho — igual que allá en
+     viewport retrato.
+     ---------------------------------------------------------------- */
+  var DEF = [
+    { reach:58, dir:0.95, size:10.0, w:1.85, tooth:5.10, step:3, bow: 0.13, viva:true },
+    { reach:36, dir:0.31, size: 7.2, w:1.42, tooth:3.80, step:3, bow:-0.17 },
+    { reach:32, dir:1.22, size: 6.8, w:1.34, tooth:3.60, step:3, bow: 0.20 },
+    { reach:13, dir:0.62, size: 3.4, w:0.82, tooth:1.80, step:2, bow: 0.10, capullo:true }
+  ];
+  /* SUELO, no BY: el cursor bicho de más abajo ya usa BX/BY y pisaba
+     esta variable a -400. La planta se dibujaba fuera de la retícula
+     y el panel salía en blanco. */
+  var SC = 1, SP = 1, CX = 0, SUELO = 0;
+
+  function limb(reach, dir, size, w, tooth, step, bow) {
+    var sx = Math.sin(dir), cy2 = Math.cos(dir);
+    var hx = reach * sx, hy = reach * cy2;
+    var px2 = -cy2 * reach * bow, py2 = sx * reach * bow;   // el peciolo arquea
+    return { hx:hx, hy:hy, ang:(Math.PI/2 - dir) + (dir > 1.0 ? -0.16 : 0.26),
+             size:size, w:w, tooth:tooth, step:step,
+             px:0, py:0.6, cx:hx*0.45 + px2, cy:hy*0.45 + py2,
+             reach:reach, nx:cy2, ny:-sx };
+  }
+
+  function medirPlanta() {
+    var caja = gEl.getBoundingClientRect();
+    var px = Math.max(6, Math.min(12, caja.height / 58, caja.width / 42));
+    pEl.style.setProperty("--pcell", px + "px");
+    var c = medirCelda(px);
+    CW = c.w; CH = c.h;
+    PC = Math.max(16, Math.floor(caja.width / c.w));
+    PR = Math.max(16, Math.floor(caja.height / c.h));
+    AR = c.w / c.h;
+    M = new Float32Array(PC * PR);
+
+    SC = PR / 60;            /* 60 filas nominales, como el hero apaisado */
+    CX = PC * 0.045; SUELO = PR - 1;   /* la corona casi pegada al borde */
+
+    /* cerrar el abanico hasta que el brazo dominante entre en el panel */
+    SP = 1;
+    for (var k = 0; k < 16; k++) {
+      var ancho = 0;
+      for (var i = 0; i < DEF.length; i++) {
+        var d = DEF[i];
+        var e = (d.reach * SC * Math.sin(d.dir * SP) + (d.size + d.tooth) * SC) / AR;
+        if (e > ancho) ancho = e;
+      }
+      /* Se le deja sangrar por la derecha: la planta del hero también se
+         sale del encuadre, y contenerla del todo la vuelve un icono
+         centrado en vez de una planta que crece. */
+      if (CX + ancho <= PC * 1.20) break;
+      SP -= 0.04;
+      if (SP < 0.52) { SP = 0.52; break; }
+    }
+  }
+
+  function disco(X, Y, rad, masa) {
+    /* X horizontal, Y ALTURA sobre la corona: igual que en el hero */
+    var gx = CX + X / AR, gy = SUELO - Y;
+    var rg = rad < 0.45 ? 0.45 : rad, rx = rg / AR;
+    var x0 = Math.max(0, Math.ceil(gx - rx)), x1 = Math.min(PC - 1, Math.floor(gx + rx));
+    var y0 = Math.max(0, Math.ceil(gy - rg)), y1 = Math.min(PR - 1, Math.floor(gy + rg));
+    for (var yy = y0; yy <= y1; yy++) {
+      for (var xx = x0; xx <= x1; xx++) {
+        var dx = (xx - gx) * AR, dy = yy - gy, d2 = (dx*dx + dy*dy) / (rg*rg);
+        if (d2 > 1) continue;
+        var j = yy * PC + xx, m = masa * (1 - d2 * 0.45);
+        if (m > M[j]) M[j] = m;
+      }
+    }
+  }
+  function bez(t, a, b, c) { var u = 1 - t; return u*u*a + 2*u*t*b + t*t*c; }
+
+  function dibujarCepo(T, cierre, sway) {
+    var open = 1 - cierre;
+    var alpha = 0.02 + 0.60 * open;          // giro sobre la bisagra
+    var beta  = 0.62;                        // abombamiento del lóbulo
+    var amp = sway * (0.16 + T.reach * 0.030);
+    var hx = T.hx + T.nx * amp, hy = T.hy + T.ny * amp;
+
+    /* peciolo */
+    var NP = Math.max(30, Math.round(T.reach * 2.2));
+    for (var p = 0; p <= NP; p++) {
+      var u = p / NP;
+      disco(bez(u, T.px, T.cx + T.nx*amp*0.45, hx),
+            bez(u, T.py, T.cy + T.ny*amp*0.45, hy),
+            (0.72 - 0.28*u) * SC, 0.84);
+    }
+    /* garganta: la cara interna, solo visible con la boca abierta */
+    if (open > 0.10) {
+      for (var q = 1; q <= 9; q++) {
+        var uq = q / 9;
+        disco(hx + Math.cos(T.ang)*uq*T.size*0.72, hy + Math.sin(T.ang)*uq*T.size*0.72,
+              T.w * 1.5 * (1 - uq*0.45) * open, 0.34 * open);
+      }
+    }
+    /* los dos lóbulos, con sus dientes */
+    for (var sgn = -1; sgn <= 1; sgn += 2) {
+      var a = T.ang + sgn * (alpha + beta), X = hx, Y = hy, N = 30;
+      var arc = T.size * beta / Math.sin(beta), ds = arc / N, curv = -sgn * 2 * beta / arc;
+      for (var ii = 0; ii <= N; ii++) {
+        var u2 = ii / N;
+        a += curv * ds; X += Math.cos(a) * ds; Y += Math.sin(a) * ds;
+        disco(X, Y, T.w * (0.30 + 0.95 * Math.sin(Math.pow(u2, 0.75) * Math.PI)), 0.95);
+        if (u2 > 0.22 && ii % T.step === 0) {
+          var g = Math.min(1, (u2 - 0.22) / 0.20) * (1 - 0.28 * u2), tl = T.tooth * g;
+          var na = a + sgn * (Math.PI/2 - 0.40 * u2);
+          var tnx = Math.cos(na), tny = Math.sin(na);
+          var NT = Math.max(5, Math.round(tl * 3.0));
+          for (var d = 1; d <= NT; d++) {
+            var f = d / NT;
+            disco(X + tnx*tl*f, Y + tny*tl*f, 0.46 * (1 - f*0.50) * SC, 0.93 - 0.13*f);
+          }
+        }
+      }
+    }
+    return { hx: hx, hy: hy };
+  }
+
+  var CIERRE = 0, TW = null, INCL = 0, INCL_OBJ = 0;
+  var ARMADO = true, CUENTA = 0, MORDIENDO = false;
+
+  function easeInPow4(x){ return x*x*x*x; }
+  function easeInOutPow2(x){ return x < .5 ? 2*x*x : 1 - Math.pow(-2*x+2,2)/2; }
+  function tween(hasta, dur, ease, retardo) {
+    TW = { t0: performance.now()/1000 + (retardo||0), desde: CIERRE,
+           hasta: hasta, dur: dur, ease: ease };
+  }
+  function pasoTween() {
+    if (!TW) return;
+    var p = (performance.now()/1000 - TW.t0) / TW.dur;
+    if (p < 0) return;
+    if (p >= 1) { CIERRE = TW.hasta; TW = null; return; }
+    CIERRE = TW.desde + (TW.hasta - TW.desde) * TW.ease(p);
+  }
+
+  /* la boca del brazo dominante, en coordenadas de pantalla */
+  var BOCA = { x: 0, y: 0, r: 40 };
+  function situarBoca(hx, hy) {
+    var caja = gEl.getBoundingClientRect();
+    var sobraX = caja.width  - PC * CW, sobraY = caja.height - PR * CH;
+    BOCA.x = caja.left + sobraX/2 + (CX + hx / AR) * CW;
+    BOCA.y = caja.top  + sobraY/2 + (SUELO - hy) * CH;
+    BOCA.r = DEF[0].size * SC * CH * 1.25;
+  }
+
+  var pbufN = 0;
+  function pintarPlanta(t) {
+    M.fill(0);
+    var sway = Math.sin(t * 0.62) * 0.62 + Math.sin(t * 1.07 + 1.3) * 0.28;
+    var boca = null;
+
+    for (var i = 0; i < DEF.length; i++) {
+      var d = DEF[i];
+      var dir = d.dir * SP + (d.viva ? INCL : 0);
+      var T = limb(d.reach*SC, dir, d.size*SC, d.w*SC, d.tooth*SC, d.step, d.bow);
+      var cierre = d.capullo ? 1
+                 : d.viva    ? CIERRE
+                 : 0.16 + 0.13 * Math.sin(t * 0.5 + i * 2.1);   /* los otros respiran */
+      var h = dibujarCepo(T, cierre, sway * (d.viva ? 1 : 0.8));
+      if (d.viva) boca = h;
+    }
+    if (boca) situarBoca(boca.hx, boca.hy);
+
+    var gl = CIERRE > 0.5 && CIERRE < 0.999;
+    for (var y2 = 0; y2 < PR; y2++) {
+      var fila = "";
+      var desv = (gl && ruido(y2 * 7.3) > 0.6) ? ((ruido(y2 * 3.1) * 13) | 0) - 6 : 0;
+      for (var x2 = 0; x2 < PC; x2++) {
+        var xi = x2 + desv;
+        var val = (xi < 0 || xi >= PC) ? 0 : M[y2 * PC + xi];
+        if (val > 0.06) val += (ruido(y2 * PC + xi) - 0.5) * 0.26 * val;
+        fila += val <= 0.07 ? " " : RAMPA.charAt(val >= 1 ? RN : (val * RN) | 0);
+      }
+      pbuf[y2] = fila;
+    }
+    pbuf.length = PR;
+    pEl.textContent = pbuf.join("\n");
+    pbufN = PR;
+  }
+
+
+  /* ================================================================
+     3. TEXTO
+     ================================================================ */
+  var GLIFOS = "\u259A\u259E\u2588\u2593\u2592\u2591/\\|<>+*#@$%&=~^01";
+  var pathEl = document.getElementById("path");
+  var stEl   = document.getElementById("status");
+  var sayEl  = document.getElementById("say");
+  var numEl  = document.querySelector(".side__num");
+  var cntEl  = document.getElementById("counter");
+  var hintEl = document.getElementById("hint");
+
+  var RUTA = (location.pathname + location.search) || "/";
+  if (RUTA === "/" || RUTA === "/404.html") RUTA = "/the-page-you-asked-for";
+  if (RUTA.length > 46) RUTA = RUTA.slice(0, 45) + "\u2026";
+
+  /* la ruta no se digiere: NO RESUELVE. Sigue intentando ser algo y no
+     lo consigue, porque esa página no existe. */
+  function pintarRuta(t) {
+    var chars = RUTA.split(""), out = "";
+    for (var i = 0; i < chars.length; i++) {
+      out += ruido(i * 4.3 + Math.floor(t * 9) * 1.7) > 0.93
+           ? GLIFOS[(Math.random() * GLIFOS.length) | 0] : chars[i];
+    }
+    pathEl.textContent = out;
+  }
+
+  var ESTADO = "";
+  var ARO = {
+    "open \u00b7 waiting": "s-wait",
+    "hunting":              "s-fly",
+    "caught":               "s-caught",
+    "reopening":            "s-reopen"
+  };
+  var coreEl = document.getElementById("sealCore");
+
+  function decir(est, frase) {
+    if (ESTADO === est) return;
+    ESTADO = est; stEl.textContent = est;
+    if (frase) sayEl.innerHTML = frase;
+    /* el aro del sello marca en qué estado está la planta */
+    var id = ARO[est];
+    for (var k in ARO) {
+      var el = document.getElementById(ARO[k]);
+      if (el) el.classList.toggle("on", ARO[k] === id);
+    }
+  }
+  function marcador() {
+    cntEl.textContent = (CUENTA < 10 ? "0" : "") + CUENTA;
+    cntEl.classList.add("hit");
+    setTimeout(function () { cntEl.classList.remove("hit"); }, 260);
+  }
+
+
+  /* ================================================================
+     4. EL BICHO Y EL BUCLE
+     ================================================================ */
+  var bugEl = document.getElementById("bug");
+  var BX = -400, BY = -400, TX = -400, TY = -400, VIVO = false;
+
+  /* El bicho tiene su propia máquina de estados, igual que en el hero:
+       alive   aletea — cuatro fotogramas a ~11 fps
+       caught  un punto, quieto DENTRO de la boca mientras el cepo aprieta
+       digest  sigue ahí dentro
+       regrow  se recompone con basura antes de volver a ser un bicho
+     Las alas son lo que le da vida; sin ellas es un glifo pegado al ratón. */
+  var WINGC = ["\\#/", "-#-", "/#\\", "-#-"];
+  var SCRAP = "\u259A\u259E/\\|<>+*#@%&";
+  var CUR = { st: "alive", t0: 0 };
+  var TT = 0;
+  var TACTIL = !matchMedia("(hover:hover)").matches;
+
+  if (!REDUCE && !TACTIL) {
+    document.documentElement.style.cursor = "none";
+    addEventListener("pointermove", function (e) {
+      if (e.pointerType && e.pointerType !== "mouse") return;
+      TX = e.clientX; TY = e.clientY; VIVO = true;
+    }, { passive: true });
+    addEventListener("pointerleave", function () { VIVO = false; });
+  }
+  if (TACTIL && hintEl) hintEl.textContent = "tap the mouth.";
+
+  function morder() {
+    ARMADO = false; MORDIENDO = true; CUENTA++;
+    CUR.st = "caught"; CUR.t0 = TT + 1.0;    /* te quedás dentro un rato */
+    marcador();
+    if (coreEl) {                          /* el núcleo del sello encoge */
+      coreEl.classList.add("snap");
+      setTimeout(function () { coreEl.classList.remove("snap"); }, 420);
+    }
+    setTimeout(function () { decir("reopening", null); }, 990);
+    /* En secuencia, no encadenadas: la segunda llamada a tween() pisa la
+       primera —captura `desde` en el acto— y el mordisco se cancelaba
+       antes de empezar. Se programa la reapertura cuando ya cerró. */
+    tween(1, 0.09, easeInPow4);                       /* = bugSnap()   */
+    setTimeout(function () {
+      tween(0, 2.4, easeInOutPow2);                   /* = bugReopen() */
+    }, 90 + 900);
+    decir("caught", 'Got you. That\u2019s <b>' + CUENTA +
+          (CUENTA === 1 ? '</b> so far.' : '</b> so far.'));
+    setTimeout(function () {
+      MORDIENDO = false;
+      decir("open \u00b7 waiting", 'The trap is <b>open</b>. It always is.');
+    }, 2900);
+  }
+
+  gEl.addEventListener("pointerdown", function (e) {
+    if (CIERRE > 0.3) return;
+    BX = TX = e.clientX; BY = TY = e.clientY; VIVO = !TACTIL;
+    ARMADO = true; morder();
+  });
+
+  function cazar() {
+    if (TACTIL || !VIVO || MORDIENDO) return;
+    var dx = BX - BOCA.x, dy = BY - BOCA.y;
+    var d = Math.sqrt(dx * dx + dy * dy);
+
+    /* se inclina hacia vos mientras estés en el panel */
+    var caja = gEl.getBoundingClientRect();
+    if (BX > caja.left && BX < caja.right && BY > caja.top && BY < caja.bottom) {
+      INCL_OBJ = Math.max(-0.30, Math.min(0.34,
+        (BX - BOCA.x) / (caja.width * 0.85)));
+      if (CIERRE < 0.05 && d < BOCA.r * 2.1) decir("hunting", 'It is <b>leaning</b> toward you.');
+    } else {
+      INCL_OBJ = 0;
+      if (CIERRE < 0.05) decir("open \u00b7 waiting", 'The trap is <b>open</b>. It always is.');
+    }
+
+    if (d > BOCA.r * 1.5) ARMADO = true;
+    if (ARMADO && !MORDIENDO && d < BOCA.r) morder();
+  }
+
+  function medirTodo() { medirDither(); medirPlanta(); }
+
+  if (REDUCE) {
+    pathEl.textContent = RUTA;
+    sayEl.innerHTML = 'The trap is <b>open</b>. It always is. This page never was.';
+    medirPlanta(); pintarPlanta(0);
+  } else {
+    decir("open \u00b7 waiting", null);
+    medirTodo();
+    var rt;
+    addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(medirTodo, 180); });
+
+    var t0 = performance.now(), f = 0;
+    (function marco(now) {
+      var t = (now - t0) / 1000; f++;
+      pasoTween();
+      INCL += (INCL_OBJ - INCL) * 0.07;
+      if (M) pintarPlanta(t);
+      if (f % 3 === 0) pintarDither(t);               /* el dither, a un tercio */
+      pintarRuta(t);
+      cazar();
+
+      TT = t;
+      if (CUR.st === "alive") {
+        BX += (TX - BX) * 0.17; BY += (TY - BY) * 0.17;
+        bugEl.textContent = WINGC[((t * 11) | 0) & 3];          /* aletea */
+
+      } else if (CUR.st === "caught" || CUR.st === "digest") {
+        BX = BOCA.x; BY = BOCA.y;                 /* queda dentro de la boca */
+        bugEl.textContent = "\u00b7";            /* un punto, para no perderlo */
+        if (t > CUR.t0) {
+          if (CUR.st === "caught") { CUR.st = "digest"; CUR.t0 = t + 0.9; }
+          else                     { CUR.st = "regrow"; CUR.t0 = t + 0.65; }
+        }
+
+      } else {                                    /* regrow: se recompone */
+        BX += (TX - BX) * 0.09; BY += (TY - BY) * 0.09;
+        var sc = "";
+        for (var i2 = 0; i2 < 3; i2++) sc += SCRAP.charAt((Math.random() * SCRAP.length) | 0);
+        bugEl.textContent = sc;
+        if (t > CUR.t0) CUR.st = "alive";
+      }
+
+      var cj = gEl.getBoundingClientRect();
+      bugEl.classList.toggle("losa",
+        BX > cj.left && BX < cj.right && BY > cj.top && BY < cj.bottom);
+      bugEl.classList.toggle("on", VIVO);
+      bugEl.style.transform = "translate3d(" + (BX - 9) + "px," + (BY - 9) + "px,0)";
+      numEl.classList.toggle("glitch", CIERRE > 0.5 && CIERRE < 0.999);
+      requestAnimationFrame(marco);
+    })(t0);
+  }
+})();
 </script>
+</body>
+{% endraw %}
+</html>
