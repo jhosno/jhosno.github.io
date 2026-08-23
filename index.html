@@ -1545,6 +1545,19 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 
 <script>
+document.querySelectorAll('[data-scroll]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=a.getAttribute('href');
+    if(!h||h.charAt(0)!=='#')return;
+    var t=document.querySelector(h);
+    if(!t)return;
+    e.preventDefault();
+    t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script>
+
+<script>
 (function () {
   "use strict";
 
@@ -1877,16 +1890,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     }
   }
 
-  document.querySelectorAll("[data-scroll]").forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      var id = a.getAttribute("href");
-      if (!id || id.charAt(0) !== "#") return;
-      var el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      goTo(el);
-    });
-  });
+  /* data-scroll handled by standalone script above */
 
 
   /* ----------------------------------------------------------
