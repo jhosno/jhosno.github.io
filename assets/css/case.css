@@ -20,7 +20,9 @@
   font-size: min(108px, 7.6vw,
                  calc((100vw - var(--pad) * 2) / (var(--title-ch, 12) * 0.95)));
   line-height:.92; letter-spacing:-.045em; text-transform:uppercase;
-  overflow-wrap:anywhere;
+  overflow-wrap:break-word;
+  word-break:normal;
+  max-width:100%;
   margin:0; color: var(--paper);
 }
 .lede__thesis{

@@ -13,7 +13,7 @@ lang: en
   <!-- PORTADA -->
   <div class="lede">
     <span class="lede__idx" data-i18n="idx">[PRODUCT · LARAVEL · 2024 — NOW]</span>
-    <h1 style="--title-ch:12">[Creatienda]</h1>
+    <h1 style="--title-ch:13">[Creatienda]</h1>
     <p class="lede__thesis" data-i18n-html="thesis">
       A system that was already alive, already had customers, and <em>could not stop</em>
       while I took it apart.
