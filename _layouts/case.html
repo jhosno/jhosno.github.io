@@ -1,0 +1,83 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>{{ page.title }} — {{ page.subtitle }} · jhosno</title>
+<meta name="description" content="{{ page.description }}" />
+<link rel="canonical" href="{{ page.url | prepend: site.url }}" />
+<meta name="author" content="Jhosno Hernández" />
+<meta name="theme-color" content="#1a1a1a" />
+
+{% if page.og_type %}
+<meta property="og:type" content="{{ page.og_type }}" />
+{% else %}
+<meta property="og:type" content="article" />
+{% endif %}
+<meta property="og:url" content="{{ page.url | prepend: site.url }}" />
+<meta property="og:site_name" content="jhosno" />
+<meta property="og:title" content="{{ page.title }} — {{ page.subtitle }}" />
+<meta property="og:description" content="{{ page.og_description | default: page.description }}" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+{% if page.schema %}
+<script type="application/ld+json">
+{{ page.schema }}
+</script>
+{% endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Martian+Mono:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/case.css">
+
+{{ page.head }}
+</head>
+<body>
+
+<a class="skip" href="#case" data-i18n="skip">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="ribbon">
+  <div class="ribbon__bar">
+    <a class="ribbon__mark" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <g fill="var(--ink)">
+          <path d="M16.4 22.8C6.2 24.4 -.6 15.8 1.8 3.4c8.2 3.6 13.8 10.6 14.6 19.4Z"/>
+          <path d="M15.6 22.8c10.2 1.6 17-7 14.6-19.4-8.2 3.6-13.8 10.6-14.6 19.4Z"/>
+        </g>
+        <path d="M16 22.4c.6 3.4-1.2 5.4-4 6.6-1.6.7-2.6 1.4-3 2.4" stroke="var(--ink)"
+              stroke-width="2.7" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span>jhosno</span>
+    </a>
+    <div class="ribbon__aside">
+      <button class="lang" id="langBtn" type="button" aria-label="Cambiar a español">ES</button>
+      <span class="ribbon__readout" id="readout">case</span>
+      <a href="/#trabajo" style="text-decoration:none;opacity:.7" data-i18n="allwork">← all work</a>
+    </div>
+  </div>
+  <div class="ribbon__rail"><i id="progress"></i></div>
+</header>
+
+<main id="case">
+{{ content }}
+</main>
+
+<footer class="foot">
+  <span>Jhosno Hernández — 2018—2026 ©</span>
+  <span data-i18n="foot">handmade with html, css and gsap · no templates</span>
+  <a href="/">jhosno.github.io</a>
+</footer>
+
+<script src="/assets/js/case.js"></script>
+</body>
+</html>

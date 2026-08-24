@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Network: nodes and edges -->
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <!-- Central node -->
+  <circle cx="200" cy="150" r="40" fill="#C53A9D"/>
+  <!-- Outer nodes -->
+  <circle cx="80" cy="80" r="20" fill="#5a2bc7"/>
+  <circle cx="320" cy="80" r="20" fill="#5a2bc7"/>
+  <circle cx="80" cy="220" r="20" fill="#5a2bc7"/>
+  <circle cx="320" cy="220" r="20" fill="#5a2bc7"/>
+  <circle cx="200" cy="40" r="20" fill="#B9BE2A"/>
+  <circle cx="200" cy="260" r="20" fill="#B9BE2A"/>
+  <!-- Edges -->
+  <line x1="160" y1="150" x2="100" y2="80" stroke="#7d2764" stroke-width="2"/>
+  <line x1="240" y1="150" x2="300" y2="80" stroke="#7d2764" stroke-width="2"/>
+  <line x1="160" y1="150" x2="100" y2="220" stroke="#7d2764" stroke-width="2"/>
+  <line x1="240" y1="150" x2="300" y2="220" stroke="#7d2764" stroke-width="2"/>
+  <line x1="200" y1="110" x2="200" y2="60" stroke="#7d2764" stroke-width="2"/>
+  <line x1="200" y1="190" x2="200" y2="240" stroke="#7d2764" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="200" y="155" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">API</text>
+</svg>

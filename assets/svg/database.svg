@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Database: cylinder -->
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <!-- Cylinder body -->
+  <ellipse cx="200" cy="80" rx="100" ry="30" fill="#5a2bc7" opacity="0.8"/>
+  <rect x="100" y="80" width="200" height="140" fill="#5a2bc7" opacity="0.6"/>
+  <ellipse cx="200" cy="220" rx="100" ry="30" fill="#5a2bc7" opacity="0.8"/>
+  <!-- Top ellipse -->
+  <ellipse cx="200" cy="80" rx="100" ry="30" fill="#7d2764"/>
+  <!-- Lines -->
+  <ellipse cx="200" cy="130" rx="100" ry="30" fill="none" stroke="#C53A9D" stroke-width="1" opacity="0.5"/>
+  <ellipse cx="200" cy="180" rx="100" ry="30" fill="none" stroke="#C53A9D" stroke-width="1" opacity="0.5"/>
+  <!-- Label -->
+  <text x="200" y="155" fill="#f2f0d8" font-family="monospace" font-size="12" text-anchor="middle">DB</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Data flow: nodes and connections -->
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <!-- Nodes -->
+  <circle cx="80" cy="150" r="30" fill="#5a2bc7"/>
+  <circle cx="200" cy="80" r="30" fill="#C53A9D"/>
+  <circle cx="200" cy="220" r="30" fill="#C53A9D"/>
+  <circle cx="320" cy="150" r="30" fill="#B9BE2A"/>
+  <!-- Connections -->
+  <line x1="110" y1="150" x2="170" y2="80" stroke="#7d2764" stroke-width="2"/>
+  <line x1="110" y1="150" x2="170" y2="220" stroke="#7d2764" stroke-width="2"/>
+  <line x1="230" y1="80" x2="290" y2="150" stroke="#7d2764" stroke-width="2"/>
+  <line x1="230" y1="220" x2="290" y2="150" stroke="#7d2764" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="80" y="155" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">IN</text>
+  <text x="200" y="85" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">A</text>
+  <text x="200" y="225" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">B</text>
+  <text x="320" y="155" fill="#1a1a1a" font-family="monospace" font-size="10" text-anchor="middle">OUT</text>
+</svg>
