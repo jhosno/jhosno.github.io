@@ -1592,8 +1592,8 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     /* cadenas que no viven en el DOM sino en JS */
     _copied:"correo copiado",
     _subject:"Tengo un sistema que ya existe",
-    _secs:{ top:"inicio", quien:"quién", trabajo:"trabajo", labs:"labs", contacto:"contacto" },
-    navAbout:"quién", navWorks:"trabajo", navLabs:"labs", navContact:"contacto",
+    _secs:{ top:"inicio", quien:"quién", trabajo:"trabajos", labs:"labs", contacto:"contacto" },
+    navAbout:"quién", navWorks:"trabajos", navLabs:"labs", navContact:"contacto",
     _facts:["tamagotchi fan", "glitch", "brat",'retro RPG', "leer stack traces", "tattoo", "puzzle solver", "elgibitiquaplus",],
     _btn:"EN", _aria:"Switch to English"
   };
@@ -1601,7 +1601,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   var EN = {
     _copied:"email copied",
     _subject:"I have a system that already exists",
-    _secs:{ top:"home", quien:"about", trabajo:"work", labs:"labs", contacto:"contact" },
+    _secs:{ top:"home", quien:"about", trabajo:"works", labs:"labs", contacto:"contact" },
     _facts:CONTENIDO.facts.slice(),
     _btn:"ES", _aria:"Cambiar a español"
   };
@@ -1896,11 +1896,36 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     { id: "contacto", nav: "contacto" }
   ];
   var currentId = "top";
-  var worksPinned = false;
+  var workPinStart = 0;
+  var workPinEnd = 0;
   readout.textContent = T._secs.top;
 
+  function updateWorkPinZone() {
+    var el = document.getElementById("trabajo");
+    var track = document.getElementById("workTrack");
+    var vp = document.querySelector(".work__vp");
+    if (!el || !track || !vp) return;
+    var pad = parseFloat(getComputedStyle(vp).paddingLeft) || 32;
+    var dist = Math.max(0, track.scrollWidth - window.innerWidth + pad * 2);
+    workPinStart = el.offsetTop;
+    workPinEnd = el.offsetTop + dist;
+  }
+
+  function activeSection() {
+    var scrollY = window.pageYOffset || window.scrollY;
+    if (scrollY >= workPinStart && scrollY < workPinEnd) return sections[2];
+    var viewMid = window.innerHeight * 0.5;
+    var best = sections[0];
+    for (var i = sections.length - 1; i >= 0; i--) {
+      var el = document.getElementById(sections[i].id);
+      if (!el) continue;
+      var rect = el.getBoundingClientRect();
+      if (rect.top <= viewMid) { best = sections[i]; break; }
+    }
+    return best;
+  }
+
   function setSection(s) {
-    if (worksPinned && s.id !== "trabajo") return;
     if (currentId === s.id) return;
     currentId = s.id;
     scramble(readout, T._secs[s.id], 0.5);
@@ -1909,16 +1934,11 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     });
   }
 
-  sections.forEach(function (s) {
-    var el = document.getElementById(s.id);
-    if (!el) return;
-    ScrollTrigger.create({
-      trigger: el,
-      start: "top 70%",
-      end: "bottom 30%",
-      onEnter:     function () { setSection(s); },
-      onEnterBack: function () { setSection(s); }
-    });
+  ScrollTrigger.create({
+    trigger: document.documentElement,
+    start: "top top",
+    end: "bottom bottom",
+    onUpdate: function () { setSection(activeSection()); }
   });
 
   /* 4. reloj local del estudio (desfase en CONTENIDO.husoH) */
@@ -3097,13 +3117,12 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
         pin: true,
         scrub: 0.8,
         invalidateOnRefresh: true,
-        anticipatePin: 1,
-        onEnter: function () { worksPinned = true; },
-        onLeave: function () { worksPinned = false; },
-        onEnterBack: function () { worksPinned = true; },
-        onLeaveBack: function () { worksPinned = false; }
+        anticipatePin: 1
       }
     });
+
+    updateWorkPinZone();
+    ScrollTrigger.addEventListener("refresh", updateWorkPinZone);
 
     /* las tarjetas entran ligeramente escalonadas */
     gsap.from(".card", {
