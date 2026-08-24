@@ -221,7 +221,7 @@ window.__CASE_ES = {
   fig4:"La cascada acortándose. La misma petición, menos trabajo detrás.",
 
   n1:"Siguiente caso", n2:"O bien", n3:"Traé el stack trace →",
-  foot:"hecho a mano con html, css y gsap · sin plantillas",
+  foot:"Made with a concept, hardcore music and gsap",
   _btn:"EN", _aria:"Switch to English"
 };
 </script>

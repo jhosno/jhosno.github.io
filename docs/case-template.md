@@ -231,7 +231,7 @@ window.__CASE_ES = {
   n1:"Siguiente caso",
   n2:"O bien",
   n3:"Traé el stack trace →",
-  foot:"hecho a mano con html, css y gsap · sin plantillas",
+  foot:"Made with a concept, hardcore music and gsap",
 
   // Language button
   _btn:"EN",
