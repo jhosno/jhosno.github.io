@@ -423,7 +423,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   position:absolute; inset:0;
   padding: var(--hero-top) var(--pad) calc(var(--pad) + 26px);
   display:grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr;
   gap: clamp(10px, 2vh, 22px);
   z-index:2;
 }
@@ -657,6 +657,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 
 /* --- fila 3: metadatos + cue --- */
 .hero__bottom{
+  position:absolute; bottom:26px; left:var(--pad); right:var(--pad);
   display:flex; flex-wrap:wrap; align-items:flex-end;
   justify-content:space-between;
   gap: 14px clamp(14px, 3vw, 40px);
@@ -692,9 +693,31 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   font-size: 10px;
   letter-spacing: .1em;
   text-transform: uppercase;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 var(--pad);
 }
-.hero__ticker .marquee{ height:26px; }
-.hero__ticker em{ color: var(--acid-hi); font-style:normal; }
+.hero__ticker-state{
+  display:flex; align-items:center; gap:.45em;
+}
+.hero__ticker-state .is-active{
+  color: var(--acid-hi);
+}
+.hero__ticker-email{
+  display:flex; align-items:center; gap:.45em;
+  color: var(--ink);
+  margin-left:auto;
+}
+.hero__ticker-copy{
+  font:inherit; color:inherit; letter-spacing:inherit; text-transform:inherit;
+  border: var(--line) solid var(--ink-dim);
+  padding: 1px 8px;
+  cursor:pointer;
+  transition: border-color .25s, color .25s;
+}
+.hero__ticker-copy:hover{
+  border-color: var(--acid-hi);
+  color: var(--acid-hi);
+}
 
 
 /* ============================================================
@@ -1256,15 +1279,12 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   </div>
 
   <div class="hero__ticker">
-    <div class="marquee" data-marquee data-speed="60" data-dir="-1">
-      <div class="marquee__track">
-        <div class="marquee__group">
-          <span data-mail></span><span><em>░░▒▒▓▓▒▒░░</em></span>
-          <span data-i18n="copymq">copy email</span><span><em>░░▒▒▓▓▒▒░░</em></span>
-          <span data-mail></span><span><em>░░▒▒▓▓▒▒░░</em></span>
-        </div>
-      </div>
-    </div>
+    <!--
+    <span class="hero__ticker-state" id="tickerState"
+      ><span id="ts-wait" class="is-active">wait</span> → <span id="ts-fly">fly</span> → <span id="ts-caught">caught</span> → <span id="ts-reopen">reopen</span></span
+    ><span class="hero__ticker-email">·</span>
+    -->
+    <span class="hero__ticker-email"><span data-mail></span> · <button class="hero__ticker-copy" id="tickerCopy" type="button" data-i18n="copymq">copy email</button></span>
   </div>
 </section>
 
@@ -2609,7 +2629,7 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
 
   /* --- el bicho: autómata de cinco estados --- */
   var WING = ["\\#/", "-#-", "/#\\", "-#-"];
-  var BUG  = { st: "wait", gx: 0, gy: 0, tx: 0, ty: 0, t0: 2.6, target: 0, seed: 0, glyph: null };
+  var BUG  = { st: "wait", phase: "wait", gx: 0, gy: 0, tx: 0, ty: 0, t0: 2.6, target: 0, seed: 0, glyph: null };
 
   function closeKey(k) { return k === 0 ? "a" : (k === 1 ? "b" : "c"); }
 
@@ -2623,28 +2643,33 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
     BUG.tx = m.gx + (Math.random() - 0.5) * 5;
     BUG.ty = m.gy - 3.5 - Math.random() * 3;
     BUG.seed = Math.random() * 6.28;
-    BUG.st = "fly";
+    BUG.st = "fly"; BUG.phase = "fly";
   }
   function bugSnap(t) {
     var o = {}; o[closeKey(BUG.target)] = 1; o.duration = 0.09; o.ease = "power4.in";
     gsap.to(CL, o);
     burstGlitch(150);                              // el glitch de bandas acompaña
-    BUG.st = "caught"; BUG.t0 = t + 1.6;
+    BUG.st = "caught"; BUG.phase = "caught"; BUG.t0 = t + 1.6;
   }
   function bugReopen(t) {
     var o = {}; o[closeKey(BUG.target)] = 0; o.duration = 2.4; o.ease = "power2.inOut"; o.delay = 0.7;
     gsap.to(CL, o);
-    BUG.st = "wait"; BUG.t0 = t + 4.6 + Math.random() * 2.5;
+    BUG.st = "wait"; BUG.phase = "reopen"; BUG.t0 = t + 4.6 + Math.random() * 2.5;
   }
 
   function stepBug(t, grow) {
-    if (grow < 0.85) { BUG.glyph = null; BUG.st = "wait"; BUG.t0 = t + 1.2; return; }
+    if (grow < 0.85) { BUG.glyph = null; BUG.st = "wait"; BUG.phase = "wait"; BUG.t0 = t + 1.2; return; }
     var m = plant.mouth(BUG.target);
 
     /* si el cepo al que iba se cerró por el camino — porque te mordió a ti —
        el bicho se larga y espera otro momento */
     if ((BUG.st === "fly" || BUG.st === "hover") && CLOSE[BUG.target] > 0.5) {
-      BUG.st = "wait"; BUG.t0 = t + 3.0; BUG.glyph = null; return;
+      BUG.st = "wait"; BUG.phase = "wait"; BUG.t0 = t + 3.0; BUG.glyph = null; return;
+    }
+
+    /* reopen → wait: las garras ya se abrieron lo suficiente */
+    if (BUG.phase === "reopen" && Math.max(CL.a, CL.b, CL.c) < 0.1) {
+      BUG.phase = "wait";
     }
 
     if (BUG.st === "wait") {
@@ -2874,6 +2899,13 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
   var CLOSE = [0, 0, 0, 1];   // el cuarto es el capullo: siempre cerrado
 
   var panelDirty = false, noiseDirty = false, noiseTick = 0;
+  var lastPhase = "";
+  /* var TSK = {
+    "wait":   document.getElementById("ts-wait"),
+    "fly":    document.getElementById("ts-fly"),
+    "caught": document.getElementById("ts-caught"),
+    "reopen": document.getElementById("ts-reopen")
+  }; */
 
   function paintPlant(t) {
     var grow = FL.open * FL.wilt;
@@ -2915,6 +2947,10 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
   if (REDUCE) {
     FL.open = 1;
     paintPlant(3.2);                      // un fotograma fijo, boca abierta
+    /* marcar el estado inicial en el ticker (REDUCE no tiene loop)
+    lastPhase = "wait";
+    if (TSK["wait"]) TSK["wait"].classList.add("is-active");
+    */
   } else {
     paintPlant(0);
     gsap.ticker.add(function () {
@@ -2926,6 +2962,12 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
       cursorBug(t);
       stepBug(t, FL.open * FL.wilt);
       paintPlant(t);
+      /* if (BUG.phase !== lastPhase) {
+        lastPhase = BUG.phase;
+        for (var k in TSK) {
+          if (TSK[k]) TSK[k].classList.toggle("is-active", k === BUG.phase);
+        }
+      } */
     });
   }
 
@@ -3238,13 +3280,10 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
      ---------------------------------------------------------- */
   var copyBtn = document.getElementById("copyBtn");
   var MAIL = CONTENIDO.correo;
-  copyBtn.addEventListener("click", function () {
+
+  function copyMailToClipboard() {
     var done = function () {
-      scramble(copyBtn, T._copied, 0.5);
       burstGlitch(200);
-      setTimeout(function () {
-        scramble(copyBtn, IDIOMA === "es" ? ES.copy : BASE.text.copy, 0.5);
-      }, 2000);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(MAIL).then(done, done);
@@ -3255,7 +3294,25 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
       document.body.removeChild(ta);
       done();
     }
+  }
+
+  copyBtn.addEventListener("click", function () {
+    copyMailToClipboard();
+    scramble(copyBtn, T._copied, 0.5);
+    setTimeout(function () {
+      scramble(copyBtn, IDIOMA === "es" ? ES.copy : BASE.text.copy, 0.5);
+    }, 2000);
   });
+
+  var tickerCopy = document.getElementById("tickerCopy");
+  if (tickerCopy) {
+    tickerCopy.addEventListener("click", function () {
+      copyMailToClipboard();
+      var orig = tickerCopy.textContent;
+      tickerCopy.textContent = T._copied || "copied";
+      setTimeout(function () { tickerCopy.textContent = orig; }, 1500);
+    });
+  }
 
 
   /* ----------------------------------------------------------
