@@ -18,10 +18,11 @@
 .lede h1{
   font-family: var(--display); font-weight:800;
   font-size: min(108px, 7.6vw,
-                 calc((100vw - var(--pad) * 2) / (var(--title-ch, 12) * 0.95)));
+                 calc((100vw - var(--pad) * 2) / (var(--title-ch, 14) * 1.05)));
   line-height:.92; letter-spacing:-.045em; text-transform:uppercase;
-  overflow-wrap:break-word;
+  overflow-wrap:normal;
   word-break:normal;
+  white-space:nowrap;
   max-width:100%;
   margin:0; color: var(--paper);
 }
