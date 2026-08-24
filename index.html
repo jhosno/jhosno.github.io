@@ -955,6 +955,14 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 }
 .card__tags span{ border: var(--line) solid var(--ink-dim); padding:3px 6px; }
 
+.card__link{
+  display:inline-block; margin-top:10px;
+  font-family: var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color: var(--acid-hi); text-decoration:none; opacity:.8;
+  transition: opacity .25s;
+}
+.card__link:hover{ opacity:1; }
+
 /* --- contacto: el cepo ---------------------------------------------------
    El cursor viene siendo un bicho desde la primera pantalla y la planta del
    hero le cede el turno cada vez que aparece. Acá deja de cederlo. Los dos
@@ -1396,6 +1404,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
               <div><dt data-i18n="lOut">outcome</dt><dd data-i18n="c2c">+20% response speed.</dd></div>
             </dl>
             <div class="card__tags"><span>laravel</span><span>spatie multitenancy</span><span>solid</span></div>
+            <a href="/cases/creatienda/" class="card__link" data-i18n="viewCase">view case →</a>
           </div>
         </article>
 
@@ -1650,6 +1659,7 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
     lBrief:"encargo", lShip:"entrega",
     lSym:"síntoma", lCatch:"captura", lOut:"resultado",
     before:"antes ↗", live:"ahora ↗",
+    viewCase:"ver caso →",
     tDover:"Estado anterior en archive.org · 7 de marzo de 2026",
     tClute:"Estado anterior en archive.org · 8 de febrero de 2026",
     tLive:"Sitio en vivo",
