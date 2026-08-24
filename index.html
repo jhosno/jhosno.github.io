@@ -2,8 +2,6 @@
 layout: none
 permalink: /
 ---
-{% raw %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1343,165 +1341,9 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   <section class="sec work" id="trabajo">
     <div class="work__vp">
       <div class="work__track" id="workTrack">
-        <!-- Every card repeats the plant's own state machine.
-             Rescue:  symptom (flies in) · catch (snaps) · outcome (reopens).
-             Build:   brief · call · shipped — the plant before it hunts,
-                      while it is still giving itself a shape. -->
-
-        <!-- Both papers live in ONE card: the argument is the difference
-             between them, and split across the rail nobody crosses them. -->
-        <article class="card card--doble">
-          <div class="card__par">
-            <div class="card__mitad">
-              <img src="img/dover.png" width="760" height="475" decoding="async"
-                   data-i18n-alt="altDover"
-                   alt="The Dover Street Examiner: heavy grotesque headline with chromatic glitch over a night photograph.">
-              <b>
-                <span>The Dover Street Examiner</span>
-                <span class="card__vs">
-                  <a href="https://web.archive.org/web/20260307115301/https://www.doverstreet.org/"
-                     target="_blank" rel="noopener" data-i18n="before"
-                     data-i18n-title="tDover" title="Previous state on archive.org · 7 March 2026">before ↗</a>
-                  <a href="https://www.doverstreet.org" target="_blank" rel="noopener"
-                     data-i18n="live" data-i18n-title="tLive" title="Live site">live ↗</a>
-                </span>
-              </b>
-            </div>
-            <div class="card__mitad">
-              <img src="img/clute.png" width="760" height="475" decoding="async"
-                   data-i18n-alt="altClute"
-                   alt="Clute Institute: high-contrast serif headline over a teal polygonal texture.">
-              <b>
-                <span>Clute Institute</span>
-                <span class="card__vs">
-                  <a href="https://web.archive.org/web/20260208090953/https://www.cluteinstitute-onlinejournals.com/"
-                     target="_blank" rel="noopener" data-i18n="before"
-                     data-i18n-title="tClute" title="Previous state on archive.org · 8 February 2026">before ↗</a>
-                  <a href="https://www.cluteinstitute-onlinejournals.com" target="_blank" rel="noopener"
-                     data-i18n="live" data-i18n-title="tLive" title="Live site">live ↗</a>
-                </span>
-              </b>
-            </div>
-          </div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c0i">wordpress · web design · 2026</span>
-            <h3 class="card__title" data-i18n="c0t">Two papers</h3>
-            <p class="card__desc" data-i18n="c0d">Same agency, weeks apart. The same Elementor. Two identities with nothing in common — on purpose. The "before" of each one is on archive.org.</p>
-            <dl class="card__log">
-              <div><dt data-i18n="lBrief">brief</dt><dd data-i18n="c0a">Login details and two adjectives: "modern and pretty". No web design, no guide, no design.</dd></div>
-              <div><dt data-i18n="c0bt">call · dover</dt><dd data-i18n="c0b">The voice was already paranoid parody. So direct it straight: the more convinced the design, the funnier the text.</dd></div>
-              <div><dt data-i18n="c0ct">call · clute</dt><dd data-i18n="c0c">No color to inherit. Teal instead of every newspaper's navy, and far from Dover on purpose: two clients of one agency cannot converge.</dd></div>
-              <div><dt data-i18n="lShip">shipped</dt><dd data-i18n="c0e">Identity, visual system and the site running. Twice, without repeating a single decision.</dd></div>
-            </dl>
-            <div class="card__tags"><span>wordpress</span><span data-i18n="tgBrand">web design</span><span data-i18n="tgArt">web design</span><span>elementor</span></div>
-          </div>
-        </article>
-
-        <article class="card p6">
-          <div class="card__vis"><i></i></div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c1i">wordpress · client portfolio · 2018 — 2024</span>
-            <h3 class="card__title" data-i18n="c1t">Deep WordPress</h3>
-            <p class="card__desc" data-i18n="c1d">Themes, custom plugins and WooCommerce stores under ongoing maintenance.</p>
-            <dl class="card__log">
-              <div><dt data-i18n="lSym">symptom</dt><dd data-i18n="c1a">Third-party plugins doing almost what was needed.</dd></div>
-              <div><dt data-i18n="lCatch">catch</dt><dd data-i18n="c1b">Custom plugins and load optimization.</dd></div>
-              <div><dt data-i18n="lOut">outcome</dt><dd data-i18n="c1c">Fewer dependencies, fewer tickets.</dd></div>
-            </dl>
-            <div class="card__tags"><span>wordpress</span><span>woocommerce</span><span>performance</span></div>
-          </div>
-        </article>
-
-        <article class="card p1">
-          <div class="card__vis"><i></i></div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c2i">product · laravel · 2024 — now</span>
-            <h3 class="card__title">Creatienda</h3>
-            <p class="card__desc" data-i18n="c2d">Multi-tenant e-commerce SaaS for LATAM small businesses. Critical modules in production, many stores on one codebase.</p>
-            <dl class="card__log">
-              <div><dt data-i18n="lSym">symptom</dt><dd data-i18n="c2a">Coupled modules, slow to respond.</dd></div>
-              <div><dt data-i18n="lCatch">catch</dt><dd data-i18n="c2b">Refactored into a service layer, SOLID-oriented.</dd></div>
-              <div><dt data-i18n="lOut">outcome</dt><dd data-i18n="c2c">+20% response speed.</dd></div>
-            </dl>
-            <div class="card__tags"><span>laravel</span><span>spatie multitenancy</span><span>solid</span></div>
-            <a href="/cases/creatienda/" class="card__link" data-i18n="viewCase">view case →</a>
-          </div>
-        </article>
-
-        <article class="card p2">
-          <div class="card__vis"><i></i></div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c3i">product · payments · 2025</span>
-            <h3 class="card__title" data-i18n="c3t">Multi&#8209;gateway</h3>
-            <p class="card__desc" data-i18n="c3d">Payments across LATAM: every country with its own provider, every provider with its own contract.</p>
-            <dl class="card__log">
-              <div><dt data-i18n="lSym">symptom</dt><dd data-i18n="c3a">Adding one gateway meant touching the whole checkout.</dd></div>
-              <div><dt data-i18n="lCatch">catch</dt><dd data-i18n="c3b">Factory pattern behind a single shared interface.</dd></div>
-              <div><dt data-i18n="lOut">outcome</dt><dd data-i18n="c3c">A new provider without opening the core.</dd></div>
-            </dl>
-            <div class="card__tags"><span data-i18n="tgPay">payments</span><span>factory</span><span data-i18n="tgInt">integrations</span></div>
-          </div>
-        </article>
-
-        <article class="card p3">
-          <div class="card__vis"><i></i></div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c4i">product · backoffice · 2025</span>
-            <h3 class="card__title">BackOffice</h3>
-            <p class="card__desc" data-i18n="c4d">The panel the SaaS is run from. Whoever operates it needs to see the business without asking anyone for a query.</p>
-            <dl class="card__log">
-              <div><dt data-i18n="lSym">symptom</dt><dd data-i18n="c4a">Fixed metrics: every new question was a ticket.</dd></div>
-              <div><dt data-i18n="lCatch">catch</dt><dd data-i18n="c4b">Dynamic metrics with date-range filters.</dd></div>
-              <div><dt data-i18n="lOut">outcome</dt><dd data-i18n="c4c">The team answers itself.</dd></div>
-            </dl>
-            <div class="card__tags"><span>laravel</span><span>dashboards</span><span>ux</span></div>
-          </div>
-        </article>
-
-        <article class="card p4">
-          <div class="card__vis"><i></i></div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c5i">own product · 2018 — 2024</span>
-            <h3 class="card__title">MenúMaestro</h3>
-            <p class="card__desc" data-i18n="c5d">My own product. Digital QR menus for restaurants, built in four steps.</p>
-            <dl class="card__log">
-              <div><dt data-i18n="lSym">symptom</dt><dd data-i18n="c5a">Changing one price meant reprinting the menu.</dd></div>
-              <div><dt data-i18n="lCatch">catch</dt><dd data-i18n="c5b">Product upload, style editor and a unique URL.</dd></div>
-              <div><dt data-i18n="lOut">outcome</dt><dd data-i18n="c5c">The menu updates without going back to print.</dd></div>
-            </dl>
-            <div class="card__tags"><span data-i18n="tgProd">product</span><span>php</span><span>qr</span></div>
-          </div>
-        </article>
-
-        <article class="card p5">
-          <div class="card__vis"><i></i></div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c6i">custom platform · 2019 — 2021</span>
-            <h3 class="card__title" data-i18n="c6t">Care platform</h3>
-            <p class="card__desc" data-i18n="c6d">Custom platform for a psychological care center for children with special needs.</p>
-            <dl class="card__log">
-              <div><dt data-i18n="lSym">symptom</dt><dd data-i18n="c6a">Requirements changed faster than the code.</dd></div>
-              <div><dt data-i18n="lCatch">catch</dt><dd data-i18n="c6b">Module refactors and evolutionary maintenance.</dd></div>
-              <div><dt data-i18n="lOut">outcome</dt><dd data-i18n="c6c">A stable base to keep adding without breaking.</dd></div>
-            </dl>
-            <div class="card__tags"><span>laravel</span><span data-i18n="tgPhp">plain php</span><span data-i18n="tgSens">sensitive domain</span></div>
-          </div>
-        </article>
-
-        <article class="card p2">
-          <div class="card__vis"><i></i></div>
-          <div class="card__body">
-            <span class="card__idx" data-i18n="c7i">in progress · 2026</span>
-            <h3 class="card__title" data-i18n="c7t">In progress</h3>
-            <p class="card__desc" data-i18n="c7d">What is open on the desk right now.</p>
-            <dl class="card__log">
-              <div><dt>wordpress</dt><dd data-i18n="c7a">Two sites from scratch, each with its own web design.</dd></div>
-              <div><dt data-i18n="tgProd">product</dt><dd data-i18n="c7b">Management SaaS: part client work, part lab.</dd></div>
-              <div><dt data-i18n="c7ct">available</dt><dd data-i18n="c7c">There is room. Write and let's talk.</dd></div>
-            </dl>
-            <div class="card__tags"><span>wordpress</span><span>laravel</span><span>2026</span></div>
-          </div>
-        </article>
+        {% for item in site.data.work %}
+          {% include card.html item=item %}
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -3482,5 +3324,4 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 })();
 </script>
 </body>
-{% endraw %}
 </html>

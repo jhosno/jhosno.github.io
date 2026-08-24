@@ -1,0 +1,224 @@
+# Work cards — edit here to add, remove or reorder projects.
+# Each card generates a <article class="card"> in the work section.
+
+# --- Card 0: Two papers (double) ---
+- type: double
+  i18n: c0
+  pattern: card--doble
+  idx: "wordpress · web design · 2026"
+  title: "Two papers"
+  desc: "Same agency, weeks apart. The same Elementor. Two identities with nothing in common — on purpose. The \"before\" of each one is on archive.org."
+  log:
+    - dt: lBrief
+      dt_label: brief
+      dd: "Login details and two adjectives: \"modern and pretty\". No web design, no guide, no design."
+      key: c0a
+    - dt: c0bt
+      dt_label: "call · dover"
+      dd: "The voice was already paranoid parody. So direct it straight: the more convinced the design, the funnier the text."
+      key: c0b
+    - dt: c0ct
+      dt_label: "call · clute"
+      dd: "No color to inherit. Teal instead of every newspaper's navy, and far from Dover on purpose: two clients of one agency cannot converge."
+      key: c0c
+    - dt: lShip
+      dt_label: shipped
+      dd: "Identity, visual system and the site running. Twice, without repeating a single decision."
+      key: c0e
+  images:
+    - src: img/dover.png
+      alt_key: altDover
+      alt: "The Dover Street Examiner: heavy grotesque headline with chromatic glitch over a night photograph."
+      name: "The Dover Street Examiner"
+      before: "https://web.archive.org/web/20260307115301/https://www.doverstreet.org/"
+      before_title_key: tDover
+      live: "https://www.doverstreet.org"
+    - src: img/clute.png
+      alt_key: altClute
+      alt: "Clute Institute: high-contrast serif headline over a teal polygonal texture."
+      name: "Clute Institute"
+      before: "https://web.archive.org/web/20260208090953/https://www.cluteinstitute-onlinejournals.com/"
+      before_title_key: tClute
+      live: "https://www.cluteinstitute-onlinejournals.com"
+  tags:
+    - label: wordpress
+    - key: tgBrand
+      label: "web design"
+    - key: tgArt
+      label: "web design"
+    - label: elementor
+
+# --- Card 1: Deep WordPress ---
+- pattern: p6
+  i18n: c1
+  idx: "wordpress · client portfolio · 2018 — 2024"
+  title: "Deep WordPress"
+  desc: "Themes, custom plugins and WooCommerce stores under ongoing maintenance."
+  log:
+    - dt: lSym
+      dt_label: symptom
+      dd: "Third-party plugins doing almost what was needed."
+      key: c1a
+    - dt: lCatch
+      dt_label: catch
+      dd: "Custom plugins and load optimization."
+      key: c1b
+    - dt: lOut
+      dt_label: outcome
+      dd: "Fewer dependencies, fewer tickets."
+      key: c1c
+  tags:
+    - label: wordpress
+    - label: woocommerce
+    - label: performance
+
+# --- Card 2: Creatienda ---
+- pattern: p1
+  i18n: c2
+  title: Creatienda
+  idx: "product · laravel · 2024 — now"
+  desc: "Multi-tenant e-commerce SaaS for LATAM small businesses. Critical modules in production, many stores on one codebase."
+  log:
+    - dt: lSym
+      dt_label: symptom
+      dd: "Coupled modules, slow to respond."
+      key: c2a
+    - dt: lCatch
+      dt_label: catch
+      dd: "Refactored into a service layer, SOLID-oriented."
+      key: c2b
+    - dt: lOut
+      dt_label: outcome
+      dd: "+20% response speed."
+      key: c2c
+  tags:
+    - label: laravel
+    - label: "spatie multitenancy"
+    - label: solid
+  link: /cases/creatienda/
+  link_text: viewCase
+
+# --- Card 3: Multi-gateway ---
+- pattern: p2
+  i18n: c3
+  idx: "product · payments · 2025"
+  title: "Multi&#8209;gateway"
+  desc: "Payments across LATAM: every country with its own provider, every provider with its own contract."
+  log:
+    - dt: lSym
+      dt_label: symptom
+      dd: "Adding one gateway meant touching the whole checkout."
+      key: c3a
+    - dt: lCatch
+      dt_label: catch
+      dd: "Factory pattern behind a single shared interface."
+      key: c3b
+    - dt: lOut
+      dt_label: outcome
+      dd: "A new provider without opening the core."
+      key: c3c
+  tags:
+    - key: tgPay
+      label: payments
+    - label: factory
+    - key: tgInt
+      label: integrations
+
+# --- Card 4: BackOffice ---
+- pattern: p3
+  i18n: c4
+  title: BackOffice
+  idx: "product · backoffice · 2025"
+  desc: "The panel the SaaS is run from. Whoever operates it needs to see the business without asking anyone for a query."
+  log:
+    - dt: lSym
+      dt_label: symptom
+      dd: "Fixed metrics: every new question was a ticket."
+      key: c4a
+    - dt: lCatch
+      dt_label: catch
+      dd: "Dynamic metrics with date-range filters."
+      key: c4b
+    - dt: lOut
+      dt_label: outcome
+      dd: "The team answers itself."
+      key: c4c
+  tags:
+    - label: laravel
+    - label: dashboards
+    - label: ux
+
+# --- Card 5: MenúMaestro ---
+- pattern: p4
+  i18n: c5
+  title: "MenúMaestro"
+  idx: "own product · 2018 — 2024"
+  desc: "My own product. Digital QR menus for restaurants, built in four steps."
+  log:
+    - dt: lSym
+      dt_label: symptom
+      dd: "Changing one price meant reprinting the menu."
+      key: c5a
+    - dt: lCatch
+      dt_label: catch
+      dd: "Product upload, style editor and a unique URL."
+      key: c5b
+    - dt: lOut
+      dt_label: outcome
+      dd: "The menu updates without going back to print."
+      key: c5c
+  tags:
+    - key: tgProd
+      label: product
+    - label: php
+    - label: qr
+
+# --- Card 6: Care platform ---
+- pattern: p5
+  i18n: c6
+  idx: "custom platform · 2019 — 2021"
+  title: "Care platform"
+  desc: "Custom platform for a psychological care center for children with special needs."
+  log:
+    - dt: lSym
+      dt_label: symptom
+      dd: "Requirements changed faster than the code."
+      key: c6a
+    - dt: lCatch
+      dt_label: catch
+      dd: "Module refactors and evolutionary maintenance."
+      key: c6b
+    - dt: lOut
+      dt_label: outcome
+      dd: "A stable base to keep adding without breaking."
+      key: c6c
+  tags:
+    - label: laravel
+    - key: tgPhp
+      label: "plain php"
+    - key: tgSens
+      label: "sensitive domain"
+
+# --- Card 7: In progress ---
+- pattern: p2
+  i18n: c7
+  idx: "in progress · 2026"
+  title: "In progress"
+  desc: "What is open on the desk right now."
+  log:
+    - dt: wordpress
+      dt_label: wordpress
+      dd: "Two sites from scratch, each with its own web design."
+      key: c7a
+    - dt: tgProd
+      dt_label: product
+      dd: "Management SaaS: part client work, part lab."
+      key: c7b
+    - dt: c7ct
+      dt_label: available
+      dd: "There is room. Write and let's talk."
+      key: c7c
+  tags:
+    - label: wordpress
+    - label: laravel
+    - label: "2026"
