@@ -1573,18 +1573,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 
-<script>
-document.querySelectorAll('[data-scroll]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var h=a.getAttribute('href');
-    if(!h||h.charAt(0)!=='#')return;
-    var t=document.querySelector(h);
-    if(!t)return;
-    e.preventDefault();
-    t.scrollIntoView({behavior:'smooth',block:'start'});
-  });
-});
-</script>
+
 
 <script>
 (function () {
@@ -1920,7 +1909,12 @@ document.querySelectorAll('[data-scroll]').forEach(function(a){
     }
   }
 
-  /* data-scroll handled by standalone script above */
+  document.querySelectorAll('[data-scroll]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
 
 
   /* ----------------------------------------------------------
