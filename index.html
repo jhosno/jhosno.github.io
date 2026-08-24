@@ -1194,10 +1194,10 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     </a>
 
     <nav class="ribbon__nav" aria-label="Principal">
-      <a href="#quien"    data-scroll data-nav="quien">about</a>
-      <a href="#trabajo"  data-scroll data-nav="trabajo">works</a>
-      <a href="#labs"     data-scroll data-nav="labs">labs</a>
-      <a href="#contacto" data-scroll data-nav="contacto">contact me</a>
+      <a href="#quien"    data-scroll data-nav="quien" data-i18n="navAbout">about</a>
+      <a href="#trabajo"  data-scroll data-nav="trabajo" data-i18n="navWorks">works</a>
+      <a href="#labs"     data-scroll data-nav="labs" data-i18n="navLabs">labs</a>
+      <a href="#contacto" data-scroll data-nav="contacto" data-i18n="navContact">contact me</a>
     </nav>
 
     <div class="ribbon__aside">
@@ -1304,7 +1304,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   <!-- QUIÉN -->
   <section class="sec" id="quien">
     <h2 class="sec__head">
-      <span data-i18n="h1a">01 — who</span><span data-i18n="h1b">profile</span>
+      <span data-i18n="h1a">01 — about</span><span data-i18n="h1b">profile</span>
     </h2>
 
     <div class="who">
@@ -1593,6 +1593,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     _copied:"correo copiado",
     _subject:"Tengo un sistema que ya existe",
     _secs:{ top:"inicio", quien:"quién", trabajo:"trabajo", labs:"labs", contacto:"contacto" },
+    navAbout:"quién", navWorks:"trabajo", navLabs:"labs", navContact:"contacto",
     _facts:["tamagotchi fan", "glitch", "brat",'retro RPG', "leer stack traces", "tattoo", "puzzle solver", "elgibitiquaplus",],
     _btn:"EN", _aria:"Switch to English"
   };
@@ -1600,7 +1601,7 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   var EN = {
     _copied:"email copied",
     _subject:"I have a system that already exists",
-    _secs:{ top:"home", quien:"who", trabajo:"work", labs:"labs", contacto:"contact" },
+    _secs:{ top:"home", quien:"about", trabajo:"work", labs:"labs", contacto:"contact" },
     _facts:CONTENIDO.facts.slice(),
     _btn:"ES", _aria:"Cambiar a español"
   };
@@ -1742,11 +1743,11 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   }
 
   function goTo(target) {
-    if (lenis) { lenis.scrollTo(target, { offset: 0, duration: 1.15 }); return; }
+    var y = (target instanceof HTMLElement) ? target.getBoundingClientRect().top + window.pageYOffset : 0;
+    if (lenis) { lenis.scrollTo(y, { offset: 0, duration: 1.15 }); return; }
     if (typeof ScrollToPlugin !== "undefined") {
-      gsap.to(window, { duration: 0.9, scrollTo: target, ease: "power2.inOut" });
+      gsap.to(window, { duration: 0.9, scrollTo: y, ease: "power2.inOut" });
     } else {
-      var y = (target instanceof HTMLElement) ? target.getBoundingClientRect().top + window.pageYOffset : 0;
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   }
@@ -1754,7 +1755,12 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   document.querySelectorAll('[data-scroll]').forEach(function(a){
     a.addEventListener('click',function(e){
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (a.getAttribute('href') === '#top') {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      var target = document.querySelector(a.getAttribute('href'));
+      if (target) goTo(target);
     });
   });
 
@@ -1890,9 +1896,11 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     { id: "contacto", nav: "contacto" }
   ];
   var currentId = "top";
+  var worksPinned = false;
   readout.textContent = T._secs.top;
 
   function setSection(s) {
+    if (worksPinned && s.id !== "trabajo") return;
     if (currentId === s.id) return;
     currentId = s.id;
     scramble(readout, T._secs[s.id], 0.5);
@@ -1906,8 +1914,8 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     if (!el) return;
     ScrollTrigger.create({
       trigger: el,
-      start: "top 45%",
-      end: "bottom 45%",
+      start: "top 70%",
+      end: "bottom 30%",
       onEnter:     function () { setSection(s); },
       onEnterBack: function () { setSection(s); }
     });
@@ -3089,7 +3097,11 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
         pin: true,
         scrub: 0.8,
         invalidateOnRefresh: true,
-        anticipatePin: 1
+        anticipatePin: 1,
+        onEnter: function () { worksPinned = true; },
+        onLeave: function () { worksPinned = false; },
+        onEnterBack: function () { worksPinned = true; },
+        onLeaveBack: function () { worksPinned = false; }
       }
     });
 
