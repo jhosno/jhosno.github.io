@@ -899,6 +899,17 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
    linear-gradient(90deg, var(--acid) 0 18%, transparent 18%) 0 79%/100% 8% no-repeat,
    var(--bg); }
 
+/* p7 · copywriting — líneas de texto que se apilan */
+.p7 i{ background:
+   linear-gradient(90deg, var(--acid) 0 65%, transparent 65%) 0 12%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--ink) 0 82%, transparent 82%) 0 24%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 55%, transparent 55%) 0 36%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--ink) 0 70%, transparent 70%) 0 48%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 45%, transparent 45%) 0 60%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--ink) 0 78%, transparent 78%) 0 72%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 38%, transparent 38%) 0 84%/100% 6% no-repeat,
+   var(--bg); }
+
 .card__body{ padding: 14px 15px 16px; display:flex; flex-direction:column; gap:9px; flex:1; }
 .card__idx{
   font-family: var(--mono); font-size:9.5px; letter-spacing:.14em;
@@ -955,6 +966,36 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 /* min-width:0 o el nombre no cede: un ítem flex no baja de su contenido
    por defecto, y en móvil la barra se salía 105 px */
 .card__mitad b > span:first-child{
+  min-width:0; flex:1 1 auto;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+/* single: una imagen con links antes/después */
+.card__single{
+  position:relative; display:block; overflow:hidden;
+  background: var(--bg);
+  border-bottom: var(--line) solid var(--ink-dim);
+}
+.card__single img{
+  display:block; width:100%; height:auto;
+  transition: transform .6s var(--ease), opacity .3s;
+}
+.card__single:hover img{ transform: scale(1.045); }
+.card__single-img{
+  position:relative; display:block; overflow:hidden;
+}
+.card__single-img b{
+  position:absolute; left:0; right:0; bottom:0;
+  background: var(--bg); color: var(--acid-hi);
+  font-family: var(--mono); font-weight:400;
+  font-size: clamp(8px, .68vw, 9.5px); letter-spacing:.1em; text-transform:uppercase;
+  padding:5px 7px;
+  border-top: var(--line) solid var(--ink-dim);
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  transition: border-color .3s;
+}
+.card__single-img:hover b{ border-top-color: var(--acid-hi); }
+.card__single-img b > span:first-child{
   min-width:0; flex:1 1 auto;
   overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
 }
@@ -1530,6 +1571,13 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
     c0ct:"criterio · clute",
     c0c:"Sin color que heredar. Turquesa en vez del azul de todo diario, y lejos de Dover a propósito: dos clientes de la misma agencia no pueden parecerse.",
     c0e:"Identidad, sistema visual y el sitio funcionando. Dos veces, sin repetir una sola decisión.",
+
+    cAi:"diseño web · 2025",
+    cAt:"Amanda Escalona",
+    cAd:"Actualización de portafolio para copywriter y content strategist. Identidad nueva, sin concepto previo — solo la necesidad de verse como lo que ya es.",
+    cAa:"Un sitio Jekyll de 2020 con tema por defecto y sin identidad visual.",
+    cAb:"Rediseño completo: CSS custom, sistema tipográfico, paleta oscura, estructura bilingüe.",
+    cAc:"Un sitio que finalmente se ve como el trabajo — en amandaescalona.github.io.",
 
     c1i:"wordpress · cartera de cliente · 2018 — 2024", c1t:"WordPress a fondo",
     c1d:"Temas, plugins propios y tiendas WooCommerce con mantenimiento continuo.",

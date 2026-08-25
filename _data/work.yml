@@ -48,7 +48,40 @@
       label: "web design"
     - label: elementor
 
-# --- Card 1: Deep WordPress ---
+# --- Card 1: Amanda Escalona ---
+- type: single
+  i18n: cA
+  pattern: p7
+  idx: "web design · 2025"
+  title: "Amanda Escalona"
+  desc: "Portfolio update for a copywriter and content strategist. New identity, no prior design concept — just the need to look like what she already is."
+  log:
+    - dt: lSym
+      dt_label: symptom
+      dd: "A 2020 Jekyll site with default theme and no visual identity."
+      key: cAa
+    - dt: lCatch
+      dt_label: catch
+      dd: "Full redesign: custom CSS, typographic system, dark palette, bilingual structure."
+      key: cAb
+    - dt: lOut
+      dt_label: outcome
+      dd: "A site that finally matches the work — live at amandaescalona.github.io."
+      key: cAc
+  images:
+    - src: img/AE.png
+      alt: "Amanda Escalona: copywriter and content strategist portfolio with dark palette and typographic system."
+      name: "Amanda Escalona"
+      before: "https://web.archive.org/web/20200909113858/https://amandaescalona.github.io/"
+      live: "https://amandaescalona.github.io/"
+  tags:
+    - label: html
+    - label: css
+    - label: jekyll
+    - key: tgBrand
+      label: "web design"
+
+# --- Card 2: Deep WordPress ---
 - pattern: p6
   i18n: c1
   idx: "wordpress · client portfolio · 2018 — 2024"

@@ -45,6 +45,47 @@
   </div>
 </article>
 
+{% elsif item.type == "single" %}
+<article class="card {{ item.pattern }}">
+  <div class="card__single">
+    {% for img in item.images %}
+    <div class="card__single-img">
+      <img src="{{ img.src }}" width="760" height="475" decoding="async"
+           {% if img.alt_key %}data-i18n-alt="{{ img.alt_key }}"{% endif %}
+           alt="{{ img.alt }}">
+      <b>
+        <span>{{ img.name }}</span>
+        <span class="card__vs">
+          <a href="{{ img.before }}" target="_blank" rel="noopener"
+             data-i18n="before" data-i18n-title="{{ img.before_title_key }}"
+             title="">before ↗</a>
+          <a href="{{ img.live }}" target="_blank" rel="noopener"
+             data-i18n="live" data-i18n-title="tLive" title="">live ↗</a>
+        </span>
+      </b>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="card__body">
+    <span class="card__idx" data-i18n="{{ item.i18n }}i">{{ item.idx }}</span>
+    <h3 class="card__title" data-i18n="{{ item.i18n }}t">{{ item.title }}</h3>
+    <p class="card__desc" data-i18n="{{ item.i18n }}d">{{ item.desc }}</p>
+    <dl class="card__log">
+      {% for entry in item.log %}
+      <div>
+        <dt data-i18n="{{ entry.dt }}">{{ entry.dt_label | default: entry.dt }}</dt>
+        <dd data-i18n="{{ entry.key }}">{{ entry.dd }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+    <div class="card__tags">
+      {% for tag in item.tags %}
+      <span{% if tag.key %} data-i18n="{{ tag.key }}"{% endif %}>{{ tag.label }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</article>
+
 {% else %}
 <article class="card {{ item.pattern }}">
   <div class="card__vis"><i></i></div>
