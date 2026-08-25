@@ -1,0 +1,80 @@
+/* ============================================================
+   SECTIONS.CSS — Stage, sections, bands, who/dl, line reveals
+   ============================================================ */
+
+/* --- stage (body wrapper over hero) --- */
+.stage{
+  position:relative;
+  z-index:1;
+  background: var(--bg);
+}
+
+.sec{
+  padding: clamp(72px, 11vh, 150px) var(--pad);
+  position:relative;
+}
+
+.sec__head{
+  margin: 0 0 clamp(30px, 5vh, 60px);
+  font-weight: 400;
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:16px; flex-wrap:wrap;
+  border-bottom: var(--line) solid var(--ink-dim);
+  padding-bottom: 12px;
+  font-family: var(--mono);
+  font-size: clamp(9.5px, .82vw, 12px);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.sec__head span:last-child{ color: var(--acid-hi); }
+
+/* --- bandas marquee --- */
+.band{
+  background: var(--ink);
+  color: var(--bg);
+  border-block: var(--line) solid var(--bg);
+  padding: clamp(10px, 1.6vw, 18px) 0;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(26px, 4.6vw, 66px);
+  letter-spacing: -.035em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.band .marquee__group > span{ gap:.5em; }
+.band .dot{ color: var(--acid); }
+
+.band--acid{ background: var(--acid); color:#151508; }
+.band--acid .dot{ color: var(--ink); }
+
+/* --- quién / about --- */
+.who{ display:grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: clamp(24px,5vw,80px); }
+.statement{
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(24px, 3.5vw, 50px);
+  line-height: 1.06;
+  letter-spacing: -.028em;
+  margin:0;
+}
+.statement em{ font-style:normal; color: var(--acid-hi); }
+.line{ display:block; overflow:hidden; }
+.line > span{ display:block; will-change:transform; }
+
+.dl{
+  margin:0;
+  font-family: var(--mono);
+  font-size: clamp(9.5px, .8vw, 11.5px);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.dl__row{
+  display:flex; justify-content:space-between; gap:14px;
+  padding: 11px 0;
+  border-bottom: var(--line) solid var(--ink-dim);
+}
+.dl__row dt{ opacity:.62; }
+.dl__row dd{ margin:0; text-align:right; color: var(--acid-hi); }
+
+/* elementos que entran con el scroll */
+.rise{ opacity:0; transform: translateY(26px); }
