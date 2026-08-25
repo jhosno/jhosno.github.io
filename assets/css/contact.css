@@ -48,6 +48,7 @@
 .copy{ will-change: transform; }
 .bigmail{
   display:inline-block;
+  text-decoration:none;
   font-family: var(--display); font-weight:800;
   font-size: min(132px, 8.4vw, calc((100vw - var(--pad) * 2) / (var(--mail-ch, 20) * 1.15)));
   max-width: 100%;

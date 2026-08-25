@@ -91,6 +91,7 @@
   position:relative;
   padding: 6px 2px;
   opacity:.72;
+  text-decoration:none;
   transition: opacity .25s;
 }
 .ribbon__nav a::after{
