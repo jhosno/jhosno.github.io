@@ -18,7 +18,7 @@
    RIBBON — home-page overrides (base.css has case-page defaults)
    ============================================================ */
 .ribbon{
-  position: fixed; inset: 0 0 auto 0; z-index: 900;
+  position: fixed; inset: 6px 0 auto 0; z-index: 900;
   color: var(--hero-ink);
   border-bottom: none;
   transition: color .45s var(--ease), background-color .45s var(--ease);
