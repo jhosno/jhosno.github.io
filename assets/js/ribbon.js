@@ -41,7 +41,7 @@
 
   function activeSection() {
     var scrollY = window.pageYOffset || window.scrollY;
-    if (scrollY >= workPinStart && scrollY < workPinEnd) return sections[2];
+    if (workPinStart > 0 && scrollY >= workPinStart && scrollY < workPinEnd) return sections[2];
     var viewMid = window.innerHeight * 0.5;
     var best = sections[0];
     for (var i = sections.length - 1; i >= 0; i--) {
