@@ -112,7 +112,7 @@
     reveal:"Lo encontraste. El cursor nunca fue una flecha.",
     catches:"capturas", copy:"copiar correo",
     k1t:"trabajo con", k1:"agencias, estudios y equipos de producto",
-    k2t:"modalidad",  k2:"white-label · remoto · sin nombrar clientes",
+    k2t:"modalidad",  k2:"remoto",
     k3t:"horario",    k3:"bogotá gmt−5 · solapo con jornada us",
     k4t:"entrego",    k4:"diseño web, sistema visual y el sitio funcionando",
     k5t:"idiomas",    k5:"español nativo · inglés c2 (efset 73)",
