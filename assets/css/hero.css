@@ -163,6 +163,8 @@
 .lang:hover{ opacity:1; }
 .ribbon[data-state="stuck"] .lang{ color: var(--acid-hi); }
 .ribbon[data-state="stuck"] .lang:hover{ background: var(--acid-hi); color: var(--bg); }
+.ribbon[data-state="top"] .ribbon__readout{ color: var(--hero-ink); }
+.ribbon[data-state="top"] .lang{ color: var(--hero-ink); }
 .ribbon[data-state="top"] .lang:hover{ background: var(--hero-ink); color: var(--hero-bg); }
 
 /* ============================================================
