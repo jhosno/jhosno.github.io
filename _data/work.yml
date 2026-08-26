@@ -128,8 +128,8 @@
     - label: laravel
     - label: "spatie multitenancy"
     - label: solid
-  link: /cases/creatienda/
-  link_text: viewCase
+  # link: /cases/creatienda/
+  # link_text: viewCase
 
 # --- Card 3: Multi-gateway ---
 - pattern: p2
