@@ -34,8 +34,9 @@
     if (!el || !track || !vp) return;
     var pad = parseFloat(getComputedStyle(vp).paddingLeft) || 32;
     var dist = Math.max(0, track.scrollWidth - window.innerWidth + pad * 2);
-    workPinStart = el.offsetTop;
-    workPinEnd = el.offsetTop + dist;
+    var spacer = el.closest(".pin-spacer") || el;
+    workPinStart = spacer.getBoundingClientRect().top + (window.pageYOffset || window.scrollY);
+    workPinEnd = workPinStart + dist;
   }
   window.JH.updateWorkPinZone = updateWorkPinZone;
 
@@ -45,6 +46,7 @@
     var viewMid = window.innerHeight * 0.5;
     var best = sections[0];
     for (var i = sections.length - 1; i >= 0; i--) {
+      if (i === 2 && workPinEnd > 0 && scrollY >= workPinEnd) continue;
       var el = document.getElementById(sections[i].id);
       if (!el) continue;
       var rect = el.getBoundingClientRect();
