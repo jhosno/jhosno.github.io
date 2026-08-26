@@ -18,7 +18,7 @@
     signoise:"señal/ruido",
     seal:"disponible ✳ marca ✳ código ✳ refactor ✳ ",
     copymq:"copiar correo",
-    b1a:"leer ", b1b:"dirigir ", b1c:"refactorizar ", b1d:"entregar ",
+    b1a:"leer ", b1b:"diseñar ", b1c:"refactorizar ", b1d:"entregar ",
     b2a:"02 · trabajo ", b2b:"wordpress + producto ",
 
     h1a:"01 — quién", h1b:"perfil",
