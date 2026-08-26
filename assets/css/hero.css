@@ -21,13 +21,14 @@
   position: fixed; inset: 6px 0 auto 0; z-index: 900;
   color: var(--hero-ink);
   border-bottom: none;
-  transition: color .45s var(--ease), background-color .45s var(--ease);
+  transition: top .45s var(--ease), color .45s var(--ease), background-color .45s var(--ease);
   will-change: background-color;
 }
 .ribbon[data-state="top"]{
   background: transparent;
 }
 .ribbon[data-state="stuck"]{
+  top: 0;
   background: var(--bg);
   color: var(--ink);
   box-shadow: 0 10px 40px -18px #000;
