@@ -1,0 +1,205 @@
+/* ============================================================
+   WORK.CSS — Horizontal scroll work section + card styles
+   ============================================================ */
+
+.work{ padding-block: 0; overflow:hidden; }
+.work__vp{
+  height: 100vh; height:100svh;
+  display:flex; align-items:center;
+  padding-left: var(--pad);
+}
+.work__track{
+  display:flex;
+  gap: clamp(16px, 2.2vw, 32px);
+  align-items:stretch;
+  will-change: transform;
+}
+
+.card{
+  flex: none;
+  width: clamp(240px, 27vw, 380px);
+  container-type: inline-size;
+  border: var(--line) solid var(--ink-dim);
+  background: var(--bg);
+  display:flex; flex-direction:column;
+  transition: border-color .35s, transform .35s var(--ease);
+}
+.card:hover{ border-color: var(--acid-hi); transform: translateY(-6px); }
+
+.card__vis{
+  aspect-ratio: 4/3;
+  position:relative;
+  overflow:hidden;
+  border-bottom: var(--line) solid var(--ink-dim);
+}
+.card__vis i{
+  position:absolute; inset:0;
+  transition: transform .6s var(--ease);
+}
+.card:hover .card__vis i{ transform: scale(1.06) rotate(1.2deg); }
+
+/* CSS patterns (sin imágenes externas) */
+.p1 i{ background:
+   linear-gradient(0deg, transparent 0 47%, var(--ink) 47% 49%, transparent 49%),
+   repeating-linear-gradient(90deg, var(--acid) 0 15px, #1f1f10 15px 17px, var(--bg) 17px 32px); }
+
+.p2 i{ background:
+   radial-gradient(circle at 5% 50%, var(--ink) 0 8px, transparent 9px),
+   conic-gradient(from 0deg at 5% 50%,
+     transparent 0 57deg,
+     var(--acid)  57deg  60deg, transparent  60deg  65deg,
+     var(--ink)   65deg  68deg, transparent  68deg  73deg,
+     var(--acid)  73deg  76deg, transparent  76deg  81deg,
+     var(--ink)   81deg  84deg, transparent  84deg  89deg,
+     var(--acid)  89deg  92deg, transparent  92deg  97deg,
+     var(--ink)   97deg 100deg, transparent 100deg 105deg,
+     var(--acid) 105deg 108deg, transparent 108deg 113deg,
+     var(--ink)  113deg 116deg, transparent 116deg 121deg,
+     var(--acid) 121deg 124deg, transparent 124deg),
+   var(--bg); }
+
+.p3 i{ background:
+   linear-gradient(var(--acid),var(--acid)) 8%  100%/9% 34% no-repeat,
+   linear-gradient(var(--acid),var(--acid)) 23% 100%/9% 58% no-repeat,
+   linear-gradient(var(--ink), var(--ink))  38% 100%/9% 41% no-repeat,
+   linear-gradient(var(--acid),var(--acid)) 53% 100%/9% 76% no-repeat,
+   linear-gradient(var(--ink), var(--ink))  68% 100%/9% 61% no-repeat,
+   linear-gradient(var(--acid),var(--acid)) 83% 100%/9% 90% no-repeat,
+   repeating-linear-gradient(0deg, rgba(197,58,157,.16) 0 1px, transparent 1px 13px),
+   var(--bg); }
+
+.p4 i{ background:
+   linear-gradient(var(--ink),var(--ink))  no-repeat calc(9% + 21px) calc(11% + 21px)/16px 16px,
+   linear-gradient(var(--bg), var(--bg))   no-repeat calc(9% + 12px) calc(11% + 12px)/34px 34px,
+   linear-gradient(var(--ink),var(--ink))  no-repeat 9% 11%/58px 58px,
+   conic-gradient(var(--ink) 0 25%, transparent 0 50%, var(--ink) 0 75%, transparent 0) 0 0/32px 32px,
+   conic-gradient(var(--bg) 0 25%, transparent 0 50%, var(--bg) 0 75%, transparent 0) 16px 8px/52px 52px,
+   var(--acid); }
+
+.p5 i{ background:
+   repeating-linear-gradient(0deg, var(--acid) 0 2px, transparent 2px 15px) no-repeat right/36% 100%,
+   linear-gradient(var(--bg), var(--bg)) no-repeat right/36% 100%,
+   repeating-linear-gradient(38deg,  var(--ink-dim) 0 2px, transparent 2px 12px),
+   repeating-linear-gradient(-38deg, var(--ink-dim) 0 2px, transparent 2px 12px),
+   linear-gradient(140deg, #2a1730, var(--bg)); }
+
+.p6 i{ background:
+   linear-gradient(90deg, var(--ink) 0 79%, transparent 79%)  0 15%/100% 8% no-repeat,
+   linear-gradient(90deg, var(--ink) 0 62%, transparent 62%)  0 31%/100% 8% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 45%, transparent 45%) 0 47%/100% 8% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 30%, transparent 30%) 0 63%/100% 8% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 18%, transparent 18%) 0 79%/100% 8% no-repeat,
+   var(--bg); }
+
+.p7 i{ background:
+   linear-gradient(90deg, var(--acid) 0 65%, transparent 65%) 0 12%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--ink) 0 82%, transparent 82%) 0 24%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 55%, transparent 55%) 0 36%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--ink) 0 70%, transparent 70%) 0 48%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 45%, transparent 45%) 0 60%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--ink) 0 78%, transparent 78%) 0 72%/100% 6% no-repeat,
+   linear-gradient(90deg, var(--acid) 0 38%, transparent 38%) 0 84%/100% 6% no-repeat,
+   var(--bg); }
+
+.card__body{ padding: 14px 15px 16px; display:flex; flex-direction:column; gap:9px; flex:1; }
+.card__idx{
+  font-family: var(--mono); font-size:9.5px; letter-spacing:.14em;
+  color: var(--acid-hi);
+}
+.card__title{
+  font-family: var(--display); font-weight:800;
+  font-size: clamp(17px, 7.4cqw, 27px);
+  letter-spacing:-.03em; line-height:1.02; margin:0;
+  text-transform:uppercase;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+.card__desc{
+  font-size: 13.5px; line-height:1.4; margin:0;
+  color: var(--ink-hi); opacity:.85;
+}
+
+/* --- ficha doble --- */
+.card--doble{ width: clamp(300px, 58vw, 820px); }
+.card__par{
+  display:grid; grid-template-columns:1fr 1fr;
+  border-bottom: var(--line) solid var(--ink-dim);
+}
+.card__mitad{
+  position:relative; display:block; overflow:hidden;
+  background: var(--bg);
+}
+.card__mitad + .card__mitad{ border-left: var(--line) solid var(--ink-dim); }
+.card__mitad img{
+  display:block; width:100%; height:auto;
+  transition: transform .6s var(--ease), opacity .3s;
+}
+.card__mitad:hover img{ transform: scale(1.045); }
+.card__mitad b{
+  position:absolute; left:0; right:0; bottom:0;
+  background: var(--bg); color: var(--acid-hi);
+  font-family: var(--mono); font-weight:400;
+  font-size: clamp(8px, .68vw, 9.5px); letter-spacing:.1em; text-transform:uppercase;
+  padding:5px 7px;
+  border-top: var(--line) solid var(--ink-dim);
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  transition: border-color .3s;
+}
+.card__mitad:hover b{ border-top-color: var(--acid-hi); }
+.card__mitad b > span:first-child{
+  min-width:0; flex:1 1 auto;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+/* --- ficha single --- */
+.card__single{
+  position:relative; display:block; overflow:hidden;
+  background: var(--bg);
+  border-bottom: var(--line) solid var(--ink-dim);
+}
+.card__single img{
+  display:block; width:100%; height:auto;
+  transition: transform .6s var(--ease), opacity .3s;
+}
+.card__single:hover img{ transform: scale(1.045); }
+.card__single-img{
+  position:relative; display:block; overflow:hidden;
+}
+.card__single-img b{
+  position:absolute; left:0; right:0; bottom:0;
+  background: var(--bg); color: var(--acid-hi);
+  font-family: var(--mono); font-weight:400;
+  font-size: clamp(8px, .68vw, 9.5px); letter-spacing:.1em; text-transform:uppercase;
+  padding:5px 7px;
+  border-top: var(--line) solid var(--ink-dim);
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+  transition: border-color .3s;
+}
+.card__single-img:hover b{ border-top-color: var(--acid-hi); }
+.card__single-img b > span:first-child{
+  min-width:0; flex:1 1 auto;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+
+.card__vs{ display:flex; flex:none; gap:9px; }
+.card__vs a{ opacity:.6; transition: opacity .2s; white-space:nowrap; }
+.card__vs a:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px; }
+
+.card__log{ margin:0; display:grid; gap:7px; font-family: var(--mono); }
+.card__log > div{ border-top: var(--line) solid var(--ink-dim); padding-top:6px; }
+.card__log dt{ font-size:8.5px; letter-spacing:.14em; text-transform:uppercase; opacity:.5; }
+.card__log dd{ margin:2px 0 0; font-size:11px; line-height:1.35; color: var(--acid-hi); }
+
+.card__tags{
+  display:flex; flex-wrap:wrap; gap:5px; margin-top:auto; padding-top:8px;
+  font-family: var(--mono); font-size:8.5px; letter-spacing:.1em; text-transform:uppercase;
+}
+.card__tags span{ border: var(--line) solid var(--ink-dim); padding:3px 6px; }
+
+.card__link{
+  display:inline-block; margin-top:10px;
+  font-family: var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+  color: var(--acid-hi); text-decoration:none; opacity:.8;
+  transition: opacity .25s;
+}
+.card__link:hover{ opacity:1; }

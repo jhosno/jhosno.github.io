@@ -1,0 +1,35 @@
+---
+layout: none
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+
+<a class="skip" href="#quien" data-i18n="skip">Skip to content</a>
+<div class="bugcur" id="bugcur" aria-hidden="true">\#/</div>
+<div class="grain" aria-hidden="true"></div>
+
+{{ content }}
+
+<!-- Librerías externas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+
+<!-- JS modular (el orden importa: dependencias primero) -->
+<script src="{{ '/assets/js/content.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/scramble.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/i18n.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/scroll.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/marquee.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/ribbon.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/hero.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/work.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/contact.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/init.js' | relative_url }}"></script>
+</body>
+</html>

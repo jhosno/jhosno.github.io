@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Dionaea">
+  <rect width="32" height="32" fill="#1a1a1a"/>
+  <g fill="#C53A9D">
+    <path d="M16.4 22.8C6.2 24.4 -.6 15.8 1.8 3.4c8.2 3.6 13.8 10.6 14.6 19.4Z"/>
+    <path d="M15.6 22.8c10.2 1.6 17-7 14.6-19.4-8.2 3.6-13.8 10.6-14.6 19.4Z"/>
+  </g>
+  <path d="M16 22.4c.6 3.4-1.2 5.4-4 6.6-1.6.7-2.6 1.4-3 2.4" stroke="#C53A9D" stroke-width="2.7" fill="none" stroke-linecap="round"/>
+</svg>

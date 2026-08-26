@@ -1,0 +1,65 @@
+<!-- HERO — sección principal -->
+<section class="hero" id="top">
+
+  <!-- capa 0: el dither a sangre -->
+  <div class="hero__noise" aria-hidden="true"><pre class="noise" id="noise"></pre></div>
+
+  <!-- capa 1: la planta -->
+  <div class="hero__plant" data-depth="0.014" aria-hidden="true"><pre class="plant" id="plant"></pre></div>
+
+  <div class="hero__inner">
+
+    <div class="hero__top">
+      <span class="hero__fn">function() randomfacts array:</span>
+      <span class="hero__array">[<b id="fact"></b>]</span>
+    </div>
+
+    <div class="hero__mid">
+      <div>
+        <h1 class="wordmark" id="wordmark">
+          <span class="wordmark__row"><span class="wordmark__glyphs">jhosno</span></span>
+          <span class="u-sr" data-i18n="h1sr">Jhosno Hernández — full-stack developer and web designer. WordPress, Laravel and web design.</span>
+        </h1>
+        <span class="wordmark__tail" data-i18n="tail">
+          I read what is already there before touching anything. Sometimes it is
+          broken code someone else wrote. Sometimes it is a web design that does not
+          exist yet.
+        </span>
+      </div>
+    </div>
+
+    <div class="hero__bottom">
+      <div class="hero__meta">
+        <span>Bogotá, Col</span>
+        <span data-i18n="tz">[timezone <b data-huso></b>]</span>
+        <span data-i18n="since">since <b>2018</b></span>
+      </div>
+      <div class="cue"><i id="cueLine"></i><span>Scroll</span></div>
+    </div>
+  </div>
+
+  <pre class="ascii" id="ascii" aria-hidden="true"><span class="ascii__tag" data-i18n="signoise">signal/noise</span></pre>
+
+  <div class="sticker sticker--note" data-depth="0.06">
+    WordPress ✳ Laravel ✳ bug catcher
+  </div>
+  <div class="sticker sticker--tape" data-depth="0.11">
+    ✳ Open to work
+  </div>
+
+  <div class="seal" data-depth="0.04">
+    <svg class="seal__ring" id="seal" viewBox="0 0 100 100" aria-hidden="true">
+      <defs>
+        <path id="sealPath" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+      </defs>
+      <text><textPath href="#sealPath" startOffset="0"
+                      textLength="238.7" lengthAdjust="spacing"
+         data-i18n="seal">available ✳ web design ✳ code ✳ refactor ✳ </textPath></text>
+    </svg>
+    <span class="seal__core">✳</span>
+  </div>
+
+  <div class="hero__ticker">
+    <span class="hero__ticker-email"><span data-mail></span> · <button class="hero__ticker-copy" id="tickerCopy" type="button" data-i18n="copymq">copy email</button></span>
+  </div>
+</section>

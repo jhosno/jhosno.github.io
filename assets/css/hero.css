@@ -1,0 +1,469 @@
+/* ============================================================
+   HERO.CSS — Hero section, wordmark, noise, plant, ASCII panel,
+   stickers, seal, ticker, cursor bug.
+   ============================================================ */
+
+/* Tokens extra del hero (no están en base.css) */
+:root{
+  --hero-bg:   var(--acid);
+  --hero-ink:  #1a1a1a;
+  --bloom-ink: #8E2E72;
+  --ascii-fs:  min(1.042vw, 1.72svh);
+  --hero-top:  calc(var(--ribbon-h) + var(--strip-h) + clamp(14px, 3vh, 34px));
+  --strip-h:   30px;
+  --ribbon-h:  clamp(52px, 5.6vw, 66px);
+}
+
+/* ============================================================
+   RIBBON — home-page overrides (base.css has case-page defaults)
+   ============================================================ */
+.ribbon{
+  position: fixed; inset: 6px 0 auto 0; z-index: 900;
+  color: var(--hero-ink);
+  border-bottom: none;
+  transition: top .45s var(--ease), color .45s var(--ease), background-color .45s var(--ease);
+  will-change: background-color;
+}
+.ribbon[data-state="top"]{
+  background: transparent;
+}
+.ribbon[data-state="stuck"]{
+  top: 0;
+  background: var(--bg);
+  color: var(--ink);
+  box-shadow: 0 10px 40px -18px #000;
+}
+.ribbon__strip{
+  height: var(--strip-h);
+  overflow: hidden;
+  border-bottom: var(--line) solid currentColor;
+  padding-top: 2px;
+  transition: height .5s var(--ease), opacity .35s linear;
+}
+.ribbon[data-state="stuck"] .ribbon__strip{ height:0; opacity:0; }
+.ribbon__bar{
+  height: var(--ribbon-h);
+  padding: 0 var(--pad);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  transition: height .5s var(--ease);
+}
+.ribbon[data-state="stuck"] .ribbon__bar{ height: calc(var(--ribbon-h) * .8); }
+.ribbon[data-state="stuck"] .ribbon__mark::after{ background: var(--acid-hi); }
+.ribbon[data-state="stuck"] .ribbon__rail i{ background: var(--acid-hi); }
+.ribbon[data-state="stuck"] .ribbon__live i{ background: var(--acid-hi); }
+.ribbon[data-state="stuck"] .ribbon__readout{ color: var(--acid-hi); }
+.ribbon__mark{
+  display: flex; align-items: center; gap: .45em;
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(17px, 1.7vw, 22px);
+  letter-spacing: -.03em;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.ribbon__diamond{
+  color: var(--ink);
+  font-size: .65em;
+  margin-left: -.15em;
+  transition: color .45s var(--ease);
+}
+.ribbon__bud{
+  margin:0;
+  font-family: var(--mono);
+  font-size: clamp(3.8px, .42vw, 5.2px);
+  line-height:1;
+  letter-spacing:0;
+  white-space:pre;
+  color: inherit;
+  transition: color .45s var(--ease), transform .35s var(--ease);
+}
+.ribbon__mark:hover .ribbon__bud{ transform: scale(1.22) rotate(-10deg); }
+.ribbon__nav{
+  display:flex; justify-content:center; gap: clamp(10px, 2.4vw, 34px);
+  font-family: var(--mono);
+  font-size: clamp(9px, .8vw, 11px);
+  letter-spacing:.1em;
+  text-transform: uppercase;
+}
+.ribbon__nav a{
+  position:relative;
+  padding: 6px 2px;
+  opacity:.72;
+  text-decoration:none;
+  transition: opacity .25s;
+}
+.ribbon__nav a::after{
+  content:"";
+  position:absolute; left:0; bottom:2px;
+  width:100%; height: var(--line);
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform .4s var(--ease);
+}
+.ribbon__nav a:hover,
+.ribbon__nav a[data-active="true"]{ opacity:1; }
+.ribbon__nav a:hover::after,
+.ribbon__nav a[data-active="true"]::after{ transform: scaleX(1); }
+.ribbon__aside{
+  display:flex; align-items:center; gap: clamp(8px,1.4vw,18px);
+  font-family: var(--mono);
+  font-size: clamp(9px, .78vw, 11px);
+  letter-spacing:.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ribbon__readout{
+  border:var(--line) solid currentColor;
+  padding:4px 9px;
+  min-width: 10ch;
+  text-align:center;
+}
+.ribbon__clock{
+  opacity: .7;
+  font-variant-numeric: tabular-nums;
+}
+.ribbon__live{
+  display: flex; align-items: center; gap: 6px;
+}
+.ribbon__live i{
+  width:8px; height:8px; border-radius:50%;
+  background: var(--ink);
+  box-shadow: 0 0 0 0 currentColor;
+  animation: pulse 2.4s infinite;
+}
+@keyframes pulse{
+  0%,100%{ opacity:1; transform:scale(1); }
+  50%{ opacity:.35; transform:scale(.72); }
+}
+.ribbon__rail{
+  height: 3px;
+  background: transparent;
+  border-top: var(--line) solid currentColor;
+  transition: border-color .45s var(--ease);
+}
+.ribbon__rail i{
+  display:block; height:100%; width:0%;
+  background: var(--ink);
+  transition: background-color .45s var(--ease);
+}
+.lang{
+  border: var(--line) solid currentColor;
+  padding: 4px 8px;
+  font-family: var(--mono);
+  font-size: inherit;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  line-height: 1;
+  opacity:.72;
+  transition: opacity .25s, background-color .25s, color .25s;
+}
+.lang:hover{ opacity:1; }
+.ribbon[data-state="stuck"] .lang{ color: var(--acid-hi); }
+.ribbon[data-state="stuck"] .lang:hover{ background: var(--acid-hi); color: var(--bg); }
+.ribbon[data-state="top"] .ribbon__readout{ color: var(--hero-ink); }
+.ribbon[data-state="top"] .lang{ color: var(--hero-ink); }
+.ribbon[data-state="top"] .lang:hover{ background: var(--hero-ink); color: var(--hero-bg); }
+
+/* ============================================================
+   HERO — losa de color sólido
+   ============================================================ */
+.hero{
+  position: sticky; top:0;
+  z-index: 0;
+  height: 100vh;
+  height: 100svh;
+  min-height: 620px;
+  background: var(--hero-bg);
+  color: var(--hero-ink);
+  overflow: hidden;
+  isolation:isolate;
+}
+
+.hero::after{
+  content:""; position:absolute; inset:0; z-index:3; pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg, rgba(26,26,26,.055) 0 1px, transparent 1px 4px);
+  mix-blend-mode: multiply;
+}
+
+.hero__inner{
+  position:absolute; inset:0;
+  padding: var(--hero-top) var(--pad) calc(var(--pad) + 26px);
+  display:grid;
+  grid-template-rows: auto 1fr auto;
+  gap: clamp(10px, 2vh, 22px);
+  z-index:2;
+}
+
+/* --- fila 1: etiqueta + array --- */
+.hero__top{
+  display:flex; flex-wrap:wrap; align-items:baseline;
+  gap: 6px clamp(10px, 2vw, 24px);
+  font-family: var(--mono);
+  font-size: clamp(9.5px, .82vw, 12px);
+  letter-spacing:.06em;
+  text-transform: uppercase;
+}
+.hero__fn{ opacity:.62; }
+.hero__array{
+  display:inline-flex; align-items:center;
+  border: var(--line) solid var(--hero-ink);
+  background: var(--hero-ink);
+  color: var(--acid-hi);
+  padding: 5px 11px;
+  min-width: 20ch;
+}
+.hero__array b{ font-weight:500; }
+
+/* --- fila 2: la marca gigante --- */
+.hero__mid{
+  display:flex;
+  align-items:flex-end;
+  min-height:0;
+}
+
+.wordmark{
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: min(210px, 14vw, calc((100vw - var(--pad) * 2) / (var(--wm-ch, 5) * 0.62)));
+  line-height: .78;
+  letter-spacing: -.055em;
+  text-transform: uppercase;
+  margin:0;
+  position:relative;
+  user-select:none;
+}
+.wordmark__row{ display:block; overflow:hidden; }
+.wordmark__glyphs{ display:flex; }
+.wordmark__ch{
+  display:inline-block;
+  position:relative;
+  will-change: transform;
+}
+.wordmark__ch::before,
+.wordmark__ch::after{
+  content: attr(data-ch);
+  position:absolute; inset:0;
+  opacity:0;
+  pointer-events:none;
+}
+.wordmark__ch::before{ color: var(--ink); transform: translate3d(-.035em,-.012em,0); }
+.wordmark__ch::after{  color: #f2f0d8;   transform: translate3d(.035em,.012em,0); }
+.wordmark.is-glitching .wordmark__ch::before,
+.wordmark.is-glitching .wordmark__ch::after{ opacity:.9; }
+
+.wordmark__tail{
+  display:block;
+  font-family: var(--mono);
+  font-weight:400;
+  font-size: clamp(10px, 1.05vw, 14px);
+  letter-spacing:.02em;
+  line-height:1.5;
+  text-transform:none;
+  max-width: 34ch;
+  margin-top: clamp(10px, 1.6vh, 20px);
+  opacity:.82;
+}
+
+/* --- capa 0: el dither a sangre --- */
+.hero__noise{
+  position:absolute; inset:0; z-index:0;
+  display:grid; place-items:end start;
+  pointer-events:none;
+  overflow:hidden;
+  contain: layout paint style;
+}
+.noise{
+  margin:0;
+  font-family: var(--mono);
+  letter-spacing:0; line-height:1;
+  white-space:pre;
+  font-size: var(--ascii-fs);
+  color: var(--hero-ink);
+  opacity:.34;
+}
+
+/* --- capa 1: la Dionaea --- */
+.hero__plant{
+  position:absolute; inset:0; z-index:1;
+  display:grid; place-items:end start;
+  pointer-events:none;
+  will-change: transform, opacity;
+  contain: layout paint style;
+}
+
+/* --- el cursor dentro del hero --- */
+.bugcur{
+  position:fixed; left:0; top:0; z-index:950;
+  pointer-events:none;
+  font-family: var(--mono);
+  font-size: 17px; font-weight:700; line-height:1; letter-spacing:0;
+  white-space:pre;
+  color: var(--hero-ink);
+  text-shadow:
+    0 0 7px var(--hero-bg), 0 0 7px var(--hero-bg), 0 0 3px var(--hero-bg),
+    .07em 0 rgba(197,58,157,.9), -.07em 0 rgba(240,238,205,.6);
+  opacity:0;
+  transition: opacity .18s linear;
+  will-change: transform, opacity;
+}
+.bugcur.is-on{ opacity:1; }
+
+.plant{
+  margin:0;
+  font-family: var(--mono);
+  letter-spacing:0;
+  line-height:1;
+  white-space:pre;
+  font-size: var(--ascii-fs);
+  color: var(--bloom-ink);
+  text-shadow: .05em 0 rgba(197,58,157,.28), -.05em 0 rgba(136,140,20,.28);
+}
+
+/* --- la placa: rosa polar --- */
+.ascii{
+  position:absolute; z-index:4;
+  right: var(--pad);
+  bottom: calc(var(--pad) + 26px + clamp(58px, 9vh, 84px));
+  background: var(--bg);
+  color: var(--ink-hi);
+  border: var(--line) solid var(--hero-ink);
+  padding: 10px 12px 8px;
+  font-family: var(--mono);
+  font-size: clamp(5.5px, .58vw, 9px);
+  line-height: 1.06;
+  letter-spacing: 0;
+  white-space: pre;
+  margin:0;
+  box-shadow: 8px 8px 0 rgba(26,26,26,.28);
+}
+.ascii__tag{
+  position:absolute; top:-1px; right:-1px;
+  background: var(--ink);
+  color: var(--bg);
+  font-size: 8px;
+  letter-spacing:.14em;
+  padding: 3px 6px;
+}
+
+/* --- calcos / stickers --- */
+.sticker{
+  position:absolute;
+  z-index:4;
+  font-family: var(--mono);
+  font-size: clamp(8.5px, .74vw, 11px);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  will-change: transform;
+}
+.sticker--note{
+  top: 30%; right: clamp(12px, 6vw, 90px);
+  background: var(--ink);
+  color: #17150f;
+  padding: 9px 13px;
+  max-width: 19ch;
+  line-height:1.35;
+  transform: rotate(6deg);
+  box-shadow: 5px 5px 0 rgba(26,26,26,.45);
+}
+.sticker--tape{
+  bottom: 21%; left: clamp(12px, 9vw, 130px);
+  background: var(--bg);
+  color: var(--acid-hi);
+  padding: 7px 12px;
+  border: var(--line) dashed var(--acid-hi);
+  transform: rotate(-4deg);
+}
+
+/* --- sello circular giratorio --- */
+.seal{
+  position:absolute;
+  z-index:5;
+  right: var(--pad);
+  top: calc(var(--hero-top) - 6px);
+  width: clamp(76px, 9vw, 118px);
+  aspect-ratio:1;
+  display:grid; place-items:center;
+}
+.seal__ring{ position:absolute; inset:0; will-change:transform; }
+.seal__ring text{
+  font-family: var(--mono);
+  font-size: 7.1px;
+  letter-spacing: .21em;
+  fill: var(--hero-ink);
+  text-transform: uppercase;
+}
+.seal__core{
+  width: 46%; aspect-ratio:1;
+  border-radius:50%;
+  background: var(--bg);
+  color: var(--ink);
+  display:grid; place-items:center;
+  font-family: var(--display);
+  font-weight:800;
+  font-size: clamp(15px, 1.8vw, 24px);
+}
+
+/* --- fila 3: metadatos + cue --- */
+.hero__bottom{
+  display:flex; flex-wrap:wrap; align-items:flex-end;
+  justify-content:space-between;
+  gap: 14px clamp(14px, 3vw, 40px);
+  font-family: var(--mono);
+  font-size: clamp(9px, .78vw, 11px);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border-top: var(--line) solid var(--hero-ink);
+  padding-top: 12px;
+}
+.hero__meta{ display:flex; flex-wrap:wrap; gap: 6px clamp(12px,2.4vw,32px); }
+.hero__meta span{ opacity:.78; }
+.hero__meta b{ font-weight:600; opacity:1; }
+.hero__meta{ min-width:0; flex:1 1 auto; }
+.cue{ display:flex; align-items:center; gap:9px; flex:0 0 auto; white-space:nowrap; }
+@media (max-width: 900px){ .hero__bottom .cue{ display:none; } }
+.cue i{
+  display:block; width:1px; height:26px; background: var(--hero-ink);
+  transform-origin: 50% 0;
+}
+
+/* --- cinta inferior del hero --- */
+.hero__ticker{
+  position:absolute; left:0; right:0; bottom:0; z-index:6;
+  background: var(--bg);
+  color: var(--ink);
+  border-top: var(--line) solid var(--hero-ink);
+  height: 26px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 var(--pad);
+}
+.hero__ticker-state{
+  display:flex; align-items:center; gap:.45em;
+}
+.hero__ticker-state .is-active{
+  color: var(--acid-hi);
+}
+.hero__ticker-email{
+  display:flex; align-items:center; gap:.45em;
+  color: var(--ink);
+  margin-left:auto;
+}
+.hero__ticker-copy{
+  font:inherit; color:inherit; letter-spacing:inherit; text-transform:inherit;
+  border: var(--line) solid var(--ink-dim);
+  padding: 1px 8px;
+  cursor:pointer;
+  transition: border-color .25s, color .25s;
+}
+.hero__ticker-copy:hover{
+  border-color: var(--acid-hi);
+  color: var(--acid-hi);
+}

@@ -1,51 +1,106 @@
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- HEAD — meta tags, OG, JSON-LD, fonts, CSS -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>jhosno — full-stack developer &amp; web designer · WordPress and Laravel</title>
+<meta name="description" content="Full-stack developer and web designer. I read what is already there before touching anything — sometimes broken code someone else wrote, sometimes a web design that does not exist yet. WordPress, Laravel, web design." />
 
-  <meta
-    name="description"
-    content="👾👩‍💻 Developer y designer frontend, React / MERN stack, Laravel/PHP, Wordpress"
-  />
-  <meta name="author" content="Jhosno Hernández" />
+<link rel="canonical" href="https://jhosno.github.io/" />
+<meta name="author" content="Jhosno Hernández" />
+<meta name="theme-color" content="#1a1a1a" />
+<link rel="alternate" hreflang="en" href="https://jhosno.github.io/" />
+<link rel="alternate" hreflang="es" href="https://jhosno.github.io/?lang=es" />
+<link rel="alternate" hreflang="x-default" href="https://jhosno.github.io/" />
 
-  <meta
-    name="theme-color"
-    media="(prefers-color-scheme: light)"
-    content="#420992"
-  />
-  <meta
-    name="theme-color"
-    media="(prefers-color-scheme: dark)"
-    content="#181818"
-  />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="https://jhosno.github.io/" />
+<meta property="og:site_name" content="jhosno" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="es_CO" />
+<meta property="og:title" content="jhosno — full-stack developer &amp; web designer" />
+<meta property="og:description" content="I read what is already there before touching anything. WordPress, Laravel, web design. White-label for agencies, Bogotá GMT−5." />
+<meta property="og:image" content="https://jhosno.github.io/img/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="jhosno — full-stack developer and web designer" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="jhosno — full-stack developer &amp; web designer" />
+<meta name="twitter:description" content="WordPress, Laravel and web design. White-label for agencies. Bogotá, GMT−5." />
+<meta name="twitter:image" content="https://jhosno.github.io/img/og.png" />
 
-  <link
-    rel="icon"
-    href="/assets/images/favicon.png"
-    type="image/gif"
-    sizes="16x16"
-  />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Google tag (gtag.js) -->
-  {%include /head/google-analytics.html %}
-  <!-- Open Graph tags -->
-  {%include /head/open-graph-metadata.html %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://jhosno.github.io/#person",
+      "name": "Jhosno Hernández",
+      "alternateName": "jhosno",
+      "url": "https://jhosno.github.io/",
+      "email": "mailto:jhosno.dev@gmail.com",
+      "jobTitle": ["Full-Stack Developer", "web designer"],
+      "description": "Full-stack developer and web designer. Reads what is already there before touching anything: broken code someone else wrote, or a web design that does not exist yet. WordPress, Laravel, multi-tenant SaaS and web design. White-label for agencies.",
+      "knowsAbout": ["WordPress","WooCommerce","Elementor","Laravel","PHP","MySQL","Multi-tenant SaaS","Payment gateway integration","web design","web design","Refactoring","GSAP"],
+      "knowsLanguage": [
+        { "@type": "Language", "name": "Spanish" },
+        { "@type": "Language", "name": "English" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bogotá",
+        "addressRegion": "Distrito Capital",
+        "addressCountry": "CO"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/jhosno",
+        "https://github.com/jhosno"
+      ],
+      "hasCredential": {
+        "@type": "EducationalOccupationalCredential",
+        "name": "EFSET English Certificate — C2 Proficient (73/100)"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jhosno.github.io/#website",
+      "url": "https://jhosno.github.io/",
+      "name": "jhosno",
+      "inLanguage": ["en","es"],
+      "author": { "@id": "https://jhosno.github.io/#person" }
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "The Dover Street Examiner",
+      "url": "https://www.doverstreet.org",
+      "creator": { "@id": "https://jhosno.github.io/#person" },
+      "about": "web design and WordPress build for a local newspaper.",
+      "dateCreated": "2026-05"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Clute Institute",
+      "url": "https://www.cluteinstitute-onlinejournals.com",
+      "creator": { "@id": "https://jhosno.github.io/#person" },
+      "about": "web design and WordPress build for a local news site.",
+      "dateCreated": "2026-06"
+    }
+  ]
+}
+</script>
 
-  <title>Jhosno | {{ page.title }}</title>
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Martian+Mono:wght@200;300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 
-  <!-- TODO actualizar estos enlaces para producción -->
-
-  <link rel="stylesheet" href="{{site.url}}//assets/css/tailwind.css"/>
-  <link rel="stylesheet" href="{{site.url}}//assets/css/output.css"/>
-  <script src="{{site.url}}/assets/js/lucide.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Custom CSS - SCSS compiled styles with animations and custom effects -->
-  <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
-</head>
+<!-- CSS (base compartido + modular) -->
+<link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/hero.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/marquee.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/sections.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/work.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/contact.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}" />

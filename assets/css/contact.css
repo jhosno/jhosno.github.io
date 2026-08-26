@@ -1,0 +1,88 @@
+/* ============================================================
+   CONTACT.CSS — Contact section, cepo trap, bigmail, copy btn
+   ============================================================ */
+
+.connect{ text-align:center; }
+
+.connect__reveal{
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(21px, 3.1vw, 46px);
+  line-height: 1.06;
+  letter-spacing: -.028em;
+  margin: 0 auto clamp(34px, 7vh, 78px);
+  max-width: 19ch;
+}
+.connect__reveal em{ font-style:normal; color: var(--acid-hi); }
+
+.trap{
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: clamp(6px, 1.1vh, 14px);
+  isolation: isolate;
+}
+.trap__cilia{
+  margin:0;
+  font-family: var(--mono);
+  font-size: clamp(9px, 1.05vw, 16px);
+  line-height: 1.02;
+  letter-spacing: 0;
+  white-space: pre;
+  color: var(--ink);
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+.trap__cilia--bot{ color: var(--ink-dim); }
+.trap .bigmail{ will-change: transform; z-index:1; }
+
+.trap__count{
+  position:absolute; right:0; top: -1.9em;
+  color: var(--acid-hi);
+  opacity:.55;
+  pointer-events:none;
+}
+.trap__count b{ font-weight:600; opacity:1; }
+
+.copy{ will-change: transform; }
+.bigmail{
+  display:inline-block;
+  text-decoration:none;
+  font-family: var(--display); font-weight:800;
+  font-size: min(132px, 8.4vw, calc((100vw - var(--pad) * 2) / (var(--mail-ch, 20) * 1.15)));
+  max-width: 100%;
+  overflow-wrap: normal;
+  line-height:.92; letter-spacing:-.05em;
+  text-transform:uppercase;
+  position:relative;
+  padding: .06em .04em;
+}
+.bigmail::before,
+.bigmail::after{
+  content: attr(data-text);
+  position:absolute; inset:0; padding:inherit;
+  opacity:0; pointer-events:none;
+  transition: opacity .12s;
+}
+.bigmail::before{ color: var(--acid); transform: translate(-4px,2px); }
+.bigmail::after{  color:#fff;         transform: translate(4px,-2px); mix-blend-mode:difference; }
+.bigmail:hover::before,
+.bigmail:hover::after{ opacity:.85; }
+
+.copy{
+  margin-top: 26px;
+  font-family: var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+  border: var(--line) solid var(--acid-hi);
+  color: var(--acid-hi);
+  padding: 11px 20px;
+  transition: background-color .25s, color .25s;
+}
+.copy:hover{ background: var(--acid-hi); color: var(--bg); }
+
+.status{
+  margin: clamp(40px,7vh,80px) auto 0;
+  max-width: 620px; text-align:left;
+  font-family: var(--mono); font-size: clamp(9.5px,.8vw,11.5px);
+  letter-spacing:.05em; text-transform:uppercase;
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Multi-tenant architecture: columns sharing a base -->
+  <rect width="400" height="300" fill="#1a1a1a"/>
+  <!-- Shared base line -->
+  <line x1="40" y1="150" x2="360" y2="150" stroke="#C53A9D" stroke-width="2"/>
+  <!-- Tenant columns -->
+  <rect x="60" y="40" width="60" height="100" fill="#5a2bc7" opacity="0.8"/>
+  <rect x="140" y="40" width="60" height="100" fill="#5a2bc7" opacity="0.8"/>
+  <rect x="220" y="40" width="60" height="100" fill="#5a2bc7" opacity="0.8"/>
+  <rect x="300" y="40" width="60" height="100" fill="#5a2bc7" opacity="0.8"/>
+  <!-- Labels -->
+  <text x="90" y="95" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">T1</text>
+  <text x="170" y="95" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">T2</text>
+  <text x="250" y="95" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">T3</text>
+  <text x="330" y="95" fill="#f2f0d8" font-family="monospace" font-size="10" text-anchor="middle">T4</text>
+  <!-- Shared core label -->
+  <text x="200" y="180" fill="#B9BE2A" font-family="monospace" font-size="10" text-anchor="middle">SHARED CORE</text>
+</svg>

@@ -1,0 +1,53 @@
+/* ============================================================
+   RESPONSIVE.CSS — Breakpoint overrides for home page
+   ============================================================ */
+
+@media (max-width: 1000px){
+  .ascii{ bottom: calc(var(--pad) + 26px + 74px); }
+  .seal{ width:78px; }
+  .who{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 860px){
+  .ascii{ display:none; }
+}
+
+@media (max-width: 720px){
+  .noise{ opacity:.26; }
+  .ribbon__bud{ font-size:4.6px; }
+  .wordmark{ font-size: min(92px, 21vw, calc((100vw - var(--pad) * 2) / (var(--wm-ch, 5) * 0.60))); }
+  .wordmark__tail{ max-width:30ch; }
+  .ribbon__bar{ grid-template-columns: auto auto; gap:10px; }
+  .ribbon__nav{
+    grid-column: 1 / -1;
+    order:3;
+    justify-content:flex-start;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding-bottom:2px;
+  }
+  .ribbon__nav::-webkit-scrollbar{ display:none; }
+  .ribbon__bar{ height:auto; padding-block:9px; }
+  .ribbon[data-state="stuck"] .ribbon__bar{ height:auto; }
+  .ribbon__readout{ display:none; }
+  .sticker--note{ top:auto; bottom:34%; right:10px; }
+  .sticker--tape{ display:none; }
+  .work__vp{ height:auto; padding: clamp(60px,9vh,100px) var(--pad); }
+  .work__track{ flex-direction:column; width:100%; }
+  .card{ width:100%; }
+  .card__par{ grid-template-columns:1fr; }
+  .card__mitad + .card__mitad{ border-left:0; border-top: var(--line) solid var(--ink-dim); }
+  .hero__bottom .cue{ display:none; }
+  .bigmail{ font-size: calc((100vw - var(--pad) * 2) / 12.6); }
+  .bigmail::before, .bigmail::after{ content: none; }
+}
+
+@media (min-width: 721px) and (max-height: 820px){
+  .card__vis{ aspect-ratio: 16/9; }
+  .card__desc{ font-size:12.5px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  .rise{ opacity:1; transform:none; }
+}
