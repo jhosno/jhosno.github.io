@@ -31,7 +31,10 @@
   .ribbon[data-state="stuck"] .ribbon__bar{ height:auto; }
   .ribbon__readout{ display:none; }
   .sticker--note{ top:auto; bottom:34%; right:10px; }
-  .sticker--tape{ display:none; }
+  /* «open to work» vuelve en móvil, en el hueco medio-izquierdo */
+  .sticker--tape{ display:block; top:auto; bottom:46%; left:12px; right:auto; }
+  /* reservar la columna del sello para que el array de facts no lo pise */
+  .hero__top{ padding-right: 92px; }
   .work__vp{ height:auto; padding: clamp(60px,9vh,100px) var(--pad); }
   .work__track{ flex-direction:column; width:100%; }
   .card{ width:100%; }

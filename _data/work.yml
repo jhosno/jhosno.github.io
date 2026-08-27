@@ -11,7 +11,7 @@
   log:
     - dt: lBrief
       dt_label: brief
-      dd: "Login details and two adjectives: \"modern and pretty\". No web design, no guide, no design."
+      dd: "Login details and two adjectives: \"modern and pretty\". No design, no guide, nothing to inherit."
       key: c0a
     - dt: c0bt
       dt_label: "call · dover"
@@ -31,6 +31,7 @@
       alt: "The Dover Street Examiner: heavy grotesque headline with chromatic glitch over a night photograph."
       name: "The Dover Street Examiner"
       before: "https://web.archive.org/web/20260307115301/https://www.doverstreet.org/"
+      before_title: "Previous state on archive.org · 7 March 2026"
       before_title_key: tDover
       live: "https://www.doverstreet.org"
     - src: img/clute.png
@@ -38,48 +39,51 @@
       alt: "Clute Institute: high-contrast serif headline over a teal polygonal texture."
       name: "Clute Institute"
       before: "https://web.archive.org/web/20260208090953/https://www.cluteinstitute-onlinejournals.com/"
+      before_title: "Previous state on archive.org · 8 February 2026"
       before_title_key: tClute
       live: "https://www.cluteinstitute-onlinejournals.com"
   tags:
     - label: wordpress
     - key: tgBrand
       label: "web design"
-    - key: tgArt
-      label: "web design"
+    - label: ui
     - label: elementor
 
 # --- Card 1: Amanda Escalona ---
 - type: single
   i18n: cA
   pattern: p7
-  idx: "web design · 2025"
+  idx: "landing page · personal site · 2025"
   title: "Amanda Escalona"
-  desc: "Portfolio update for a copywriter and content strategist. New identity, no prior design concept — just the need to look like what she already is."
+  desc: "A freelance copywriter's site is her sales channel. No product to photograph and nothing to inherit — the only material was her own writing, in two languages."
   log:
-    - dt: lSym
-      dt_label: symptom
-      dd: "A 2020 Jekyll site with default theme and no visual identity."
+    - dt: lBrief
+      dt_label: brief
+      dd: "A working copywriter selling in Spanish and English, on a 2020 site running a default theme."
       key: cAa
-    - dt: lCatch
-      dt_label: catch
-      dd: "Full redesign: custom CSS, typographic system, dark palette, bilingual structure."
+    - dt: lCall
+      dt_label: call
+      dd: "Her material is text and there was no photography to lean on, so the type system had to carry the design. Palette and spacing chosen to keep the words legible in both languages."
       key: cAb
-    - dt: lOut
-      dt_label: outcome
-      dd: "A site that finally matches the work — live at amandaescalona.github.io."
+    - dt: lShip
+      dt_label: shipped
+      dd: "Custom build: type system, dark palette and bilingual structure."
       key: cAc
   images:
     - src: img/AE.png
-      alt: "Amanda Escalona: copywriter and content strategist portfolio with dark palette and typographic system."
+      alt_key: altAE
+      alt: "Amanda Escalona: copywriter and content strategist portfolio with a dark palette and a typographic system."
       name: "Amanda Escalona"
       before: "https://web.archive.org/web/20200909113858/https://amandaescalona.github.io/"
+      before_title: "Previous state on archive.org · 9 September 2020"
+      before_title_key: tAmanda
       live: "https://amandaescalona.github.io/"
   tags:
-    - label: html
-    - label: css
+    - label: "landing page"
+    - label: "type system"
+    - key: tgBil
+      label: bilingual
     - label: jekyll
-    - key: tgBrand
-      label: "web design"
 
 # --- Card 2: Deep WordPress ---
 - pattern: p6
@@ -241,7 +245,7 @@
   log:
     - dt: wordpress
       dt_label: wordpress
-      dd: "Two sites from scratch, each with its own web design."
+      dd: "Two sites from scratch, each with its own design."
       key: c7a
     - dt: tgProd
       dt_label: product

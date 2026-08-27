@@ -13,7 +13,7 @@
     asunto: "Tengo un sistema que ya existe",
     huso:   "gmt−5",
     husoH:  -5,
-    facts:  [ "tamagotchi fan", "glitch", "brat", "retro RPG", "leer stack traces", "tattoo", "puzzle solver", "elgibitiquaplus" ]
+    facts:  [ "tamagotchi fan", "glitch", "retro RPG", "reads stack traces", "tattoos", "puzzle solver", "elgibitiquaplus" ]
   };
 
   /* Volcar al DOM antes de que nada mida ni clone */
