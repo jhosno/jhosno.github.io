@@ -16,8 +16,8 @@
         <span>{{ img.name }}</span>
         <span class="card__vs">
           <a href="{{ img.before }}" target="_blank" rel="noopener"
-             data-i18n="before" data-i18n-title="{{ img.before_title_key }}"
-             title="">before ↗</a>
+             data-i18n="before"{% if img.before_title_key %} data-i18n-title="{{ img.before_title_key }}"{% endif %}
+             title="{{ img.before_title | default: 'Previous state on archive.org' }}">before ↗</a>
           <a href="{{ img.live }}" target="_blank" rel="noopener"
              data-i18n="live" data-i18n-title="tLive" title="">live ↗</a>
         </span>
@@ -57,8 +57,8 @@
         <span>{{ img.name }}</span>
         <span class="card__vs">
           <a href="{{ img.before }}" target="_blank" rel="noopener"
-             data-i18n="before" data-i18n-title="{{ img.before_title_key }}"
-             title="">before ↗</a>
+             data-i18n="before"{% if img.before_title_key %} data-i18n-title="{{ img.before_title_key }}"{% endif %}
+             title="{{ img.before_title | default: 'Previous state on archive.org' }}">before ↗</a>
           <a href="{{ img.live }}" target="_blank" rel="noopener"
              data-i18n="live" data-i18n-title="tLive" title="">live ↗</a>
         </span>
@@ -91,7 +91,7 @@
   <div class="card__vis"><i></i></div>
   <div class="card__body">
     <span class="card__idx" data-i18n="{{ item.i18n }}i">{{ item.idx }}</span>
-    <h3 class="card__title"{% if item.title_i18n %} data-i18n="{{ item.title_i18n }}"{% endif %}>{{ item.title }}</h3>
+    <h3 class="card__title" data-i18n="{{ item.i18n }}t">{{ item.title }}</h3>
     <p class="card__desc" data-i18n="{{ item.i18n }}d">{{ item.desc }}</p>
     <dl class="card__log">
       {% for entry in item.log %}
