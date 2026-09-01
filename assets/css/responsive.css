@@ -13,9 +13,10 @@
 }
 
 @media (max-width: 720px){
+  .hero{ --hero-top: calc(var(--ribbon-h) + var(--strip-h) + 36px); }
   .noise{ opacity:.26; }
   .ribbon__bud{ font-size:4.6px; }
-  .wordmark{ font-size: min(92px, 21vw, calc((100vw - var(--pad) * 2) / (var(--wm-ch, 5) * 0.60))); }
+  .wordmark{ font-size: min(72px, 18vw, calc((100vw - var(--pad) * 2) / (var(--wm-ch, 5) * 0.65))); }
   .wordmark__tail{ max-width:30ch; }
   .ribbon__bar{ grid-template-columns: auto auto; gap:10px; }
   .ribbon__nav{
@@ -31,10 +32,9 @@
   .ribbon[data-state="stuck"] .ribbon__bar{ height:auto; }
   .ribbon__readout{ display:none; }
   .sticker--note{ top:auto; bottom:34%; right:10px; }
-  /* «open to work» vuelve en móvil, en el hueco medio-izquierdo */
-  .sticker--tape{ display:block; top:auto; bottom:46%; left:12px; right:auto; }
-  /* reservar la columna del sello para que el array de facts no lo pise */
-  .hero__top{ padding-right: 92px; }
+  .sticker--tape{ display:block; top:auto; bottom:46%; left:24px; right:auto; }
+  .hero__top{ padding-right: 0; }
+  .seal{ top: calc(var(--hero-top) + 48px); width: 64px; }
   .work__vp{ height:auto; padding: clamp(60px,9vh,100px) var(--pad); }
   .work__track{ flex-direction:column; width:100%; }
   .card{ width:100%; }
