@@ -52,7 +52,7 @@
 # --- Card 1: improve performance ---
 - type: single
   i18n: cG
-  pattern: p7
+  pattern: p1
   idx: "white-label · performance · 2026"
   title: "WordPress rescue"
   desc: "Elementor site for a US marine services company. Every editor save returned a 500 error, and the home took about 4 s to generate."
@@ -69,12 +69,6 @@
       dt_label: shipped
       dd: "The editor saves again. In testing, home generation dropped 64 % and memory per visit 51 %. In production, the HTML went from 797 KB to 341 KB."
       key: cAc
-  images:
-    - src: img/improve-performance.png
-      alt_key: altAE
-      alt: "WP rescue: a US marine service company has troubles with they Wordpress site"
-      name: "WordPress Rescue"
-
   tags:
     - label: wordpress
     - key: tgBrand
