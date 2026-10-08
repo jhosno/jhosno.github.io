@@ -49,7 +49,40 @@
     - label: ui
     - label: elementor
 
-# --- Card 1: Amanda Escalona ---
+# --- Card 1: improve performance ---
+- type: single
+  i18n: cG
+  pattern: p7
+  idx: "white-label · performance · 2026"
+  title: "WordPress rescue"
+  desc: "Elementor site for a US marine services company. Every editor save returned a 500 error, and the home took about 4 s to generate."
+  log:
+    - dt: lBrief
+      dt_label: brief
+      dd: "The hosting can't take it."
+      key: cAa
+    - dt: lCall
+      dt_label: call
+      dd: "It wasn't the hosting. The PHP log showed 419 revisions loaded on every save, exhausting memory. On top of that, 100+ unused addon widgets cost ~80 MB per visit."
+      key: cAb
+    - dt: lShip
+      dt_label: shipped
+      dd: "The editor saves again. In testing, home generation dropped 64 % and memory per visit 51 %. In production, the HTML went from 797 KB to 341 KB."
+      key: cAc
+  images:
+    - src: img/improve-performance.png
+      alt_key: altAE
+      alt: "WP rescue: a US marine service company has troubles with they Wordpress site"
+      name: "WordPress Rescue"
+
+  tags:
+    - label: wordpress
+    - key: tgBrand
+      label: "web design"
+    - label: ui
+    - label: elementor
+    
+# --- Card 2: Amanda Escalona ---
 - type: single
   i18n: cA
   pattern: p7
@@ -85,7 +118,7 @@
       label: bilingual
     - label: jekyll
 
-# --- Card 2: Deep WordPress ---
+# --- Card 3: Deep WordPress ---
 - pattern: p6
   i18n: c1
   idx: "wordpress · client portfolio · 2018 — 2024"
@@ -109,7 +142,7 @@
     - label: woocommerce
     - label: performance
 
-# --- Card 2: Creatienda ---
+# --- Card 4: Creatienda ---
 - pattern: p1
   i18n: c2
   title: Creatienda
@@ -135,7 +168,7 @@
   # link: /cases/creatienda/
   # link_text: viewCase
 
-# --- Card 3: Multi-gateway ---
+# --- Card 5: Multi-gateway ---
 - pattern: p2
   i18n: c3
   idx: "product · payments · 2025"
@@ -161,7 +194,7 @@
     - key: tgInt
       label: integrations
 
-# --- Card 4: BackOffice ---
+# --- Card 6: BackOffice ---
 - pattern: p3
   i18n: c4
   title: BackOffice
@@ -185,7 +218,7 @@
     - label: dashboards
     - label: ux
 
-# --- Card 5: MenúMaestro ---
+# --- Card 7: MenúMaestro ---
 - pattern: p4
   i18n: c5
   title: "MenúMaestro"
@@ -210,7 +243,7 @@
     - label: php
     - label: qr
 
-# --- Card 6: Care platform ---
+# --- Card 8: Care platform ---
 - pattern: p5
   i18n: c6
   idx: "custom platform · 2019 — 2021"
@@ -236,7 +269,7 @@
     - key: tgSens
       label: "sensitive domain"
 
-# --- Card 7: In progress ---
+# --- Card 9: In progress ---
 - pattern: p2
   i18n: c7
   idx: "in progress · 2026"
@@ -247,10 +280,6 @@
       dt_label: wordpress
       dd: "Two sites from scratch, each with its own design."
       key: c7a
-    - dt: tgProd
-      dt_label: product
-      dd: "Management SaaS: part client work, part lab."
-      key: c7b
     - dt: c7ct
       dt_label: available
       dd: "There is room. Write and let's talk."
