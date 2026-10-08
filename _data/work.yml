@@ -50,31 +50,29 @@
     - label: elementor
 
 # --- Card 1: improve performance ---
-- type: single
-  i18n: cG
-  pattern: p1
+- pattern: p2
+  i18n: c1
   idx: "white-label · performance · 2026"
   title: "WordPress rescue"
   desc: "Elementor site for a US marine services company. Every editor save returned a 500 error, and the home took about 4 s to generate."
   log:
-    - dt: lBrief
-      dt_label: brief
+    - dt: lSym
+      dt_label: symptom
       dd: "The hosting can't take it."
-      key: cAa
-    - dt: lCall
-      dt_label: call
+      key: c1a
+    - dt: lCatch
+      dt_label: catch
       dd: "It wasn't the hosting. The PHP log showed 419 revisions loaded on every save, exhausting memory. On top of that, 100+ unused addon widgets cost ~80 MB per visit."
-      key: cAb
-    - dt: lShip
-      dt_label: shipped
+      key: c1b
+    - dt: lOut
+      dt_label: outcome
       dd: "The editor saves again. In testing, home generation dropped 64 % and memory per visit 51 %. In production, the HTML went from 797 KB to 341 KB."
-      key: cAc
+      key: c1c
   tags:
     - label: wordpress
-    - key: tgBrand
-      label: "web design"
-    - label: ui
     - label: elementor
+    - label: query monitor
+    - label: performance
     
 # --- Card 2: Amanda Escalona ---
 - type: single
