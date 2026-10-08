@@ -50,7 +50,7 @@
     - label: elementor
 
 # --- Card 1: improve performance ---
-- pattern: p2
+- pattern: p5
   i18n: c1
   idx: "white-label · performance · 2026"
   title: "WordPress rescue"
