@@ -1,0 +1,121 @@
+# Services page (/services/) — edit here to change packages, lists and FAQ.
+# Each key is the data-i18n key; the Spanish copy lives in _includes/services/i18n.html.
+# ph: true marks copy that is still a placeholder to confirm.
+
+packages:
+  - key: p0
+    label: "basic plan"
+    name: "Refresh"
+    price: "500–900"
+    pages: "up to 5 existing"
+    features:
+      - key: p0f1
+        text: "New visual design for up to 5 existing pages"
+      - key: p0f2
+        text: "Your current copy, corrected and improved"
+      - key: p0f3
+        text: "Mobile optimization and basic speed work"
+      - key: p0f4
+        text: "Book / call button and your Google reviews on the site"
+    excludes:
+      key: p0x
+      text: "Not included: new pages, branding, new content."
+  - key: p1
+    label: "plan 1"
+    name: "Landing"
+    price: "700–950"
+    pages: "1"
+    features:
+      - key: p1f1
+        text: "One-page web design, mobile first"
+      - key: p1f2
+        text: "SEO content for the page: title, meta, headings and copy"
+      - key: p1f3
+        text: "Book / call button and Google reviews"
+      - key: p1f4
+        text: "Google Business Profile review"
+      - key: hosting
+        text: "Hosting and SSL: first year included"
+    excludes:
+      key: p1x
+      text: "Not included: extra pages, blog, branding."
+  - key: p2
+    label: "plan 2"
+    name: "Essential site"
+    price: "1,300–1,900"
+    pages: "4"
+    features:
+      - key: p2f1
+        text: "Home, About us, Catalog or Services, Contact us"
+      - key: p2f2
+        text: "Web design and on-page SEO content on every page"
+      - key: p2f3
+        text: "Logo refresh (your existing logo, adjusted; not a new logo)"
+      - key: p2f4
+        text: "Contact form, built-in booking and Google reviews"
+      - key: p2f5
+        text: "Google Business Profile review"
+      - key: hosting
+        text: "Hosting and SSL: first year included"
+
+included:
+  - key: i1
+    html: "<strong>Built for phones first</strong>, because that is where your customers find you."
+  - key: i2
+    html: "<strong>Fast.</strong> Speeding up slow WordPress sites is a big part of my work."
+  - key: i3
+    html: "Your <strong>reviews and your call / book button</strong> where people can see them."
+  - key: i4
+    html: "Built on <strong>WordPress</strong>, so you can change text and photos yourself."
+  - key: i5
+    html: "The site, the domain and every login are <strong>yours</strong>."
+  - key: i6
+    html: "<strong>The basics Google needs</strong> to understand what you do and where."
+
+steps:
+  - key: s1
+    html: "<strong>You reply</strong> to the email or message."
+  - key: s2
+    html: "<strong>15-minute call</strong>, in English or Spanish, to confirm pages and details."
+  - key: s3
+    html: "<strong>Fixed price and date</strong>, in writing, before any work starts."
+  - key: s4
+    html: "<strong>I build.</strong> You see progress on a private link."
+  - key: s5
+    html: "<strong>Launch</strong>, plus a short video showing you how to edit it."
+
+faq:
+  - key: q1
+    q: "Why did you write to me?"
+    a:
+      - key: a1
+        text: "Because your customers already love you, your reviews say so, and your website is not keeping up. That is the only kind of business I write to."
+  - key: q2
+    q: "Is the redesign really free?"
+    a:
+      - key: a2
+        text: "Yes. It is a redesign of your homepage at a private link, with nothing to sign to see it, and it is deleted after 14 days if you are not interested. You only pay if you decide to build the whole site, at the price in the email."
+  - key: q3
+    q: "Who will I actually be working with?"
+    a:
+      - key: a3
+        text: "Me, Jhosno, from the first message to launch day. The call, the build and the handover are with the same person."
+  - key: q4
+    q: "How does paying someone in another country work?"
+    a:
+      - key: a4a
+        text: "The price is fixed in USD and written down before any work starts."
+      - key: a4b
+        text: "Payment goes through Upwork: a deposit to start, and the rest at launch."
+  - key: q5
+    q: "Do I need to change my hosting or my domain?"
+    a:
+      - key: a5a
+        text: "The site, the domain and every login stay yours."
+      - key: a5b
+        text: "I provide the domain and the hosting, so there is nothing for you to set up."
+  - key: q6
+    q: "I do not want more messages."
+    a:
+      - key: a6
+        text: "Reply \"no\" and you will not hear from me again."

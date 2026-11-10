@@ -1,0 +1,17 @@
+{% comment %}
+  Screenshot partial for the services page.
+  Usage: {% include services/shot.html img=img %}
+  Expects an image from site.data.work (src, alt, alt_key, name, before, live).
+{% endcomment %}
+<article class="shot">
+  <img src="{{ include.img.src | relative_url }}" width="760" height="475" loading="lazy"
+       {% if include.img.alt_key %}data-i18n-alt="{{ include.img.alt_key }}"{% endif %}
+       alt="{{ include.img.alt }}">
+  <b>
+    <span>{{ include.img.name }}</span>
+    <nav>
+      <a href="{{ include.img.before }}" target="_blank" rel="noopener" data-i18n="before">before ↗</a>
+      <a href="{{ include.img.live }}" target="_blank" rel="noopener" data-i18n="live">live ↗</a>
+    </nav>
+  </b>
+</article>

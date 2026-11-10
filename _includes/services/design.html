@@ -1,0 +1,20 @@
+<!-- 02 · DESIGN — primero el trabajo -->
+<div class="band band--acid" id="design"><span data-i18n="b2">Design</span><small data-i18n="b2s">02 — the work comes first</small></div>
+<div class="wrap"><section class="state">
+  <div class="state__grid">
+    <div class="prose rise">
+      <p data-i18n-html="d1">Instead of a sales call, you get the work first: <strong>a redesign of your homepage</strong> made with your own name, services and reviews.</p>
+      <p data-i18n-html="d2">It lives at a private link that search engines do not index, and <em>it is deleted after 14 days</em> if you are not interested. No account, no form, nothing to sign to look at it.</p>
+      <p data-i18n="d3">If you like it, the email that brought you here already has the price for the whole site and how many days it takes.</p>
+    </div>
+
+    <div class="stack rise">
+      <p class="stack__h" data-i18n="d4">Not a template · every one starts from zero</p>
+      {% for item in site.data.work %}
+        {% for img in item.images %}
+          {% include services/shot.html img=img %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section></div>
