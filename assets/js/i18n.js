@@ -109,7 +109,7 @@
     labs:"La planta de arriba es una Dionaea escrita en ASCII: crece, espera y solo entonces <em>atrapa</em> — el mismo instinto que lee un sistema antes de tocarlo. Nada es de stock: todo está generado en vivo.",
     l1:"máquina de estados en ASCII", l2:"el bicho es lo que traes",
     l3:"ruido procedural a sangre", l4t:"marca", l4:"glitch cromático por capas",
-    l5:"cero · todo generado",
+    l5:"cero · todo generado", l6:"lector local · ver el lab →",
 
     h4a:"04 — contacto", h4b:"la última captura",
     reveal:"El cursor nunca fue una flecha. Es el problema que trajiste.",

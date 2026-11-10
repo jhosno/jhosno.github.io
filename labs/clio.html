@@ -1,0 +1,215 @@
+---
+layout: null
+permalink: /labs/clio/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Clio Reader — a reader that keeps what you read · jhosno labs</title>
+<meta name="description" content="Clio Reader: highlight, take notes and find them again. Your library stays on your computer. For Windows and Linux." />
+<link rel="canonical" href="{{ page.url | prepend: site.url }}" />
+<meta name="author" content="Jhosno Hernández" />
+<meta name="theme-color" content="#1a1a1a" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ page.url | prepend: site.url }}" />
+<meta property="og:site_name" content="jhosno" />
+<meta property="og:title" content="Clio Reader — everything you read, kept" />
+<meta property="og:description" content="Highlight, take notes and find them again. Your library stays on your computer. For Windows and Linux." />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="/assets/images/clio/clio-brand.svg" type="image/svg+xml" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Martian+Mono:wght@400;500;700&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="{{ '/assets/css/marquee.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/clio.css' | relative_url }}" />
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="ribbon">
+  <div class="ribbon__bar gut mono">
+    <a class="mark" href="#top" aria-label="Clio Reader">{% include clio/brand.svg %}<span>clio</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#why" data-i18n="n1">why clio</a>
+      <a href="#how" data-i18n="n2">how it works</a>
+      <a href="#next" data-i18n="n3">what is next</a>
+      <a href="#get" data-i18n="n4">download</a>
+    </nav>
+    <div class="aside">
+      <button class="lang" id="langBtn" type="button" aria-label="Cambiar a español">ES</button>
+      <span class="live"><i></i><span data-i18n="livel">windows · linux</span></span>
+    </div>
+  </div>
+  <div class="strip mono" aria-hidden="true">
+    <div class="strip__track">
+      <span>no account <em>✳</em></span><span>works offline <em>✳</em></span><span>epub · pdf · markdown · cbz <em>✳</em></span><span>markdown export, ready for obsidian <em>✳</em></span><span>windows · linux <em>✳</em></span><span>obsidian plugin in the works <em>✳</em></span>
+      <span>no account <em>✳</em></span><span>works offline <em>✳</em></span><span>epub · pdf · markdown · cbz <em>✳</em></span><span>markdown export, ready for obsidian <em>✳</em></span><span>windows · linux <em>✳</em></span><span>obsidian plugin in the works <em>✳</em></span>
+    </div>
+  </div>
+  <div class="rail"><i id="progress"></i></div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero__inner gut">
+      <div class="hero__copy">
+        <div class="eyebrow"><span data-i18n="eb">01 / a reader with a memory</span><b data-i18n="ebt">read · note · keep</b></div>
+        <h1 class="h1"><span data-i18n="h1a">Everything you read.</span> <span class="g" id="glitch" data-text="Kept.">Kept.</span></h1>
+        <p class="lead" data-i18n="lead">Highlight what matters, write down what it made you think, and find it again months later. Clio keeps your library and your notes on your computer, in files you own.</p>
+        <div class="ctas">
+          <a class="btn" href="#get"><span aria-hidden="true">↓</span><span data-i18n="cta1">download for windows &amp; linux</span></a>
+          <a class="btn btn--ghost" href="#next"><span data-i18n="cta2">what is coming</span><span aria-hidden="true">→</span></a>
+        </div>
+        <div class="tagrow" aria-label="Available on"><span class="on">windows</span><span class="on">linux</span><span>epub</span><span>pdf</span><span>markdown</span><span>cbz</span></div>
+      </div>
+      <div class="stage" role="img" aria-label="An open book drawn in ASCII characters, its pages slowly turning.">
+        <pre id="book" aria-hidden="true"></pre>
+        <span class="note note--a">signal / <i id="pageNo">001</i></span>
+        <span class="note note--b" data-i18n-html="noteb">local library<br>no cloud required</span>
+      </div>
+    </div>
+  </section>
+  <div class="meta gut mono">
+    <span data-i18n="metal"># clio reader / available for windows &amp; linux</span>
+    <span data-i18n-html="metar">obsidian plugin <em>in the works</em></span>
+  </div>
+
+  <!-- 02 WHY -->
+  <section class="sec gut" id="why" aria-labelledby="whyHead">
+    <h2 class="sechead" id="whyHead"><span data-i18n="s1a">02 — why clio</span><span data-i18n="s1b">read once, keep it for good</span></h2>
+    <div class="split">
+      <p class="statement" data-i18n-html="st1">You mark a great passage today. Months later, <em>it is still one click away.</em></p>
+      <dl class="benefits">
+        <div><dt data-i18n="bk1">never lose a note</dt><dd><strong data-i18n="bt1">Every note knows where it came from</strong><span data-i18n="bd1">Highlights and notes stay tied to their exact passage, so you can always go back to the page.</span></dd></div>
+        <div><dt data-i18n="bk2">yours</dt><dd><strong data-i18n="bt2">No account. No cloud.</strong><span data-i18n="bd2">Your library and everything you write live on your computer, and it works offline.</span></dd></div>
+        <div><dt data-i18n="bk3">portable</dt><dd><strong data-i18n="bt3">Ready for Obsidian</strong><span data-i18n="bd3">Your notes export as plain Markdown files that drop straight into an Obsidian vault, or open in any editor.</span></dd></div>
+        <div><dt data-i18n="bk4">one library</dt><dd><strong data-i18n="bt4">Reads what you already have</strong><span data-i18n="bd4">Books, papers, notes and comics: EPUB, PDF, Markdown and CBZ in one place.</span></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="band band--mq" data-marquee data-speed="72" data-dir="-1" data-velocity>
+    <div class="marquee">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span><span data-i18n="ba1">import</span> <i class="dot">✳</i></span><span><span data-i18n="ba2">read</span> <i class="dot">✳</i></span>
+          <span><span data-i18n="ba3">highlight</span> <i class="dot">✳</i></span><span><span data-i18n="ba4">come back</span> <i class="dot">✳</i></span>
+          <span><span data-i18n="ba5">export</span> <i class="dot">✳</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 HOW -->
+  <section class="sec gut" id="how" aria-labelledby="howHead">
+    <h2 class="sechead" id="howHead"><span data-i18n="s2a">03 — how it works</span><span data-i18n="s2b">no sign-up, no setup</span></h2>
+    <div class="split">
+      <p class="statement" data-i18n-html="st2">Install it, add your books, start reading. <em>That is the whole setup.</em></p>
+      <ol class="loop">
+        <li><b data-i18n="l1">Import</b><span data-i18n="l1d">Drop in your EPUB, PDF, Markdown and CBZ files.</span></li>
+        <li><b data-i18n="l2">Read</b><span data-i18n="l2d">A quiet page with nothing in the way.</span></li>
+        <li><b data-i18n="l3">Highlight</b><span data-i18n="l3d">Mark a passage and write down what it made you think.</span></li>
+        <li><b data-i18n="l4">Come back</b><span data-i18n="l4d">Every note opens the book right where you left it.</span></li>
+        <li><b data-i18n="l5">Export</b><span data-i18n="l5d">Your notes as Markdown files, ready for Obsidian.</span></li>
+      </ol>
+    </div>
+
+    <div class="two" style="margin-top:clamp(40px,7vh,72px)">
+      <div>
+        <div class="app" style="margin-top:0" role="img" aria-label="Sketch of the reader: the first page of Alice's Adventures in Wonderland with two highlights, and a notes panel with an export button.">
+          <div class="app__bar"><span>alice-in-wonderland.epub · ch. 1</span><span data-i18n="hlc">2 highlights</span></div>
+          <div class="page">
+            <h4>Down the Rabbit-Hole</h4>
+            <p>Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, <mark>“and what is the use of a book,” thought Alice “without pictures or conversations?”</mark></p>
+            <p>So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly <mark class="n">a White Rabbit with pink eyes</mark> ran close by her.</p>
+          </div>
+          <div class="notes">
+            <h4><span data-i18n="nt">notes</span><span>2</span></h4>
+            <div class="hl"><q>what is the use of a book without pictures or conversations?</q><p data-i18n="nt1">Alice wants pictures and conversations. Fair.</p><code>ch. 1 · ¶ 1</code></div>
+            <div class="hl"><q>a White Rabbit with pink eyes</q><p data-i18n="nt2">Where the story really starts.</p><code>ch. 1 · ¶ 2</code></div>
+            <div class="notes__x" aria-hidden="true"><span>export .md</span></div>
+          </div>
+        </div>
+        <p class="cap" data-i18n="cap1">Interface sketch. Alice’s Adventures in Wonderland (1865) is in the public domain.</p>
+      </div>
+      <div>
+        <div class="code" style="margin-top:0">
+          <div class="code__head"><span>use-of-a-book.md</span><span data-i18n="illus">example</span></div>
+<pre><b>---</b>
+<u>book</u>: alice-in-wonderland.epub
+<u>chapter</u>: 1
+<u>tags</u>: [books, pictures]
+<b>---</b>
+
+&gt; “and what is the use of a book,”
+&gt; thought Alice “without pictures
+&gt; or conversations?”
+
+Alice wants pictures and conversations.
+Fair.</pre>
+        </div>
+        <p class="cap" data-i18n="cap2">A note exported to Markdown, ready to drop into an Obsidian vault. A plain file you keep forever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 NEXT -->
+  <div class="band band--acid gut"><span data-i18n="bn1">today</span><i class="dot">→</i><span data-i18n="bn2">next</span><i class="dot">→</i><span data-i18n="bn3">later</span></div>
+  <section class="sec gut" id="next" aria-labelledby="nextHead">
+    <h2 class="sechead" id="nextHead"><span data-i18n="s3a">04 — what is here, what is next</span><span data-i18n="s3b">said plainly</span></h2>
+    <div class="stages">
+      <article class="st">
+        <div class="st__top"><span data-i18n="t1n">today</span><span class="chip chip--now"><i></i><span data-i18n="avail">available</span></span></div>
+        <h3>Desktop<small>windows · linux</small></h3>
+        <p data-i18n="t1p">The reader itself: your library, highlights and notes, and export to Markdown, ready for Obsidian.</p>
+        <a class="btn" href="#get" style="align-self:flex-start;margin-top:auto" data-i18n="dl">download ↓</a>
+      </article>
+      <article class="st">
+        <div class="st__top"><span data-i18n="t2n">next</span><span class="chip chip--next"><i></i><span data-i18n="soon">in the works</span></span></div>
+        <h3>Obsidian<small data-i18n="t2s">plugin</small></h3>
+        <p data-i18n="t2p">Bring your highlights and notes into your Obsidian vault, with links that open the passage back in Clio.</p>
+      </article>
+      <article class="st later">
+        <div class="st__top"><span data-i18n="t3n">later</span><span class="chip chip--later"><i></i><span data-i18n="plan">planned</span></span></div>
+        <h3>Android</h3>
+        <p data-i18n="t3p">Keep reading and taking notes on your phone, with the same library.</p>
+      </article>
+    </div>
+    <p class="rule"><small data-i18n="rk">a promise</small><span data-i18n="rt">Whatever comes next, your library stays on your devices, in files you own.</span></p>
+  </section>
+
+  <!-- 05 GET -->
+  <section class="sec gut" id="get" aria-labelledby="getHead" style="border-top:var(--line) solid var(--ink-dim)">
+    <h2 class="sechead" id="getHead"><span data-i18n="s5a">05 — download</span><span data-i18n="s5b">available today</span></h2>
+    <div class="dl-grid">
+      <h3 class="big"><span data-i18n="b1">Your library.</span><em data-i18n="b2">Your files.</em></h3>
+      <div>
+        <ul class="os">
+          <li><div><b>Windows</b><small class="ph" data-i18n="pend">[download link and version to confirm]</small></div><a class="btn" href="#get" data-i18n="dl">download ↓</a></li>
+          <li><div><b>Linux</b><small class="ph" data-i18n="pend">[download link and version to confirm]</small></div><a class="btn" href="#get" data-i18n="dl">download ↓</a></li>
+          <li class="off"><div><b data-i18n="obp">Obsidian plugin</b><small data-i18n="obs">in the works</small></div><span class="chip chip--next"><i></i><span data-i18n="next">next</span></span></li>
+          <li class="off"><div><b>Android</b><small data-i18n="ans">planned</small></div><span class="chip chip--later"><i></i><span data-i18n="later">later</span></span></li>
+        </ul>
+        <div class="repo"><span data-i18n="src">source code</span><span class="ph" data-i18n="repo">[repository and license when public]</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot gut">
+  <span>{% include clio/brand.svg %}<span>Clio Reader · <span data-i18n="ft">a reader that keeps what you read</span></span></span>
+  <a href="/" data-i18n="lab">a jhosno lab</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<!-- clio.js sets JH.REDUCE, which marquee.js reads on load -->
+<script src="{{ '/assets/js/clio.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/marquee.js' | relative_url }}"></script>
+</body>
+</html>
