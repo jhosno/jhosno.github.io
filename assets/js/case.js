@@ -91,13 +91,16 @@
 
   // Snapshot the original English content from the DOM
   var BASE = (function () {
-    var m = { text: {}, html: {} };
+    var m = { text: {}, html: {}, alt: {} };
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var k = el.getAttribute("data-i18n");
       if (!(k in m.text)) m.text[k] = el.textContent;
     });
     document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
       m.html[el.getAttribute("data-i18n-html")] = el.innerHTML;
+    });
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      m.alt[el.getAttribute("data-i18n-alt")] = el.alt;
     });
     return m;
   })();
@@ -116,6 +119,12 @@
       var k = el.getAttribute("data-i18n-html");
       var v = (lang === "es") ? ES[k] : BASE.html[k];
       if (v != null) el.innerHTML = v;
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var k = el.getAttribute("data-i18n-alt");
+      var v = (lang === "es") ? ES[k] : BASE.alt[k];
+      if (v != null) el.alt = v;
     });
 
     var b = document.getElementById("langBtn");

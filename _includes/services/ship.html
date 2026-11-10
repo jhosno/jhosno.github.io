@@ -1,0 +1,42 @@
+<!-- 03 · SHIP — qué recibes -->
+<div class="band" id="ship"><span data-i18n="b3">Ship</span><small data-i18n="b3s">03 — what you get</small></div>
+<div class="wrap"><section class="state">
+  <div class="pkgs rise">
+    {% for pkg in site.data.services.packages %}
+    <div class="pkg">
+      <span class="pkg__k" data-i18n="{{ pkg.key }}">{{ pkg.label }}</span>
+      <h3 class="pkg__name" data-i18n="{{ pkg.key }}n">{{ pkg.name }}</h3>
+      <p class="pkg__price">${{ pkg.price | replace: "–", "<wbr>–" }}<small data-i18n="once">USD · one-time</small></p>
+      <dl>
+        <div><dt data-i18n="pg">pages</dt><dd data-i18n="{{ pkg.key }}p">{{ pkg.pages }}</dd></div>
+        <div><dt data-i18n="rd">ready in</dt><dd class="ph" data-i18n="days">[—] days</dd></div>
+      </dl>
+      <ul class="pkg__list">
+        {% for f in pkg.features %}
+        <li data-i18n="{{ f.key }}">{{ f.text }}</li>
+        {% endfor %}
+      </ul>
+      {% if pkg.excludes %}<p class="pkg__x" data-i18n="{{ pkg.excludes.key }}">{{ pkg.excludes.text }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="two">
+    <div class="rise">
+      <h3 class="h3" data-i18n="incT">Included no matter what</h3>
+      <ul class="incl">
+        {% for i in site.data.services.included %}
+        <li><span data-i18n-html="{{ i.key }}">{{ i.html }}</span></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="rise">
+      <h3 class="h3" data-i18n="stT">How it goes</h3>
+      <ol class="steps">
+        {% for s in site.data.services.steps %}
+        <li><span data-i18n-html="{{ s.key }}">{{ s.html }}</span></li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+</section></div>

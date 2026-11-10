@@ -1,0 +1,199 @@
+/* ============================================================
+   SERVICES.CSS — Service pages (Before → After).
+   Loaded after base.css + case.css; only adds what a case
+   page does not already have: buttons, glitch title, work
+   stack, packages, steps, FAQ.
+   ============================================================ */
+
+
+/* ============================================================
+   1. BUTTONS — the only button is outlined
+   ============================================================ */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family: var(--mono); font-size:11px; letter-spacing:.16em;
+  text-transform:uppercase; text-decoration:none;
+  padding:13px 20px; border: var(--line) solid var(--acid-hi);
+  color: var(--acid-hi); background: var(--bg);
+  transition: background-color .25s, color .25s;
+}
+.btn:hover{ background: var(--acid-hi); color: var(--bg); }
+.btn--paper{ border-color: var(--paper); color: var(--paper); }
+.btn--paper:hover{ background: var(--paper); color: var(--bg); }
+
+.ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-top: clamp(26px,4vh,40px); }
+
+
+/* ============================================================
+   2. LEDE — glitch on the title word
+   ============================================================ */
+.lede h1 .g{ position:relative; display:inline-block; }
+.lede h1 .g::before,
+.lede h1 .g::after{ content:attr(data-text); position:absolute; inset:0; opacity:0; pointer-events:none; }
+.lede h1 .g::before{ color: var(--ink);  transform: translate3d(-.035em,-.012em,0); }
+.lede h1 .g::after{  color: var(--acid); transform: translate3d(.035em,.012em,0); }
+.lede h1 .g.is-on::before,
+.lede h1 .g.is-on::after{ opacity:.9; }
+
+
+/* ============================================================
+   3. BANDS — anchor targets under the sticky ribbon
+   ============================================================ */
+.band{ flex-wrap:wrap; scroll-margin-top: calc(var(--ribbon-h) + 8px); }
+
+
+/* ============================================================
+   4. DIAGRAM — a phone waiting
+   Each bar is something to load before the number shows.
+   ============================================================ */
+.f-wait i{ background:
+  linear-gradient(90deg, var(--ink) 0 84%, transparent 84%)  6% 14%/94% 9% no-repeat,
+  linear-gradient(90deg, var(--ink) 0 66%, transparent 66%)  6% 30%/94% 9% no-repeat,
+  linear-gradient(90deg, var(--acid) 0 48%, transparent 48%) 6% 46%/94% 9% no-repeat,
+  linear-gradient(90deg, var(--acid) 0 31%, transparent 31%) 6% 62%/94% 9% no-repeat,
+  linear-gradient(90deg, var(--acid) 0 19%, transparent 19%) 6% 78%/94% 9% no-repeat,
+  repeating-linear-gradient(90deg, rgba(197,58,157,.14) 0 1px, transparent 1px 10%),
+  var(--bg); }
+
+
+/* ============================================================
+   5. WORK STACK — screenshots with before / live links
+   ============================================================ */
+.stack{ display:grid; gap:16px; }
+.stack__h{
+  font-family: var(--mono); font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color: var(--acid-hi); margin:0;
+}
+.shot{
+  margin:0; border: var(--line) solid var(--ink-dim); background: var(--bg);
+  transition: border-color .3s, transform .35s var(--ease);
+}
+.shot:hover{ border-color: var(--acid-hi); transform: translateY(-4px); }
+.shot img{ width:100%; height:auto; aspect-ratio: 760/475; object-fit:cover; }
+.shot b{
+  display:flex; justify-content:space-between; gap:10px; align-items:center;
+  border-top: var(--line) solid var(--ink-dim); padding:7px 10px;
+  font-family: var(--mono); font-weight:400; font-size:10px;
+  letter-spacing:.1em; text-transform:uppercase; color: var(--acid-hi);
+}
+.shot b > span:first-child{ min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.shot nav{ display:flex; gap:10px; flex:none; }
+.shot nav a{ text-decoration:none; opacity:.7; }
+.shot nav a:hover{ opacity:1; text-decoration:underline; text-underline-offset:3px; }
+
+
+/* ============================================================
+   6. PACKAGES
+   ============================================================ */
+/* 1.5px gap over the border color draws the dividers in any column count */
+.pkgs{
+  display:grid; grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: var(--line); background: var(--ink-dim); border: var(--line) solid var(--ink-dim);
+}
+.pkg{ padding: clamp(18px,2vw,26px); display:grid; grid-template-columns: minmax(0,1fr); gap:12px; align-content:start; min-width:0; background: var(--bg); }
+.pkg__k{ font-family: var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color: var(--acid-hi); }
+.pkg__name{
+  font-family: var(--display); font-weight:700; font-size: clamp(22px,2vw,28px);
+  line-height:1; letter-spacing:-.025em; color: var(--paper); margin:0;
+}
+.pkg__price{
+  font-family: var(--display); font-weight:800;
+  font-size: clamp(24px,2.2vw,32px); line-height:1; letter-spacing:-.04em;
+  color: var(--paper); margin:0;
+}
+.pkg__price small{
+  display:block; margin-top:6px; font-family: var(--mono); font-weight:400;
+  font-size:10px; letter-spacing:.14em; text-transform:uppercase; color: var(--ink);
+}
+.pkg dl{ margin:0; font-family: var(--mono); font-size:11px; letter-spacing:.05em; text-transform:uppercase; }
+.pkg dl > div{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:9px 0; border-top: var(--line) solid var(--ink-dim); }
+.pkg dt{ opacity:.62; }
+.pkg dd{ margin:0; color: var(--acid-hi); text-align:right; }
+.pkg__list{ list-style:none; margin:0; padding:0; border-top: var(--line) solid var(--ink-dim); }
+.pkg__list li{
+  display:grid; grid-template-columns: 1.1em 1fr; gap:8px; padding:8px 0;
+  font-size:14.5px; line-height:1.4; color: var(--ink-hi);
+}
+.pkg__list li::before{ content:"✳"; color: var(--acid); }
+.pkg__x{ margin:0; font-family: var(--mono); font-size:11px; line-height:1.5; letter-spacing:.03em; color: var(--ink); opacity:.8; }
+
+/* placeholder copy still to be confirmed */
+.ph{ color: var(--ink) !important; opacity:.75; }
+
+
+/* ============================================================
+   7. INCLUDED + STEPS
+   ============================================================ */
+.two{
+  display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+  gap: clamp(26px,5vw,72px); margin-top: clamp(40px,7vh,72px);
+}
+.two > *{ min-width:0; }
+.h3{
+  font-family: var(--mono); font-weight:500; font-size:12px;
+  letter-spacing:.16em; text-transform:uppercase; color: var(--acid-hi);
+  margin:0 0 14px;
+}
+.incl, .steps{ list-style:none; margin:0; padding:0; border-top: var(--line) solid var(--ink-dim); }
+.incl li, .steps li{
+  display:grid; padding:11px 0; border-bottom: var(--line) solid var(--ink-dim);
+  font-size:15.5px; line-height:1.45; color: var(--ink-hi);
+}
+.incl li{ grid-template-columns: 1.2em 1fr; gap:10px; }
+.incl li::before{ content:"✳"; color: var(--acid); }
+.steps{ counter-reset:s; }
+.steps li{ counter-increment:s; grid-template-columns: 3ch 1fr; gap:14px; }
+.steps li::before{
+  content: counter(s, decimal-leading-zero);
+  font-family: var(--mono); font-size:11px; color: var(--acid-hi); padding-top:3px;
+}
+.incl strong, .steps strong{ color: var(--paper); font-weight:500; }
+
+
+/* ============================================================
+   8. TALK + FAQ
+   ============================================================ */
+.talk{ text-align:center; }
+.statement{
+  margin:0 auto; font-family: var(--display); font-weight:600;
+  font-size: clamp(26px,3.4vw,48px); line-height:1.06; letter-spacing:-.028em;
+  max-width:21ch; color: var(--paper); text-wrap:balance;
+}
+.statement em{ font-style:normal; color: var(--acid-hi); }
+.mail{ margin-top: clamp(22px,4vh,36px); display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+.mailline{
+  margin-top:14px; font-family: var(--mono); font-size:12px;
+  letter-spacing:.04em; color: var(--ink-hi); user-select:all;
+}
+
+.faq{ max-width:760px; margin: clamp(48px,8vh,88px) auto 0; text-align:left; border-top: var(--line) solid var(--ink-dim); }
+.faq .h3{ margin:22px 0 4px; }
+.faq details{ border-bottom: var(--line) solid var(--ink-dim); }
+.faq summary{
+  list-style:none; cursor:pointer;
+  display:flex; justify-content:space-between; gap:16px; align-items:baseline;
+  padding:16px 0; font-family: var(--display); font-weight:600;
+  font-size: clamp(17px,1.6vw,21px); letter-spacing:-.015em; color: var(--paper);
+  transition: color .25s;
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:"+"; font-family: var(--mono); color: var(--acid-hi); flex:none; transition: transform .3s var(--ease); }
+.faq details[open] summary::after{ transform: rotate(45deg); }
+.faq summary:hover{ color: var(--acid-hi); }
+.faq .ans{ padding:0 0 18px; max-width: var(--measure); font-size:16px; line-height:1.6; color: var(--ink-hi); }
+.faq .ans p{ margin:0 0 .8em; }
+.faq .ans p:last-child{ margin:0; }
+
+.next div:last-child{ text-align:right; }
+
+
+/* ============================================================
+   9. RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px){
+  .two{ grid-template-columns: 1fr; }
+  .pkgs{ grid-template-columns: 1fr; }
+}
+@media (max-width: 680px){
+  .next div:last-child{ text-align:left; }
+}

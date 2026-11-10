@@ -104,9 +104,26 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   font-size: clamp(15px, 1.5vw, 19px); letter-spacing:-.03em;
   text-decoration:none; white-space:nowrap;
 }
-.ribbon__mark svg{ width:1.5em; height:1.5em; flex:none; }
-.ribbon__mark:hover svg{ transform: rotate(-8deg) scale(1.08); }
-.ribbon__mark svg{ transition: transform .35s var(--ease); }
+.ribbon__diamond{
+  color: var(--ink);
+  font-size: .65em;
+  margin-left: -.15em;
+  transition: color .45s var(--ease);
+}
+.ribbon__bud{
+  margin:0;
+  font-family: var(--mono);
+  font-size: clamp(3.8px, .42vw, 5.2px);
+  line-height:1;
+  letter-spacing:0;
+  white-space:pre;
+  color: inherit;
+  transition: color .45s var(--ease), transform .35s var(--ease);
+}
+.ribbon__mark:hover .ribbon__bud{ transform: scale(1.22) rotate(-10deg); }
+@media (max-width: 720px){
+  .ribbon__bud{ font-size:4.6px; }
+}
 
 .ribbon__aside{
   display:flex; align-items:center; gap: clamp(8px,1.4vw,16px);

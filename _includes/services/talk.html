@@ -1,0 +1,21 @@
+<!-- 04 · TALK — contacto + preguntas -->
+<div class="band band--acid" id="talk"><span data-i18n="b4">Talk</span><small data-i18n="b4s">04 — one person, end to end</small></div>
+<div class="wrap"><section class="state talk">
+  <p class="statement" data-i18n-html="t1">You talk to me from the first message to launch day. <em>Pick whatever is easiest.</em></p>
+  <div class="mail">
+    <button class="btn" id="copyBtn" type="button" data-i18n="copy">copy email</button>
+    <a class="btn btn--paper" href="https://www.linkedin.com/in/jhosno" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+  <p class="mailline" id="mail">{{ site.email }}</p>
+
+  <div class="faq">
+    <h3 class="h3" data-i18n="fq">Fair questions</h3>
+    {% for f in site.data.services.faq %}
+    <details><summary data-i18n="{{ f.key }}">{{ f.q }}</summary>
+      <div class="ans">
+        {% for a in f.a %}<p{% if a.ph %} class="ph"{% endif %} data-i18n="{{ a.key }}">{{ a.text }}</p>{% endfor %}
+      </div>
+    </details>
+    {% endfor %}
+  </div>
+</section></div>
