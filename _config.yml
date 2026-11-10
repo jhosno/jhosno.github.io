@@ -21,3 +21,5 @@ exclude:
   - .gitignore
   - skills-lock.json
   - .agents
+  - vendor
+  - .bundle
