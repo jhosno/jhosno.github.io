@@ -64,23 +64,6 @@
   white-space: nowrap;
   text-decoration: none;
 }
-.ribbon__diamond{
-  color: var(--ink);
-  font-size: .65em;
-  margin-left: -.15em;
-  transition: color .45s var(--ease);
-}
-.ribbon__bud{
-  margin:0;
-  font-family: var(--mono);
-  font-size: clamp(3.8px, .42vw, 5.2px);
-  line-height:1;
-  letter-spacing:0;
-  white-space:pre;
-  color: inherit;
-  transition: color .45s var(--ease), transform .35s var(--ease);
-}
-.ribbon__mark:hover .ribbon__bud{ transform: scale(1.22) rotate(-10deg); }
 .ribbon__nav{
   display:flex; justify-content:center; gap: clamp(10px, 2.4vw, 34px);
   font-family: var(--mono);
