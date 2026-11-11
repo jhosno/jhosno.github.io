@@ -1,0 +1,17 @@
+{%- comment -%}
+  JSON-LD: un solo @graph. person.html va primero (sin coma); el resto de piezas
+  empiezan con su propia coma, así cualquiera puede omitirse sin romper el JSON.
+{%- endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {% include seo/schema/person.html %}
+    {% include seo/schema/website.html %}
+    {% include seo/schema/webpage.html %}
+    {% include seo/schema/breadcrumb.html %}
+    {% include seo/schema/works.html %}
+    {% include seo/schema/extra.html %}
+  ]
+}
+</script>

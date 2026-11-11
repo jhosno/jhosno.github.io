@@ -1,0 +1,8 @@
+{%- comment -%}
+  Nodo específico de la página (SoftwareApplication, Service, Article…), escrito como
+  hash YAML en el front matter `schema_extra`. Usa "$site" para referirte a site.url,
+  p. ej. "author": { "@id": "$site/#person" }.
+{%- endcomment -%}
+{%- if page.schema_extra -%}
+,{{ page.schema_extra | jsonify | replace: "$site", site.url }}
+{%- endif -%}

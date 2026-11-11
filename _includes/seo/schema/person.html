@@ -1,0 +1,26 @@
+{%- assign p = seo.person -%}
+{
+      "@type": "Person",
+      "@id": {{ seo_person_id | jsonify }},
+      "name": {{ p.name | jsonify }},
+      "alternateName": {{ p.alternate_name | jsonify }},
+      "url": {{ seo_home | jsonify }},
+      {%- if p.image %}
+      "image": {{ p.image | absolute_url | jsonify }},
+      {%- endif %}
+      "email": {{ p.email | prepend: "mailto:" | jsonify }},
+      "jobTitle": {{ p.job_title | jsonify }},
+      "description": {{ p.description | strip | jsonify }},
+      "knowsAbout": {{ p.knows_about | jsonify }},
+      "knowsLanguage": [{% for l in p.languages %}{ "@type": "Language", "name": {{ l | jsonify }} }{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": {{ p.address.locality | jsonify }},
+        "addressRegion": {{ p.address.region | jsonify }},
+        "addressCountry": {{ p.address.country | jsonify }}
+      },
+      "sameAs": {{ p.same_as | jsonify }}
+      {%- if p.credential %},
+      "hasCredential": { "@type": "EducationalOccupationalCredential", "name": {{ p.credential | jsonify }} }
+      {%- endif %}
+    }

@@ -7,30 +7,9 @@ layout: none
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>{{ page.title }} — {{ page.subtitle }} · jhosno</title>
-<meta name="description" content="{{ page.description }}" />
-<link rel="canonical" href="{{ page.url | prepend: site.url }}" />
-<meta name="author" content="Jhosno Hernández" />
-<meta name="theme-color" content="#1a1a1a" />
-
-{% if page.og_type %}
-<meta property="og:type" content="{{ page.og_type }}" />
-{% else %}
-<meta property="og:type" content="article" />
-{% endif %}
-<meta property="og:url" content="{{ page.url | prepend: site.url }}" />
-<meta property="og:site_name" content="jhosno" />
-<meta property="og:title" content="{{ page.title }} — {{ page.subtitle }}" />
-<meta property="og:description" content="{{ page.og_description | default: page.description }}" />
-<meta name="twitter:card" content="summary_large_image" />
+{% include seo.html %}
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
-{% if page.schema %}
-<script type="application/ld+json">
-{{ page.schema }}
-</script>
-{% endif %}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

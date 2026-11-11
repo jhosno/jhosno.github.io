@@ -1,0 +1,12 @@
+{%- comment -%} Metas básicos: título, descripción, canonical, robots. {%- endcomment %}
+<title>{{ seo_title | escape }}</title>
+<meta name="description" content="{{ seo_desc | escape }}" />
+<link rel="canonical" href="{{ seo_url }}" />
+{%- if page.noindex %}
+<meta name="robots" content="noindex, follow" />
+{%- else %}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+{%- endif %}
+<meta name="author" content="{{ seo.person.name }}" />
+<meta name="theme-color" content="{{ seo.theme_color }}" />
+<link rel="alternate" type="text/plain" title="llms.txt" href="{{ '/llms.txt' | absolute_url }}" />

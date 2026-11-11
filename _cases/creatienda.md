@@ -6,6 +6,22 @@ description: "Refactoring critical modules of a multi-tenant e-commerce SaaS int
 og_description: "Coupled modules, slow to respond. Refactored into a service layer: +20% response speed. And a Factory pattern so adding a payment provider stopped touching the checkout core."
 permalink: /cases/creatienda/
 lang: en
+breadcrumbs:
+  - name: Work
+    url: /#trabajo
+  - name: Creatienda
+    url: /cases/creatienda/
+schema_extra:
+  "@type": Article
+  "@id": "$site/cases/creatienda/#article"
+  headline: "Creatienda — multi-tenant SaaS refactor"
+  description: "Refactoring critical modules of a multi-tenant e-commerce SaaS into a service layer, and replacing a hard-coded checkout with a Factory-based multi-gateway integration. +20% response speed."
+  articleSection: Case study
+  keywords: [Laravel, PHP, MySQL, Multi-tenant SaaS, Refactoring, Payment gateway integration, Factory pattern]
+  about: { "@type": SoftwareApplication, name: Creatienda, applicationCategory: BusinessApplication }
+  author: { "@id": "$site/#person" }
+  publisher: { "@id": "$site/#person" }
+  mainEntityOfPage: { "@id": "$site/cases/creatienda/#webpage" }
 ---
 
 <div class="wrap">

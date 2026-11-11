@@ -1,23 +1,35 @@
 ---
 layout: null
 permalink: /labs/clio/
+seo_title: "Clio Reader — a reader that keeps what you read · jhosno labs"
+description: "Clio Reader: highlight, take notes and find them again. Your library stays on your computer. For Windows and Linux."
+og_title: "Clio Reader — everything you read, kept"
+og_description: "Highlight, take notes and find them again. Your library stays on your computer. For Windows and Linux."
+breadcrumbs:
+  - name: Labs
+    url: /labs/
+  - name: Clio Reader
+    url: /labs/clio/
+schema_extra:
+  "@type": SoftwareApplication
+  "@id": "$site/labs/clio/#app"
+  name: Clio Reader
+  url: "$site/labs/clio/"
+  description: "A desktop reader that keeps what you read: highlight, take notes and find them again. Local library, no account, works offline. Markdown export ready for Obsidian."
+  applicationCategory: ProductivityApplication
+  operatingSystem: "Windows, Linux"
+  fileFormat: [application/epub+zip, application/pdf, text/markdown, application/vnd.comicbook+zip]
+  featureList: [Highlights and notes, Local library, Works offline, No account required, Markdown export for Obsidian]
+  author: { "@id": "$site/#person" }
+  creator: { "@id": "$site/#person" }
+  mainEntityOfPage: { "@id": "$site/labs/clio/#webpage" }
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Clio Reader — a reader that keeps what you read · jhosno labs</title>
-<meta name="description" content="Clio Reader: highlight, take notes and find them again. Your library stays on your computer. For Windows and Linux." />
-<link rel="canonical" href="{{ page.url | prepend: site.url }}" />
-<meta name="author" content="Jhosno Hernández" />
-<meta name="theme-color" content="#1a1a1a" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ page.url | prepend: site.url }}" />
-<meta property="og:site_name" content="jhosno" />
-<meta property="og:title" content="Clio Reader — everything you read, kept" />
-<meta property="og:description" content="Highlight, take notes and find them again. Your library stays on your computer. For Windows and Linux." />
-<meta name="twitter:card" content="summary" />
+{% include seo.html %}
 <link rel="icon" href="/assets/images/clio/clio-brand.svg" type="image/svg+xml" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
