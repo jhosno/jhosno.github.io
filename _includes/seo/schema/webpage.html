@@ -1,0 +1,20 @@
+{%- assign is_home = false -%}{%- if page.url == "/" or page.url == "/index.html" -%}{%- assign is_home = true -%}{%- endif -%}
+,{
+      "@type": {{ page.schema_type | default: "WebPage" | jsonify }},
+      "@id": {{ seo_page_id | jsonify }},
+      "url": {{ seo_url | jsonify }},
+      "name": {{ seo_og_title | jsonify }},
+      "description": {{ seo_desc | jsonify }},
+      "inLanguage": {{ seo_lang | jsonify }},
+      "isPartOf": { "@id": {{ seo_website_id | jsonify }} },
+      "author": { "@id": {{ seo_person_id | jsonify }} },
+      {%- if page.last_modified_at %}
+      "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+      {%- endif %}
+      {%- if is_home %}
+      "mainEntity": { "@id": {{ seo_person_id | jsonify }} },
+      {%- else %}
+      "breadcrumb": { "@id": {{ seo_url | append: "#breadcrumb" | jsonify }} },
+      {%- endif %}
+      "primaryImageOfPage": { "@type": "ImageObject", "url": {{ seo_image | jsonify }} }
+    }

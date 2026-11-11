@@ -7,6 +7,26 @@ og_description: "If you got here from a link I sent you, the redesign is already
 og_type: website
 permalink: /services/
 lang: en
+breadcrumbs:
+  - name: Services
+    url: /services/
+schema_extra:
+  "@type": Service
+  "@id": "$site/services/#service"
+  name: "Websites for local businesses"
+  serviceType: "Web design and development"
+  description: "Websites for local businesses: the redesign comes first, then the price. Refresh, landing page and essential site packages with on-page SEO, mobile-first design and Google Business Profile review."
+  provider: { "@id": "$site/#person" }
+  areaServed: Worldwide
+  availableLanguage: [English, Spanish]
+  url: "$site/services/"
+  hasOfferCatalog:
+    "@type": OfferCatalog
+    name: "Website packages"
+    itemListElement:
+      - { "@type": Offer, itemOffered: { "@type": Service, name: "Refresh — new visual design for up to 5 existing pages" } }
+      - { "@type": Offer, itemOffered: { "@type": Service, name: "Landing — one-page web design, mobile first" } }
+      - { "@type": Offer, itemOffered: { "@type": Service, name: "Essential site — 4 pages with on-page SEO" } }
 extra_css:
   - /assets/css/services.css
 extra_js:

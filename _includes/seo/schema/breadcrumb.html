@@ -1,0 +1,28 @@
+{%- comment -%}
+  BreadcrumbList automático a partir de page.url (/labs/clio/ → Home › labs › clio).
+  Se puede sobreescribir con page.breadcrumbs: [{name, url}]. No se emite en la home.
+{%- endcomment -%}
+{%- unless page.url == "/" or page.url == "/index.html" or page.noindex -%}
+,{
+      "@type": "BreadcrumbList",
+      "@id": {{ seo_url | append: "#breadcrumb" | jsonify }},
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ seo_home | jsonify }} }
+        {%- if page.breadcrumbs -%}
+          {%- for c in page.breadcrumbs %},
+        { "@type": "ListItem", "position": {{ forloop.index | plus: 1 }}, "name": {{ c.name | jsonify }}, "item": {{ c.url | absolute_url | jsonify }} }
+          {%- endfor -%}
+        {%- else -%}
+          {%- assign parts = page.url | remove: "index.html" | split: "/" -%}
+          {%- assign path = "" -%}{%- assign pos = 1 -%}
+          {%- for part in parts -%}
+            {%- if part == "" -%}{%- continue -%}{%- endif -%}
+            {%- assign path = path | append: "/" | append: part -%}
+            {%- assign pos = pos | plus: 1 -%}
+            {%- if forloop.last -%}{%- assign crumb = seo_og_title | split: " — " | first -%}{%- else -%}{%- assign crumb = part -%}{%- endif -%},
+        { "@type": "ListItem", "position": {{ pos }}, "name": {{ crumb | jsonify }}, "item": {{ path | append: "/" | absolute_url | jsonify }} }
+          {%- endfor -%}
+        {%- endif %}
+      ]
+    }
+{%- endunless -%}

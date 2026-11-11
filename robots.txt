@@ -1,7 +1,39 @@
 ---
 layout: null
 permalink: /robots.txt
+sitemap: false
 ---
+# Buscadores y motores generativos (GEO): todo el sitio es público.
 User-agent: *
 Allow: /
+
+# Crawlers de IA permitidos explícitamente
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Resumen para LLMs: {{ '/llms.txt' | absolute_url }}
 Sitemap: {{ '/sitemap.xml' | absolute_url }}

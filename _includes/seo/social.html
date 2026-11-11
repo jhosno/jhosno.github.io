@@ -1,0 +1,28 @@
+{%- comment -%} Open Graph + Twitter/X card. {%- endcomment -%}
+{%- if seo_lang == "es" -%}
+  {%- assign seo_locale = "es_CO" -%}{%- assign seo_locale_alt = "en_US" -%}
+{%- else -%}
+  {%- assign seo_locale = "en_US" -%}{%- assign seo_locale_alt = "es_CO" -%}
+{%- endif %}
+<meta property="og:type" content="{{ page.og_type | default: 'website' }}" />
+<meta property="og:url" content="{{ seo_url }}" />
+<meta property="og:site_name" content="{{ site.title }}" />
+<meta property="og:locale" content="{{ seo_locale }}" />
+<meta property="og:locale:alternate" content="{{ seo_locale_alt }}" />
+<meta property="og:title" content="{{ seo_og_title | escape }}" />
+<meta property="og:description" content="{{ seo_og_desc | escape }}" />
+<meta property="og:image" content="{{ seo_image }}" />
+{%- unless page.image %}
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{%- endunless %}
+<meta property="og:image:alt" content="{{ seo_image_alt | escape }}" />
+<meta name="twitter:card" content="summary_large_image" />
+{%- if site.twitter_username %}
+<meta name="twitter:site" content="@{{ site.twitter_username }}" />
+<meta name="twitter:creator" content="@{{ site.twitter_username }}" />
+{%- endif %}
+<meta name="twitter:title" content="{{ seo_og_title | escape }}" />
+<meta name="twitter:description" content="{{ seo_og_desc | escape }}" />
+<meta name="twitter:image" content="{{ seo_image }}" />
+<meta name="twitter:image:alt" content="{{ seo_image_alt | escape }}" />

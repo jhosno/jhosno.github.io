@@ -1,0 +1,44 @@
+# SEO / GEO — datos de entidad que usan los includes de _includes/seo/.
+# Edita aquí quién eres; todas las páginas lo heredan (meta, Open Graph y JSON-LD).
+
+og_image: /img/og.png          # 1200×630 por defecto para og:image / twitter:image
+og_image_alt: "jhosno — full-stack developer and web designer"
+theme_color: "#1a1a1a"
+
+person:
+  name: "Jhosno Hernández"
+  alternate_name: "jhosno"
+  email: "jhosno.dev@gmail.com"
+  image: /assets/images/JH-about-1-c.png   # retrato para Person.image
+  job_title:
+    - "Full-Stack Developer"
+    - "Web Designer"
+  description: >-
+    Full-stack developer and web designer. Reads what is already there before
+    touching anything: broken code someone else wrote, or a web design that does
+    not exist yet. WordPress, Laravel, multi-tenant SaaS and web design.
+    White-label for agencies.
+  knows_about:
+    - WordPress
+    - WooCommerce
+    - Elementor
+    - Laravel
+    - PHP
+    - MySQL
+    - Multi-tenant SaaS
+    - Payment gateway integration
+    - Web design
+    - UI design
+    - Refactoring
+    - GSAP
+  languages:
+    - Spanish
+    - English
+  address:
+    locality: "Bogotá"
+    region: "Distrito Capital"
+    country: "CO"
+  same_as:
+    - https://www.linkedin.com/in/jhosno
+    - https://github.com/jhosno
+  credential: "EFSET English Certificate — C2 Proficient (73/100)"

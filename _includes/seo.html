@@ -1,0 +1,48 @@
+{%- comment -%}
+  SEO / GEO — único punto de entrada. Se incluye UNA vez dentro de <head>.
+  Resuelve los valores comunes y delega en las piezas de _includes/seo/.
+
+  Front matter que entiende (todo opcional):
+    seo_title        título completo del <title> (si no: title — subtitle · site)
+    description      meta description
+    og_title         título para redes (si no: title — subtitle)
+    og_description   descripción para redes (si no: description)
+    og_type          website | article | profile (por defecto website)
+    image / image_alt  imagen social (si no: _data/seo.yml → og_image)
+    noindex: true    añade robots noindex
+    lang             en | es (por defecto site.lang)
+    schema_type      tipo del nodo WebPage (WebPage, ProfilePage, CollectionPage…)
+    schema_extra     hash YAML con un nodo JSON-LD extra; "$site" se reemplaza por site.url
+    breadcrumbs      lista [{name, url}] para BreadcrumbList (si no se omite)
+{%- endcomment -%}
+{%- assign seo = site.data.seo -%}
+{%- if page.seo_title -%}
+  {%- assign seo_title = page.seo_title -%}
+{%- elsif page.title and page.subtitle -%}
+  {%- assign seo_title = page.title | append: " — " | append: page.subtitle | append: " · " | append: site.title -%}
+{%- elsif page.title -%}
+  {%- assign seo_title = page.title | append: " · " | append: site.title -%}
+{%- else -%}
+  {%- assign seo_title = site.title -%}
+{%- endif -%}
+{%- if page.og_title -%}
+  {%- assign seo_og_title = page.og_title -%}
+{%- elsif page.title and page.subtitle -%}
+  {%- assign seo_og_title = page.title | append: " — " | append: page.subtitle -%}
+{%- else -%}
+  {%- assign seo_og_title = seo_title -%}
+{%- endif -%}
+{%- assign seo_desc = page.description | default: site.description | strip_html | strip_newlines | strip -%}
+{%- assign seo_og_desc = page.og_description | default: seo_desc | strip_html | strip_newlines | strip -%}
+{%- assign seo_url = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign seo_image = page.image | default: seo.og_image | absolute_url -%}
+{%- assign seo_image_alt = page.image_alt | default: seo.og_image_alt -%}
+{%- assign seo_lang = page.lang | default: site.lang | default: "en" -%}
+{%- assign seo_home = "/" | absolute_url -%}
+{%- assign seo_person_id = seo_home | append: "#person" -%}
+{%- assign seo_website_id = seo_home | append: "#website" -%}
+{%- assign seo_page_id = seo_url | append: "#webpage" -%}
+{% include seo/analytics.html %}
+{% include seo/meta.html %}
+{% include seo/social.html %}
+{% include seo/schema.html %}

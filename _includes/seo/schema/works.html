@@ -1,0 +1,21 @@
+{%- comment -%}
+  Trabajos publicados (CreativeWork) generados desde _data/work.yml:
+  cada imagen con `live` es un sitio real hecho por ti. Solo en la home.
+{%- endcomment -%}
+{%- if page.url == "/" or page.url == "/index.html" -%}
+  {%- for card in site.data.work -%}
+    {%- for img in card.images -%}
+      {%- if img.live -%}
+,{
+      "@type": "CreativeWork",
+      "name": {{ img.name | jsonify }},
+      "url": {{ img.live | jsonify }},
+      "image": {{ img.src | absolute_url | jsonify }},
+      "description": {{ img.alt | jsonify }},
+      "keywords": {{ card.idx | jsonify }},
+      "creator": { "@id": {{ seo_person_id | jsonify }} }
+    }
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+{%- endif -%}

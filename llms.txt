@@ -1,0 +1,33 @@
+---
+layout: null
+permalink: /llms.txt
+sitemap: false
+---
+{%- assign p = site.data.seo.person -%}
+# {{ p.name }} ({{ p.alternate_name }})
+
+> {{ p.description | strip }}
+
+- Role: {{ p.job_title | join: ", " }}
+- Based in: {{ p.address.locality }}, Colombia (GMT−5). Works remotely, white-label for agencies.
+- Languages: {{ p.languages | join: ", " }}
+- Skills: {{ p.knows_about | join: ", " }}
+- Contact: {{ p.email }}
+- Profiles: {{ p.same_as | join: " · " }}
+
+## Main pages
+
+- [Portfolio]({{ '/' | absolute_url }}): selected work, about and contact.
+- [Services]({{ '/services/' | absolute_url }}): websites for local businesses — the redesign comes first, then the price.
+- [Labs]({{ '/labs/' | absolute_url }}): experiments — explore, break, imagine, make.
+- [Clio Reader]({{ '/labs/clio/' | absolute_url }}): desktop reader for Windows and Linux; highlights, notes, local library, Markdown export for Obsidian.
+
+## Case studies
+{% for c in site.cases %}
+- [{{ c.title }} — {{ c.subtitle }}]({{ c.url | absolute_url }}): {{ c.description }}
+{%- endfor %}
+
+## Selected work
+{% for card in site.data.work %}{% if card.title != "In progress" %}
+- {{ card.title | replace: "&#8209;", "-" }} ({{ card.idx }}): {{ card.desc | strip_html }}{% for img in card.images %}{% if img.live %} — {{ img.name }}: {{ img.live }}{% endif %}{% endfor %}
+{%- endif %}{% endfor %}

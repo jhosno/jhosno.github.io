@@ -3,7 +3,16 @@ email: jhosno.dev@gmail.com
 description: >-
   Full-stack developer and web designer. WordPress, Laravel and web design.
   White-label for agencies. Bogotá, GMT−5.
-url: "https://jhosno.github.io/"
+url: "https://jhosno.dev"
+baseurl: ""
+lang: en
+
+# GA4 — solo se carga en producción (ver _includes/seo/analytics.html)
+google_analytics: G-618JXX6MET
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
 twitter_username: jhosno
 github_username: jhosno
 
@@ -23,3 +32,6 @@ exclude:
   - .agents
   - vendor
   - .bundle
+  - docs
+  - Gemfile
+  - Gemfile.lock
